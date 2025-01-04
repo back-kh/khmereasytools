@@ -1,2 +1,2 @@
-# KDP-Khmer-Document-Parser
-Khmer Document Parser (Text PDF + Text Image) 
+# KDP-Khmer-Text-Parser-From Documents (HTML,PDF, and Image)
+Khmer Document Parser (HTML, PDF + Text Image) 
