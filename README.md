@@ -17,8 +17,20 @@ You can install the core library, which is lightweight and has no heavy dependen
 ```bash
 pip install khmereasytools
 ```
-##Installing Optional Features
+### Installing Optional Features
 For more advanced tasks, khmereasytools uses "extras". This allows you to install additional features only when you need them, preventing installation errors if a particular dependency is not compatible with your system (a common issue with some NLP libraries on Windows).
+```bash
+# To install support for Part-of-Speech tagging (khpos)
+# This will install the `khmernltk` library.
+pip install khmereasytools[khmernltk]
+
+# To install support for Optical Character Recognition (khocr)
+# This will install `pytesseract` and `Pillow`.
+pip install khmereasytools[ocr]
+
+# To install all available optional features at once
+pip install khmereasytools[all]
+```
 
 
 
