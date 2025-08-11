@@ -7,8 +7,6 @@
 `khmereasytools` is a lightweight, self-contained Python library for common Khmer NLP tasks. It focuses on ease of use and zero heavy dependencies by default, with opt-in extras for advanced features.
 
 - **Core:** Khmer detection, word segmentation, keyword filtering, syllable segmentation  
-- **Extras (optional):** POS tagging via `khmernltk`, OCR via Tesseract (`pytesseract` + `Pillow`)
-
 ---
 
 ## Table of Contents
@@ -44,22 +42,6 @@ Install the core package (no heavy deps):
 pip install khmereasytools
 ```
 
-### Optional extras
-
-Install only the features you need:
-
-```bash
-# POS tagging (requires khmernltk)
-pip install "khmereasytools[khmernltk]"
-
-# OCR (requires pytesseract + Pillow)
-pip install "khmereasytools[ocr]"
-
-# Everything
-pip install "khmereasytools[all]"
-```
-
-> **Note:** If your environment cannot resolve `khmernltk` (e.g., older Python or OS wheels unavailable), install the base package and skip the `khmernltk` extra. Core features will still work.
 
 ### OCR prerequisite
 
@@ -177,6 +159,22 @@ import khmereasytools as ket
 tags = ket.khpos("ខ្ញុំស្រឡាញ់ភាសាខ្មែរ")
 print(tags)  # [('ខ្ញុំ','PRO'), ('ស្រឡាញ់','VERB'), ('ភាសាខ្មែរ','NOUN')]
 ```
+### Optional extras
+
+Install only the features you need:
+
+```bash
+# POS tagging (requires khmernltk)
+pip install "khmereasytools[khmernltk]"
+
+# OCR (requires pytesseract + Pillow)
+pip install "khmereasytools[ocr]"
+
+# Everything
+pip install "khmereasytools[all]"
+```
+- **Extras (optional):** POS tagging via `khmernltk`, OCR via Tesseract (`pytesseract` + `Pillow`)
+> **Note:** If your environment cannot resolve `khmernltk` (e.g., older Python or OS wheels unavailable), install the base package and skip the `khmernltk` extra. Core features will still work.
 
 ### OCR from image *(extra)*
 
@@ -226,3 +224,4 @@ If this toolkit assists academic or industry work, consider citing the repositor
 ## Changelog
 
 See [`CHANGELOG.md`](./CHANGELOG.md) for version history (features, fixes, breaking changes).
+
