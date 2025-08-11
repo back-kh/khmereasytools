@@ -208,13 +208,7 @@ Issues and pull requests are welcome!
 If this toolkit assists academic or industry work, consider citing the repository:
 
 ```bibtex
-@misc{khmereasytools,
-  title  = {Khmer Easy Tools},
-  author = {Contributors},
-  year   = {2025},
-  note   = {Python library for Khmer NLP},
-  url    = {https://pypi.org/project/khmereasytools/}
-}
+@article{thuon2024ksw, title={KSW: Khmer Stop Word based Dictionary for Keyword Extraction}, author={Thuon, Nimol and Zhang, Wangrui and Thuon, Sada}, journal={arXiv preprint arXiv:2405.17390}, year={2024} }
 ```
 
 ---
@@ -222,6 +216,7 @@ If this toolkit assists academic or industry work, consider citing the repositor
 ## Changelog
 
 See [`CHANGELOG.md`](./CHANGELOG.md) for version history (features, fixes, breaking changes).
+
 
 
 
