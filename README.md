@@ -16,8 +16,9 @@ You can install the core library, which is lightweight and has no heavy dependen
 
 ```bash
 pip install khmereasytools
-```bash
+```
 ##Installing Optional Features
 For more advanced tasks, khmereasytools uses "extras". This allows you to install additional features only when you need them, preventing installation errors if a particular dependency is not compatible with your system (a common issue with some NLP libraries on Windows).
+
 
 
