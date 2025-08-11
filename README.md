@@ -147,17 +147,29 @@ print(keywords)  # 'ប្រាសាទ អង្គរវត្ត ដ៏ ស
 ```python
 import khmereasytools as ket
 
-print(ket.khsyllable("សាលារៀន"))  # ['សា', 'លា', 'រៀន']
+print(ket.khsyllable("នេះជាសាលារៀន"))  # ['នេះ', 'ជា', 'សា', 'លា', 'រៀ', 'ន']
 ```
 
 ### POS tagging *(extra)*
 
 ```python
-# pip install "khmereasytools[khmernltk]"
 import khmereasytools as ket
 
 tags = ket.khpos("ខ្ញុំស្រឡាញ់ភាសាខ្មែរ")
-print(tags)  # [('ខ្ញុំ','PRO'), ('ស្រឡាញ់','VERB'), ('ភាសាខ្មែរ','NOUN')]
+print(tags)  # [('ខ្ញុំ', 'n'), (' ', 'n'), ('ស្រឡាញ់', 'v'), (' ', 'n'), ('ភាសា', 'n'), ('ខ្មែរ', 'n')]
+
+### OCR from image *(extra)*
+
+```python
+# System: Tesseract with Khmer data; Python: pip install "khmereasytools[ocr]"
+import khmereasytools as ket
+
+try:
+    text = ket.khocr("path/to/khmer_text.png")
+    print(text)
+except Exception as e:
+    print("OCR error:", e)
+
 ```
 ### Optional extras
 
@@ -176,20 +188,6 @@ pip install "khmereasytools[all]"
 - **Extras (optional):** POS tagging via `khmernltk`, OCR via Tesseract (`pytesseract` + `Pillow`)
 > **Note:** If your environment cannot resolve `khmernltk` (e.g., older Python or OS wheels unavailable), install the base package and skip the `khmernltk` extra. Core features will still work.
 
-### OCR from image *(extra)*
-
-```python
-# System: Tesseract with Khmer data; Python: pip install "khmereasytools[ocr]"
-import khmereasytools as ket
-
-try:
-    text = ket.khocr("path/to/khmer_text.png")
-    print(text)
-except Exception as e:
-    print("OCR error:", e)
-```
-
----
 
 ## License
 
@@ -224,4 +222,5 @@ If this toolkit assists academic or industry work, consider citing the repositor
 ## Changelog
 
 See [`CHANGELOG.md`](./CHANGELOG.md) for version history (features, fixes, breaking changes).
+
 
