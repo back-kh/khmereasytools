@@ -42,25 +42,6 @@ Install the core package (no heavy deps):
 pip install khmereasytools
 ```
 
-
-### OCR prerequisite
-
-For `khocr`, install the **Tesseract OCR engine** (system package) and the **Khmer language data (`khm`)**:
-
-- Windows: Install Tesseract from the official installer and select Khmer (`khm`) during setup (or add later).  
-- macOS: `brew install tesseract` then add Khmer traineddata.  
-- Linux: `sudo apt-get install tesseract-ocr tesseract-ocr-khm` (package names may vary by distro).
-
-Python side is handled by the `ocr` extra (`pytesseract`, `Pillow`).
-
-### Troubleshooting
-
-- **`khmernltk>=2.2` not found:** Use base install without extras or try a different Python version (3.9–3.11 usually safest), then reinstall the `khmernltk` extra when available.
-- **Tesseract not found:** Ensure `tesseract` is on your system `PATH` (Windows) or installed in standard locations (macOS/Linux). Verify with `tesseract --version`.
-- **Khmer OCR garbled:** Confirm Khmer language data is installed and pass `lang="khm"` if your wrapper exposes it.
-
----
-
 ## Quickstart
 
 ```python
@@ -171,6 +152,23 @@ except Exception as e:
     print("OCR error:", e)
 
 ```
+### OCR prerequisite
+
+For `khocr`, install the **Tesseract OCR engine** (system package) and the **Khmer language data (`khm`)**:
+
+- Windows: Install Tesseract from the official installer and select Khmer (`khm`) during setup (or add later).  
+- macOS: `brew install tesseract` then add Khmer traineddata.  
+- Linux: `sudo apt-get install tesseract-ocr tesseract-ocr-khm` (package names may vary by distro).
+
+Python side is handled by the `ocr` extra (`pytesseract`, `Pillow`).
+
+### Troubleshooting
+
+- **`khmernltk>=2.2` not found:** Use base install without extras or try a different Python version (3.9–3.11 usually safest), then reinstall the `khmernltk` extra when available.
+- **Tesseract not found:** Ensure `tesseract` is on your system `PATH` (Windows) or installed in standard locations (macOS/Linux). Verify with `tesseract --version`.
+- **Khmer OCR garbled:** Confirm Khmer language data is installed and pass `lang="khm"` if your wrapper exposes it.
+
+---
 ### Optional extras
 
 Install only the features you need:
@@ -216,6 +214,7 @@ If this toolkit assists academic or industry work, consider citing the repositor
 ## Changelog
 
 See [`CHANGELOG.md`](./CHANGELOG.md) for version history (features, fixes, breaking changes).
+
 
 
 
