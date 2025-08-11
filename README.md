@@ -4,9 +4,9 @@
 [![Python versions](https://img.shields.io/pypi/pyversions/khmereasytools.svg)](https://pypi.org/project/khmereasytools/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](#license)
 
-`khmereasytools` is a lightweight, self-contained Python library for common Khmer NLP tasks. It focuses on ease of use and zero heavy dependencies by default, with opt-in extras for advanced features.
+`khmereasytools` is a lightweight, self-contained Python library designed for essential Khmer Natural Language Processing (NLP) tasks. It emphasizes simplicity, ease of use, and minimal dependencies, making it suitable for quick deployment in environments where installing heavy NLP frameworks is impractical. Advanced capabilities are available as optional “extras,” allowing users to install only the features they need.
 
-- **Core:** Khmer detection, word segmentation, keyword filtering, syllable segmentation  
+- **Core:** Khmer word segmentation, keyword filtering, and syllable segmentation are implemented using a built-in Khmer Stop Dictionary and Khmer Segmentation Dictionary. Part-of-speech tagging and OCR functionalities are integrated via existing, well-established libraries. These implementations are intentionally lightweight and straightforward, which may introduce certain limitations in accuracy or coverage compared to large-scale NLP toolkits; however, they remain efficient, portable, and well-suited for resource-constrained environments.
 ---
 
 ## Table of Contents
@@ -222,5 +222,6 @@ If this toolkit assists academic or industry work, consider citing the repositor
 ## Changelog
 
 See [`CHANGELOG.md`](./CHANGELOG.md) for version history (features, fixes, breaking changes).
+
 
 
