@@ -1,36 +1,228 @@
 # Khmer Easy Tools
 
-**PyPI Project Link:** [https://pypi.org/project/khmereasytools/](https://pypi.org/project/khmereasytools/)
+[![PyPI version](https://img.shields.io/pypi/v/khmereasytools.svg)](https://pypi.org/project/khmereasytools/)
+[![Python versions](https://img.shields.io/pypi/pyversions/khmereasytools.svg)](https://pypi.org/project/khmereasytools/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](#license)
 
-This link takes you to the official project page on the Python Package Index (PyPI), where the library is hosted. Users can find version history and other package details here.
+`khmereasytools` is a lightweight, self-contained Python library for common Khmer NLP tasks. It focuses on ease of use and zero heavy dependencies by default, with opt-in extras for advanced features.
+
+- **Core:** Khmer detection, word segmentation, keyword filtering, syllable segmentation  
+- **Extras (optional):** POS tagging via `khmernltk`, OCR via Tesseract (`pytesseract` + `Pillow`)
 
 ---
 
-`khmereasytools` is a simple, user-friendly, and self-contained Python library for common Khmer Natural Language Processing (NLP) tasks. The main goal of this package is to provide easy-to-use functions for essential text manipulations like keyword extraction and word segmentation, without forcing users to install complex dependencies that might fail on their system.
+## Table of Contents
+
+- [Installation](#installation)
+  - [Base](#base)
+  - [Optional extras](#optional-extras)
+  - [OCR prerequisite](#ocr-prerequisite)
+  - [Troubleshooting](#troubleshooting)
+- [Quickstart](#quickstart)
+- [API Overview](#api-overview)
+  - [`is_khmer(text)`](#is_khmertext)
+  - [`khseg(text)`](#khsegtext)
+  - [`khfilter(text)`](#khfiltertext)
+  - [`khsyllable(text)`](#khsyllabletext)
+  - [`khpos(text)` *(extra)*](#khpostext-extra)
+  - [`khocr(image_path)` *(extra)*](#khocrimage_path-extra)
+- [Examples](#examples)
+- [License](#license)
+- [Contributing](#contributing)
+- [Citation](#citation)
+- [Changelog](#changelog)
+
+---
 
 ## Installation
 
-### Base Installation
+### Base
 
-You can install the core library, which is lightweight and has no heavy dependencies, using `pip`. This will give you access to the foundational functions: `is_khmer`, `khseg` (word segmentation), `khfilter` (keyword extraction), and `khsyllable` (syllable segmentation).
+Install the core package (no heavy deps):
 
 ```bash
 pip install khmereasytools
 ```
-### Installing Optional Features
-For more advanced tasks, khmereasytools uses "extras". This allows you to install additional features only when you need them, preventing installation errors if a particular dependency is not compatible with your system (a common issue with some NLP libraries on Windows).
+
+### Optional extras
+
+Install only the features you need:
+
 ```bash
-# To install support for Part-of-Speech tagging (khpos)
-# This will install the `khmernltk` library.
-pip install khmereasytools[khmernltk]
+# POS tagging (requires khmernltk)
+pip install "khmereasytools[khmernltk]"
 
-# To install support for Optical Character Recognition (khocr)
-# This will install `pytesseract` and `Pillow`.
-pip install khmereasytools[ocr]
+# OCR (requires pytesseract + Pillow)
+pip install "khmereasytools[ocr]"
 
-# To install all available optional features at once
-pip install khmereasytools[all]
+# Everything
+pip install "khmereasytools[all]"
 ```
 
+> **Note:** If your environment cannot resolve `khmernltk` (e.g., older Python or OS wheels unavailable), install the base package and skip the `khmernltk` extra. Core features will still work.
 
+### OCR prerequisite
 
+For `khocr`, install the **Tesseract OCR engine** (system package) and the **Khmer language data (`khm`)**:
+
+- Windows: Install Tesseract from the official installer and select Khmer (`khm`) during setup (or add later).  
+- macOS: `brew install tesseract` then add Khmer traineddata.  
+- Linux: `sudo apt-get install tesseract-ocr tesseract-ocr-khm` (package names may vary by distro).
+
+Python side is handled by the `ocr` extra (`pytesseract`, `Pillow`).
+
+### Troubleshooting
+
+- **`khmernltk>=2.2` not found:** Use base install without extras or try a different Python version (3.9–3.11 usually safest), then reinstall the `khmernltk` extra when available.
+- **Tesseract not found:** Ensure `tesseract` is on your system `PATH` (Windows) or installed in standard locations (macOS/Linux). Verify with `tesseract --version`.
+- **Khmer OCR garbled:** Confirm Khmer language data is installed and pass `lang="khm"` if your wrapper exposes it.
+
+---
+
+## Quickstart
+
+```python
+import khmereasytools as ket
+
+text = "ខ្ញុំស្រឡាញ់ភាសាខ្មែរ"
+
+print(ket.is_khmer(text))          # True
+print(ket.khseg(text))             # ['ខ្ញុំ', 'ស្រឡាញ់', 'ភាសាខ្មែរ']
+print(ket.khfilter("នេះគឺជាប្រាសាទអង្គរវត្តដ៏ស្រស់ស្អាត"))
+# 'ប្រាសាទ អង្គរវត្ត ដ៏ ស្រស់ស្អាត'
+print(ket.khsyllable("សាលារៀន"))   # ['សា', 'លា', 'រៀន']
+```
+
+---
+
+## API Overview
+
+### `is_khmer(text)`
+- **Purpose:** Detect presence of Khmer Unicode characters.
+- **Input:** `str`
+- **Returns:** `bool`
+
+### `khseg(text)`
+- **Purpose:** Word segmentation using a built-in dictionary and longest-match.
+- **Input:** `str`
+- **Returns:** `List[str]`
+
+### `khfilter(text)`
+- **Purpose:** Keyword extraction via segmentation + Khmer stop-word removal.
+- **Input:** `str`
+- **Returns:** `str` (space-joined keywords)
+
+### `khsyllable(text)`
+- **Purpose:** Syllable segmentation via simple rules.
+- **Input:** `str`
+- **Returns:** `List[str]`
+
+### `khpos(text)` *(extra)*
+- **Requires:** `pip install "khmereasytools[khmernltk]"`
+- **Purpose:** Part-of-speech tagging using `khmernltk`.
+- **Input:** `str`
+- **Returns:** `List[Tuple[str, str]]` — `(word, POS)`
+
+### `khocr(image_path)` *(extra)*
+- **Requires:** `pip install "khmereasytools[ocr]"` + system Tesseract + Khmer traineddata
+- **Purpose:** Extract Khmer text from images.
+- **Input:** `str` — path to image file
+- **Returns:** `str`
+
+---
+
+## Examples
+
+### Khmer character validation
+
+```python
+import khmereasytools as ket
+
+print(ket.is_khmer("សួស្តី"))  # True
+print(ket.is_khmer("Hello"))   # False
+```
+
+### Word segmentation
+
+```python
+import khmereasytools as ket
+
+words = ket.khseg("ខ្ញុំស្រឡាញ់ភាសាខ្មែរ")
+print(words)  # ['ខ្ញុំ', 'ស្រឡាញ់', 'ភាសាខ្មែរ']
+```
+
+### Keyword extraction
+
+```python
+import khmereasytools as ket
+
+keywords = ket.khfilter("នេះគឺជាប្រាសាទអង្គរវត្តដ៏ស្រស់ស្អាត")
+print(keywords)  # 'ប្រាសាទ អង្គរវត្ត ដ៏ ស្រស់ស្អាត'
+```
+
+### Syllable segmentation
+
+```python
+import khmereasytools as ket
+
+print(ket.khsyllable("សាលារៀន"))  # ['សា', 'លា', 'រៀន']
+```
+
+### POS tagging *(extra)*
+
+```python
+# pip install "khmereasytools[khmernltk]"
+import khmereasytools as ket
+
+tags = ket.khpos("ខ្ញុំស្រឡាញ់ភាសាខ្មែរ")
+print(tags)  # [('ខ្ញុំ','PRO'), ('ស្រឡាញ់','VERB'), ('ភាសាខ្មែរ','NOUN')]
+```
+
+### OCR from image *(extra)*
+
+```python
+# System: Tesseract with Khmer data; Python: pip install "khmereasytools[ocr]"
+import khmereasytools as ket
+
+try:
+    text = ket.khocr("path/to/khmer_text.png")
+    print(text)
+except Exception as e:
+    print("OCR error:", e)
+```
+
+---
+
+## License
+
+This project is licensed under the **MIT License**. See [`LICENSE`](./LICENSE) for full text.
+
+---
+
+## Contributing
+
+Issues and pull requests are welcome!  
+- Report bugs with a minimal repro and environment details.  
+- For new features, open an issue to discuss scope and API shape before submitting a PR.
+
+---
+
+## Citation
+
+If this toolkit assists academic or industry work, consider citing the repository:
+
+```bibtex
+@misc{khmereasytools,
+  title  = {Khmer Easy Tools},
+  author = {Contributors},
+  year   = {2025},
+  note   = {Python library for Khmer NLP},
+  url    = {https://pypi.org/project/khmereasytools/}
+}
+```
+
+---
+
+## Changelog
+
+See [`CHANGELOG.md`](./CHANGELOG.md) for version history (features, fixes, breaking changes).
