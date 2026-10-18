@@ -1,0 +1,124 @@
+{
+  "mlx-community/DeepSeek-OCR-4bit": {
+    "directory": "DeepSeek-OCR-4bit",
+    "revision": "4958b6b0d46d7dc3cf27556989dab659996ea426",
+    "files": [
+      {
+        "path": "README.md",
+        "size": 653,
+        "sha256": "193d116cf49b39d68746cddda295986e91ef78ef4df80b509cf02a4f34ce6253"
+      },
+      {
+        "path": "chat_template.jinja",
+        "size": 191,
+        "sha256": "b4e4771e69892ebc712ed6986bcce490c65041d1545e85599cd4a531cfab98a5"
+      },
+      {
+        "path": "chat_template.json",
+        "size": 217,
+        "sha256": "9aec9391d364b0da5bdee6af557e3d76b3e2ae999610888186df2679f7b27ef7"
+      },
+      {
+        "path": "config.json",
+        "size": 3398,
+        "sha256": "c96a8d4289ab3fd3b7409ccfb5da56ba0a36d2a74a0f2c7d3b21ad3804540234"
+      },
+      {
+        "path": "model.safetensors",
+        "size": 2451214926,
+        "sha256": "cf97cb093ef54cd6847bf088d31fb5b507d5fd6e23f6f14ec486f2ec1e03c2eb"
+      },
+      {
+        "path": "model.safetensors.index.json",
+        "size": 72573,
+        "sha256": "e408a502fa4df68cd92c201ca83e62522bf6545c5ba080de3c54357ea6e1680a"
+      },
+      {
+        "path": "processor_config.json",
+        "size": 460,
+        "sha256": "0fe7ba9aa6b967a90e4af40d43c8030cbdd3dbcfbb387b8907625d5e54f0dbbe"
+      },
+      {
+        "path": "special_tokens_map.json",
+        "size": 801,
+        "sha256": "ab4bd57ce17d62e39e0a39e739de1e407484f090f0b2c7e391312bca7a5b061a"
+      },
+      {
+        "path": "tokenizer.json",
+        "size": 9979544,
+        "sha256": "a02f8fd5228c90256bb4f6554c34a579d48f909e5beb232dc4afad870b55a8b4"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "size": 577,
+        "sha256": "fe8b80f22dd322ca2c50a2ed97daabdbf4a672cd21ff90bf4a9851574bb3f9d4"
+      }
+    ]
+  },
+  "mlx-community/PaddleOCR-VL-1.6-4bit": {
+    "directory": "PaddleOCR-VL-1.6-4bit",
+    "revision": "c8987b277bdd8aaec8bd265d154f391bd03ad165",
+    "files": [
+      {
+        "path": "README.md",
+        "size": 7933,
+        "sha256": "8df822882d055d504a2b6a9777bb2eea6aaeb7a54b2285ba732b650c00c14cda"
+      },
+      {
+        "path": "added_tokens.json",
+        "size": 25381,
+        "sha256": "f59f889088e0fe21c523e7cf121bb6dca3b0bb148cb7159fbb4572c74dfc5644"
+      },
+      {
+        "path": "chat_template.jinja",
+        "size": 1474,
+        "sha256": "2f27812dab7f333e471884e0c803d807f11953d5453140dfb1aaba234f872bc8"
+      },
+      {
+        "path": "config.json",
+        "size": 2676,
+        "sha256": "f3201c9d3ffb55873a844d10ca2c616c3e1dc4939ee0631c697905a9d245f504"
+      },
+      {
+        "path": "generation_config.json",
+        "size": 133,
+        "sha256": "a6701d78ab3b4d972307cdec3b69d4c13f46e0d5140514f50ab7d84259324b94"
+      },
+      {
+        "path": "model.safetensors",
+        "size": 703562705,
+        "sha256": "5d1ce8b52bf14c528a4b860ef8ed74a8136aecf21d98ed514c09522a19cdf559"
+      },
+      {
+        "path": "model.safetensors.index.json",
+        "size": 69879,
+        "sha256": "7922fd298904bb4271d80f51bc7bb5d4cc7d3a038921cdbf5080bfb6c0556271"
+      },
+      {
+        "path": "preprocessor_config.json",
+        "size": 641,
+        "sha256": "111872ab1e8bb7fd040ac5087bfced7ab8f011f02139b088cba294964c3b1d0e"
+      },
+      {
+        "path": "processor_config.json",
+        "size": 609,
+        "sha256": "37e0b148483ccbd862ec95e5a4ccd9d5a6a8e79e8b49db95eeefcb94fcb436e2"
+      },
+      {
+        "path": "special_tokens_map.json",
+        "size": 1151,
+        "sha256": "d3a125c03103deb2acaf7730791bdbbf196f620e5a2213b664511ff9b4b25bab"
+      },
+      {
+        "path": "tokenizer.json",
+        "size": 11188983,
+        "sha256": "f64dee5b500fd0737498420a95cfa25927990ecbe37c0c112a6c8fcea22bc7f9"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "size": 782,
+        "sha256": "ec27a60e0ac749b3820964af0511115d8e5a9b63ce22ff933ef6a09c36aa50fe"
+      }
+    ]
+  }
+}

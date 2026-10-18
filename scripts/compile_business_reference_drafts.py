@@ -1,4 +1,5 @@
 """Audit private Codex drafts and prepare an offline human-review artifact."""
+from collections import Counter
 import hashlib
 import json
 from pathlib import Path
@@ -107,8 +108,13 @@ def main():
             transcript=draft["transcript"], uncertain_spans=draft["uncertain_spans"],
             draft_sha256=hashlib.sha256(draft["transcript"].encode()).hexdigest(),
             human_reviewed=False, reference_complete=False))
+    text_hashes = Counter(r["draft_sha256"] for r in review_rows if r["transcript"].strip())
     summary = dict(raw_image_files=148, selected_distinct_images=146,
         completed_drafts=len(records), failed_calls=0, human_reviewed=0,
+        empty_drafts=sum(not r["transcript"].strip() for r in review_rows),
+        distinct_nonempty_transcript_hashes=len(text_hashes),
+        exact_text_duplicate_groups=sum(n > 1 for n in text_hashes.values()),
+        images_in_exact_text_duplicate_groups=sum(n for n in text_hashes.values() if n > 1),
         uncertain_pages=sum(bool(r["draft"]["uncertain_spans"]) for r in records),
         illegible_pages=sum("[ILLEGIBLE]" in r["draft"]["transcript"] for r in records),
         model_claimed_complete_pages=sum(r["draft"]["complete"] for r in records),
