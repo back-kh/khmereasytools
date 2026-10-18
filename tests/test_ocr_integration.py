@@ -7,7 +7,7 @@ import sys
 import unittest
 from pathlib import Path
 
-from khmereasytools import khanalyze, khocr, khocr_layout, khocr_overlay
+from khmereasytools import khanalyze, khocr, khocr_layout, khocr_overlay, khprocess, khdoctor
 
 
 @unittest.skipUnless(os.environ.get("KET_RUN_OCR_TESTS") == "1", "Set KET_RUN_OCR_TESTS=1 for real OCR tests")
@@ -81,6 +81,25 @@ class RealKhmerOCRTests(unittest.TestCase):
         self.assertIsInstance(text, str)
         self.assertGreater(sum("\u1780" <= char <= "\u17ff" for char in text), 10)
         self.assertNotIn("error", text.lower())
+
+    def test_daily_processing_pipeline_with_real_image_and_pdf(self):
+        for path, options in ((self.image, {}), (self.image.with_name("khmer_document.pdf"), {"pages": [2], "dpi": 144})):
+            with self.subTest(path=path):
+                report = khprocess(path, psm=6, **options)
+                self.assertGreater(report.audit.khmer_letter_count, 10)
+                self.assertEqual("".join(token.text for token in report.tokens), report.text)
+                self.assertTrue(report.sentences)
+                self.assertEqual(report.document.text, report.original_text)
+                if report.source_type == "pdf":
+                    self.assertEqual(report.document.pages[0].number, 2)
+        checks = {check.name: check.status for check in khdoctor().checks}
+        self.assertEqual(checks["ocr"], "ready")
+        self.assertEqual(checks["pdf"], "ready")
+        result = subprocess.run([sys.executable, "-m", "khmereasytools", "process", str(self.image), "--json"],
+                                stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
+        detailed = json.loads(result.stdout)
+        self.assertEqual(detailed["source_type"], "image")
+        self.assertGreater(detailed["audit"]["khmer_letter_count"], 10)
 
     def test_daily_cli_defaults_to_text_and_layout_is_optional(self):
         base = [sys.executable, "-m", "khmereasytools", "ocr", str(self.image), "--psm", "6"]

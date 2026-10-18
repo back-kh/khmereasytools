@@ -15,6 +15,6 @@ The transformation ignores comments/blank lines, deduplicates, keeps only entrie
 python scripts/rebuild_dictionary.py --check
 ```
 
-The runtime never downloads data. It loads the dictionary on first use and caches a word set plus possible lengths indexed by the first two code points. This avoids a nested Python trie for every character. A local Python 3.9 `tracemalloc` smoke measurement, starting before library import and one segmentation call, observed about **13.7 MB retained / 17.7 MB peak Python allocations**. That is not total process RSS and excludes OCR/PDF engines; hardware/runtime differences apply. No general speed claim is made.
+The runtime never downloads data. It loads the dictionary on first use and caches a word set plus possible lengths indexed by the first two code points. This avoids a nested Python trie for every character. A local Python 3.9 `tracemalloc` smoke measurement of the full current API (including search, translation, and daily wrappers), starting before library import and one segmentation call, observed about **16.0 MiB retained / 19.7 MiB peak Python allocations**. That is not total process RSS and excludes optional OCR/PDF/POS backends and document reports; hardware/runtime differences apply. No general speed claim is made.
 
 `get_khmer_dictionary()` returns an independent mutable set. `get_khmer_dictionary("legacy")` returns the original 213 entries. New APIs accept `dictionary="legacy"` or a caller-provided iterable. Neither custom words nor evaluation data modifies the cached default lexicon.

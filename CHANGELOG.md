@@ -2,6 +2,8 @@
 
 ## 0.5.0.dev0 — unreleased
 
+- Add dependency-free `khsentences`, `khextract`, `khprocess`, and `khdoctor`, with daily-use CLI commands and explicit source-offset/date-ambiguity contracts.
+- Extend actual image/PDF pipeline tests and installed-package validation reports with setup status, source revision, and wheel hashes.
 - Add local `khindex`/`khsearch` BM25 keyword retrieval with original-text results, snippets, source-token matches, and Khmer compound recall.
 - Add explicit, credentialed `khtranslate` Google Cloud Translation client and CLI; keep live provider checks separate and opt-in.
 - Test fresh core/all-extras installations on Windows, macOS, and Linux, including actual Khmer OCR and khmer-nltk POS models; publish per-OS validation artifacts.

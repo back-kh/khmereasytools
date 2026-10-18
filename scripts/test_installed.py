@@ -1,5 +1,6 @@
 """Test a built wheel in fresh environments, outside the source checkout."""
 import argparse
+import hashlib
 import json
 import os
 import platform
@@ -46,8 +47,15 @@ def check(wheel, extras, tests, report_directory):
                     versions[name] = importlib.metadata.version(name)
                 except importlib.metadata.PackageNotFoundError:
                     pass
+            doctor = {check.name: check.status for check in ket.khdoctor().checks}
+            assert doctor['core'] == 'ready', doctor
+            if os.environ.get('KET_RUN_OCR_TESTS') == '1':
+                assert doctor['ocr'] == doctor['pdf'] == doctor['pos'] == 'ready', doctor
             report = dict(platform=platform.platform(), python=platform.python_version(),
                           package_path=str(installed), versions=versions,
+                          source_revision=os.environ.get('GITHUB_SHA'),
+                          wheel_sha256=os.environ.get('KET_VALIDATION_WHEEL_SHA256'),
+                          doctor=doctor,
                           functions=[name for name in ket.__all__ if inspect.isfunction(getattr(ket, name))],
                           tests=result.testsRun, skipped=len(result.skipped),
                           failures=len(result.failures), errors=len(result.errors),
@@ -62,6 +70,7 @@ def check(wheel, extras, tests, report_directory):
         environment_variables["KET_RUN_OCR_TESTS"] = "1" if extras else "0"
         environment_variables["KET_RUN_POS_TESTS"] = "1" if extras else "0"
         environment_variables["KET_RUN_TRANSLATION_TESTS"] = "0"
+        environment_variables["KET_VALIDATION_WHEEL_SHA256"] = hashlib.sha256(wheel.read_bytes()).hexdigest()
         # Prove the core install is independent even if the outer runner has
         # optional packages. Only this fresh venv provides importable packages.
         report_path = report_directory / ("{}-{}.json".format(platform.system().lower(), "extras" if extras else "core"))

@@ -15,6 +15,10 @@ from .lexicon import get_khmer_dictionary
 from .segmentation import TokenSpan, khseg_spans
 from .search import KhmerSearchIndex, SearchHit, SearchMatch, khindex, khsearch
 from .translation import TranslationError, khtranslate
+from .sentences import SentenceSpan, khsentences
+from .extraction import TextMatch, khextract
+from .processing import ProcessResult, khprocess
+from .diagnostics import DoctorCheck, DoctorReport, khdoctor
 from .ocr import (Box, LayoutColumn, OCRBlock, OCRError, OCRLine, OCRWord, PageLayout,
                   khlayout, khocr_layout, khocr_overlay)
 from .text_quality import (
@@ -39,4 +43,6 @@ __all__ = [
     "DocumentLayout", "DocumentPage", "khanalyze",
     "KhmerSearchIndex", "SearchHit", "SearchMatch", "khindex", "khsearch",
     "TranslationError", "khtranslate",
+    "SentenceSpan", "khsentences", "TextMatch", "khextract",
+    "ProcessResult", "khprocess", "DoctorCheck", "DoctorReport", "khdoctor",
 ]

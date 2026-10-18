@@ -10,6 +10,10 @@ from .ocr import OCRError, khocr_overlay
 from .documents import khanalyze
 from .search import khsearch
 from .translation import TranslationError, khtranslate
+from .sentences import khsentences
+from .extraction import khextract
+from .processing import khprocess
+from .diagnostics import khdoctor
 from .text_quality import khaudit, khdigits, khnormalize
 
 
@@ -25,9 +29,22 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Everyday Khmer text, search, and document tools.")
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command")
-    for command in ("audit", "normalize", "digits", "segment", "ocr", "search", "translate"):
+    for command in ("audit", "normalize", "digits", "segment", "sentences", "extract",
+                    "process", "doctor", "ocr", "search", "translate"):
         subparser = commands.add_parser(command)
-        if command == "ocr":
+        if command == "doctor":
+            subparser.add_argument("--json", action="store_true", help="Print a machine-readable setup report")
+            subparser.add_argument("--require", action="append", default=[],
+                                   choices=("core", "ocr", "pdf", "pos", "translation"),
+                                   help="Exit with an error if this feature is not configured; repeat as needed")
+        elif command == "process":
+            subparser.add_argument("file", help="UTF-8 text, image or PDF to process locally")
+            subparser.add_argument("--json", action="store_true", help="Include sentences, tokens, entities and diagnostics")
+            subparser.add_argument("--pages", help="PDF page numbers, e.g. 1,2")
+            subparser.add_argument("--lang", help="OCR language, e.g. khm+eng")
+            subparser.add_argument("--date-order", choices=("DMY", "MDY"),
+                                   help="Explicit order for ambiguous dates (default: leave unresolved)")
+        elif command == "ocr":
             subparser.add_argument("file", help="Image or PDF to read locally")
             subparser.add_argument("--layout", action="store_true", help="Return page layout and Khmer diagnostics as JSON")
             subparser.add_argument("--pages", help="PDF page numbers, e.g. 1,2 (default: all pages)")
@@ -66,12 +83,37 @@ def main(argv=None):
             subparser.add_argument("--to", dest="target", default="en", help="Target language code (default: en)")
             subparser.add_argument("--from", dest="source", default="km", help="Source language code, or auto (default: km)")
             subparser.add_argument("--timeout", type=float, default=30.0)
+        elif command == "extract":
+            subparser.add_argument("--kind", action="append", choices=("url", "email", "phone", "date", "number"),
+                                   help="Return only this kind; repeat as needed")
+            subparser.add_argument("--date-order", choices=("DMY", "MDY"))
     args = parser.parse_args(argv)
     if args.command is None:
         parser.print_help()
         return 0
 
     try:
+        if args.command == "doctor":
+            report = khdoctor()
+            if args.json:
+                output = json.dumps(_jsonable(report), ensure_ascii=False, indent=2) + "\n"
+            else:
+                lines = ["Khmer Easy Tools {} | Python {} | {}".format(report.version, report.python, report.platform)]
+                for check in report.checks:
+                    lines.append("{}: {} — {}".format(check.name, check.status, check.message))
+                    if check.hint:
+                        lines.append("  " + check.hint)
+                output = "\n".join(lines) + "\n"
+            sys.stdout.buffer.write(output.encode("utf-8"))
+            return 2 if any(check.name in args.require and check.status not in ("ready", "configured")
+                            for check in report.checks) else 0
+        if args.command == "process":
+            options = {"lang": args.lang} if args.lang is not None else {}
+            selected = [int(page.strip()) for page in args.pages.split(",")] if args.pages is not None else None
+            report = khprocess(args.file, pages=selected, date_order=args.date_order, **options)
+            output = (json.dumps(_jsonable(report), ensure_ascii=False, indent=2) + "\n") if args.json else report.text
+            sys.stdout.buffer.write(output.encode("utf-8"))
+            return 0
         if args.command == "search":
             documents = {}
             for path in args.files:
@@ -105,6 +147,10 @@ def main(argv=None):
             result = khaudit(text)
         elif args.command == "segment":
             result = khseg_spans(text, custom_words=args.word, dictionary=args.dictionary, strategy=args.strategy)
+        elif args.command == "sentences":
+            result = khsentences(text, with_spans=True)
+        elif args.command == "extract":
+            result = khextract(text, kinds=args.kind, date_order=args.date_order)
         elif args.command == "digits":
             result = khdigits(text, target=args.target)
         elif args.command == "translate":

@@ -18,8 +18,12 @@ Passing tests establish the documented contracts on checked inputs. They do not 
 | `khpos` | Real installed khmer-nltk models, known verb/noun output, punctuation and empty text | Real backend execution; not an independent POS accuracy evaluation |
 | `khindex`, `khsearch` | Khmer retrieval, compound recall, BM25 score, digits/case, source offsets, original retrieval and errors | Functional keyword search, not a semantic/large-corpus benchmark |
 | `khtranslate` | Local HTTP protocol, credential/error/timeout handling; separately gated live checks | Live provider checks pending by user choice; translation quality unmeasured |
+| `khsentences` | Khmer/mixed punctuation, abbreviations, decimals, links, CRLF/paragraph/page boundaries, randomized source coverage | Documented sentence heuristic; not full UAX #29 or a linguistic benchmark |
+| `khextract` | Pattern/source offsets, digit folding, overlap priority, contact syntax, calendar validity, explicit date ambiguity | Structured text candidates, not verified contacts or general named entities |
+| `khprocess` | UTF-8/BOM/newline mappings, invalid input, unchanged files, real image/PDF processing, original/cleaned coordinate contracts | Local workflow reuses existing core/OCR; OCR quality limits remain unchanged |
+| `khdoctor` | Missing packages/engine/language, timeouts, safe key presence, no optional imports, actual installed-environment setup checks | Read-only configuration report, not remote credential or model health verification |
 
-All 20 exported functions have executable tests. See [segmentation protocol](EVALUATION.md), [OCR limits](OCR_LAYOUT.md), [search](SEARCH.md), and [translation](TRANSLATION.md) for the limits of each result.
+All 24 exported functions have executable tests. See [daily tools](DAILY_TOOLS.md), [segmentation protocol](EVALUATION.md), [OCR limits](OCR_LAYOUT.md), [search](SEARCH.md), and [translation](TRANSLATION.md) for the limits of each result.
 
 ## Reproduction
 
@@ -31,6 +35,6 @@ KET_RUN_OCR_TESTS=1 KET_RUN_POS_TESTS=1 python -m unittest discover -s tests -v
 
 Optional tests are skipped unless explicitly enabled. Installing optional packages alone does not enable them. Live translation is a separate opt-in described in its guide.
 
-The GitHub Actions workflow builds a wheel and source archive, tests the core on multiple Python versions, and tests fresh wheel installations on Windows, macOS, and Linux with Python 3.11. Each OS runs both a dependency-free core environment and an `[all]` environment outside the source checkout. OCR uses a checksum-pinned official `tessdata_fast` Khmer model; POS uses the actual installed backend, without mocks. Machine-readable artifacts record OS, Python/dependency versions, exported functions, executed/skipped tests, failures, and backend flags.
+The GitHub Actions workflow builds a wheel and source archive, tests the core on multiple Python versions, and tests fresh wheel installations on Windows, macOS, and Linux with Python 3.11. Each OS runs both a dependency-free core environment and an `[all]` environment outside the source checkout. OCR uses a checksum-pinned official `tessdata_fast` Khmer model; POS uses the actual installed backend, without mocks. Machine-readable artifacts record OS, Python/dependency versions, source revision, wheel checksum, exported functions, executed/skipped tests, failures, backend flags, and setup-check statuses.
 
 These jobs must actually pass before claiming that a particular revision is checked on all three operating systems. Merely having a workflow file is not a passing result. Current Python 3.14/3.15 source tests cover core code; they do not establish optional backend support on those versions. Python 3.6/3.9 checks are legacy core compatibility only, not recommendations to use unsupported runtimes.

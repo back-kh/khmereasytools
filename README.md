@@ -2,7 +2,7 @@
 
 Everyday Khmer tools: split words, search local text, read images or PDFs, and inspect document layouts. Core text and search tools run offline with **no runtime dependencies or model downloads**. Translation is an explicit online option with your own Google Cloud credentials.
 
-The new **0.5.0.dev0** source version adds an **81,005-entry dictionary**, better word segmentation, local search/retrieval, optional online translation, and image/PDF analysis. PyPI 0.4.0 remains the published version until this update is released.
+The new **0.5.0.dev0** source version adds an **81,005-entry dictionary**, better segmentation, sentence splitting, structured extraction, one-call file processing, local search, optional translation, and setup diagnostics. PyPI 0.4.0 remains the published version until this update is released.
 
 ## Install
 
@@ -23,6 +23,40 @@ sudo apt-get install tesseract-ocr tesseract-ocr-khm
 ```
 
 Python 3.6+ for core features; use a maintained Python version for OCR extras. OCR/PDF support uses Pillow, pytesseract, and pypdfium2. These are imported only when needed. No OpenCV, NumPy, neural framework, or remote service is required.
+
+Check your setup at any time:
+
+```bash
+khmereasytools doctor
+```
+
+It reports available features and installation hints. Missing optional features do not prevent core text tools from working.
+
+## One call for everyday files
+
+```python
+import khmereasytools as ket
+
+report = ket.khprocess("notes.txt")  # UTF-8 text; no extras needed.
+# report = ket.khprocess("scan.jpg")      # Requires optional OCR setup.
+# report = ket.khprocess("document.pdf")  # Same optional OCR setup.
+print(report.text)
+print(report.sentences)
+print(report.entities)
+```
+
+The report keeps original text, conservative cleanup with source mappings, sentence/token positions, extracted patterns, and diagnostics. Images/PDFs also retain page layouts. Processing stays local and preserves input files.
+
+```python
+sentences = ket.khsentences("សួស្តី។ ខ្ញុំអានសៀវភៅ។")
+assert sentences == ["សួស្តី។", "ខ្ញុំអានសៀវភៅ។"]
+
+matches = ket.khextract("លេខ០១២ ៣៤៥ ៦៧៨ ថ្ងៃ១៨/១០/២០២៦")
+assert [(item.kind, item.value) for item in matches] == [
+    ("phone", "+85512345678"), ("date", "2026-10-18")]
+```
+
+Extraction covers common URLs, ASCII emails, Cambodian phone patterns, numbers, and numeric Gregorian dates. Ambiguous dates such as `01/02/2026` retain `value=None` unless you explicitly select `date_order="DMY"` or `"MDY"`. These are text patterns, not verified contacts. Sentence splitting uses conservative documented rules. See [daily tools and setup checks](docs/DAILY_TOOLS.md).
 
 ## Split Khmer words
 
@@ -106,6 +140,11 @@ See [advanced OCR/layout options](docs/OCR_LAYOUT.md) for column ordering, revie
 
 ```bash
 # Common daily use:
+khmereasytools doctor
+khmereasytools process notes.txt
+khmereasytools process document.pdf --json
+khmereasytools sentences notes.txt
+khmereasytools extract notes.txt
 khmereasytools ocr scan.jpg
 khmereasytools ocr document.pdf
 
@@ -125,7 +164,7 @@ khmereasytools search "សៀវភៅ" notes.txt articles.txt
 khmereasytools translate document.txt --to en
 ```
 
-`ocr` prints plain text by default; `--layout` prints JSON. Input files are never overwritten. Review overlays currently take image input. Other text commands print JSON except `normalize --text-only` and `digits`.
+`ocr` and `process` print text by default, with optional JSON reports. `doctor` prints readable setup checks, or JSON with `--json`. Input files are never overwritten. Review overlays currently take image input. Other text commands print JSON except `normalize --text-only`, `digits`, and `translate`.
 
 ## Other text tools
 
