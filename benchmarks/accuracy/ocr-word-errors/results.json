@@ -1,0 +1,901 @@
+{
+  "schema_version": 1,
+  "analysis_sha256": "c2282c95b92f655da6de478cfe4c2772acba05bec1069ccaf4bfc1fe010358e5",
+  "metric_token": "467b6f8e289ac3a1387621aa00ef2d6535d65f7c0669a3704206a1b867e9904f",
+  "inputs_and_metrics": {
+    "scripts/ocr_word_metrics.py": "27de016505d98cc9285384ce8c849d5d5e4f6e57da4f5d80b13f1fa4999bfa50",
+    "scripts/evaluation_metrics.py": "7bb38b67244e9df4f3dfc0e46938ee494224ab41a9921ebe19e4fb964792dcb3",
+    "scripts/audit_document_ocr.py": "a07d78266ff14eb12c629a3bcd92b93fefd665e238d4ebcbae200a154159e242",
+    "scripts/document_ocr_metrics.py": "45bb0a2c72a49e60585d2721fc82e0cba3ad1c0b792d2283e854922b35c7ee37",
+    "khmereasytools/segmentation.py": "2d2a8ffadfa3b650737483266c9fb554c06529419f85b11dce7df3f87ae83857",
+    "khmereasytools/lexicon.py": "d5de159d298d9d7ec6ed063fa7aad8261085e72568306a93346e33e26d0c7aae",
+    "khmereasytools/data/khmer_words.txt": "f398bea51287dc36d52d2482f0005ecff817733cedb84936fd8e5b72b73d9cf8",
+    "khmereasytools/data/word_frequencies.txt": "b1f50d1f3a2085e9cb35db5fb66aff1453a9ba5b1a24400533f8644d7edbe42c",
+    "benchmarks/accuracy/BUSINESS_OCR_PROTOCOL.md": "a24b7147f28a4103cd6190c97602a284d1021a29ad1ff150b52e1f4e4edd485c",
+    "benchmarks/accuracy/expanded-ocr/local-paired.json": "e984240fc62dea8ff948c1d9026eb87de785d4c29c2c87e61c0afcbb4ab80839",
+    "benchmarks/accuracy/document-ocr/local-results.json": "ec7a9feb79e2c8a3ba8c2754e12e507bc77c73b2186493299d3d523bf8a79402",
+    "benchmarks/accuracy/small-vlm/local-results.json": "e5d00e881b3dfe65411b00998dab004794e98e95cc1d4cef4b1a809fd2e4736f"
+  },
+  "summary": {
+    "historical": {
+      "deepseek-ocr-4bit": {
+        "compact_cer": {
+          "substitutions": 57196,
+          "deletions": 9391,
+          "insertions": 475615,
+          "reference_units": 67487,
+          "prediction_units": 533711,
+          "edits": 542202,
+          "error_rate": 8.034169543763984
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 13153,
+          "deletions": 4440,
+          "insertions": 94783,
+          "reference_units": 17593,
+          "prediction_units": 107936,
+          "edits": 112376,
+          "error_rate": 6.387540499062127
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 17827,
+          "deletions": 2724,
+          "insertions": 409650,
+          "reference_units": 20562,
+          "prediction_units": 427488,
+          "edits": 430201,
+          "error_rate": 20.922137924326428
+        },
+        "samples": 150,
+        "empty": 17,
+        "errors": 0,
+        "capped": 140,
+        "minimum_length_insertions": 475615
+      },
+      "ket-ocr": {
+        "compact_cer": {
+          "substitutions": 21770,
+          "deletions": 43227,
+          "insertions": 409,
+          "reference_units": 67487,
+          "prediction_units": 24669,
+          "edits": 65406,
+          "error_rate": 0.9691644316683213
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 9009,
+          "deletions": 8563,
+          "insertions": 859,
+          "reference_units": 17593,
+          "prediction_units": 9889,
+          "edits": 18431,
+          "error_rate": 1.0476325811402263
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 11133,
+          "deletions": 9282,
+          "insertions": 1305,
+          "reference_units": 20562,
+          "prediction_units": 12585,
+          "edits": 21720,
+          "error_rate": 1.0563174788444705
+        },
+        "samples": 150,
+        "empty": 14,
+        "errors": 0,
+        "capped": 0,
+        "minimum_length_insertions": 383
+      },
+      "paddleocr-vl-1.6-4bit": {
+        "compact_cer": {
+          "substitutions": 47847,
+          "deletions": 19640,
+          "insertions": 298027,
+          "reference_units": 67487,
+          "prediction_units": 345874,
+          "edits": 365514,
+          "error_rate": 5.416065316283136
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 4964,
+          "deletions": 12629,
+          "insertions": 42487,
+          "reference_units": 17593,
+          "prediction_units": 47451,
+          "edits": 60080,
+          "error_rate": 3.4149946001250497
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 10365,
+          "deletions": 10197,
+          "insertions": 187760,
+          "reference_units": 20562,
+          "prediction_units": 198125,
+          "edits": 208322,
+          "error_rate": 10.131407450637097
+        },
+        "samples": 150,
+        "empty": 14,
+        "errors": 0,
+        "capped": 118,
+        "minimum_length_insertions": 298027
+      },
+      "surya-2": {
+        "compact_cer": {
+          "substitutions": 58149,
+          "deletions": 1010,
+          "insertions": 310793,
+          "reference_units": 67487,
+          "prediction_units": 377270,
+          "edits": 369952,
+          "error_rate": 5.481826129476788
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 15572,
+          "deletions": 1968,
+          "insertions": 66970,
+          "reference_units": 17593,
+          "prediction_units": 82595,
+          "edits": 84510,
+          "error_rate": 4.803615074177229
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 20042,
+          "deletions": 270,
+          "insertions": 265708,
+          "reference_units": 20562,
+          "prediction_units": 286000,
+          "edits": 286020,
+          "error_rate": 13.910125474175663
+        },
+        "samples": 150,
+        "empty": 0,
+        "errors": 0,
+        "capped": 109,
+        "minimum_length_insertions": 310538
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 21770,
+          "deletions": 43227,
+          "insertions": 409,
+          "reference_units": 67487,
+          "prediction_units": 24669,
+          "edits": 65406,
+          "error_rate": 0.9691644316683213
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 9009,
+          "deletions": 8563,
+          "insertions": 859,
+          "reference_units": 17593,
+          "prediction_units": 9889,
+          "edits": 18431,
+          "error_rate": 1.0476325811402263
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 11133,
+          "deletions": 9282,
+          "insertions": 1305,
+          "reference_units": 20562,
+          "prediction_units": 12585,
+          "edits": 21720,
+          "error_rate": 1.0563174788444705
+        },
+        "samples": 150,
+        "empty": 14,
+        "errors": 0,
+        "capped": 0,
+        "minimum_length_insertions": 383
+      }
+    },
+    "historical_test": {
+      "deepseek-ocr-4bit": {
+        "compact_cer": {
+          "substitutions": 11321,
+          "deletions": 1880,
+          "insertions": 91408,
+          "reference_units": 13201,
+          "prediction_units": 102729,
+          "edits": 104609,
+          "error_rate": 7.924323914854935
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 2686,
+          "deletions": 761,
+          "insertions": 17328,
+          "reference_units": 3447,
+          "prediction_units": 20014,
+          "edits": 20775,
+          "error_rate": 6.026979982593559
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 3482,
+          "deletions": 495,
+          "insertions": 79024,
+          "reference_units": 3977,
+          "prediction_units": 82506,
+          "edits": 83001,
+          "error_rate": 20.87025396027156
+        },
+        "samples": 30,
+        "empty": 3,
+        "errors": 0,
+        "capped": 27,
+        "minimum_length_insertions": 91408
+      },
+      "ket-ocr": {
+        "compact_cer": {
+          "substitutions": 4296,
+          "deletions": 8448,
+          "insertions": 3,
+          "reference_units": 13201,
+          "prediction_units": 4756,
+          "edits": 12747,
+          "error_rate": 0.9656086660101507
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 1828,
+          "deletions": 1616,
+          "insertions": 83,
+          "reference_units": 3447,
+          "prediction_units": 1914,
+          "edits": 3527,
+          "error_rate": 1.0232085871772556
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 2260,
+          "deletions": 1693,
+          "insertions": 149,
+          "reference_units": 3977,
+          "prediction_units": 2433,
+          "edits": 4102,
+          "error_rate": 1.0314307266784009
+        },
+        "samples": 30,
+        "empty": 5,
+        "errors": 0,
+        "capped": 0,
+        "minimum_length_insertions": 0
+      },
+      "paddleocr-vl-1.6-4bit": {
+        "compact_cer": {
+          "substitutions": 8620,
+          "deletions": 4581,
+          "insertions": 56504,
+          "reference_units": 13201,
+          "prediction_units": 65124,
+          "edits": 69705,
+          "error_rate": 5.280281796833573
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 986,
+          "deletions": 2461,
+          "insertions": 13849,
+          "reference_units": 3447,
+          "prediction_units": 14835,
+          "edits": 17296,
+          "error_rate": 5.017696547722657
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 1915,
+          "deletions": 2062,
+          "insertions": 38641,
+          "reference_units": 3977,
+          "prediction_units": 40556,
+          "edits": 42618,
+          "error_rate": 10.716117676640684
+        },
+        "samples": 30,
+        "empty": 4,
+        "errors": 0,
+        "capped": 24,
+        "minimum_length_insertions": 56504
+      },
+      "qwen25-vl-3b": {
+        "compact_cer": {
+          "substitutions": 9472,
+          "deletions": 0,
+          "insertions": 62836,
+          "reference_units": 13201,
+          "prediction_units": 76037,
+          "edits": 72308,
+          "error_rate": 5.477463828497841
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 1642,
+          "deletions": 1805,
+          "insertions": 1563,
+          "reference_units": 3447,
+          "prediction_units": 3205,
+          "edits": 5010,
+          "error_rate": 1.453437771975631
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 3893,
+          "deletions": 84,
+          "insertions": 10656,
+          "reference_units": 3977,
+          "prediction_units": 14549,
+          "edits": 14633,
+          "error_rate": 3.6794065878803117
+        },
+        "samples": 30,
+        "empty": 0,
+        "errors": 0,
+        "capped": 11,
+        "minimum_length_insertions": 62836
+      },
+      "qwen3-vl-2b": {
+        "compact_cer": {
+          "substitutions": 9660,
+          "deletions": 0,
+          "insertions": 80666,
+          "reference_units": 13201,
+          "prediction_units": 93867,
+          "edits": 90326,
+          "error_rate": 6.842360427240361
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 2227,
+          "deletions": 1219,
+          "insertions": 7594,
+          "reference_units": 3447,
+          "prediction_units": 9822,
+          "edits": 11040,
+          "error_rate": 3.202785030461271
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 3961,
+          "deletions": 0,
+          "insertions": 17332,
+          "reference_units": 3977,
+          "prediction_units": 21309,
+          "edits": 21293,
+          "error_rate": 5.354035705305507
+        },
+        "samples": 30,
+        "empty": 0,
+        "errors": 0,
+        "capped": 30,
+        "minimum_length_insertions": 80666
+      },
+      "surya-2": {
+        "compact_cer": {
+          "substitutions": 11697,
+          "deletions": 391,
+          "insertions": 59625,
+          "reference_units": 13201,
+          "prediction_units": 72435,
+          "edits": 71713,
+          "error_rate": 5.432391485493524
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 2925,
+          "deletions": 513,
+          "insertions": 14477,
+          "reference_units": 3447,
+          "prediction_units": 17411,
+          "edits": 17915,
+          "error_rate": 5.197272991006672
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 3891,
+          "deletions": 39,
+          "insertions": 55884,
+          "reference_units": 3977,
+          "prediction_units": 59822,
+          "edits": 59814,
+          "error_rate": 15.039979884334926
+        },
+        "samples": 30,
+        "empty": 0,
+        "errors": 0,
+        "capped": 21,
+        "minimum_length_insertions": 59557
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 4296,
+          "deletions": 8448,
+          "insertions": 3,
+          "reference_units": 13201,
+          "prediction_units": 4756,
+          "edits": 12747,
+          "error_rate": 0.9656086660101507
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 1828,
+          "deletions": 1616,
+          "insertions": 83,
+          "reference_units": 3447,
+          "prediction_units": 1914,
+          "edits": 3527,
+          "error_rate": 1.0232085871772556
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 2260,
+          "deletions": 1693,
+          "insertions": 149,
+          "reference_units": 3977,
+          "prediction_units": 2433,
+          "edits": 4102,
+          "error_rate": 1.0314307266784009
+        },
+        "samples": 30,
+        "empty": 5,
+        "errors": 0,
+        "capped": 0,
+        "minimum_length_insertions": 0
+      }
+    },
+    "historical_train": {
+      "deepseek-ocr-4bit": {
+        "compact_cer": {
+          "substitutions": 45875,
+          "deletions": 7511,
+          "insertions": 384207,
+          "reference_units": 54286,
+          "prediction_units": 430982,
+          "edits": 437593,
+          "error_rate": 8.060881258519691
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 10467,
+          "deletions": 3679,
+          "insertions": 77455,
+          "reference_units": 14146,
+          "prediction_units": 87922,
+          "edits": 91601,
+          "error_rate": 6.4753994061925635
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 14345,
+          "deletions": 2229,
+          "insertions": 330626,
+          "reference_units": 16585,
+          "prediction_units": 344982,
+          "edits": 347200,
+          "error_rate": 20.934579439252335
+        },
+        "samples": 120,
+        "empty": 14,
+        "errors": 0,
+        "capped": 113,
+        "minimum_length_insertions": 384207
+      },
+      "ket-ocr": {
+        "compact_cer": {
+          "substitutions": 17474,
+          "deletions": 34779,
+          "insertions": 406,
+          "reference_units": 54286,
+          "prediction_units": 19913,
+          "edits": 52659,
+          "error_rate": 0.9700291051099731
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 7181,
+          "deletions": 6947,
+          "insertions": 776,
+          "reference_units": 14146,
+          "prediction_units": 7975,
+          "edits": 14904,
+          "error_rate": 1.053584052028842
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 8873,
+          "deletions": 7589,
+          "insertions": 1156,
+          "reference_units": 16585,
+          "prediction_units": 10152,
+          "edits": 17618,
+          "error_rate": 1.062285197467591
+        },
+        "samples": 120,
+        "empty": 9,
+        "errors": 0,
+        "capped": 0,
+        "minimum_length_insertions": 383
+      },
+      "paddleocr-vl-1.6-4bit": {
+        "compact_cer": {
+          "substitutions": 39227,
+          "deletions": 15059,
+          "insertions": 241523,
+          "reference_units": 54286,
+          "prediction_units": 280750,
+          "edits": 295809,
+          "error_rate": 5.449084478502745
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 3978,
+          "deletions": 10168,
+          "insertions": 28638,
+          "reference_units": 14146,
+          "prediction_units": 32616,
+          "edits": 42784,
+          "error_rate": 3.0244592110844053
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 8450,
+          "deletions": 8135,
+          "insertions": 149119,
+          "reference_units": 16585,
+          "prediction_units": 157569,
+          "edits": 165704,
+          "error_rate": 9.99119686463672
+        },
+        "samples": 120,
+        "empty": 10,
+        "errors": 0,
+        "capped": 94,
+        "minimum_length_insertions": 241523
+      },
+      "surya-2": {
+        "compact_cer": {
+          "substitutions": 46452,
+          "deletions": 619,
+          "insertions": 251168,
+          "reference_units": 54286,
+          "prediction_units": 304835,
+          "edits": 298239,
+          "error_rate": 5.493847400803154
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 12647,
+          "deletions": 1455,
+          "insertions": 52493,
+          "reference_units": 14146,
+          "prediction_units": 65184,
+          "edits": 66595,
+          "error_rate": 4.7076912201329
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 16151,
+          "deletions": 231,
+          "insertions": 209824,
+          "reference_units": 16585,
+          "prediction_units": 226178,
+          "edits": 226206,
+          "error_rate": 13.639192041000904
+        },
+        "samples": 120,
+        "empty": 0,
+        "errors": 0,
+        "capped": 88,
+        "minimum_length_insertions": 250981
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 17474,
+          "deletions": 34779,
+          "insertions": 406,
+          "reference_units": 54286,
+          "prediction_units": 19913,
+          "edits": 52659,
+          "error_rate": 0.9700291051099731
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 7181,
+          "deletions": 6947,
+          "insertions": 776,
+          "reference_units": 14146,
+          "prediction_units": 7975,
+          "edits": 14904,
+          "error_rate": 1.053584052028842
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 8873,
+          "deletions": 7589,
+          "insertions": 1156,
+          "reference_units": 16585,
+          "prediction_units": 10152,
+          "edits": 17618,
+          "error_rate": 1.062285197467591
+        },
+        "samples": 120,
+        "empty": 9,
+        "errors": 0,
+        "capped": 0,
+        "minimum_length_insertions": 383
+      }
+    },
+    "khmerst_clean": {
+      "ket-ocr": {
+        "compact_cer": {
+          "substitutions": 8437,
+          "deletions": 26019,
+          "insertions": 1456,
+          "reference_units": 54625,
+          "prediction_units": 30062,
+          "edits": 35912,
+          "error_rate": 0.6574279176201373
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 2836,
+          "deletions": 1562,
+          "insertions": 926,
+          "reference_units": 4980,
+          "prediction_units": 4344,
+          "edits": 5324,
+          "error_rate": 1.0690763052208836
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 4541,
+          "deletions": 4954,
+          "insertions": 2969,
+          "reference_units": 12246,
+          "prediction_units": 10261,
+          "edits": 12464,
+          "error_rate": 1.0178017311775274
+        },
+        "samples": 3563,
+        "empty": 964,
+        "errors": 0,
+        "capped": 0,
+        "minimum_length_insertions": 1085
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 8264,
+          "deletions": 26981,
+          "insertions": 1392,
+          "reference_units": 54625,
+          "prediction_units": 29036,
+          "edits": 36637,
+          "error_rate": 0.670700228832952
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 2812,
+          "deletions": 1622,
+          "insertions": 865,
+          "reference_units": 4980,
+          "prediction_units": 4223,
+          "edits": 5299,
+          "error_rate": 1.0640562248995984
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 4455,
+          "deletions": 5113,
+          "insertions": 2744,
+          "reference_units": 12246,
+          "prediction_units": 9877,
+          "edits": 12312,
+          "error_rate": 1.0053895149436551
+        },
+        "samples": 3563,
+        "empty": 994,
+        "errors": 0,
+        "capped": 0,
+        "minimum_length_insertions": 1032
+      }
+    },
+    "khmerst_half_jpeg40": {
+      "ket-ocr": {
+        "compact_cer": {
+          "substitutions": 804,
+          "deletions": 2413,
+          "insertions": 83,
+          "reference_units": 4882,
+          "prediction_units": 2552,
+          "edits": 3300,
+          "error_rate": 0.6759524784924211
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 242,
+          "deletions": 141,
+          "insertions": 89,
+          "reference_units": 439,
+          "prediction_units": 387,
+          "edits": 472,
+          "error_rate": 1.0751708428246014
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 418,
+          "deletions": 495,
+          "insertions": 216,
+          "reference_units": 1151,
+          "prediction_units": 872,
+          "edits": 1129,
+          "error_rate": 0.9808861859252823
+        },
+        "samples": 320,
+        "empty": 85,
+        "errors": 0,
+        "capped": 0,
+        "minimum_length_insertions": 60
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 773,
+          "deletions": 2653,
+          "insertions": 81,
+          "reference_units": 4882,
+          "prediction_units": 2310,
+          "edits": 3507,
+          "error_rate": 0.7183531339614911
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 232,
+          "deletions": 155,
+          "insertions": 64,
+          "reference_units": 439,
+          "prediction_units": 348,
+          "edits": 451,
+          "error_rate": 1.0273348519362187
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 399,
+          "deletions": 545,
+          "insertions": 176,
+          "reference_units": 1151,
+          "prediction_units": 782,
+          "edits": 1120,
+          "error_rate": 0.9730668983492615
+        },
+        "samples": 320,
+        "empty": 89,
+        "errors": 0,
+        "capped": 0,
+        "minimum_length_insertions": 56
+      }
+    },
+    "khob_clean": {
+      "ket-ocr": {
+        "compact_cer": {
+          "substitutions": 4606,
+          "deletions": 2055,
+          "insertions": 1945,
+          "reference_units": 80606,
+          "prediction_units": 80496,
+          "edits": 8606,
+          "error_rate": 0.10676624568890654
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 2033,
+          "deletions": 69,
+          "insertions": 491,
+          "reference_units": 4983,
+          "prediction_units": 5405,
+          "edits": 2593,
+          "error_rate": 0.5203692554685933
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 3492,
+          "deletions": 288,
+          "insertions": 3232,
+          "reference_units": 17804,
+          "prediction_units": 20748,
+          "edits": 7012,
+          "error_rate": 0.39384407998202653
+        },
+        "samples": 40,
+        "empty": 0,
+        "errors": 0,
+        "capped": 0,
+        "minimum_length_insertions": 727
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 6005,
+          "deletions": 5557,
+          "insertions": 1814,
+          "reference_units": 80606,
+          "prediction_units": 76863,
+          "edits": 13376,
+          "error_rate": 0.16594298191201648
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 2353,
+          "deletions": 265,
+          "insertions": 374,
+          "reference_units": 4983,
+          "prediction_units": 5092,
+          "edits": 2992,
+          "error_rate": 0.6004415011037527
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 4360,
+          "deletions": 808,
+          "insertions": 2959,
+          "reference_units": 17804,
+          "prediction_units": 19955,
+          "edits": 8127,
+          "error_rate": 0.456470456077286
+        },
+        "samples": 40,
+        "empty": 0,
+        "errors": 0,
+        "capped": 0,
+        "minimum_length_insertions": 680
+      }
+    },
+    "khob_half_jpeg40": {
+      "ket-ocr": {
+        "compact_cer": {
+          "substitutions": 13876,
+          "deletions": 44954,
+          "insertions": 707,
+          "reference_units": 80606,
+          "prediction_units": 36359,
+          "edits": 59537,
+          "error_rate": 0.7386174726447162
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 3096,
+          "deletions": 1365,
+          "insertions": 175,
+          "reference_units": 4983,
+          "prediction_units": 3793,
+          "edits": 4636,
+          "error_rate": 0.9303632349989965
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 6212,
+          "deletions": 8245,
+          "insertions": 1199,
+          "reference_units": 17804,
+          "prediction_units": 10758,
+          "edits": 15656,
+          "error_rate": 0.8793529543922713
+        },
+        "samples": 40,
+        "empty": 0,
+        "errors": 0,
+        "capped": 0,
+        "minimum_length_insertions": 314
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 4801,
+          "deletions": 60816,
+          "insertions": 375,
+          "reference_units": 80606,
+          "prediction_units": 20165,
+          "edits": 65992,
+          "error_rate": 0.8186983599235789
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 1475,
+          "deletions": 3295,
+          "insertions": 61,
+          "reference_units": 4983,
+          "prediction_units": 1749,
+          "edits": 4831,
+          "error_rate": 0.969496287377082
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 2855,
+          "deletions": 12895,
+          "insertions": 1000,
+          "reference_units": 17804,
+          "prediction_units": 5909,
+          "edits": 16750,
+          "error_rate": 0.940799820265109
+        },
+        "samples": 40,
+        "empty": 10,
+        "errors": 0,
+        "capped": 0,
+        "minimum_length_insertions": 0
+      }
+    }
+  },
+  "independent_audit": {
+    "passed": true,
+    "bit_vector_dp_selfchecks": 1039,
+    "predictions": 8736,
+    "independently_checked_projections": 26208
+  },
+  "notes": [
+    "Posthoc added metrics from unchanged frozen predictions and references.",
+    "All metrics are unbounded micro edit ratios; no clipping or repetition removal.",
+    "Whitespace WER uses NFC + U+200B as a space + str.split(). Khmer whitespace is not human word gold.",
+    "Segmentation-assisted WER uses the pinned identical KET frequency decoder on both strings, retaining punctuation, case and digits; not human word gold.",
+    "S/D/I are one minimum-cost alignment; equally optimal decompositions can differ.",
+    "Historical Qwen results cover only the official 30 test pages.",
+    "KET-OCR denotes the existing Tesseract-based toolkit pipeline, not an independent recognizer."
+  ],
+  "private_count_records_sha256": "af0235ecde129ca3e6c95943d49434594b5f64b6f35db688c2e5c71ed811deb1"
+}
