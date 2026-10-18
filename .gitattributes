@@ -1,2 +1,5 @@
-*.pdf binary
-*.png binary
+# Preserve byte-pinned linguistic resources on Windows source checkouts.
+/khmereasytools/data/*.txt text eol=lf
+/khmereasytools/data/*.json text eol=lf
+# Keep the upstream MIT notice byte-for-byte, including its final blank lines.
+/khmereasytools/data/SIL-LICENSE.txt whitespace=-blank-at-eof

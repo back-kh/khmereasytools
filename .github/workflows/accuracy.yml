@@ -3,6 +3,7 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - '.gitattributes'
       - '.github/workflows/accuracy.yml'
       - 'scripts/compare_improvements.py'
       - 'scripts/run_accuracy_ci.py'
