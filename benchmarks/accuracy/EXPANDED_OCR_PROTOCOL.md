@@ -34,7 +34,7 @@ selection, or assume perfect annotations. Both systems get the same crop.
 
 Before inference, exclude only missing/blank/non-string transcripts, explicit
 ### illegibility markers, malformed/non-finite polygons, zero-size crops,
-missing images, or coordinates outside image bounds by more than one pixel.
+or coordinates outside image bounds by more than one pixel.
 Record every exclusion. Clamp at most one-pixel boundary rounding. Fail on
 duplicate filenames across annotation files, changed hashes, or absent source
 images. Retain all other labels, including numbers, Latin and mixed text.

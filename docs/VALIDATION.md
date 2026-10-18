@@ -2,6 +2,25 @@
 
 Passing tests establish the documented contracts on checked inputs. They do not establish universal linguistic accuracy. The source version is 0.5.0.dev0; PyPI 0.4.0 does not include the unreleased features.
 
+The [native installation run 39098752057](https://github.com/back-kh/khmereasytools/actions/runs/39098752057)
+passed at evaluation revision `73d2483ad7a843db855ff6371ea51ec8516f4b44`.
+All three operating systems used the same wheel. Runtime Python source bytes
+remain identical to `b062be0`; eight new tests validate the separate OCR
+research harness, including EXIF geometry and paired, clustered scoring.
+
+| Environment | Windows | macOS | Linux |
+| --- | --- | --- | --- |
+| Core installation | 137 passed, 14 skipped | 137 passed, 14 skipped | 137 passed, 14 skipped |
+| All optional extras | 150 passed, 1 skipped | 150 passed, 1 skipped | 150 passed, 1 skipped |
+| Actual OCR and POS | Both executed | Both executed | Both executed |
+| Live translation | Pending | Pending | Pending |
+
+The suite has 151 tests with no failures in those runs. The single all-extras
+skip is live translation, left pending by user choice. The [machine-readable
+records](../benchmarks/accuracy/expanded-ocr/native-validation.json) retain the
+revision, common wheel hash, dependency versions, and backend flags. These
+are installation and contract checks, separate from dataset accuracy.
+
 | Public function | Checks | Interpretation |
 | --- | --- | --- |
 | `khseg`, `khseg_spans` | Frequency resources/objective, coverage/legacy modes, unknowns, mixed text, offsets, randomized losslessness, exhaustive small decoder checks | khPOS exact-token F1 77.21 -> 78.46%; reserved ALT word F1 66.68 -> 68.29%; corpus limits apply |

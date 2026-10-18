@@ -20,7 +20,7 @@ COOLDOWN_LOCK = threading.Lock()
 COOLDOWN_UNTIL = 0.0
 
 
-def read_url(url, limit=16000000):
+def read_url(url, limit=64000000):
     global COOLDOWN_UNTIL
     for attempt in range(4):
         while True:
