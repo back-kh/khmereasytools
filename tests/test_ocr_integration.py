@@ -76,6 +76,12 @@ class RealKhmerOCRTests(unittest.TestCase):
         self.assertGreater(len(text), 20)
         self.assertNotIn("error", text.lower())
 
+    def test_one_call_text_api_accepts_image(self):
+        text = khocr(self.image)
+        self.assertIsInstance(text, str)
+        self.assertGreater(sum("\u1780" <= char <= "\u17ff" for char in text), 10)
+        self.assertNotIn("error", text.lower())
+
     def test_daily_cli_defaults_to_text_and_layout_is_optional(self):
         base = [sys.executable, "-m", "khmereasytools", "ocr", str(self.image), "--psm", "6"]
         text = subprocess.run(base, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True).stdout.decode()

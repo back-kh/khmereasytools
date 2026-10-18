@@ -2,6 +2,9 @@
 
 ## 0.5.0.dev0 — unreleased
 
+- Add local `khindex`/`khsearch` BM25 keyword retrieval with original-text results, snippets, source-token matches, and Khmer compound recall.
+- Add explicit, credentialed `khtranslate` Google Cloud Translation client and CLI; keep live provider checks separate and opt-in.
+- Test fresh core/all-extras installations on Windows, macOS, and Linux, including actual Khmer OCR and khmer-nltk POS models; publish per-OS validation artifacts.
 - Expand the bundled lexicon from 213 to 81,005 entries using a pinned, checksum-verified ICU adaptation under Unicode License V3.
 - Make global maximum-coverage segmentation the default, with custom vocabulary and an explicit legacy compatibility mode. Token boundaries intentionally change.
 - Add `khanalyze` for images and multi-page PDFs, with page-local boxes, lines/blocks/column hints, confidence, segmentation, and Khmer diagnostics.

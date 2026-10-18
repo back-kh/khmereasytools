@@ -1,8 +1,8 @@
 # Khmer Easy Tools
 
-Everyday Khmer text tools: split words, read text from an image or PDF, and inspect a document's text layout. Core tools run offline with **no runtime dependencies or model downloads**.
+Everyday Khmer tools: split words, search local text, read images or PDFs, and inspect document layouts. Core text and search tools run offline with **no runtime dependencies or model downloads**. Translation is an explicit online option with your own Google Cloud credentials.
 
-The new **0.5.0.dev0** source version adds an **81,005-entry dictionary**, better word segmentation, and image/PDF analysis. PyPI 0.4.0 remains the published version until this update is released.
+The new **0.5.0.dev0** source version adds an **81,005-entry dictionary**, better word segmentation, local search/retrieval, optional online translation, and image/PDF analysis. PyPI 0.4.0 remains the published version until this update is released.
 
 ## Install
 
@@ -42,6 +42,35 @@ The new default considers complete candidate paths instead of committing to the 
 On the 1,000-sentence khPOS OPEN-TEST, exact-token F1 is **77.2%**, compared with **10.8%** for old `khseg` and **30.4%** for the old lossless span tokenizer. These are results on one corpus, not universal accuracy. See [evaluation protocol and limitations](docs/EVALUATION.md).
 
 For annotations, `khseg_spans(text)` preserves every input character, including spaces and punctuation, and gives `text`, `start`, `end`, and `kind` for each token. Offsets are Python code points with exclusive ends. Custom vocabulary is local to the call.
+
+## Search and retrieve local text
+
+```python
+documents = {
+    "school": "សិស្សអានសៀវភៅនៅសាលារៀន។",
+    "food": "ខ្ញុំញ៉ាំបាយ។",
+}
+hits = ket.khsearch("សៀវភៅ", documents)
+print(hits[0].document_id, hits[0].snippet)
+
+# Build once for repeated searches; retrieve unchanged source text by ID.
+index = ket.khindex(documents)
+hits = index.search("សៀវភៅ")
+original = index.get("school")
+```
+
+Search ranks keyword matches using BM25, folds Latin case and Khmer/ASCII digits, and supports matches inside Khmer dictionary compounds. Results include source text, snippets, and original token positions. This is local lexical retrieval for small collections, with no semantic model or spelling correction. See [search behavior and limits](docs/SEARCH.md).
+
+## Translate with explicit online setup
+
+Enable Google Cloud Translation and configure `GOOGLE_TRANSLATE_API_KEY` locally. Then:
+
+```python
+english = ket.khtranslate("សួស្តី", target="en")  # Default source: km (Khmer).
+khmer = ket.khtranslate("Hello", target="km", source="en")
+```
+
+Calling `khtranslate` sends this text to Google and may incur provider charges. It uses the Python standard library, accepts up to 5,000 characters per call, and requires your own credentials. Live translation checks need separate opt-in; protocol tests do not establish translation quality. See [translation setup and validation](docs/TRANSLATION.md).
 
 ## Read text from an image or PDF
 
@@ -90,6 +119,10 @@ khmereasytools ocr mixed-text.jpg --lang khm+eng
 khmereasytools segment document.txt
 khmereasytools audit document.txt
 khmereasytools normalize document.txt --text-only
+
+# Local retrieval; translation uses your configured Google API key:
+khmereasytools search "សៀវភៅ" notes.txt articles.txt
+khmereasytools translate document.txt --to en
 ```
 
 `ocr` prints plain text by default; `--layout` prints JSON. Input files are never overwritten. Review overlays currently take image input. Other text commands print JSON except `normalize --text-only` and `digits`.
@@ -110,12 +143,13 @@ See [text quality and mappings](docs/TEXT_QUALITY.md) for cleanup options. To re
 ```bash
 python -m unittest discover -s tests -v
 KET_RUN_OCR_TESTS=1 python -m unittest discover -s tests -v
+KET_RUN_OCR_TESTS=1 KET_RUN_POS_TESTS=1 python -m unittest discover -s tests -v
 python -m pip install build twine
 python -m build
 python -m twine check dist/*
 ```
 
-Core tests need only the standard library. Real image/PDF tests additionally need the OCR extra, Tesseract, and `khm` traineddata. The supplied OCR fixture is a clean synthetic rendering; it is not a real-scan accuracy benchmark.
+Core tests need only the standard library. Real image/PDF tests additionally need the OCR extra, Tesseract, and `khm` traineddata. Real POS tests use the installed `khmer-nltk` CRF models. CI tests fresh core and `[all]` wheel installations on Windows, macOS, and Linux outside the checkout, with machine-readable reports. The supplied OCR fixture is a clean synthetic rendering; it is not a real-scan accuracy benchmark. See [validation coverage and interpretation](docs/VALIDATION.md).
 
 The expanded dictionary is adapted from ICU under **Unicode License V3**, with a pinned revision, checksums, and reproducible filtering. The original 213-entry lexicon is retained. The external noncommercial khPOS evaluation corpus is not bundled and supplies no runtime vocabulary or frequencies. See [dictionary provenance](docs/DICTIONARY.md), [source history](docs/SOURCE_PROVENANCE.md), and [changelog](CHANGELOG.md).
 

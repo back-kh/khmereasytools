@@ -30,10 +30,24 @@ class LegacyTests(unittest.TestCase):
         self.assertEqual(len(words), 379)
         words.clear()
         self.assertEqual(len(ket.get_default_stop_words()), 379)
+        self.assertEqual(ket.khfilter("ឋខ្ញុំ", {"ខ្ញុំ"}, dictionary="legacy", strategy="legacy"), "ឋខ្ញុំ")
 
     def test_presence(self):
         self.assertTrue(ket.is_khmer("Hello ខ្មែរ"))
         self.assertFalse(ket.is_khmer("Hello"))
+
+    def test_load_stop_words_csv(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = os.path.join(directory, "stop-words.csv")
+            with open(path, "w", encoding="utf-8", newline="") as handle:
+                handle.write("ខ្ញុំ,pronoun\n ដែល ,other\n\nខ្ញុំ,duplicate\n")
+            self.assertEqual(ket.load_stop_words_from_file(path), {"ខ្ញុំ", "ដែល"})
+
+    def test_missing_stop_word_file_retains_legacy_behavior(self):
+        import io
+        with patch("sys.stdout", new_callable=io.StringIO) as output:
+            self.assertEqual(ket.load_stop_words_from_file("/nonexistent/ket-stop-words.csv"), set())
+        self.assertIn("not found", output.getvalue())
 
     def test_core_does_not_import_optional_dependencies(self):
         code = "import sys, khmereasytools; assert not {'khmernltk', 'pytesseract', 'PIL', 'pypdfium2', 'numpy', 'cv2'} & set(sys.modules)"
@@ -108,6 +122,26 @@ class CLITests(unittest.TestCase):
     def test_version(self):
         result = self.run_cli("--version")
         self.assertEqual(result.stdout.decode().strip(), ket.__version__)
+
+    def test_search_files(self):
+        with tempfile.TemporaryDirectory() as directory:
+            first = os.path.join(directory, "សៀវភៅ.txt")
+            second = os.path.join(directory, "other.txt")
+            for path, text in ((first, "សិស្សអានសៀវភៅ។"), (second, "cat")):
+                with open(path, "w", encoding="utf-8") as handle:
+                    handle.write(text)
+            result = self.run_cli("search", "សៀវភៅ", first, second)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        hits = json.loads(result.stdout)
+        self.assertEqual(hits[0]["document_id"], first)
+        self.assertEqual(hits[0]["text"], "សិស្សអានសៀវភៅ។")
+
+    def test_translate_missing_key_is_actionable(self):
+        with patch.dict(os.environ, {"GOOGLE_TRANSLATE_API_KEY": ""}):
+            result = self.run_cli("translate", data="សួស្តី".encode())
+        self.assertEqual(result.returncode, 2)
+        self.assertIn(b"GOOGLE_TRANSLATE_API_KEY", result.stderr)
+        self.assertNotIn(b"Traceback", result.stderr)
 
 
 if __name__ == "__main__":

@@ -8,6 +8,8 @@ from . import __version__
 from .segmentation import khseg_spans
 from .ocr import OCRError, khocr_overlay
 from .documents import khanalyze
+from .search import khsearch
+from .translation import TranslationError, khtranslate
 from .text_quality import khaudit, khdigits, khnormalize
 
 
@@ -20,10 +22,10 @@ def _jsonable(value):
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="Inspect and prepare Khmer text locally.")
+    parser = argparse.ArgumentParser(description="Everyday Khmer text, search, and document tools.")
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command")
-    for command in ("audit", "normalize", "digits", "segment", "ocr"):
+    for command in ("audit", "normalize", "digits", "segment", "ocr", "search", "translate"):
         subparser = commands.add_parser(command)
         if command == "ocr":
             subparser.add_argument("file", help="Image or PDF to read locally")
@@ -38,6 +40,11 @@ def main(argv=None):
             subparser.add_argument("--frame", type=int, default=None, help=argparse.SUPPRESS)
             subparser.add_argument("--no-segment", action="store_true", help=argparse.SUPPRESS)
             subparser.add_argument("--overlay", help="Write a line-box review PNG (image input only)")
+        elif command == "search":
+            subparser.add_argument("query", help="Khmer or Latin search terms")
+            subparser.add_argument("files", nargs="+", help="UTF-8 text files to search locally")
+            subparser.add_argument("--limit", type=int, default=5)
+            subparser.add_argument("--all", action="store_true", help="Require every query term")
         else:
             subparser.add_argument("file", nargs="?", default="-", help="UTF-8 file, or - for stdin")
         if command == "normalize":
@@ -55,12 +62,24 @@ def main(argv=None):
             subparser.add_argument("--word", action="append", default=[], help="Add a domain word; repeat as needed")
             subparser.add_argument("--dictionary", choices=("expanded", "legacy"), default="expanded")
             subparser.add_argument("--strategy", choices=("coverage", "longest"), default="coverage")
+        elif command == "translate":
+            subparser.add_argument("--to", dest="target", default="en", help="Target language code (default: en)")
+            subparser.add_argument("--from", dest="source", default="km", help="Source language code, or auto (default: km)")
+            subparser.add_argument("--timeout", type=float, default=30.0)
     args = parser.parse_args(argv)
     if args.command is None:
         parser.print_help()
         return 0
 
     try:
+        if args.command == "search":
+            documents = {}
+            for path in args.files:
+                with open(path, encoding="utf-8", newline="") as handle:
+                    documents[path] = handle.read()
+            hits = khsearch(args.query, documents, limit=args.limit, match="all" if args.all else "any")
+            sys.stdout.buffer.write((json.dumps(_jsonable(hits), ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
+            return 0
         if args.command == "ocr":
             selected = [int(page.strip()) for page in args.pages.split(",")] if args.pages is not None else None
             options = dict(lang=args.lang, psm=args.psm, timeout=args.timeout,
@@ -88,6 +107,9 @@ def main(argv=None):
             result = khseg_spans(text, custom_words=args.word, dictionary=args.dictionary, strategy=args.strategy)
         elif args.command == "digits":
             result = khdigits(text, target=args.target)
+        elif args.command == "translate":
+            result = khtranslate(text, target=args.target, source=None if args.source == "auto" else args.source,
+                                 timeout=args.timeout)
         else:
             result = khnormalize(
                 text, zero_width_space=args.zero_width_space, digits=args.digits,
@@ -102,7 +124,7 @@ def main(argv=None):
             result = json.dumps(_jsonable(result), ensure_ascii=False, indent=2) + "\n"
         sys.stdout.buffer.write(result.encode("utf-8"))
         return 0
-    except (OSError, UnicodeError, ValueError, ImportError, OCRError) as exc:
+    except (OSError, UnicodeError, ValueError, ImportError, OCRError, TranslationError) as exc:
         print("khmereasytools: {}".format(exc), file=sys.stderr)
         return 2
 

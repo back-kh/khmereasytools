@@ -9,3 +9,4 @@ dist/
 htmlcov/
 .evaluation/
 .DS_Store
+validation-results/

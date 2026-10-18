@@ -10,7 +10,7 @@ setup(
     version="0.5.0.dev0",
     author="Nimol Thuon",
     author_email="nimol.thuon@gmail.com",
-    description="Lightweight Khmer NLP with traceable text cleanup, Unicode diagnostics, and source-aligned tokens.",
+    description="Lightweight Khmer text, local search, optional translation, and image/PDF OCR tools.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/back-kh/khmereasytools",

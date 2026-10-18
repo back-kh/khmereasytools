@@ -13,6 +13,8 @@ from .tools import (
 from .documents import DocumentLayout, DocumentPage, khanalyze
 from .lexicon import get_khmer_dictionary
 from .segmentation import TokenSpan, khseg_spans
+from .search import KhmerSearchIndex, SearchHit, SearchMatch, khindex, khsearch
+from .translation import TranslationError, khtranslate
 from .ocr import (Box, LayoutColumn, OCRBlock, OCRError, OCRLine, OCRWord, PageLayout,
                   khlayout, khocr_layout, khocr_overlay)
 from .text_quality import (
@@ -35,4 +37,6 @@ __all__ = [
     "Box", "LayoutColumn", "OCRBlock", "OCRError", "OCRLine", "OCRWord",
     "PageLayout", "khlayout", "khocr_layout", "khocr_overlay",
     "DocumentLayout", "DocumentPage", "khanalyze",
+    "KhmerSearchIndex", "SearchHit", "SearchMatch", "khindex", "khsearch",
+    "TranslationError", "khtranslate",
 ]
