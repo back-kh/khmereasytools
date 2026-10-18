@@ -1,0 +1,306 @@
+{
+  "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+  "selection": "All 30 official CHURRO-DS Khmer test pages, without source-train additions or references on the inference host",
+  "pages": [
+    {
+      "id": "sleuk/010_nl_a158_253_02",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a158",
+      "image_sha256": "71947d58c5dad50cf1794bdf2fe5e23555263f0f210311eba43f923517c70634",
+      "width": 5446,
+      "height": 462,
+      "image": "images/2b10cd948b968cdf069195cbfcfda99b843476fa0075990f005cd64e6f75dcc4.png"
+    },
+    {
+      "id": "sleuk/097_efeo_029_01_05",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/efeo_029",
+      "image_sha256": "bd4a5e3dd9bd29b29c2dff8adc2e84c2357830d6284c41c022a52bff61bc4eb9",
+      "width": 4222,
+      "height": 378,
+      "image": "images/53e875bb457f9fb1666fcda3ffeb9f5db16e9b15f3801e5c69ddd8815e7cc0c4.png"
+    },
+    {
+      "id": "sleuk/120_pp_ttp_01_004",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/pp_ttp_01",
+      "image_sha256": "9690fa2f7b4ef71e9dd193e83ba5a305ee44e1c7fcb5b9629a249003e9bb2993",
+      "width": 5368,
+      "height": 696,
+      "image": "images/22543ebd663d3d29d3797bd55032b05622412d9c4e8f003eed694b3339725d3c.png"
+    },
+    {
+      "id": "sleuk/129_nl_a134_313_02",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a134",
+      "image_sha256": "8a04338a223d04d61e49b3b7fe31cd0115f03de0ef90fbbadfcdd9143bf06bc5",
+      "width": 5503,
+      "height": 445,
+      "image": "images/e4ee2c6ba224d068f83088a4db9a87d16a77a5ac8fb002ed87ba0216b5c7add3.png"
+    },
+    {
+      "id": "sleuk/285_efeo_048_02_64",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/efeo_048",
+      "image_sha256": "78b7980acf906a7b7609f146b37e6526bcf0e502ba7c3167f60f26a2dc771f91",
+      "width": 4288,
+      "height": 401,
+      "image": "images/343655e63a149f9202135ac8c26393d2c6042dd7bf5cca5e87f7fa3b3666068d.png"
+    },
+    {
+      "id": "sleuk/299_nl_d856_118_02",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_d856",
+      "image_sha256": "35d7a409aa2d7a1cf6b7bb46482307fee6e73804631f1031b01ff1a33ad83db6",
+      "width": 5674,
+      "height": 480,
+      "image": "images/73b267c10188dcec8405b1083985a52535148b26a604c15f463d8b9c7342de06.png"
+    },
+    {
+      "id": "sleuk/326_nl_a140_031_02",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a140",
+      "image_sha256": "d73678ec31c62f00a43497ee3302f3af9c16e9c5d230cea1f78d31d6b2c3cc98",
+      "width": 5678,
+      "height": 479,
+      "image": "images/ea3f5b0078f4eb814fd3481ba6b0d656073ed6966b6245edeaed88f9a7c9adb2.png"
+    },
+    {
+      "id": "sleuk/329_kandal_tekvil_01_024",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/kandal_tekvil_01",
+      "image_sha256": "0c47802ed6c491ba3b92f96821ffdf4f000cbc7e8a100990eaa8156829bbf2bf",
+      "width": 7936,
+      "height": 744,
+      "image": "images/aed51981c0178f3469d8e953ba287421419cad30c8a888cc235794c71f473651.png"
+    },
+    {
+      "id": "sleuk/337_pp_ttp_02_013",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/pp_ttp_02",
+      "image_sha256": "0f23e99e7b099172c1512f10043842dd21b0cbfd0c50abee7872c2325552c692",
+      "width": 8200,
+      "height": 816,
+      "image": "images/4d3281d59c9b9e5f09333ab370895ce07056d06c8a0cfefdac44faf028d3c0b4.png"
+    },
+    {
+      "id": "sleuk/362_nl_a140_029_02",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a140",
+      "image_sha256": "ad0238ef62587a6d3650be3712f8109b0af95c81248a1ae7bca5280dda48f9e4",
+      "width": 5654,
+      "height": 491,
+      "image": "images/f32887ef073e80441f791b2776aabaa88234962024b22a9b859b8fecb3c0d672.png"
+    },
+    {
+      "id": "sleuk/387_kandal_tekvil_02_013b",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/kandal_tekvil_02",
+      "image_sha256": "e62c7d90b3e774ac46d5dbd7bc05bfa3436bb0cde5b7b6acb54fc274d954a6c5",
+      "width": 8040,
+      "height": 776,
+      "image": "images/04a1763200cf28f678e2e522c09be0804c6f56d2172ad6c147df4d8fd3de908f.png"
+    },
+    {
+      "id": "sleuk/389_pp_ttp_02_012",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/pp_ttp_02",
+      "image_sha256": "029097959efb518245ea6458e20b9aa03aa87f61d9bcfbb597bd77eed2cbb5a7",
+      "width": 8056,
+      "height": 704,
+      "image": "images/0124a2b3329fe2958f7a91ab58f9b06abf77641610891fc98e980c06fd28e121.png"
+    },
+    {
+      "id": "sleuk/396_kandal_tekvil_01_026",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/kandal_tekvil_01",
+      "image_sha256": "c0ac852365628ce23c88e2d94996f4679070d8be73fbcc43ad12125dce0c2822",
+      "width": 8024,
+      "height": 712,
+      "image": "images/ed643094a028441e6175f112890d5b0ea87efdda2d17d4c958b15ffe54ac00e9.png"
+    },
+    {
+      "id": "sleuk/411_nl_a140_015_01",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a140",
+      "image_sha256": "830729f10b837258c7ba57e92e98c11f475398233571b0c3d056d44d1b7390e6",
+      "width": 5678,
+      "height": 479,
+      "image": "images/b2aabcd0d4740364053dd7428c6efba6b31a796c7d992546b1eba13551e72042.png"
+    },
+    {
+      "id": "sleuk/452_pp_ttp_02_009",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/pp_ttp_02",
+      "image_sha256": "99d7c58cf148c4f991cf0efad2745795b03a50c42b8c446d21c6f6c6b3c43c72",
+      "width": 8152,
+      "height": 736,
+      "image": "images/ba1c7cbdba5b73c4b15b888b15741991cbe04c610f4861d93ed1a4a04b246a45.png"
+    },
+    {
+      "id": "sleuk/488_nl_a161_271_01",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a161",
+      "image_sha256": "c4c5bb439962cbe851052a68bf8aea6669c4629b4794bdc0c9bdec4f6875393f",
+      "width": 5484,
+      "height": 468,
+      "image": "images/692c0bc48ad756f09fb923f9a93fa721807009c462dd4fd84150e0243110305a.png"
+    },
+    {
+      "id": "sleuk/490_nl_a161_305_02",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a161",
+      "image_sha256": "3d1bfc04545808d604c773962cf00f09ac02f8206b33dfbe92f585902cdd060f",
+      "width": 5480,
+      "height": 474,
+      "image": "images/b5d2bdf2dc7b9f0bbe3f8b22ac2b975ef5cd5985b4f8d666613d28e97466c7b3.png"
+    },
+    {
+      "id": "sleuk/492_nl_a161_275_01",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a161",
+      "image_sha256": "4889b51f6ac6895caef1ae489fd38cb2a82f9869e1feef976303509e53d47844",
+      "width": 5510,
+      "height": 473,
+      "image": "images/de67e0a6c094107b7d11ce8ec557007163b431d2767b2a5aa82a0d3fb0155593.png"
+    },
+    {
+      "id": "sleuk/514_nl_a143_013_02",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a143",
+      "image_sha256": "1b8a1176c2cd42382b2548b4e9ff062a4926c05d92e5a47f587d91e27deb1af7",
+      "width": 5536,
+      "height": 472,
+      "image": "images/7a001ac0084f5b665442855b45d9291de7f90bcf66c7730a27cf9d8b21227608.png"
+    },
+    {
+      "id": "sleuk/515_nl_a157_224_02",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a157",
+      "image_sha256": "0792e9344d563874e71de8dc01b7bd9edd68df6ac39ce1f303807f46ed5a37aa",
+      "width": 5426,
+      "height": 491,
+      "image": "images/3a12d7ca824eeb96d3afcf9a5e24f6dfb032a900d267a584f057ddbf52c8dafc.png"
+    },
+    {
+      "id": "sleuk/534_nl_a157_223_01",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a157",
+      "image_sha256": "8147c8a6208375e67c9778a5b7d6f6130f0e4ee71bf8c1de10992a697ef04ca1",
+      "width": 5432,
+      "height": 486,
+      "image": "images/af8307244fc43db5d1207f48ccb96d2bf9b0f5812f821eb2e7a83f38159ca349.png"
+    },
+    {
+      "id": "sleuk/546_nl_a133_283_02",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a133",
+      "image_sha256": "1110c399a987c90af520c7dcd6e43f731359fce75af1a25c0cefadd67a0b3b32",
+      "width": 5518,
+      "height": 462,
+      "image": "images/56b3db53067f6dc66c75a9edf840c56ee461b935324f7051dea8908960aae801.png"
+    },
+    {
+      "id": "sleuk/560_nl_a161_297_01",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a161",
+      "image_sha256": "1be7a1ce8c652b405aa1c83cefccd630556bf8fb26f76436582c01395f12dfc7",
+      "width": 5486,
+      "height": 467,
+      "image": "images/5fba40cdf81e330e458367b359e6f14991d5a6d2a324c850bfe6c93138734716.png"
+    },
+    {
+      "id": "sleuk/585_nl_a133_298_02",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a133",
+      "image_sha256": "5c81d0da1e3601d8475501d2993a34bb618154547c1b98e9b7841408d882eee7",
+      "width": 5537,
+      "height": 467,
+      "image": "images/11a087e85580863158cc6a2e05c8596dd8db8fb2bb6ba0dac2bb08b000799426.png"
+    },
+    {
+      "id": "sleuk/593_nl_a143_045_01",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a143",
+      "image_sha256": "912796a9e9cd4288e936e17e836e7c38f6d6b29e29961a852fd3329761ce0e30",
+      "width": 5554,
+      "height": 502,
+      "image": "images/7d9f38839e5febd816a607d162eb4de5df1088c49f6cc4b832cd729d7e227ce5.png"
+    },
+    {
+      "id": "sleuk/613_nl_a133_285_02",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a133",
+      "image_sha256": "6c1fae9c1a1cf2469c10822efeada2521c031dad0ef46f5079eb8b83a01453c6",
+      "width": 5524,
+      "height": 468,
+      "image": "images/0820e8289f407adb5e02e9c5e81cbd8022df9bf20374872caa6000484e465079.png"
+    },
+    {
+      "id": "sleuk/635_nl_a161_297_02",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a161",
+      "image_sha256": "9193e13e69a3bc6777b136a9be233c6bf976b098076638d2d7b8d6b02d65f132",
+      "width": 5486,
+      "height": 467,
+      "image": "images/2c691adbc452487dd73565370f59f9118a6f95e7206daf55ddc5f8476c11199f.png"
+    },
+    {
+      "id": "sleuk/636_nl_a143_020_02",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a143",
+      "image_sha256": "3b720a786732c4fdb352f4ed422a6b139bb752172ba2486ff718dc46a65efdd6",
+      "width": 5500,
+      "height": 466,
+      "image": "images/7b49dfefeb9d51c37b198e94bdda92432fb9b14167cf3cf51b79382c892282e5.png"
+    },
+    {
+      "id": "sleuk/642_nl_a143_021_02",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a143",
+      "image_sha256": "803202f09f8bb557ed953c7c7a6a392d62acb2bfc74e2df7ec67097505192301",
+      "width": 5524,
+      "height": 466,
+      "image": "images/b3c8a553dc523a13a46e538bb67e0d2d339d3dbe538c9c566f8027a90675bf56.png"
+    },
+    {
+      "id": "sleuk/708_nl_a161_284_01",
+      "collection": "churro-sleuk",
+      "source_split": "test",
+      "group": "sleuk/nl_a161",
+      "image_sha256": "17f373971a5f3cb3ed1d1622203ccff47f805c8f9d77fe8aad279b15773d16e5",
+      "width": 5492,
+      "height": 479,
+      "image": "images/1e9af28edd50b433bd287f7c149975b2b9ce9a5ffe90957b6d7697d515ae4287.png"
+    }
+  ]
+}

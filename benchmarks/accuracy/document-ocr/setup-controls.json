@@ -1,0 +1,45 @@
+{
+  "scope": "Setup controls only; not accuracy evaluation on the new corpus",
+  "surya_first_pass": {
+    "source": "KHOB development task-1/goc_3",
+    "characters": 1803,
+    "generation_tokens": 2178,
+    "error": null
+  },
+  "deepseek_mlx4bit": {
+    "source": "KHOB development task-1/goc_3",
+    "characters": 955,
+    "generation_tokens": 1164
+  },
+  "paddle_mlx4bit_english": {
+    "source": "Locally generated known-English text image",
+    "reference": "Research OCR baseline smoke test.\nThe quick brown fox jumps over the lazy dog.\nInvoice 2026  Quantity 12  Total 125.50 USD.\nExact text control 0123456789.\n",
+    "prediction": "Research OCR baseline smoke test.\nThe quick brown fox jumps over the lazy dog.\nInvoice 2026 Quantity 12 Total 125.50 USD.\nExact text control 0123456789.",
+    "score": {
+      "reference_codepoints": 128,
+      "codepoint_edits": 0,
+      "exact_compact": true,
+      "spacefold_reference_codepoints": 152,
+      "spacefold_codepoint_edits": 0,
+      "reference_whitespace_units": 25,
+      "whitespace_unit_edits": 0
+    },
+    "generation_tokens": 57
+  },
+  "surya_active_english": {
+    "source": "Locally generated known-English text image sent to the active corpus backend",
+    "reference": "Research OCR baseline smoke test.\nThe quick brown fox jumps over the lazy dog.\nInvoice 2026  Quantity 12  Total 125.50 USD.\nExact text control 0123456789.\n",
+    "prediction": "Research OCR baseline smoke test.\nThe quick brown fox jumps over the lazy dog.\nInvoice 2026 Quantity 12 Total 125.50 USD.\nExact text control 0123456789.",
+    "score": {
+      "reference_codepoints": 128,
+      "codepoint_edits": 0,
+      "exact_compact": true,
+      "spacefold_reference_codepoints": 152,
+      "spacefold_codepoint_edits": 0,
+      "reference_whitespace_units": 25,
+      "whitespace_unit_edits": 0
+    },
+    "error": false,
+    "generation_tokens": 194
+  }
+}

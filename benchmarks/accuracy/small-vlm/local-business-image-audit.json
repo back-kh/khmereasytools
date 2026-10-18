@@ -1,0 +1,21 @@
+{
+  "source": "User-supplied local folder named KH-FUNSD",
+  "raw_image_files": 148,
+  "distinct_source_byte_hashes": 146,
+  "distinct_upright_rgb_hashes": 146,
+  "deduplication": "Two exact duplicate image pairs; first lexicographic path retained",
+  "categories": {
+    "invoices": 34,
+    "quotes": 16,
+    "receipts": 96
+  },
+  "acquisition_folders": {
+    "Digital": 101,
+    "Scanned": 45
+  },
+  "annotation_files_supplied": 0,
+  "reference_authoring": "Codex model-generated drafts with explicit uncertainty and false human-review flags",
+  "correspondence_to_published_158_document_set": "Unverified; no official identity/annotation mapping supplied",
+  "evaluation_status": "Not scored as independent OCR gold",
+  "redistribution": "Images and draft transcripts remain private research files"
+}

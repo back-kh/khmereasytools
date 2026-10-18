@@ -6,9 +6,20 @@ import unittest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from document_ocr_metrics import scored_record, summarize, visible_text
 from fetch_document_ocr import manuscript_group
+from audit_document_ocr import score as independent_score, self_check
+from evaluation_metrics import text_score
 
 
 class DocumentMetricsTests(unittest.TestCase):
+    def test_independent_distance_audit_and_unicode_projections(self):
+        self.assertEqual(self_check(), 1039)
+        cases = [("", ""), ("កខ", ""), ("ក" * 80, "ខ" * 120),
+                 ("a\u0301 ក\u200b ខ\n12", "á\tកខ 13"),
+                 ("ក ខ abc", "ក ខ abc abc"), ("one two", "two one")]
+        for reference, prediction in cases:
+            self.assertEqual(independent_score(reference, prediction),
+                             text_score(reference, prediction))
+
     def page(self, **extra):
         return dict(id="one", collection="churro-sleuk", group="book", source_split="test",
                     reference="សួស្តី abc", **extra)
