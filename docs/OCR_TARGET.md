@@ -121,7 +121,7 @@ python scripts/evaluate_mixed_ocr.py --prepare-models --partition reserved --pdf
 This explicit evaluation command downloads checksum-pinned models into
 ignored .evaluation if needed. Ordinary library calls never download models.
 Full predictions remain ignored; committed reports contain derived counts.
-The local derived-PDF score is 11.3747%, also above target. Mixed mode saves
+The local derived-PDF score is 11.3745%, also above target. Mixed mode saves
 609 character edits on the 40 images; at least 546 further edits would need
 to be removed to get strictly below 10% on those fixed references.
 
