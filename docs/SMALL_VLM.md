@@ -79,6 +79,45 @@ implementations and precision; shared hardware and different batching prevent
 a controlled speed ranking. Public test membership does not establish absence
 from pretraining data.
 
+## Recorded results
+
+Both Qwen implementations completed the same **30 official source-test
+images**, with **13,201 compact NFC reference code points**. The table retains
+all seven implementations on that common subset. It does not combine the
+Qwen subset with the other 120 historical pages.
+
+| Frozen implementation | Edits | Compact CER | Empty | Runtime errors | Token caps |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Tesseract fast LSTM | 12,747 | 96.56% | 5 | 0 | N/A |
+| KhmerEasyTools fast | 12,747 | 96.56% | 5 | 0 | N/A |
+| Surya 2 first-pass GGUF on Mac | 71,713 | 543.24% | 0 | 0 | 21 |
+| PaddleOCR-VL 1.6 MLX 4-bit on CUDA | 69,705 | 528.03% | 4 | 0 | 24 |
+| DeepSeek-OCR MLX 4-bit on CUDA | 104,609 | 792.43% | 3 | 0 | 27 |
+| Qwen2.5-VL-3B BF16 on CUDA | 72,308 | 547.75% | 0 | 0 | 11 |
+| Qwen3-VL-2B BF16 on CUDA | 90,326 | 684.24% | 0 | 0 | 30 |
+
+| Qwen comparison with Tesseract | CER difference in points | Descriptive 95% group interval |
+| --- | ---: | ---: |
+| Qwen2.5-VL-3B BF16 on CUDA | +451.19 | [+393.75, +495.89] |
+| Qwen3-VL-2B BF16 on CUDA | +587.68 | [+544.51, +648.73] |
+
+Negative differences favor the named Qwen implementation. Intervals use
+5,000 paired resamples of 14 heuristic filename groups. They are descriptive
+and do not establish pairwise significance among all seven systems.
+
+The [complete Qwen results](../benchmarks/accuracy/small-vlm/local-results.json)
+include frozen identities, all 60 per-page records and an independent audit
+of 180 edit-distance projections. Errors, empty outputs and caps are retained.
+CER can exceed 100% because of insertions. The
+[generation diagnostic](../benchmarks/accuracy/document-ocr/generation-diagnostics.json)
+describes lengths and repeated sequences without clipping or deduplicating
+predictions. None of these checks independently validates the source labels.
+
+Different precision, native image resizing and patch allocation, batching and
+shared hardware prevent causal attribution to architecture or nominal model
+size. These historical handwriting results do not certify modern printed
+documents, phone scans or business-field extraction.
+
 ## Private business-image reference preparation
 
 A separately supplied local folder has 148 images, with 146 distinct image
@@ -113,3 +152,7 @@ CER is calculated against them. A Khmer reader must review every visible
 character and reading order before a document can support a modern-document
 accuracy claim. Images and full draft transcripts remain private; only
 aggregate authoring counts and configuration are committed.
+
+The [reference-review workflow](REFERENCE_REVIEW.md) specifies image coverage,
+literal correction, independent second-pass review, document grouping and
+reference freezing before future comparison predictions.

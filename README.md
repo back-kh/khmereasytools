@@ -9,7 +9,7 @@ and improved defaults. Segmentation F1 rises from 77.21% to 78.46% on khPOS;
 whole-word POS joint F1 rises modestly from 67.40% to 67.67% on ALT; OCR
 character error rate falls from 15.99% to 11.43% on 40 reserved page images.
 These samples have documented overlap/annotation limits. Review output where
-errors matter. Core tools remain dependency-free; the wheel is about 507 KiB.
+errors matter. Core tools remain dependency-free; the wheel is about 508 KiB.
 
 The [sub-10% OCR experiment](docs/OCR_TARGET.md) did not meet that target:
 the optional larger model scored 11.49% versus 11.43% for the default on the
@@ -18,7 +18,7 @@ was also found in development data; historical raw reports remain preserved.
 An additional adaptive `khm+eng` check improves this local image score to
 10.68%, still above target; use that existing explicit mode for mixed text.
 
-Separate research protocols cover a [150-page historical OCR study](docs/DOCUMENT_OCR.md)
+Recorded research comparisons cover a [150-page historical OCR study](docs/DOCUMENT_OCR.md)
 and an [exploratory small Qwen comparison](docs/SMALL_VLM.md). Their external
 frameworks and model weights are not toolkit requirements. Private
 model-generated transcription drafts are kept separate from OCR gold.

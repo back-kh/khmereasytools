@@ -16,6 +16,65 @@ The [per-system identity record](../benchmarks/accuracy/document-ocr/execution-a
 retains both frozen tokens. The independent [Qwen extension](SMALL_VLM.md)
 covers only the 30 official test pages.
 
+## Recorded results
+
+All five frozen implementations completed all 150 historical images. The
+denominator is **67,487 compact NFC code points**. These results describe
+historical handwriting, outside the toolkit's intended printed-page scope.
+
+| Frozen implementation | Edits | Compact CER | Empty | Runtime errors | Token caps |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Tesseract fast LSTM | 65,406 | 96.92% | 14 | 0 | N/A |
+| KhmerEasyTools fast | 65,406 | 96.92% | 14 | 0 | N/A |
+| Surya 2 first-pass GGUF on Mac | 369,952 | 548.18% | 0 | 0 | 109 |
+| PaddleOCR-VL 1.6 MLX 4-bit on CUDA | 365,514 | 541.61% | 14 | 0 | 118 |
+| DeepSeek-OCR MLX 4-bit on CUDA | 542,202 | 803.42% | 17 | 0 | 140 |
+
+CER is not clipped at 100%: long inserted or repeated text can produce larger
+values. Empty outputs, errors and token caps retain each page's full reference
+denominator; a cap retains the generated output rather than replacing it.
+The [post hoc generation diagnostic](../benchmarks/accuracy/document-ocr/generation-diagnostics.json)
+describes output lengths and repeated eight-code-point sequences. It does not
+remove repetitions, alter predictions or provide a second accuracy score.
+
+| Frozen implementation | Official test CER, 30 pages | Source-train stress CER, 120 pages |
+| --- | ---: | ---: |
+| Tesseract fast LSTM | 96.56% | 97.00% |
+| KhmerEasyTools fast | 96.56% | 97.00% |
+| Surya 2 first-pass GGUF on Mac | 543.24% | 549.38% |
+| PaddleOCR-VL 1.6 MLX 4-bit on CUDA | 528.03% | 544.91% |
+| DeepSeek-OCR MLX 4-bit on CUDA | 792.43% | 806.09% |
+
+The official-test denominator is 13,201 code points; the source-train stress
+denominator is 54,286. These partitions share ten heuristic filename prefixes
+and do not establish manuscript-independent evaluation.
+
+| Comparison with Tesseract, all 150 pages | CER difference in points | Descriptive 95% group interval |
+| --- | ---: | ---: |
+| KhmerEasyTools fast | +0.00 | [+0.00, +0.00] |
+| Surya 2 first-pass GGUF on Mac | +451.27 | [+390.37, +516.73] |
+| PaddleOCR-VL 1.6 MLX 4-bit on CUDA | +444.69 | [+368.60, +532.20] |
+| DeepSeek-OCR MLX 4-bit on CUDA | +706.50 | [+584.78, +826.86] |
+
+A negative difference favors the named comparison. The intervals use 5,000
+paired resamples of 27 filename-prefix groups and are descriptive, without
+multiplicity correction or independently verified manuscript identities.
+
+Tesseract and KhmerEasyTools have identical compact outputs on all 150 pages.
+The preprocessing provides no measured gain on this handwriting population.
+The repeated initial and amended CPU runs reproduce those outputs; they add
+no independent documents. These results support neither a general ranking of
+model families nor a controlled speed comparison across platforms.
+
+The [complete measurements](../benchmarks/accuracy/document-ocr/local-results.json)
+retain every per-page score, raw-record hash, source partition, backend
+environment and paired interval without redistributing transcript text.
+The [independent audit](../benchmarks/accuracy/document-ocr/consistency-audit.json)
+verifies 150 input hashes, 750 prediction records and 2,250 edit-distance
+projections using a separate standard-library distance implementation.
+This verifies score computation and provenance, not the semantic correctness
+or completeness of the inherited references.
+
 ## Data availability and source quality
 
 The [source survey](../benchmarks/accuracy/document-ocr/data-survey.json) records
@@ -33,6 +92,9 @@ original SleukRith image files. The selected set has 150 distinct image and raw
 reference hashes and 27 conservative filename groups. Group identities are not
 independently verified book identities. Pretrained-model overlap and inherited
 transcription errors remain possible.
+The selected official-test pages occupy 14 filename groups and the selected
+training pages occupy 23, with ten prefixes shared across the two selections.
+This heuristic does not establish manuscript-level split independence.
 
 KH-FUNSD describes 158 business documents but its public repository currently
 provides no image/annotation download. Khmer Document Corpus version 0.1 lacks

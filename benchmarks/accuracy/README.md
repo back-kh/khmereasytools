@@ -2,6 +2,17 @@
 
 See [the evaluation guide](../../docs/ACCURACY.md) for interpretation.
 
+The [full-page study](../../docs/DOCUMENT_OCR.md) records five frozen OCR
+implementations on 150 historical manuscript images, with separate results for
+30 official CHURRO-DS test pages and 120 source-training stress pages. The
+[small-model extension](../../docs/SMALL_VLM.md) adds two Qwen implementations
+on the same 30 test images. These are historical handwriting comparisons,
+separate from modern printed documents and three-OS installation checks.
+The `document-ocr/` and `small-vlm/` directories retain source/model identities,
+execution amendments, per-page counts and independent edit-count audits.
+Private model-generated business-image transcripts are annotation drafts and
+are excluded from benchmark scoring.
+
 For current defaults, see [paired improvements](../../docs/IMPROVEMENTS.md).
 See [the sub-10% experiment](../../docs/OCR_TARGET.md) and
 [its reports](ocr-target/README.md) for the optional model comparison and a

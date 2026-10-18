@@ -1,0 +1,204 @@
+{
+  "schema_version": 2,
+  "passed": true,
+  "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+  "source_revision": "85d0c7d74ddce198e83d5fba268dd586582d0a34",
+  "auditor_sha256": "a07d78266ff14eb12c629a3bcd92b93fefd665e238d4ebcbae200a154159e242",
+  "results_sha256": "ec7a9feb79e2c8a3ba8c2754e12e507bc77c73b2186493299d3d523bf8a79402",
+  "native_validation_sha256": "7479e5a1a7e436d064d27e74cbc814b6503a884b527f50444288659f5c868791",
+  "independent_distance": "Exact integer bit-vector Levenshtein; standard-library implementation",
+  "distance_self_checks": 1039,
+  "input_hashes_verified": 150,
+  "unique_page_image_hashes": 150,
+  "unique_raw_reference_hashes": 150,
+  "source_split_counts": {
+    "test": 30,
+    "train": 120
+  },
+  "selected_from_source_inventory": 622,
+  "prediction_records_verified": 750,
+  "independent_score_projections_verified": 2250,
+  "tesseract_toolkit_identical_compact_pages": 150,
+  "repeated_cpu_attempts": {
+    "tesseract-fast": {
+      "repeated_pages": 150,
+      "identical_compact_predictions": 150
+    },
+    "khmereasytools-fast": {
+      "repeated_pages": 150,
+      "identical_compact_predictions": 150
+    }
+  },
+  "native_installation_records_verified": 6,
+  "tests_per_native_run": 158,
+  "summary": {
+    "churro-sleuk": {
+      "tesseract-fast": {
+        "samples": 150,
+        "reference_codepoints": 67487,
+        "codepoint_edits": 65406,
+        "compact_codepoint_cer": 0.9691644316683213,
+        "exact_compact": 0,
+        "empty": 14,
+        "failures": 0,
+        "capped": 0
+      },
+      "khmereasytools-fast": {
+        "samples": 150,
+        "reference_codepoints": 67487,
+        "codepoint_edits": 65406,
+        "compact_codepoint_cer": 0.9691644316683213,
+        "exact_compact": 0,
+        "empty": 14,
+        "failures": 0,
+        "capped": 0
+      },
+      "surya-2": {
+        "samples": 150,
+        "reference_codepoints": 67487,
+        "codepoint_edits": 369952,
+        "compact_codepoint_cer": 5.481826129476788,
+        "exact_compact": 0,
+        "empty": 0,
+        "failures": 0,
+        "capped": 109
+      },
+      "paddleocr-vl-1.6-4bit": {
+        "samples": 150,
+        "reference_codepoints": 67487,
+        "codepoint_edits": 365514,
+        "compact_codepoint_cer": 5.416065316283136,
+        "exact_compact": 0,
+        "empty": 14,
+        "failures": 0,
+        "capped": 118
+      },
+      "deepseek-ocr-4bit": {
+        "samples": 150,
+        "reference_codepoints": 67487,
+        "codepoint_edits": 542202,
+        "compact_codepoint_cer": 8.034169543763984,
+        "exact_compact": 0,
+        "empty": 17,
+        "failures": 0,
+        "capped": 140
+      }
+    },
+    "churro-sleuk-test": {
+      "tesseract-fast": {
+        "samples": 30,
+        "reference_codepoints": 13201,
+        "codepoint_edits": 12747,
+        "compact_codepoint_cer": 0.9656086660101507,
+        "exact_compact": 0,
+        "empty": 5,
+        "failures": 0,
+        "capped": 0
+      },
+      "khmereasytools-fast": {
+        "samples": 30,
+        "reference_codepoints": 13201,
+        "codepoint_edits": 12747,
+        "compact_codepoint_cer": 0.9656086660101507,
+        "exact_compact": 0,
+        "empty": 5,
+        "failures": 0,
+        "capped": 0
+      },
+      "surya-2": {
+        "samples": 30,
+        "reference_codepoints": 13201,
+        "codepoint_edits": 71713,
+        "compact_codepoint_cer": 5.432391485493524,
+        "exact_compact": 0,
+        "empty": 0,
+        "failures": 0,
+        "capped": 21
+      },
+      "paddleocr-vl-1.6-4bit": {
+        "samples": 30,
+        "reference_codepoints": 13201,
+        "codepoint_edits": 69705,
+        "compact_codepoint_cer": 5.280281796833573,
+        "exact_compact": 0,
+        "empty": 4,
+        "failures": 0,
+        "capped": 24
+      },
+      "deepseek-ocr-4bit": {
+        "samples": 30,
+        "reference_codepoints": 13201,
+        "codepoint_edits": 104609,
+        "compact_codepoint_cer": 7.924323914854935,
+        "exact_compact": 0,
+        "empty": 3,
+        "failures": 0,
+        "capped": 27
+      }
+    },
+    "churro-sleuk-train": {
+      "tesseract-fast": {
+        "samples": 120,
+        "reference_codepoints": 54286,
+        "codepoint_edits": 52659,
+        "compact_codepoint_cer": 0.9700291051099731,
+        "exact_compact": 0,
+        "empty": 9,
+        "failures": 0,
+        "capped": 0
+      },
+      "khmereasytools-fast": {
+        "samples": 120,
+        "reference_codepoints": 54286,
+        "codepoint_edits": 52659,
+        "compact_codepoint_cer": 0.9700291051099731,
+        "exact_compact": 0,
+        "empty": 9,
+        "failures": 0,
+        "capped": 0
+      },
+      "surya-2": {
+        "samples": 120,
+        "reference_codepoints": 54286,
+        "codepoint_edits": 298239,
+        "compact_codepoint_cer": 5.493847400803154,
+        "exact_compact": 0,
+        "empty": 0,
+        "failures": 0,
+        "capped": 88
+      },
+      "paddleocr-vl-1.6-4bit": {
+        "samples": 120,
+        "reference_codepoints": 54286,
+        "codepoint_edits": 295809,
+        "compact_codepoint_cer": 5.449084478502745,
+        "exact_compact": 0,
+        "empty": 10,
+        "failures": 0,
+        "capped": 94
+      },
+      "deepseek-ocr-4bit": {
+        "samples": 120,
+        "reference_codepoints": 54286,
+        "codepoint_edits": 437593,
+        "compact_codepoint_cer": 8.060881258519691,
+        "exact_compact": 0,
+        "empty": 14,
+        "failures": 0,
+        "capped": 113
+      }
+    }
+  },
+  "backend_environment_tokens": {
+    "tesseract-fast": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+    "khmereasytools-fast": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+    "surya-2": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+    "paddleocr-vl-1.6-4bit": "41e89f5042b38b221e90b463a72df3c0ef86aa1b3314393d003c40c904f02501",
+    "deepseek-ocr-4bit": "41e89f5042b38b221e90b463a72df3c0ef86aa1b3314393d003c40c904f02501"
+  },
+  "notes": [
+    "Repeated CPU runs are repeatability evidence, not additional independent pages.",
+    "Source filename groups are not verified independent books.",
+    "This audit validates bookkeeping and exact edit counts, not transcript correctness."
+  ]
+}
