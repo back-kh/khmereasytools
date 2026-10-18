@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.4.0.dev0 — unreleased
+## 0.4.0 — 2026-10-18
 
 ### Added
 

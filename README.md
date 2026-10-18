@@ -1,31 +1,31 @@
 # Khmer Easy Tools
 
 [![PyPI version](https://img.shields.io/pypi/v/khmereasytools.svg)](https://pypi.org/project/khmereasytools/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/back-kh/khmereasytools/blob/v0.4.0/LICENSE)
 
 Lightweight Khmer NLP and **traceable text preparation**, with no runtime dependencies for core features. Inspect suspicious text, choose cleanup rules explicitly, and map cleaned text or tokens back to their source. Everything runs locally.
 
-The development version adds a text-quality workflow for OCR review, annotation, search preprocessing, and corpus preparation. This is an engineering focus, **not a claim of research novelty or superior segmentation accuracy**. See [design, prior art, and limitations](docs/DESIGN.md).
+Version 0.4.0 adds a text-quality workflow for OCR review, annotation, search preprocessing, and corpus preparation. This is an engineering focus, **not a claim of research novelty or superior segmentation accuracy**. See [design, prior art, and limitations](https://github.com/back-kh/khmereasytools/blob/v0.4.0/docs/DESIGN.md).
 
 ## Installation
 
-The new APIs below are in **0.4.0.dev0 in this source checkout**. They are not in the published 0.3.8 release.
+Version **0.4.0** includes the text-quality APIs below and preserves the legacy core APIs.
 
 ```bash
-# From this checkout:
-python -m pip install .
+# Install or upgrade from PyPI:
+python -m pip install --upgrade khmereasytools
 
-# Published version (legacy APIs only until a new release is published):
-python -m pip install khmereasytools
+# From a source checkout:
+python -m pip install .
 ```
 
 Python 3.6+; use a maintained Python version for new projects. Core features do not download models or import optional OCR/POS libraries.
 
 ```bash
-# Optional extras, from this checkout:
-python -m pip install '.[khmernltk]'  # installs the khmer-nltk distribution
-python -m pip install '.[ocr]'       # pytesseract + Pillow
-python -m pip install '.[all]'
+# Optional extras:
+python -m pip install 'khmereasytools[khmernltk]'  # installs the khmer-nltk distribution
+python -m pip install 'khmereasytools[ocr]'       # pytesseract + Pillow
+python -m pip install 'khmereasytools[all]'
 ```
 
 OCR also requires a system installation of [Tesseract](https://tesseract-ocr.github.io/tessdoc/Installation.html) and Khmer language data (`khm`). The import name for POS is `khmernltk`; its **PyPI distribution name is `khmer-nltk`**.
@@ -155,7 +155,7 @@ python -m build
 python -m twine check dist/*
 ```
 
-Tests cover source-offset preservation, reversible edits, cleanup stability, mixed scripts, legacy compatibility, optional imports, CLI errors, and deterministic randomized inputs. CI also installs the built wheel into an isolated environment. See [CHANGELOG.md](CHANGELOG.md) and [source provenance](docs/SOURCE_PROVENANCE.md).
+Tests cover source-offset preservation, reversible edits, cleanup stability, mixed scripts, legacy compatibility, optional imports, CLI errors, and deterministic randomized inputs. CI also installs the built wheel into an isolated environment. See [CHANGELOG.md](https://github.com/back-kh/khmereasytools/blob/v0.4.0/CHANGELOG.md) and [source provenance](https://github.com/back-kh/khmereasytools/blob/v0.4.0/docs/SOURCE_PROVENANCE.md).
 
 Contributions should include a minimal example, expected behavior, and tests. Changes to spelling rules or linguistic accuracy claims need native-speaker review and an independently annotated evaluation set.
 
@@ -172,4 +172,4 @@ The original README cites the related stop-word research; it does not evaluate t
 }
 ```
 
-MIT License. See [LICENSE](LICENSE).
+MIT License. See [LICENSE](https://github.com/back-kh/khmereasytools/blob/v0.4.0/LICENSE).

@@ -7,13 +7,18 @@ with (Path(__file__).parent / "README.md").open(encoding="utf-8") as fh:
 
 setup(
     name="khmereasytools",
-    version="0.4.0.dev0",
+    version="0.4.0",
     author="Nimol Thuon",
     author_email="nimol.thuon@gmail.com",
-    description="A simple, self-contained library for Khmer text processing, with optional OCR and POS tagging support.",
+    description="Lightweight Khmer NLP with traceable text cleanup, Unicode diagnostics, and source-aligned tokens.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/back-kh/khmereasytools",
+    project_urls={
+        "Source": "https://github.com/back-kh/khmereasytools",
+        "Issues": "https://github.com/back-kh/khmereasytools/issues",
+        "Changelog": "https://github.com/back-kh/khmereasytools/blob/main/CHANGELOG.md",
+    },
     packages=find_packages(include=["khmereasytools", "khmereasytools.*"]),
     entry_points={"console_scripts": ["khmereasytools=khmereasytools.cli:main"]},
     classifiers=[

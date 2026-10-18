@@ -21,7 +21,7 @@ from .text_quality import (
     khnormalize,
 )
 
-__version__ = "0.4.0.dev0"
+__version__ = "0.4.0"
 
 __all__ = [
     "get_default_stop_words", "load_stop_words_from_file", "khfilter", "khseg",

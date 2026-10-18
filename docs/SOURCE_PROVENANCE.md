@@ -13,4 +13,4 @@ The inherited 213-entry word dictionary and 379-entry stop-word set were preserv
 
 The legacy README's claimed outputs for keyword extraction and syllabification did not match the recovered implementation. Updated examples avoid implying accuracy that the implementation does not provide. The unrelated `KH-HTML-Parser` example is unchanged and still requires BeautifulSoup separately.
 
-The old root initializer and stale checked-in `PKG-INFO` were removed. Build metadata is now generated from `setup.py`, and `pyproject.toml` declares the build backend. The next version is explicitly marked **0.4.0.dev0**; this work does not publish a PyPI release.
+The old root initializer and stale checked-in `PKG-INFO` were removed. Build metadata is now generated from `setup.py`, and `pyproject.toml` declares the build backend. The restored implementation was first prepared as **0.4.0.dev0**, then promoted to **0.4.0** for the requested PyPI release.
