@@ -4,6 +4,13 @@ These results describe the earlier defaults. See [the current paired
 improvements](IMPROVEMENTS.md) for frequency-based segmentation, direct POS
 tagging, OCR preprocessing and the corrected whole-word POS comparison.
 
+Later inspection found swapped transcript/image pairings for task-2/goc_3
+and task-2/goc_4 in this archive. The full 60-image and development aggregates
+include these mismatches; they are raw benchmark scores, not pure recognition
+error estimates. The 40-image comparison excludes both IDs. See the
+[OCR target investigation](OCR_TARGET.md). Historical numbers below are kept
+unchanged for reproducibility.
+
 OCR and POS execute successfully, but their output needs review. Passing
 installation tests is not proof of linguistic accuracy. These measurements
 use real public documents and annotated text, plus clearly labeled authored

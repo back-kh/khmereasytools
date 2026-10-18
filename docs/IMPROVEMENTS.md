@@ -14,6 +14,11 @@ No service, new model download, or configuration choice is needed for these
 improvements. The optional packages/system engine are still installed once.
 PyPI 0.4.0 remains the published version until a separate release.
 
+A later [sub-10% OCR experiment](OCR_TARGET.md) kept these defaults: the
+optional larger model did not improve the 40-image comparison. It also found
+a swapped image/transcript pair in development data; this affects the raw
+development aggregate, not the 40 comparison images reported below.
+
 ## Paired results
 
 Local macOS arm64, Python 3.9.6; same datasets/dependencies/model files before

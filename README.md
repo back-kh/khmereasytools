@@ -11,6 +11,11 @@ character error rate falls from 15.99% to 11.43% on 40 reserved page images.
 These samples have documented overlap/annotation limits. Review output where
 errors matter. Core tools remain dependency-free; the wheel is about 507 KiB.
 
+The [sub-10% OCR experiment](docs/OCR_TARGET.md) did not meet that target:
+the optional larger model scored 11.49% versus 11.43% for the default on the
+same 40 images. The default is unchanged. A swapped transcript/image pair
+was also found in development data; historical raw reports remain preserved.
+
 ## Install
 
 From this checkout:

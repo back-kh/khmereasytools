@@ -38,3 +38,10 @@ Optional tests are skipped unless explicitly enabled. Installing optional packag
 The GitHub Actions workflow builds a wheel and source archive, tests the core on multiple Python versions, and tests fresh wheel installations on Windows, macOS, and Linux with Python 3.11. Each OS runs both a dependency-free core environment and an `[all]` environment outside the source checkout. OCR uses a checksum-pinned official `tessdata_fast` Khmer model; POS uses the actual installed backend, without mocks. Machine-readable artifacts record OS, Python/dependency versions, source revision, wheel checksum, exported functions, executed/skipped tests, failures, backend flags, and setup-check statuses.
 
 These jobs must actually pass before claiming that a particular revision is checked on all three operating systems. Merely having a workflow file is not a passing result. Current Python 3.14/3.15 source tests cover core code; they do not establish optional backend support on those versions. Python 3.6/3.9 checks are legacy core compatibility only, not recommendations to use unsupported runtimes.
+
+The separate [OCR target experiment](OCR_TARGET.md) compares pinned fast and
+best Khmer models through the installed image/PDF APIs on all three OSes.
+Its accuracy target is reported separately from execution success; a green
+workflow does not mean CER is below 10%. Raw full-corpus/development scores
+include a documented swapped image/transcript pair; the 40 comparison images
+exclude both affected IDs. No new production model or dependency is added.

@@ -50,4 +50,9 @@ path. Annotation alignment problems limit crop/layout diagnostics; semantic
 layout quality is not established. khocr now shares the structured recognition
 path, so whitespace formatting may differ from its earlier image_to_string path.
 
+The [sub-10% target investigation](OCR_TARGET.md) compared a larger official
+model, additional enlargement and a different page mode. The target was not
+met; the lightweight default remains unchanged. The guide also documents
+swapped image/transcript pairings found in the development partition.
+
 Sources: [Tesseract TSV and CLI documentation](https://tesseract-ocr.github.io/tessdoc/Command-Line-Usage.html), [pytesseract API](https://github.com/madmaze/pytesseract), and [pypdfium2 API and thread-safety guidance](https://pypdfium2.readthedocs.io/en/stable/python_api.html).

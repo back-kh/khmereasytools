@@ -2,6 +2,8 @@
 
 ## 0.5.0.dev0 — unreleased
 
+- Measure the sub-10% OCR target with pinned fast/best models and native installed image/PDF checks; retain the lightweight default when the larger model does not improve the comparison. Document swapped development image/transcript pairings without altering historical raw scores.
+
 - Improve default segmentation with 16,546 pinned SIL NRSI unigram counts while retaining the 81,005-entry vocabulary and zero core dependencies; preserve explicit coverage/longest/legacy modes.
 - Tag chosen POS words directly with the existing optional CRF, avoiding whitespace tokens and loading of a second model; serialize native tagger access.
 - Share bounded automatic small-image OCR preprocessing across plain, structured, PDF and CLI paths, mapping boxes back to source coordinates; retain explicit no-preprocessing mode.

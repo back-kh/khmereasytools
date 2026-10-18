@@ -3,6 +3,11 @@
 See [the evaluation guide](../../docs/ACCURACY.md) for interpretation.
 
 For current defaults, see [paired improvements](../../docs/IMPROVEMENTS.md).
+See [the sub-10% experiment](../../docs/OCR_TARGET.md) and
+[its reports](ocr-target/README.md) for the optional model comparison and a
+swapped image/transcript pair discovered in development data. Historical
+60-image and raw development aggregates include that mismatch; they remain
+unchanged. The 40 comparison images exclude both affected IDs.
 improvements/ contains paired baseline/development/reserved reports; the
 IMPROVEMENT_PROTOCOL.md and IMPROVEMENT_SELECTION.md files record the policy
 and development decision before reserved candidate predictions. Historical

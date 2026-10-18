@@ -36,6 +36,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dist", type=Path, default=ROOT / "dist")
     parser.add_argument("--reports", type=Path, default=ROOT / "validation-results/accuracy")
+    parser.add_argument("--ocr-target", action="store_true", help="Measure the frozen optional-model comparison")
     args = parser.parse_args()
     wheels = list(args.dist.resolve().glob("*.whl"))
     if len(wheels) != 1:
@@ -71,6 +72,19 @@ def main():
                        cwd=directory, check=True)
         subprocess.run(runner + ["--name", "improved_reserved", "--installed"],
                        cwd=directory, check=True)
+        if args.ocr_target:
+            best = os.environ.get("KET_BEST_TESSDATA")
+            if not best:
+                raise ValueError("Run prepare_ocr_ci.py --best before --ocr-target")
+            target_runner = [str(python), str(ROOT / "scripts/evaluate_ocr_target.py"),
+                             "--partition", "reserved", "--installed", "--pdf-transport",
+                             "--output", str(reports)]
+            variables = dict(os.environ, KET_VALIDATION_WHEEL_SHA256=hashlib.sha256(
+                wheels[0].read_bytes()).hexdigest())
+            subprocess.run(target_runner + ["--profile", "fast-auto"],
+                           cwd=directory, env=variables, check=True)
+            subprocess.run(target_runner + ["--profile", "best-auto", "--tessdata-dir", best],
+                           cwd=directory, env=variables, check=True)
     before = json.loads((reports / "baseline_reserved.json").read_text(encoding="utf-8"))
     after = json.loads((reports / "improved_reserved.json").read_text(encoding="utf-8"))
     summary = dict(
@@ -93,6 +107,25 @@ def main():
     assert not after["word_model_loaded"] and after["pos_model_loaded"]
     for dataset in ("alt_words", "khpos_segmentation"):
         assert all(not value["alignment_failures"] for value in after[dataset]["metrics"].values())
+    if args.ocr_target:
+        fast, best = [json.loads((reports / (profile + "-reserved.json")).read_text(encoding="utf-8"))
+                      for profile in ("fast-auto", "best-auto")]
+        def inputs(report):
+            return [(row["id"], row["image_sha256"], row["annotation_sha256"])
+                    for row in report["per_page"]]
+        assert inputs(fast) == inputs(best), "Model comparison used different documents"
+        assert fast["scores"]["codepoint_edits"] == after["ocr"]["public_default"]["codepoint_edits"], \
+            "Target harness differs from the established default path"
+        target_summary = dict(
+            source_revision=os.environ.get("GITHUB_SHA"), wheel_sha256=summary["wheel_sha256"],
+            fast_cer=fast["scores"]["compact_codepoint_cer"],
+            best_cer=best["scores"]["compact_codepoint_cer"],
+            fast_pdf_cer=fast["pdf_transport"]["compact_codepoint_cer"],
+            best_pdf_cer=best["pdf_transport"]["compact_codepoint_cer"],
+            target_cer=0.1, fast_target_met=fast["target_met"], best_target_met=best["target_met"],
+            interpretation="A successful evaluation run is not evidence that the accuracy target was met.")
+        (reports / "ocr-target.json").write_text(json.dumps(target_summary, indent=2) + "\n", encoding="utf-8")
+        print(json.dumps(target_summary, indent=2))
 
 
 if __name__ == "__main__":

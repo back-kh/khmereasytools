@@ -6,10 +6,13 @@ on:
       - '.gitattributes'
       - '.github/workflows/accuracy.yml'
       - 'scripts/compare_improvements.py'
+      - 'scripts/evaluate_ocr_target.py'
+      - 'scripts/prepare_ocr_ci.py'
       - 'scripts/run_accuracy_ci.py'
       - 'scripts/evaluation_metrics.py'
       - 'scripts/fetch_accuracy_data.py'
       - 'benchmarks/accuracy/IMPROVEMENT_PROTOCOL.md'
+      - 'benchmarks/accuracy/OCR_TARGET_PROTOCOL.md'
       - 'khmereasytools/segmentation.py'
       - 'khmereasytools/pos.py'
       - 'khmereasytools/ocr.py'
@@ -63,8 +66,10 @@ jobs:
         run: choco install tesseract --no-progress --yes
       - name: Prepare pinned Khmer model
         run: python scripts/prepare_ocr_ci.py
+      - name: Prepare separate pinned optional model
+        run: python scripts/prepare_ocr_ci.py --best
       - name: Compare real-document and annotated-text accuracy
-        run: python scripts/run_accuracy_ci.py
+        run: python scripts/run_accuracy_ci.py --ocr-target
       - uses: actions/upload-artifact@v4
         if: always()
         with:
