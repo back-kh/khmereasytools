@@ -7,7 +7,7 @@ import sys
 import unittest
 from pathlib import Path
 
-from khmereasytools import khanalyze, khocr, khocr_layout, khocr_overlay, khprocess, khdoctor
+from khmereasytools import khanalyze, khocr, ket_ocr, khocr_layout, khocr_overlay, khprocess, khdoctor
 
 
 @unittest.skipUnless(os.environ.get("KET_RUN_OCR_TESTS") == "1", "Set KET_RUN_OCR_TESTS=1 for real OCR tests")
@@ -82,6 +82,13 @@ class RealKhmerOCRTests(unittest.TestCase):
         self.assertGreater(sum("\u1780" <= char <= "\u17ff" for char in text), 10)
         self.assertNotIn("error", text.lower())
 
+    def test_ket_ocr_image_pdf_and_missing_input(self):
+        self.assertEqual(ket_ocr(self.image, psm=6), khanalyze(self.image, psm=6, segment=False).text)
+        text = ket_ocr(self.image.with_name("khmer_document.pdf"), pages=[1], dpi=144, psm=6)
+        self.assertGreater(sum("\u1780" <= char <= "\u17ff" for char in text), 10)
+        with self.assertRaises(FileNotFoundError):
+            ket_ocr(self.image.with_name("does-not-exist.png"))
+
     def test_auto_and_none_preserve_source_geometry_and_share_text_path(self):
         automatic = khocr_layout(self.image, segment=False)
         original = khocr_layout(self.image, preprocess="none", segment=False)
@@ -120,6 +127,9 @@ class RealKhmerOCRTests(unittest.TestCase):
         result = json.loads(detailed.stdout)
         self.assertEqual(result["source_type"], "image")
         self.assertEqual(len(result["pages"][0]["layout"]["lines"]), 4)
+        alias = subprocess.run([sys.executable, "-m", "khmereasytools", "ket-ocr", str(self.image), "--psm", "6"],
+                               stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True).stdout.decode()
+        self.assertEqual(alias, text)
 
 
 if __name__ == "__main__":

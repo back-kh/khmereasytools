@@ -15,6 +15,9 @@ from .lexicon import get_khmer_dictionary
 from .segmentation import TokenSpan, khseg_spans
 from .search import KhmerSearchIndex, SearchHit, SearchMatch, khindex, khsearch
 from .translation import TranslationError, khtranslate
+from .local_model import LocalModel, LocalModelError
+from .rag import KhmerRAG, RAGResult, RAGSource, khrag
+from .ket_ocr import ket_ocr
 from .sentences import SentenceSpan, khsentences
 from .extraction import TextMatch, khextract
 from .processing import ProcessResult, khprocess
@@ -43,6 +46,7 @@ __all__ = [
     "DocumentLayout", "DocumentPage", "khanalyze",
     "KhmerSearchIndex", "SearchHit", "SearchMatch", "khindex", "khsearch",
     "TranslationError", "khtranslate",
+    "LocalModel", "LocalModelError", "KhmerRAG", "RAGResult", "RAGSource", "khrag", "ket_ocr",
     "SentenceSpan", "khsentences", "TextMatch", "khextract",
     "ProcessResult", "khprocess", "DoctorCheck", "DoctorReport", "khdoctor",
 ]

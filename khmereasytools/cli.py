@@ -10,6 +10,8 @@ from .ocr import OCRError, khocr_overlay
 from .documents import khanalyze
 from .search import khsearch
 from .translation import TranslationError, khtranslate
+from .local_model import LocalModel, LocalModelError
+from .rag import khrag
 from .sentences import khsentences
 from .extraction import khextract
 from .processing import khprocess
@@ -30,8 +32,8 @@ def main(argv=None):
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command")
     for command in ("audit", "normalize", "digits", "segment", "sentences", "extract",
-                    "process", "doctor", "ocr", "search", "translate"):
-        subparser = commands.add_parser(command)
+                    "process", "doctor", "ocr", "search", "rag", "translate"):
+        subparser = commands.add_parser(command, aliases=["ket-ocr"] if command == "ocr" else [])
         if command == "doctor":
             subparser.add_argument("--json", action="store_true", help="Print a machine-readable setup report")
             subparser.add_argument("--require", action="append", default=[],
@@ -57,11 +59,16 @@ def main(argv=None):
             subparser.add_argument("--frame", type=int, default=None, help=argparse.SUPPRESS)
             subparser.add_argument("--no-segment", action="store_true", help=argparse.SUPPRESS)
             subparser.add_argument("--overlay", help="Write a line-box review PNG (image input only)")
-        elif command == "search":
+        elif command in ("search", "rag"):
             subparser.add_argument("query", help="Khmer or Latin search terms")
             subparser.add_argument("files", nargs="+", help="UTF-8 text files to search locally")
-            subparser.add_argument("--limit", type=int, default=5)
-            subparser.add_argument("--all", action="store_true", help="Require every query term")
+            subparser.add_argument("--limit", type=int, default=3 if command == "rag" else 5)
+            if command == "search":
+                subparser.add_argument("--all", action="store_true", help="Require every query term")
+            else:
+                subparser.add_argument("--model", help="Installed local Ollama model; omit for retrieval only")
+                subparser.add_argument("--base-url", default="http://127.0.0.1:11434", help="Local Ollama origin")
+                subparser.add_argument("--timeout", type=float, default=120.0)
         else:
             subparser.add_argument("file", nargs="?", default="-", help="UTF-8 file, or - for stdin")
         if command == "normalize":
@@ -83,11 +90,15 @@ def main(argv=None):
             subparser.add_argument("--to", dest="target", default="en", help="Target language code (default: en)")
             subparser.add_argument("--from", dest="source", default="km", help="Source language code, or auto (default: km)")
             subparser.add_argument("--timeout", type=float, default=30.0)
+            subparser.add_argument("--model", help="Use an installed local Ollama model instead of Google")
+            subparser.add_argument("--base-url", default="http://127.0.0.1:11434", help="Local Ollama origin")
         elif command == "extract":
             subparser.add_argument("--kind", action="append", choices=("url", "email", "phone", "date", "number"),
                                    help="Return only this kind; repeat as needed")
             subparser.add_argument("--date-order", choices=("DMY", "MDY"))
     args = parser.parse_args(argv)
+    if args.command == "ket-ocr":
+        args.command = "ocr"
     if args.command is None:
         parser.print_help()
         return 0
@@ -114,12 +125,16 @@ def main(argv=None):
             output = (json.dumps(_jsonable(report), ensure_ascii=False, indent=2) + "\n") if args.json else report.text
             sys.stdout.buffer.write(output.encode("utf-8"))
             return 0
-        if args.command == "search":
+        if args.command in ("search", "rag"):
             documents = {}
             for path in args.files:
                 with open(path, encoding="utf-8", newline="") as handle:
                     documents[path] = handle.read()
-            hits = khsearch(args.query, documents, limit=args.limit, match="all" if args.all else "any")
+            if args.command == "rag":
+                model = LocalModel(args.model, base_url=args.base_url, timeout=args.timeout) if args.model else None
+                hits = khrag(args.query, documents, limit=args.limit, generator=model)
+            else:
+                hits = khsearch(args.query, documents, limit=args.limit, match="all" if args.all else "any")
             sys.stdout.buffer.write((json.dumps(_jsonable(hits), ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
             return 0
         if args.command == "ocr":
@@ -154,8 +169,9 @@ def main(argv=None):
         elif args.command == "digits":
             result = khdigits(text, target=args.target)
         elif args.command == "translate":
+            model = LocalModel(args.model, base_url=args.base_url, timeout=args.timeout) if args.model else None
             result = khtranslate(text, target=args.target, source=None if args.source == "auto" else args.source,
-                                 timeout=args.timeout)
+                                 timeout=args.timeout, local_model=model)
         else:
             result = khnormalize(
                 text, zero_width_space=args.zero_width_space, digits=args.digits,
@@ -170,7 +186,7 @@ def main(argv=None):
             result = json.dumps(_jsonable(result), ensure_ascii=False, indent=2) + "\n"
         sys.stdout.buffer.write(result.encode("utf-8"))
         return 0
-    except (OSError, UnicodeError, ValueError, ImportError, OCRError, TranslationError) as exc:
+    except (OSError, UnicodeError, ValueError, ImportError, OCRError, TranslationError, LocalModelError) as exc:
         print("khmereasytools: {}".format(exc), file=sys.stderr)
         return 2
 

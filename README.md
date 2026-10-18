@@ -1,6 +1,6 @@
 # Khmer Easy Tools
 
-Everyday Khmer tools: split words, search local text, read images or PDFs, and inspect document layouts. Core text and search tools run offline with **no runtime dependencies or model downloads**. Translation is an explicit online option with your own Google Cloud credentials.
+Everyday Khmer tools: split words, search local text, retrieve passages with KhmerRAG, read images or PDFs with KET-OCR, and inspect document layouts. Core text, search and retrieval run offline with **no runtime dependencies or model downloads**. Translation and RAG answer generation use an explicitly configured provider or local model.
 
 The new **0.5.0.dev0** source version adds an **81,005-entry dictionary**, better segmentation, sentence splitting, structured extraction, one-call file processing, local search, optional translation, and setup diagnostics. PyPI 0.4.0 remains the published version until this update is released.
 
@@ -20,8 +20,9 @@ An additional adaptive `khm+eng` check improves this local image score to
 
 Recorded research comparisons cover a [150-page historical OCR study](docs/DOCUMENT_OCR.md)
 and an [exploratory small Qwen comparison](docs/SMALL_VLM.md). Their external
-frameworks and model weights are not toolkit requirements. Private
-model-generated transcription drafts are kept separate from OCR gold.
+frameworks and model weights are not toolkit requirements. A separate KH-FUNSD
+comparison uses author-designated, machine-generated references with their
+unreviewed status disclosed; they are not certified human transcripts.
 
 ## Install
 
@@ -118,7 +119,24 @@ original = index.get("school")
 
 Search ranks keyword matches using BM25, folds Latin case and Khmer/ASCII digits, and supports matches inside Khmer dictionary compounds. Results include source text, snippets, and original token positions. This is local lexical retrieval for small collections, with no semantic model or spelling correction. See [search behavior and limits](docs/SEARCH.md).
 
-## Translate with explicit online setup
+## Simple KhmerRAG
+
+```python
+rag = ket.KhmerRAG(documents)
+result = rag.ask("សៀវភៅ")
+print(result.context)  # Retrieved passages with [1], [2], ... and source offsets.
+
+# Optional generation, after installing a local server and model separately:
+# model = ket.LocalModel("qwen2.5:3b")
+# rag = ket.KhmerRAG(documents, generator=model)
+# print(rag.ask("សៀវភៅ").answer)
+```
+
+No model is needed to retrieve passages. With a configured generator, the prompt
+asks for evidence-based answers and citations; generated answers remain
+unverified. See [KhmerRAG setup and limits](docs/RAG.md).
+
+## Translate with explicit setup
 
 Enable Google Cloud Translation and configure `GOOGLE_TRANSLATE_API_KEY` locally. Then:
 
@@ -128,6 +146,16 @@ khmer = ket.khtranslate("Hello", target="km", source="en")
 ```
 
 Calling `khtranslate` sends this text to Google and may incur provider charges. It uses the Python standard library, accepts up to 5,000 characters per call, and requires your own credentials. Live translation checks need separate opt-in; protocol tests do not establish translation quality. See [translation setup and validation](docs/TRANSLATION.md).
+
+For a separately installed local Qwen model, pass
+`local_model=ket.LocalModel("your-installed-model")` to `khtranslate`.
+Configure the server for local-only inference as described in the translation
+guide. The package does not download weights or run a translation benchmark.
+
+KET-OCR names the Khmer Easy Tools preparation/layout pipeline using Tesseract:
+`ket.ket_ocr("document.pdf", lang="khm+eng")` returns text and raises errors on
+failure. `khmereasytools ket-ocr document.pdf` is an alias for the existing OCR
+CLI. This name does not denote a newly trained recognition model.
 
 ## Read text from an image or PDF
 
