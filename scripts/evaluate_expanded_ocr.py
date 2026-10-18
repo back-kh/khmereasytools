@@ -17,7 +17,7 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from evaluation_metrics import compact, sha256, text_score
-from expanded_ocr_metrics import polygon_bounds, stable_subset, summarize
+from expanded_ocr_metrics import polygon_bounds, stable_subset, summarize, upright_dimensions
 
 DATA = ROOT / ".evaluation/expanded_ocr"
 PROTOCOL = ROOT / "benchmarks/accuracy/EXPANDED_OCR_PROTOCOL.md"
@@ -60,10 +60,14 @@ def load_groups():
         if sha256(path) != record["sha256"]:
             raise ValueError("Scene image changed: " + filename)
         with Image.open(path) as image:
-            width, height = image.size
             orientation = image.getexif().get(274, 1)
-        if width * height > 40000000 or orientation != 1:
-            exclusions.append(dict(source=filename, reason="image_dimensions_or_orientation"))
+            try:
+                width, height = upright_dimensions(*image.size, orientation)
+            except ValueError as exc:
+                exclusions.append(dict(source=filename, reason=str(exc)))
+                continue
+        if width * height > 40000000:
+            exclusions.append(dict(source=filename, reason="image_dimensions"))
             continue
         regions = item.get("regions", [])
         regions = list(regions.values()) if isinstance(regions, dict) else regions
@@ -87,7 +91,7 @@ def load_groups():
             groups.append(dict(dataset="khmerst", source_id=filename, group=record["sha256"],
                                image="expanded_ocr/khmerst/" + name,
                                image_sha256=record["sha256"], annotation_sha256=annotation_hash,
-                               width=width, height=height, psm=7, units=units))
+                               width=width, height=height, exif_orientation=orientation, psm=7, units=units))
     root = ROOT / ".evaluation/khob/level1/khob-dataset/level-1"
     count = 0
     for path in sorted(root.rglob("*.json")):
@@ -167,7 +171,9 @@ def run_group(payload):
     if sha256(image_path) != group["image_sha256"]:
         raise ValueError("Image changed after preparation")
     with Image.open(image_path) as original:
-        source = (ImageOps.exif_transpose(original) if group["dataset"] == "khob" else original).convert("RGB")
+        source = ImageOps.exif_transpose(original).convert("RGB")
+    if group["dataset"] == "khmerst" and source.size != (group["width"], group["height"]):
+        raise ValueError("Upright image dimensions changed after preparation")
     rows, predictions = [], []
     with tempfile.TemporaryDirectory(prefix="ket-expanded-ocr-") as temporary:
         target = Path(temporary) / "input.png"
@@ -237,6 +243,11 @@ def main():
         return
     if not sys.flags.isolated or args.wheel is None:
         parser.error("Run the installed-wheel evaluation with python -I and --wheel")
+    subprocess.run(["git", "diff", "--exit-code", "HEAD", "--",
+                    PROTOCOL.relative_to(ROOT).as_posix(),
+                    Path(__file__).relative_to(ROOT).as_posix(),
+                    "scripts/expanded_ocr_metrics.py", "scripts/evaluation_metrics.py"],
+                   cwd=str(ROOT), check=True, stdout=subprocess.DEVNULL)
     for language, expected in MODEL_HASHES.items():
         if sha256(args.tessdata_dir / (language + ".traineddata")) != expected:
             raise ValueError("Fixed model hash changed: " + language)
@@ -251,6 +262,8 @@ def main():
     if not {"khm", "eng"} <= languages:
         raise ValueError("Both pinned OCR languages must be available")
     metadata = dict(runtime_revision="b062be07447f7b9f1bf57f97aab7098d04db165b",
+                    evaluation_revision=subprocess.check_output(
+                        ["git", "rev-parse", "HEAD"], cwd=str(ROOT)).decode().strip(),
                     runtime_sources_sha256=source_fingerprint(package),
                     installed_package_path=str(package), wheel_sha256=sha256(args.wheel),
                     protocol_sha256=sha256(PROTOCOL), script_sha256=sha256(__file__),

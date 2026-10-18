@@ -5,6 +5,7 @@ from email.utils import parsedate_to_datetime
 import hashlib
 import json
 from pathlib import Path, PurePosixPath
+import threading
 import time
 from urllib.parse import quote, urlencode
 from urllib.error import HTTPError
@@ -15,10 +16,19 @@ PROJECT = 62344518
 REVISION = "ff64017769af17dee93384756019a975489a7fe0"
 API = "https://gitlab.com/api/v4/projects/{}/repository/".format(PROJECT)
 DATA = ROOT / ".evaluation/expanded_ocr"
+COOLDOWN_LOCK = threading.Lock()
+COOLDOWN_UNTIL = 0.0
 
 
 def read_url(url, limit=16000000):
+    global COOLDOWN_UNTIL
     for attempt in range(4):
+        while True:
+            with COOLDOWN_LOCK:
+                delay = COOLDOWN_UNTIL - time.time()
+            if delay <= 0:
+                break
+            time.sleep(min(delay, 30))
         try:
             with urlopen(Request(url, headers={"User-Agent": "KhmerEasyTools-research-evaluation"}),
                          timeout=60) as response:
@@ -27,8 +37,6 @@ def read_url(url, limit=16000000):
                 raise ValueError("Download exceeds byte bound")
             return data
         except Exception as exc:
-            if attempt == 3:
-                raise
             delay = 2 ** attempt
             if isinstance(exc, HTTPError):
                 if exc.code not in {408, 429, 500, 502, 503, 504}:
@@ -39,8 +47,12 @@ def read_url(url, limit=16000000):
                         delay = max(delay, float(retry_after))
                     except ValueError:
                         delay = max(delay, parsedate_to_datetime(retry_after).timestamp() - time.time())
-                if delay > 300:
-                    raise RuntimeError("Server requests a longer cooldown; retry later") from exc
+                if exc.code == 429:
+                    with COOLDOWN_LOCK:
+                        COOLDOWN_UNTIL = max(COOLDOWN_UNTIL, time.time() + delay)
+                    print("Rate limited; pausing all new requests for {:.0f}s".format(delay), flush=True)
+            if attempt == 3:
+                raise
             time.sleep(delay)
 
 

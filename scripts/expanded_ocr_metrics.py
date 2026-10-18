@@ -14,6 +14,12 @@ def stable_subset(names, count):
         ("expanded-ocr-20261018/" + name).encode("utf-8")).digest())[:count])
 
 
+def upright_dimensions(width, height, orientation):
+    if orientation not in range(1, 9):
+        raise ValueError("unknown_image_orientation")
+    return (height, width) if orientation in {5, 6, 7, 8} else (width, height)
+
+
 def polygon_bounds(xs, ys, width, height):
     if not isinstance(xs, list) or not isinstance(ys, list) or len(xs) != len(ys) or len(xs) < 3:
         raise ValueError("malformed_polygon")

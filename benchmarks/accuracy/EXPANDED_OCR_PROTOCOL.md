@@ -24,7 +24,10 @@ Only KHOB and KhmerST are source corpora, as requested by the author.
 KhmerST annotates individual text polygons. Its line_id values can be missing
 or repeated, so whole-image concatenation would invent reading-order gold.
 The scene experiment is therefore **recognition given gold polygons**, not
-end-to-end text detection or whole-scene OCR accuracy. Crop each polygon's
+end-to-end text detection or whole-scene OCR accuracy. First apply EXIF
+orientation to the source pixels. The polygons use upright display
+coordinates, as confirmed by pre-prediction visual and coordinate checks.
+Crop each polygon's
 axis-aligned bounding rectangle, mask pixels outside the polygon white, and
 add a two-pixel white border. Do not deskew, rectify, use OCR-dependent crop
 selection, or assume perfect annotations. Both systems get the same crop.
@@ -35,6 +38,15 @@ missing images, or coordinates outside image bounds by more than one pixel.
 Record every exclusion. Clamp at most one-pixel boundary rounding. Fail on
 duplicate filenames across annotation files, changed hashes, or absent source
 images. Retain all other labels, including numbers, Latin and mixed text.
+
+Preparation correction before any OCR predictions: the initial draft would
+exclude non-identity EXIF orientations. A metadata audit found that most
+available images use orientation 6, with polygons aligned to the upright
+display rather than the sideways raw pixels. Valid orientations 1 through 8
+are therefore applied before geometry validation and shared input creation;
+unknown orientations and images over 40 million pixels are excluded. This
+corrects coordinate handling without consulting OCR outputs or changing any
+recognition parameters.
 
 ## Matched systems
 

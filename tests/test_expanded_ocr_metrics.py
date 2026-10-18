@@ -7,7 +7,7 @@ import unittest
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 from evaluation_metrics import text_score
-from expanded_ocr_metrics import paired_interval, polygon_bounds, stable_subset, summarize
+from expanded_ocr_metrics import paired_interval, polygon_bounds, stable_subset, summarize, upright_dimensions
 
 
 class ExpandedMetricsTests(unittest.TestCase):
@@ -20,6 +20,14 @@ class ExpandedMetricsTests(unittest.TestCase):
         points, bounds = polygon_bounds([-.5, 10, 10, 0], [0, 0, 8, 8], 10, 10)
         self.assertEqual(bounds, (0, 0, 10, 9))
         self.assertTrue(all(0 <= x < 10 and 0 <= y < 10 for x, y in points))
+
+    def test_polygon_coordinates_use_upright_image_dimensions(self):
+        for orientation in [1, 2, 3, 4]:
+            self.assertEqual(upright_dimensions(4624, 3468, orientation), (4624, 3468))
+        for orientation in [5, 6, 7, 8]:
+            self.assertEqual(upright_dimensions(4624, 3468, orientation), (3468, 4624))
+        with self.assertRaises(ValueError):
+            upright_dimensions(4624, 3468, 9)
 
     def test_invalid_polygons(self):
         for xs, ys in [([0, 2], [0, 2]), ([0, math.nan, 2], [0, 1, 2]),
