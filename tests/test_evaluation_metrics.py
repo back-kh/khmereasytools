@@ -11,6 +11,18 @@ SPEC.loader.exec_module(metrics)
 
 
 class EvaluationMetricTests(unittest.TestCase):
+    def test_nova_compounds_use_outer_tags_and_reject_invalid_annotations(self):
+        words = ["ខ្ញុំ", "ស្រឡាញ់", "ភាសា", "ខ្មែរ", "។"]
+        self.assertEqual(
+            metrics.nova_word_gold(words, ["n", "v-", "n[n", "n]n", "."]),
+            [("ខ្ញុំ", "n"), ("ស្រឡាញ់", "v"), ("ភាសាខ្មែរ", "n"), ("។", ".")])
+        self.assertEqual(metrics.nova_word_gold(["ក", "ខ"], ["n[v", "a]n"]),
+                         [("កខ", "n")])
+        for words, tags in ((["ក"], []), (["ក"], ["n[n"]),
+                            (["ក", "ខ"], ["n[n", "v]v"])):
+            with self.assertRaises(ValueError):
+                metrics.nova_word_gold(words, tags)
+
     def test_known_edit_counts_and_normalization_policy(self):
         self.assertEqual(metrics.distance("kitten", "sitting"), 3)
         self.assertEqual(metrics.distance(["one", "two"], ["one", "three"]), 1)

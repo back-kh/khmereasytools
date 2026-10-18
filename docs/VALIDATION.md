@@ -4,7 +4,7 @@ Passing tests establish the documented contracts on checked inputs. They do not 
 
 | Public function | Checks | Interpretation |
 | --- | --- | --- |
-| `khseg`, `khseg_spans` | Known words, expanded/legacy modes, unknowns, mixed text, code-point offsets, randomized losslessness, exhaustive small decoder comparison | Functional coverage; independent khPOS OPEN-TEST exact-token F1 is 77.21 on one corpus |
+| `khseg`, `khseg_spans` | Frequency resources/objective, coverage/legacy modes, unknowns, mixed text, offsets, randomized losslessness, exhaustive small decoder checks | khPOS exact-token F1 77.21 -> 78.46%; reserved ALT word F1 66.68 -> 68.29%; corpus limits apply |
 | `get_khmer_dictionary` | 81,005-entry count, resource hashes/provenance, independent copies | Bundled lexicon is available and reproducible; membership is not spelling authority |
 | `khfilter` | Stop-word removal, empty values, generator vocabulary, legacy options | Removes stop words; does not rank keywords |
 | `get_default_stop_words`, `load_stop_words_from_file` | Built-in copies, UTF-8 CSV, duplicates, missing-file legacy contract | Helpers load their documented data |
@@ -13,9 +13,9 @@ Passing tests establish the documented contracts on checked inputs. They do not 
 | `khaudit` | Character/letter statistics, suspicious marks, controls, offsets | Diagnostics for review, not a spelling checker |
 | `khnormalize` | Conservative defaults, opt-ins, source maps, reversible edits, randomized idempotence | Selected text preparation is traceable |
 | `khdigits` | All digits in both directions, leading zeros, mixed scripts | Character translation preserves other text |
-| `khocr`, `khocr_layout`, `khanalyze` | Real image/PDF Tesseract calls plus 60 KHOB page images and 15 derived PDF pages | Default image OCR CER 18.07%; derived PDF CER 15.77%; output needs review |
+| `khocr`, `khocr_layout`, `khanalyze` | Actual image/PDF calls, auto/none parity, source-coordinate rescaling, input cap and paired KHOB images | Reserved image CER 15.99 -> 11.43% locally; historical full-image/PDF baseline retained; output needs review |
 | `khlayout`, `khocr_overlay` | TSV validation, block/line/column order, offsets, drawing bounds and source protection | Geometric text-layout helpers, not semantic document classifiers |
-| `khpos` | Actual backend on 1,018 ALT sentences plus a four-category khPOS proxy | ALT joint span F1 67.37%, with possible training overlap; proxy has partial tag coverage |
+| `khpos` | Actual CRF, preserved words/custom terms, no whitespace/second model, concurrent calls and whole-word ALT comparison | Joint word/tag F1 67.40 -> 67.67%; possible training overlap; older leaf-level metrics use different gold |
 | `khindex`, `khsearch` | Khmer retrieval, compound recall, BM25 score, digits/case, source offsets, original retrieval and errors | Functional keyword search, not a semantic/large-corpus benchmark |
 | `khtranslate` | Local HTTP protocol, credential/error/timeout handling; separately gated live checks | Live provider checks pending by user choice; translation quality unmeasured |
 | `khsentences` | Contracts, 97 reconstructed ALT articles and 40 authored challenges | Internal-boundary F1 99.51% on reconstruction; 37/40 exact challenges after a fix; abbreviation/ellipsis limits remain |
@@ -23,7 +23,7 @@ Passing tests establish the documented contracts on checked inputs. They do not 
 | `khprocess` | UTF-8/BOM/newline mappings, invalid input, unchanged files, real image/PDF processing, original/cleaned coordinate contracts | Local workflow reuses existing core/OCR; OCR quality limits remain unchanged |
 | `khdoctor` | Missing packages/engine/language, timeouts, safe key presence, no optional imports, actual installed-environment setup checks | Read-only configuration report, not remote credential or model health verification |
 
-All 24 exported functions have executable tests. See [accuracy results and limitations](ACCURACY.md), [daily tools](DAILY_TOOLS.md), [segmentation protocol](EVALUATION.md), [OCR limits](OCR_LAYOUT.md), [search](SEARCH.md), and [translation](TRANSLATION.md).
+All 24 exported functions have executable tests. See [current paired results](IMPROVEMENTS.md), [historical accuracy limits](ACCURACY.md), [daily tools](DAILY_TOOLS.md), [segmentation protocol](EVALUATION.md), [OCR limits](OCR_LAYOUT.md), [search](SEARCH.md), and [translation](TRANSLATION.md).
 
 ## Reproduction
 

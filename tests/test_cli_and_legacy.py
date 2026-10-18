@@ -67,11 +67,29 @@ class LegacyTests(unittest.TestCase):
             with self.assertRaisesRegex(ImportError, r"khmereasytools\[ocr\]"):
                 ket.khocr("missing.png")
 
-    def test_pos_wrapper_is_lazy_and_retains_contract(self):
+    def test_pos_uses_chosen_words_without_retokenization(self):
         fake = types.ModuleType("khmernltk")
-        fake.pos_tag = lambda text: [(text, "TEST")]
-        with patch.dict(sys.modules, {"khmernltk": fake}):
-            self.assertEqual(ket.khpos("ខ្ញុំស្រឡាញ់"), [("ខ្ញុំ ស្រឡាញ់", "TEST")])
+        backend = types.ModuleType("khmernltk.pos_tag")
+        backend.crf_model = None
+        backend.model_path = "fixture"
+        backend.create_word_features = lambda words: [{"word": word} for word in words]
+        calls = []
+
+        class Model:
+            def predict(self, sentences):
+                calls.append(sentences)
+                return [["TEST"] * len(sentences[0])]
+
+        backend.load_model = lambda _: Model()
+        with patch.dict(sys.modules, {"khmernltk": fake, "khmernltk.pos_tag": backend}):
+            self.assertEqual(ket.khpos("ខ្ញុំស្រឡាញ់"), [("ខ្ញុំ", "TEST"), ("ស្រឡាញ់", "TEST")])
+            self.assertEqual(calls, [[[{"word": "ខ្ញុំ"}, {"word": "ស្រឡាញ់"}]]])
+
+    def test_pos_empty_and_invalid_input_do_not_load_models(self):
+        with patch("khmereasytools.pos._tag_words", side_effect=AssertionError("No model load")):
+            self.assertEqual(ket.khpos(" \n\t"), [])
+            with self.assertRaises(TypeError):
+                ket.khpos(None)
 
 
 class CLITests(unittest.TestCase):

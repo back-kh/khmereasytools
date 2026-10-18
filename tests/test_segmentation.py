@@ -1,5 +1,6 @@
 import random
 import unittest
+from unittest.mock import patch
 import hashlib
 import json
 from pathlib import Path
@@ -91,6 +92,30 @@ class SegmentationTests(unittest.TestCase):
         words = get_khmer_dictionary()
         words.clear()
         self.assertGreater(len(get_khmer_dictionary()), 80000)
+
+    def test_frequency_resources_are_pinned_and_do_not_add_words(self):
+        import khmereasytools
+        directory = Path(khmereasytools.__file__).parent / "data"
+        manifest = json.loads((directory / "frequency_manifest.json").read_text(encoding="utf-8"))
+        data = (directory / "word_frequencies.txt").read_bytes()
+        self.assertEqual(hashlib.sha256(data).hexdigest(), manifest["output_sha256"])
+        counts = dict(line.rsplit("\t", 1) for line in data.decode("utf-8").splitlines())
+        self.assertEqual(len(counts), manifest["entries"])
+        self.assertTrue(set(counts) <= get_khmer_dictionary())
+        self.assertEqual(sum(int(value) for value in counts.values()), manifest["total_count"])
+        self.assertIn("SIL NRSI", (directory / "SIL-LICENSE.txt").read_text(encoding="utf-8"))
+
+    def test_weighted_path_can_resolve_compound_ambiguity(self):
+        from khmereasytools.segmentation import _index
+        vocabulary = {"កខគឃ", "កខគ", "កខ", "គឃ"}
+        costs = {"កខគឃ": 900, "កខគ": 1, "កខ": 100, "គឃ": 100}
+        with patch("khmereasytools.segmentation._default_index", return_value=_index(vocabulary)), \
+                patch("khmereasytools.segmentation._frequency_costs", return_value=(costs, 1000)):
+            self.assertEqual(khseg("កខគឃ"), ["កខ", "គឃ"])
+            self.assertEqual(khseg("កខគឃ", strategy="coverage"), ["កខគឃ"])
+            self.assertEqual(khseg("កខគឃ", custom_words=["កខគឃ"]), ["កខគឃ"])
+            # Cheap prefix cannot beat complete known-word coverage.
+            self.assertEqual(khseg("កខគ"), ["កខគ"])
 
     def test_domain_words_beyond_old_lexicon(self):
         self.assertEqual(khseg("បច្ចេកវិទ្យាព័ត៌មាន"), ["បច្ចេកវិទ្យា", "ព័ត៌មាន"])

@@ -27,7 +27,7 @@ Boxes use top-left-origin pixels in the upright, EXIF-transposed image or render
 
 ## Optional controls
 
-`khanalyze` forwards OCR options such as `lang="khm+eng"`, `psm=6` (single text block), `timeout=60`, `min_confidence=50`, `preprocess="grayscale"`, `reading_order="columns"`, and `segment=False`. Defaults use `khm`, automatic page segmentation, all scored words, unchanged pixels, engine reading order, and text diagnostics/segmentation. `khocr_layout(image)` provides the same page analysis directly for image callers. `khlayout(data, width, height)` analyzes existing Tesseract dictionary output without requiring OCR dependencies.
+`khanalyze` forwards OCR options such as `lang="khm+eng"`, `psm=6` (single text block), `timeout=60`, `min_confidence=50`, `preprocess="grayscale"`, `reading_order="columns"`, and `segment=False`. Defaults use `khm`, automatic page segmentation, all scored words, `preprocess="auto"`, engine reading order, and text diagnostics/segmentation. Auto mode uses grayscale/autocontrast and 2x enlargement when the longest edge is below 1600 pixels, mapping boxes outward to original source pixels. Larger images keep the previous pixel path. `preprocess="none"` disables enlargement; explicit grayscale/threshold retain their previous meanings. `khocr_layout(image)` provides the same page analysis for image callers; `khlayout` analyzes existing engine data without OCR dependencies.
 
 Column inference merges horizontally overlapping line intervals, ignoring near-full-width lines. Optional column reading order divides the page around spanning lines, then reads columns left to right and lines top to bottom within each band. It is a heuristic and can fail with tables, inset text, ragged columns, sidebars, or complex overlapping layouts. Engine order is the default. No heading/table/figure/handwriting classifier is included.
 
@@ -43,9 +43,11 @@ A bundled synthetic four-line Khmer page and a two-page PDF exercise real Tesser
 
 Further evaluation needs independently transcribed real scans, varied fonts and resolution, rotated/noisy pages, and annotated multi-column layouts. OCR analysis does not add an accuracy-trained OCR model. The local engine and traineddata determine recognition behavior.
 
-[The accuracy evaluation](ACCURACY.md) measures all 60 KHOB level-1 images and
-15 derived PDF pages. Default image OCR CER is 18.07% on that sample. Annotation
-alignment problems limit its crop/layout diagnostics; semantic layout quality
-is not established.
+[Paired accuracy checks](IMPROVEMENTS.md) reduce image CER from 15.99% to
+11.43% on the 40-page reserved partition locally. The [historical baseline](ACCURACY.md)
+also records all 60 images and 15 derived PDF pages under the earlier pixel
+path. Annotation alignment problems limit crop/layout diagnostics; semantic
+layout quality is not established. khocr now shares the structured recognition
+path, so whitespace formatting may differ from its earlier image_to_string path.
 
 Sources: [Tesseract TSV and CLI documentation](https://tesseract-ocr.github.io/tessdoc/Command-Line-Usage.html), [pytesseract API](https://github.com/madmaze/pytesseract), and [pypdfium2 API and thread-safety guidance](https://pypdfium2.readthedocs.io/en/stable/python_api.html).

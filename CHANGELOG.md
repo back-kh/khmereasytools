@@ -2,6 +2,11 @@
 
 ## 0.5.0.dev0 — unreleased
 
+- Improve default segmentation with 16,546 pinned SIL NRSI unigram counts while retaining the 81,005-entry vocabulary and zero core dependencies; preserve explicit coverage/longest/legacy modes.
+- Tag chosen POS words directly with the existing optional CRF, avoiding whitespace tokens and loading of a second model; serialize native tagger access.
+- Share bounded automatic small-image OCR preprocessing across plain, structured, PDF and CLI paths, mapping boxes back to source coordinates; retain explicit no-preprocessing mode.
+- Add paired, whole-word POS/segmentation and real-document OCR accuracy checks on fresh native Windows/macOS/Linux wheel installs, with a corrected NOVA compound adapter and explicit evaluation limits.
+
 - Add reproducible real-document OCR, annotated POS, reconstructed-article sentence, and authored extraction evaluations with baseline/adapted results and explicit data-quality/training-overlap limits.
 - Fix sentence splitting between consecutive initials and missed phone candidates before a sentence-ending period followed by a number.
 

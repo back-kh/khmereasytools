@@ -112,7 +112,7 @@ def load_stop_words_from_file(file_path):
         print(f"Error: Stop words file not found at {file_path}")
     return stop_words
 
-def khfilter(text, stop_words=None, *, custom_words=None, dictionary="expanded", strategy="coverage"):
+def khfilter(text, stop_words=None, *, custom_words=None, dictionary="expanded", strategy="frequency"):
     if stop_words is None:
         stop_words = get_default_stop_words()
     stop_words = set(stop_words)
@@ -124,8 +124,8 @@ def khfilter(text, stop_words=None, *, custom_words=None, dictionary="expanded",
     filtered_words = [word for word in words if word not in stop_words]
     return " ".join(filtered_words)
 
-def khseg(text, custom_words=None, *, dictionary="expanded", strategy="coverage"):
-    """Segment with the expanded lexicon and maximum-coverage path search.
+def khseg(text, custom_words=None, *, dictionary="expanded", strategy="frequency"):
+    """Segment with bundled unigram costs and safe maximum-coverage paths.
 
     Use dictionary='legacy', strategy='legacy' to reproduce version 0.4.
     Whitespace and explicit ZWSP boundaries are omitted from this list API;
@@ -146,19 +146,12 @@ def khseg(text, custom_words=None, *, dictionary="expanded", strategy="coverage"
 def khsyllable(text):
     return syllable_segmenter(text)
 
-def khpos(text):
-    try:
-        from khmernltk import pos_tag as khmernltk_pos_tag
-    except ImportError as exc:
-        raise ImportError(
-            "POS dependencies are unavailable. Install khmereasytools[khmernltk] "
-            "(the distribution is named khmer-nltk)."
-        ) from exc
-    # POS tagging works best on space-separated text
-    segmented_text = " ".join(khseg(text))
-    return khmernltk_pos_tag(segmented_text)
+def khpos(text, *, custom_words=None):
+    """Tag chosen words directly with the optional POS CRF; no retokenization."""
+    from .pos import tag_text
+    return tag_text(text, custom_words=custom_words)
 
-def khocr(image_path, *, pages=None):
+def khocr(image_path, *, pages=None, preprocess="auto"):
     """Extract text from an image or PDF. Install the optional [ocr] extra.
 
     Retains legacy image error strings. Use khanalyze for structured output
@@ -172,17 +165,8 @@ def khocr(image_path, *, pages=None):
             "OCR dependencies not installed. Install khmereasytools[ocr]."
         ) from exc
     try:
-        from pathlib import Path
-        path = Path(image_path)
-        with path.open("rb") as handle:
-            is_pdf = path.suffix.lower() == ".pdf" or b"%PDF-" in handle.read(1024)
-        if is_pdf:
-            from .documents import khanalyze
-            return khanalyze(path, pages=pages, segment=False).text
-        if pages is not None and list(pages) != [1]:
-            raise ValueError("Images have one page; pages selects PDF pages")
-        with Image.open(image_path) as image:
-            return pytesseract.image_to_string(image, lang='khm')
+        from .documents import khanalyze
+        return khanalyze(image_path, pages=pages, segment=False, preprocess=preprocess).text
     except FileNotFoundError:
         return f"Error: Image file not found at '{image_path}'"
     except Exception as e:

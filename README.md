@@ -4,11 +4,12 @@ Everyday Khmer tools: split words, search local text, read images or PDFs, and i
 
 The new **0.5.0.dev0** source version adds an **81,005-entry dictionary**, better segmentation, sentence splitting, structured extraction, one-call file processing, local search, optional translation, and setup diagnostics. PyPI 0.4.0 remains the published version until this update is released.
 
-[Accuracy evaluation](docs/ACCURACY.md) covers 60 real document images,
-15 derived PDF pages, two annotated POS corpora, and sentence/extraction
-challenges. Default OCR measured 18.07% character error rate on KHOB;
-segmentation plus POS measured 67.37% joint span F1 on ALT with possible
-training overlap. Review the output where errors matter.
+[Paired accuracy evaluation](docs/IMPROVEMENTS.md) now compares the earlier
+and improved defaults. Segmentation F1 rises from 77.21% to 78.46% on khPOS;
+whole-word POS joint F1 rises modestly from 67.40% to 67.67% on ALT; OCR
+character error rate falls from 15.99% to 11.43% on 40 reserved page images.
+These samples have documented overlap/annotation limits. Review output where
+errors matter. Core tools remain dependency-free; the wheel is about 507 KiB.
 
 ## Install
 
@@ -77,11 +78,15 @@ words = ket.khseg("ខ្ញុំស្រឡាញ់", custom_words=["ខ្�
 assert words == ["ខ្ញុំស្រឡាញ់"]
 ```
 
-The new default considers complete candidate paths instead of committing to the first longest match. It first minimizes unknown Khmer characters, then the number of output tokens. It does not guess missing OCR characters or change spellings. Dictionary entries include compounds and phrases, so the output can still differ from your preferred word boundaries.
+The default considers complete paths, minimizing unknown Khmer characters and then summed unigram costs from 16,546 pinned frequency entries. This helps resolve ambiguous dictionary combinations. It does not guess missing OCR characters or change spellings. Dictionary entries include compounds and phrases, so output can still differ from your preferred boundaries. Use `strategy="coverage"` for the earlier token-count objective.
 
-On the 1,000-sentence khPOS OPEN-TEST, exact-token F1 is **77.2%**, compared with **10.8%** for old `khseg` and **30.4%** for the old lossless span tokenizer. These are results on one corpus, not universal accuracy. See [evaluation protocol and limitations](docs/EVALUATION.md).
+On the 1,000-sentence khPOS OPEN-TEST, exact-token F1 is **78.46%**, compared with **77.21%** for the earlier coverage decoder, **10.8%** for old `khseg` and **30.4%** for the old lossless span tokenizer. These are single-corpus results, not universal accuracy. See [paired results](docs/IMPROVEMENTS.md) and [historical protocol](docs/EVALUATION.md).
 
 For annotations, `khseg_spans(text)` preserves every input character, including spaces and punctuation, and gives `text`, `start`, `end`, and `kind` for each token. Offsets are Python code points with exclusive ends. Custom vocabulary is local to the call.
+
+`khpos(text)` applies the optional POS CRF directly to the chosen words,
+preserving boundaries without whitespace tokens or a second tokenizer model.
+Use `khpos(text, custom_words=["your domain term"])` for local vocabulary.
 
 ## Search and retrieve local text
 
@@ -122,7 +127,7 @@ text = ket.khocr("document.pdf")
 text = ket.khocr("document.pdf", pages=[2])
 ```
 
-PDFs are processed one page at a time. Both scanned PDFs and PDFs with embedded text go through OCR. Recognition quality depends on scan quality, font, and the installed Tesseract language data. The existing `khocr` error-string behavior is retained; use `khanalyze` for exception-based error handling.
+PDFs are processed one page at a time. Small images use bounded grayscale/2x enlargement automatically; original image coordinates are preserved. Use `preprocess="none"` to retain earlier pixel processing. Both scanned PDFs and PDFs with embedded text go through OCR. Quality still depends on scan quality, font and installed language data. `khocr` retains error strings; use `khanalyze` for exception-based handling.
 
 ## Inspect layout when needed
 

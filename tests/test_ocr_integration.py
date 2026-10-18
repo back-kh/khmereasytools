@@ -82,6 +82,16 @@ class RealKhmerOCRTests(unittest.TestCase):
         self.assertGreater(sum("\u1780" <= char <= "\u17ff" for char in text), 10)
         self.assertNotIn("error", text.lower())
 
+    def test_auto_and_none_preserve_source_geometry_and_share_text_path(self):
+        automatic = khocr_layout(self.image, segment=False)
+        original = khocr_layout(self.image, preprocess="none", segment=False)
+        self.assertEqual((automatic.width, automatic.height), (original.width, original.height))
+        self.assertTrue(any("enlarged 2x" in message for message in automatic.warnings))
+        self.assertFalse(any("enlarged" in message for message in original.warnings))
+        self.assertEqual(khocr(self.image), automatic.text)
+        self.assertEqual(khanalyze(self.image, segment=False).text, automatic.text)
+        self.assertEqual(khocr(self.image, preprocess="none"), original.text)
+
     def test_daily_processing_pipeline_with_real_image_and_pdf(self):
         for path, options in ((self.image, {}), (self.image.with_name("khmer_document.pdf"), {"pages": [2], "dpi": 144})):
             with self.subTest(path=path):

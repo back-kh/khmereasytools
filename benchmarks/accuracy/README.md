@@ -2,6 +2,13 @@
 
 See [the evaluation guide](../../docs/ACCURACY.md) for interpretation.
 
+For current defaults, see [paired improvements](../../docs/IMPROVEMENTS.md).
+improvements/ contains paired baseline/development/reserved reports; the
+IMPROVEMENT_PROTOCOL.md and IMPROVEMENT_SELECTION.md files record the policy
+and development decision before reserved candidate predictions. Historical
+leaf-tag POS measurements below remain available for comparison, but are not
+the whole-word gold used by the latest evaluation.
+
 - baseline/ contains untouched OCR, ALT POS, ALT sentence, and challenge
   results at runtime base commit 9e5e39738e630b3e17789ab20c46061c99ce1a07.
 - results/ contains sentence/challenge reruns after the initials/phone fixes

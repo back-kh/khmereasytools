@@ -1,0 +1,63 @@
+{
+  "name": "candidate_dev",
+  "partition": "dev",
+  "metadata": {
+    "runtime_sources_sha256": "7b7c79374074e04a3d3becaa308e5c61b22d213ff49169ef1750ea63d45bc3d7",
+    "dictionary_sha256": "f398bea51287dc36d52d2482f0005ecff817733cedb84936fd8e5b72b73d9cf8",
+    "frequencies_sha256": "b1f50d1f3a2085e9cb35db5fb66aff1453a9ba5b1a24400533f8644d7edbe42c",
+    "python": "3.9.6",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "dependencies": {
+      "khmer-nltk": "1.6",
+      "sklearn-crfsuite": "0.5.0",
+      "python-crfsuite": "0.9.11",
+      "scikit-learn": "1.6.1",
+      "numpy": "2.0.2",
+      "Pillow": "11.3.0",
+      "pytesseract": "0.3.13",
+      "pypdfium2": "5.14.0"
+    },
+    "protocol_sha256": "bf1f49e6aa96b97c64488140f0d7a2fcce257e488f2e75c8dca57b4bee02486a",
+    "script_sha256": "08a7eb2395b612952cd2afe7b13e84e7244bd5efc77ed0115ae30815989b9683"
+  },
+  "alt_words": {
+    "sentences": 1000,
+    "gold_tokens": 26207,
+    "seconds": 1.840347375,
+    "metrics": {
+      "segmentation": {
+        "correct": 20163,
+        "predicted": 32109,
+        "gold": 26207,
+        "precision": 0.6279547790339157,
+        "recall": 0.7693745945739688,
+        "f1": 0.6915083339049317,
+        "exact_sentences": 15,
+        "alignment_failures": 0
+      },
+      "pos_boundaries": {
+        "correct": 20163,
+        "predicted": 32109,
+        "gold": 26207,
+        "precision": 0.6279547790339157,
+        "recall": 0.7693745945739688,
+        "f1": 0.6915083339049317,
+        "exact_sentences": 15,
+        "alignment_failures": 0
+      },
+      "pos_joint": {
+        "correct": 19989,
+        "predicted": 32109,
+        "gold": 26207,
+        "precision": 0.6225357376436513,
+        "recall": 0.7627351470981035,
+        "f1": 0.6855408464229371,
+        "exact_sentences": 14,
+        "alignment_failures": 0
+      }
+    }
+  },
+  "word_model_loaded": false,
+  "pos_model_loaded": true,
+  "text_process_peak_rss_mib": 143.8125
+}

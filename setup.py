@@ -32,10 +32,10 @@ setup(
     install_requires=[], # No hard dependencies for core functions
     extras_require={
         "ocr": ["pytesseract>=0.3.8", "Pillow>=9.0.0", "pypdfium2>=4,<6"],
-        "khmernltk": ["khmer-nltk>=1.6"],
+        "khmernltk": ["khmer-nltk>=1.6,<2"],
         "all": [
             "pytesseract>=0.3.8", "Pillow>=9.0.0", "pypdfium2>=4,<6",
-            "khmer-nltk>=1.6"
+            "khmer-nltk>=1.6,<2"
         ]
     }
 )

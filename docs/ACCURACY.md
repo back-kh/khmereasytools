@@ -1,4 +1,8 @@
-# Accuracy evaluation, 2026-10-18
+# Historical accuracy baseline, 2026-10-18
+
+These results describe the earlier defaults. See [the current paired
+improvements](IMPROVEMENTS.md) for frequency-based segmentation, direct POS
+tagging, OCR preprocessing and the corrected whole-word POS comparison.
 
 OCR and POS execute successfully, but their output needs review. Passing
 installation tests is not proof of linguistic accuracy. These measurements

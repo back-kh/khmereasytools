@@ -4,7 +4,7 @@ import unicodedata
 from functools import lru_cache
 from typing import NamedTuple
 
-from .lexicon import _words
+from .lexicon import _words, _frequency_costs
 from .text_quality import _is_base, _is_mark, _require_text
 
 
@@ -60,18 +60,20 @@ def _default_index(dictionary):
     return _index(_words(dictionary))
 
 
-def khseg_spans(text, custom_words=None, *, dictionary="expanded", strategy="coverage"):
+def khseg_spans(text, custom_words=None, *, dictionary="expanded", strategy="frequency"):
     """Return tokens whose concatenation exactly reconstructs the input.
 
-    'coverage' minimizes unknown Khmer code points across the whole input,
-    then the number of tokens; equal-cost paths prefer a longer first match.
-    'longest' uses greedy longest matching. Neither strategy is probabilistic.
+    'frequency' minimizes unknown Khmer code points, then summed smoothed
+    unigram costs from a bundled frequency table. 'coverage' instead minimizes
+    unknown code points then token count. Equal costs prefer longer first matches.
+    'longest' uses greedy longest matching. Counts are ranking preferences,
+    not calibrated confidence. No runtime model or download is required.
     dictionary accepts 'expanded', 'legacy', or an iterable for a local lexicon.
     Custom words add exact candidates without changing the shared dictionary.
     """
     _require_text(text)
-    if strategy not in ("coverage", "longest"):
-        raise ValueError("strategy must be 'coverage' or 'longest' for lossless spans")
+    if strategy not in ("frequency", "coverage", "longest"):
+        raise ValueError("strategy must be 'frequency', 'coverage' or 'longest' for lossless spans")
     if not text:
         if isinstance(dictionary, str):
             if dictionary not in ("expanded", "legacy"):
@@ -83,8 +85,17 @@ def khseg_spans(text, custom_words=None, *, dictionary="expanded", strategy="cov
         return []
     indexes = [_default_index(dictionary) if isinstance(dictionary, str)
                else _index(_validated_words(dictionary))]
-    if custom_words is not None:
-        indexes.append(_index(_validated_words(custom_words)))
+    custom = _validated_words(custom_words) if custom_words is not None else set()
+    if custom:
+        indexes.append(_index(custom))
+    weighted = strategy == "frequency" and isinstance(dictionary, str) and dictionary == "expanded"
+    weights, missing_cost = _frequency_costs() if weighted else ({}, 1)
+
+    def word_cost(start, end):
+        word = text[start:end]
+        if weighted and word in custom:
+            return 1
+        return weights.get(word, missing_cost)
     length = len(text)
     kinds = [_kind(char) for char in text]
     boundaries, previous = [], ""
@@ -129,14 +140,15 @@ def khseg_spans(text, custom_words=None, *, dictionary="expanded", strategy="cov
             steps.append((position, end, "word" if ends else kinds[position]))
             position = end
     else:
-        # Dynamic programming over character positions. No corpus-derived
-        # frequencies or evaluation-set vocabulary enters this scoring rule.
+        # Dynamic programming over character positions. No evaluation-set
+        # vocabulary or counts enter the scoring rule.
         costs = [[(0, 0)] * (length + 1) for _ in range(2)]
         choices = [[None] * length for _ in range(2)]
         for start in range(length - 1, -1, -1):
             word_best, word_choice = None, None
             for end in matches(start):
-                cost = (costs[0][end][0], costs[0][end][1] + 1)
+                cost = (costs[0][end][0], costs[0][end][1] +
+                        (word_cost(start, end) if strategy == "frequency" else 1))
                 if word_best is None or cost < word_best:
                     word_best, word_choice = cost, (end, "word")
             end, kind = fallback[start], kinds[start]
@@ -147,7 +159,8 @@ def khseg_spans(text, custom_words=None, *, dictionary="expanded", strategy="cov
             for preceding_unknown in (0, 1):
                 suffix = costs[int(is_unknown)][end]
                 candidate = (suffix[0] + unknown,
-                             suffix[1] + int(not (is_unknown and preceding_unknown)))
+                             suffix[1] + (missing_cost if weighted and is_unknown else 1) *
+                             int(not (is_unknown and preceding_unknown)))
                 if word_best is None or candidate < word_best:
                     costs[preceding_unknown][start] = candidate
                     choices[preceding_unknown][start] = (end, kind)

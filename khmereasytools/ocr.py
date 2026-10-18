@@ -247,13 +247,30 @@ def _dependencies():
     return pytesseract, Image, ImageOps
 
 
+def _source_coordinates(data, factor, width, height):
+    """Map rectangle envelopes from recognition pixels back to source pixels."""
+    mapped = dict(data)
+    boxes = {name: [] for name in ("left", "top", "width", "height")}
+    for left, top, box_width, box_height in zip(
+            data["left"], data["top"], data["width"], data["height"]):
+        x0 = max(0, min(width, math.floor(float(left) / factor)))
+        y0 = max(0, min(height, math.floor(float(top) / factor)))
+        x1 = max(x0, min(width, math.ceil((float(left) + float(box_width)) / factor)))
+        y1 = max(y0, min(height, math.ceil((float(top) + float(box_height)) / factor)))
+        for name, value in zip(("left", "top", "width", "height"),
+                               (x0, y0, x1 - x0, y1 - y0)):
+            boxes[name].append(value)
+    mapped.update(boxes)
+    return mapped
+
+
 def khocr_layout(image_path, *, lang="khm", psm=3, timeout=60.0, min_confidence=0.0,
-                 preprocess="none", reading_order="engine", segment=True, frame=0):
+                 preprocess="auto", reading_order="engine", segment=True, frame=0):
     """OCR a page image or a selected TIFF frame, then analyze its text layout.
 
     Supports PNG/JPEG and other Pillow raster formats; PDF must first be
-    rasterized. EXIF orientation is honored. Preprocessing never resizes the
-    image, so boxes use upright-image pixels. This API raises errors rather
+    rasterized. EXIF orientation is honored. Auto mode enlarges small pages
+    internally; boxes always use upright source-image pixels. This API raises errors rather
     than returning an error string. No file or document is uploaded anywhere.
     """
     if not isinstance(lang, str) or not lang or any(not part or not all(c.isalnum() or c in "_/" for c in part) for part in lang.split("+")):
@@ -266,8 +283,8 @@ def khocr_layout(image_path, *, lang="khm", psm=3, timeout=60.0, min_confidence=
         raise ValueError("timeout must be greater than zero")
     frame = _integer(frame, "frame")
     min_confidence = _finite_number(min_confidence, "min_confidence", 0, 100)
-    if preprocess not in ("none", "grayscale", "threshold"):
-        raise ValueError("preprocess must be 'none', 'grayscale', or 'threshold'")
+    if preprocess not in ("auto", "none", "grayscale", "threshold"):
+        raise ValueError("preprocess must be 'auto', 'none', 'grayscale', or 'threshold'")
     if reading_order not in ("engine", "columns"):
         raise ValueError("reading_order must be 'engine' or 'columns'")
     pytesseract, Image, ImageOps = _dependencies()
@@ -281,6 +298,8 @@ def khocr_layout(image_path, *, lang="khm", psm=3, timeout=60.0, min_confidence=
                 original.seek(frame)
             except EOFError as exc:
                 raise ValueError("frame is outside this image's available frames") from exc
+            if original.size[0] * original.size[1] > 40000000:
+                raise ValueError("Image exceeds 40 million pixels; use a smaller image")
             upright = ImageOps.exif_transpose(original)
             # Composite transparency on white; transparent black is not ink.
             if upright.mode in ("RGBA", "LA") or (upright.mode == "P" and "transparency" in upright.info):
@@ -290,15 +309,30 @@ def khocr_layout(image_path, *, lang="khm", psm=3, timeout=60.0, min_confidence=
             else:
                 page = upright.convert("RGB")
             width, height = page.size
-            if preprocess != "none":
+            factor = 2 if preprocess == "auto" and max(width, height) < 1600 else 1
+            if preprocess in ("grayscale", "threshold") or factor > 1:
                 page = ImageOps.autocontrast(ImageOps.grayscale(page))
                 if preprocess == "threshold":
                     page = page.point(lambda value: 255 if value >= 128 else 0)
-            data = pytesseract.image_to_data(page, lang=lang, config="--psm {}".format(psm),
-                                            output_type=pytesseract.Output.DICT, timeout=timeout)
-        return khlayout(data, width, height, min_confidence=min_confidence,
+            if factor > 1:
+                enlarged = page.resize((width * factor, height * factor),
+                                       getattr(Image, "Resampling", Image).LANCZOS)
+                page.close()
+                page = enlarged
+            try:
+                data = pytesseract.image_to_data(page, lang=lang, config="--psm {}".format(psm),
+                                                output_type=pytesseract.Output.DICT, timeout=timeout)
+            finally:
+                page.close()
+        if factor > 1:
+            data = _source_coordinates(data, factor, width, height)
+        result = khlayout(data, width, height, min_confidence=min_confidence,
                         reading_order=reading_order, segment=segment, language=lang,
                         engine="tesseract")
+        if factor > 1:
+            result = result._replace(warnings=result.warnings +
+                ("Small image enlarged 2x for OCR; boxes map to original image pixels.",))
+        return result
     except pytesseract.TesseractNotFoundError as exc:
         raise OCRError("Tesseract is not installed or not on PATH; install the engine and khm traineddata.") from exc
     except pytesseract.TesseractError as exc:

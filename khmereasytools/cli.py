@@ -52,7 +52,7 @@ def main(argv=None):
             subparser.add_argument("--psm", type=int, default=3, help=argparse.SUPPRESS)
             subparser.add_argument("--timeout", type=float, default=60.0, help=argparse.SUPPRESS)
             subparser.add_argument("--min-confidence", type=float, default=0.0, help=argparse.SUPPRESS)
-            subparser.add_argument("--preprocess", choices=("none", "grayscale", "threshold"), default="none", help=argparse.SUPPRESS)
+            subparser.add_argument("--preprocess", choices=("auto", "none", "grayscale", "threshold"), default="auto", help=argparse.SUPPRESS)
             subparser.add_argument("--reading-order", choices=("engine", "columns"), default="engine", help=argparse.SUPPRESS)
             subparser.add_argument("--frame", type=int, default=None, help=argparse.SUPPRESS)
             subparser.add_argument("--no-segment", action="store_true", help=argparse.SUPPRESS)
@@ -78,7 +78,7 @@ def main(argv=None):
         elif command == "segment":
             subparser.add_argument("--word", action="append", default=[], help="Add a domain word; repeat as needed")
             subparser.add_argument("--dictionary", choices=("expanded", "legacy"), default="expanded")
-            subparser.add_argument("--strategy", choices=("coverage", "longest"), default="coverage")
+            subparser.add_argument("--strategy", choices=("frequency", "coverage", "longest"), default="frequency")
         elif command == "translate":
             subparser.add_argument("--to", dest="target", default="en", help="Target language code (default: en)")
             subparser.add_argument("--from", dest="source", default="km", help="Source language code, or auto (default: km)")

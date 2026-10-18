@@ -15,6 +15,8 @@ The transformation ignores comments/blank lines, deduplicates, keeps only entrie
 python scripts/rebuild_dictionary.py --check
 ```
 
-The runtime never downloads data. It loads the dictionary on first use and caches a word set plus possible lengths indexed by the first two code points. This avoids a nested Python trie for every character. A local Python 3.9 `tracemalloc` smoke measurement of the full current API (including search, translation, and daily wrappers), starting before library import and one segmentation call, observed about **16.0 MiB retained / 19.7 MiB peak Python allocations**. That is not total process RSS and excludes optional OCR/PDF/POS backends and document reports; hardware/runtime differences apply. No general speed claim is made.
+The runtime never downloads data. It loads the dictionary on first use and caches a word set plus possible lengths indexed by the first two code points, avoiding a nested Python trie. Current defaults also load 16,546 frequency entries adapted from the MIT-noticed SIL NRSI khmerlbdict source, with original SEALang attribution and a pinned revision. No new vocabulary is added; source/output hashes, license and notices are bundled. See [changes and evidence](IMPROVEMENTS.md).
+
+A local Python 3.9 tracemalloc check, starting before import and one default segmentation call, observed **18.54 MiB retained / 19.91 MiB peak Python allocations**. This is not process RSS and excludes optional backends and document reports. Hardware/runtime differences apply; no general speed claim is made.
 
 `get_khmer_dictionary()` returns an independent mutable set. `get_khmer_dictionary("legacy")` returns the original 213 entries. New APIs accept `dictionary="legacy"` or a caller-provided iterable. Neither custom words nor evaluation data modifies the cached default lexicon.

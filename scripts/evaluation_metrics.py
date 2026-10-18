@@ -36,6 +36,33 @@ def compact(text):
                    if not c.isspace() and c != "\u200b")
 
 
+def nova_word_gold(words, tags):
+    """Collapse shallow NOVA compounds with their outer word-level POS tags."""
+    if len(words) != len(tags):
+        raise ValueError("NOVA token/tag counts differ")
+    result, pending, outer = [], [], None
+    for word, tag in zip(words, tags):
+        if "[" in tag:
+            if pending or tag.count("[") != 1:
+                raise ValueError("Nested NOVA compound")
+            outer = tag.split("[", 1)[0].rstrip("-")
+            pending = [compact(word)]
+        elif pending:
+            pending.append(compact(word))
+        else:
+            result.append((compact(word), tag.rstrip("-")))
+        if "]" in tag:
+            if not pending or tag.rsplit("]", 1)[1].rstrip("-") != outer:
+                raise ValueError("NOVA outer tag mismatch")
+            result.append(("".join(pending), outer))
+            pending, outer = [], None
+    if pending:
+        raise ValueError("Unclosed NOVA compound")
+    if not all(word and tag in {"n", "v", "a", "o", "1", ".", "+"} for word, tag in result):
+        raise ValueError("Invalid gold word/tag")
+    return result
+
+
 def distance(reference, prediction):
     # Optional accelerator is evaluation-only. The fallback is exact too.
     try:

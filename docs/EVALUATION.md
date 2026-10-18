@@ -1,5 +1,8 @@
 # Segmentation evaluation
 
+This records the earlier coverage decoder. Current defaults use fixed unigram
+costs and score 78.46% F1 on the same khPOS file; see [paired improvements](IMPROVEMENTS.md).
+
 ## Protocol and source
 
 The fixed algorithm was evaluated on **1,000 sentences / 10,778 gold tokens** from [khPOS OPEN-TEST](https://github.com/ye-kyaw-thu/khPOS/blob/0211405c145b0a340ad558569bd06c946b2296b4/corpus-draft-ver-1.0/data/OPEN-TEST.word), revision `0211405c145b0a340ad558569bd06c946b2296b4`.
@@ -34,6 +37,6 @@ python scripts/benchmark_segmentation.py .evaluation/OPEN-TEST.word --khpos --ou
 
 ## Migration
 
-`khseg(text)` and `khfilter(text)` now use the expanded lexicon and coverage decoder by default. Their signatures remain convenient, but **token boundaries change intentionally**. Unknown runs no longer swallow later recognized words. Numbers, punctuation, and text boundaries are handled through the span tokenizer. Custom vocabulary is accepted per call.
+The expanded lexicon and lossless fallback remain available. Current `khseg`, `khseg_spans` and `khfilter` defaults use `strategy="frequency"`; specify `strategy="coverage"` to reproduce the decoder evaluated above. Token boundaries intentionally change. No source characters or spellings are changed; custom vocabulary is local to each call.
 
 For frozen old pipelines, use `khseg(text, dictionary="legacy", strategy="legacy")` and the corresponding `khfilter` options. `khseg_spans` remains lossless and offers `strategy="longest"` plus either lexicon for comparisons. `khsyllable` is unchanged. Stable downstream annotations should not be resegmented automatically.

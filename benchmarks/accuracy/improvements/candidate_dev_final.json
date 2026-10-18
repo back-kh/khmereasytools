@@ -1,0 +1,301 @@
+{
+  "name": "candidate_dev_final",
+  "partition": "dev",
+  "metadata": {
+    "runtime_sources_sha256": "b89acb2eb2578b9acd65811564add8e405e9010debb175aa3dc975c9bf05759a",
+    "dictionary_sha256": "f398bea51287dc36d52d2482f0005ecff817733cedb84936fd8e5b72b73d9cf8",
+    "frequencies_sha256": "b1f50d1f3a2085e9cb35db5fb66aff1453a9ba5b1a24400533f8644d7edbe42c",
+    "python": "3.9.6",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "dependencies": {
+      "khmer-nltk": "1.6",
+      "sklearn-crfsuite": "0.5.0",
+      "python-crfsuite": "0.9.11",
+      "scikit-learn": "1.6.1",
+      "numpy": "2.0.2",
+      "Pillow": "11.3.0",
+      "pytesseract": "0.3.13",
+      "pypdfium2": "5.14.0"
+    },
+    "protocol_sha256": "bf1f49e6aa96b97c64488140f0d7a2fcce257e488f2e75c8dca57b4bee02486a",
+    "script_sha256": "08a7eb2395b612952cd2afe7b13e84e7244bd5efc77ed0115ae30815989b9683"
+  },
+  "alt_words": {
+    "sentences": 1000,
+    "gold_tokens": 26207,
+    "seconds": 1.89977325,
+    "metrics": {
+      "segmentation": {
+        "correct": 20163,
+        "predicted": 32109,
+        "gold": 26207,
+        "precision": 0.6279547790339157,
+        "recall": 0.7693745945739688,
+        "f1": 0.6915083339049317,
+        "exact_sentences": 15,
+        "alignment_failures": 0
+      },
+      "pos_boundaries": {
+        "correct": 20163,
+        "predicted": 32109,
+        "gold": 26207,
+        "precision": 0.6279547790339157,
+        "recall": 0.7693745945739688,
+        "f1": 0.6915083339049317,
+        "exact_sentences": 15,
+        "alignment_failures": 0
+      },
+      "pos_joint": {
+        "correct": 19989,
+        "predicted": 32109,
+        "gold": 26207,
+        "precision": 0.6225357376436513,
+        "recall": 0.7627351470981035,
+        "f1": 0.6855408464229371,
+        "exact_sentences": 14,
+        "alignment_failures": 0
+      }
+    }
+  },
+  "word_model_loaded": false,
+  "pos_model_loaded": true,
+  "text_process_peak_rss_mib": 142.328125,
+  "ocr": {
+    "public_default": {
+      "reference_codepoints": 34617,
+      "codepoint_edits": 6566,
+      "spacefold_reference_codepoints": 36633,
+      "spacefold_codepoint_edits": 7040,
+      "reference_whitespace_units": 2036,
+      "whitespace_unit_edits": 1213,
+      "samples": 20,
+      "exact_compact": 0,
+      "compact_codepoint_cer": 0.189675592916775,
+      "spacefold_codepoint_cer": 0.19217645292495836,
+      "whitespace_unit_error_rate": 0.5957760314341847,
+      "seconds": 18.765223583999997,
+      "per_page": [
+        {
+          "id": "task-1/goc_2",
+          "image_sha256": "2ebb57c76cb67ab9df322676b9694dc46543360885fa23f25e736a33badbadd1",
+          "reference_codepoints": 1787,
+          "codepoint_edits": 101,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1877,
+          "spacefold_codepoint_edits": 107,
+          "reference_whitespace_units": 91,
+          "whitespace_unit_edits": 30
+        },
+        {
+          "id": "task-1/goc_3",
+          "image_sha256": "94360b047a45f2edb8f0e89235ab08309071bcc76e466b03075c17d4650b039d",
+          "reference_codepoints": 1721,
+          "codepoint_edits": 136,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1800,
+          "spacefold_codepoint_edits": 141,
+          "reference_whitespace_units": 80,
+          "whitespace_unit_edits": 36
+        },
+        {
+          "id": "task-1/goc_4",
+          "image_sha256": "f915733bda2f7da0f85412b89cd64a8c1f49522e03a4db02b69ad91013efebc8",
+          "reference_codepoints": 2068,
+          "codepoint_edits": 88,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2161,
+          "spacefold_codepoint_edits": 90,
+          "reference_whitespace_units": 94,
+          "whitespace_unit_edits": 27
+        },
+        {
+          "id": "task-1/mef_1",
+          "image_sha256": "b7dfebf2bba3c2c620940a159a4c1d69886b50893effd66c5bf821a358e5ed7f",
+          "reference_codepoints": 1673,
+          "codepoint_edits": 276,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1809,
+          "spacefold_codepoint_edits": 313,
+          "reference_whitespace_units": 137,
+          "whitespace_unit_edits": 87
+        },
+        {
+          "id": "task-1/mef_3",
+          "image_sha256": "f0c3ec47d791975daff2830bee3b8e44d5ffc4cd9c3f131b7c4bee35546e160d",
+          "reference_codepoints": 1409,
+          "codepoint_edits": 199,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1515,
+          "spacefold_codepoint_edits": 231,
+          "reference_whitespace_units": 107,
+          "whitespace_unit_edits": 72
+        },
+        {
+          "id": "task-2/goc_2",
+          "image_sha256": "78683e112c94579dfcdb4c8490f6961f60b84ee29d9b17d457b6de8becba978e",
+          "reference_codepoints": 1787,
+          "codepoint_edits": 111,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1877,
+          "spacefold_codepoint_edits": 119,
+          "reference_whitespace_units": 91,
+          "whitespace_unit_edits": 34
+        },
+        {
+          "id": "task-2/goc_3",
+          "image_sha256": "2fc406c95d8f987f564ac47bd7e169ba3213417c68e2737644a49a67cb892672",
+          "reference_codepoints": 1721,
+          "codepoint_edits": 1674,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1800,
+          "spacefold_codepoint_edits": 1742,
+          "reference_whitespace_units": 80,
+          "whitespace_unit_edits": 92
+        },
+        {
+          "id": "task-2/goc_4",
+          "image_sha256": "9a36d413699e053670c7d6bfffc9b33015fbabd18c473aaec03dc951ffcacdaf",
+          "reference_codepoints": 2063,
+          "codepoint_edits": 1641,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2156,
+          "spacefold_codepoint_edits": 1715,
+          "reference_whitespace_units": 94,
+          "whitespace_unit_edits": 93
+        },
+        {
+          "id": "task-2/mef_1",
+          "image_sha256": "21f81468217961936114859fb79b963126328ba69c0520908e81bd9a7c9e8ca0",
+          "reference_codepoints": 1673,
+          "codepoint_edits": 297,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1809,
+          "spacefold_codepoint_edits": 346,
+          "reference_whitespace_units": 137,
+          "whitespace_unit_edits": 100
+        },
+        {
+          "id": "task-2/mef_3",
+          "image_sha256": "315ce3421d33aa42fbe959662fcf8ada00de508da54e7cc19d341e63faf30ac9",
+          "reference_codepoints": 1409,
+          "codepoint_edits": 191,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1515,
+          "spacefold_codepoint_edits": 227,
+          "reference_whitespace_units": 107,
+          "whitespace_unit_edits": 90
+        },
+        {
+          "id": "task-3/goc_2",
+          "image_sha256": "157f640a6e0cda4b9ac20d128c18bc45c92cca6083379d1c590e5c3166855514",
+          "reference_codepoints": 1787,
+          "codepoint_edits": 81,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1877,
+          "spacefold_codepoint_edits": 84,
+          "reference_whitespace_units": 91,
+          "whitespace_unit_edits": 26
+        },
+        {
+          "id": "task-3/goc_3",
+          "image_sha256": "08d13d7ba016a25bf9807a4aaaa86badf8feee4330af8d577625edf7a478aa16",
+          "reference_codepoints": 1721,
+          "codepoint_edits": 162,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1800,
+          "spacefold_codepoint_edits": 175,
+          "reference_whitespace_units": 80,
+          "whitespace_unit_edits": 48
+        },
+        {
+          "id": "task-3/goc_4",
+          "image_sha256": "39beaf684de7178a6e7ab2ea1bcdefd06984411bcee272692f36b4097ebfbf4e",
+          "reference_codepoints": 2063,
+          "codepoint_edits": 95,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2156,
+          "spacefold_codepoint_edits": 100,
+          "reference_whitespace_units": 94,
+          "whitespace_unit_edits": 35
+        },
+        {
+          "id": "task-3/mef_1",
+          "image_sha256": "896062f166f2339ac23b8b1cb8846bffe7defdc87f2a427cf8cfc87a5aceaad7",
+          "reference_codepoints": 1673,
+          "codepoint_edits": 331,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1809,
+          "spacefold_codepoint_edits": 365,
+          "reference_whitespace_units": 137,
+          "whitespace_unit_edits": 77
+        },
+        {
+          "id": "task-3/mef_3",
+          "image_sha256": "ec4f26002caa30052a36b504c477b161c4d56fadf12eef5f8cd354dd7e4c2476",
+          "reference_codepoints": 1409,
+          "codepoint_edits": 343,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1515,
+          "spacefold_codepoint_edits": 370,
+          "reference_whitespace_units": 107,
+          "whitespace_unit_edits": 89
+        },
+        {
+          "id": "task-4/goc_2",
+          "image_sha256": "d511fe94dfb1006568736669631e460a3ec3e1af3240070ce62344a1e71ae5a6",
+          "reference_codepoints": 1787,
+          "codepoint_edits": 85,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1877,
+          "spacefold_codepoint_edits": 88,
+          "reference_whitespace_units": 91,
+          "whitespace_unit_edits": 31
+        },
+        {
+          "id": "task-4/goc_3",
+          "image_sha256": "7ec52a8c4257b37b572b59f2af10fcb71b2540bfc58a09342c9ae351a37384b0",
+          "reference_codepoints": 1721,
+          "codepoint_edits": 158,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1800,
+          "spacefold_codepoint_edits": 166,
+          "reference_whitespace_units": 80,
+          "whitespace_unit_edits": 46
+        },
+        {
+          "id": "task-4/goc_4",
+          "image_sha256": "7a5b6e8219339608397f6cd59fdbd1c3e038ce7ba023a06527e82df7b25213b6",
+          "reference_codepoints": 2063,
+          "codepoint_edits": 98,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2156,
+          "spacefold_codepoint_edits": 100,
+          "reference_whitespace_units": 94,
+          "whitespace_unit_edits": 37
+        },
+        {
+          "id": "task-4/mef_1",
+          "image_sha256": "6cd879f3d2851b2ad637c0b535c3f3e1504f5321838cecd8cc0839b9fb991f0d",
+          "reference_codepoints": 1673,
+          "codepoint_edits": 286,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1809,
+          "spacefold_codepoint_edits": 316,
+          "reference_whitespace_units": 137,
+          "whitespace_unit_edits": 85
+        },
+        {
+          "id": "task-4/mef_3",
+          "image_sha256": "73ccb9f772acdb04695a5cc69fe6bc3fdc554fa9ed0673faf86fb8a5f322b835",
+          "reference_codepoints": 1409,
+          "codepoint_edits": 213,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1515,
+          "spacefold_codepoint_edits": 245,
+          "reference_whitespace_units": 107,
+          "whitespace_unit_edits": 78
+        }
+      ]
+    }
+  }
+}

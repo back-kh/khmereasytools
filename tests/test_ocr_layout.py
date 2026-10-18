@@ -110,6 +110,44 @@ class LayoutTests(unittest.TestCase):
 
 
 class OCRValidationTests(unittest.TestCase):
+    def test_resized_boxes_map_to_outward_source_envelopes(self):
+        from khmereasytools.ocr import _source_coordinates
+        data = data_for([("កា", 90, 21, 19, 29, 17, 1, 1, 1),
+                         ("ខ", 80, 79, 59, 5, 5, 1, 1, 2)])
+        mapped = _source_coordinates(data, 2, 40, 30)
+        self.assertEqual(data["left"], [21, 79])  # Input data stays unchanged.
+        self.assertEqual(list(zip(mapped["left"], mapped["top"],
+                                  mapped["width"], mapped["height"])),
+                         [(10, 9, 15, 9), (39, 29, 1, 1)])
+        page = khlayout(mapped, 40, 30)
+        self.assertEqual(page.width, 40)
+        self.assertEqual(page.words[0].box, (10, 9, 15, 9))
+
+    def test_oversize_image_rejected_before_engine_call(self):
+        from types import SimpleNamespace
+        from unittest.mock import Mock
+
+        class LargeImage:
+            mode, size = "RGB", (8000, 8000)
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                pass
+            def seek(self, frame):
+                pass
+            def convert(self, mode):
+                return self
+
+        engine = SimpleNamespace(get_languages=lambda **_: ["khm"], image_to_data=Mock(),
+                                 TesseractError=type("EngineError", (Exception,), {}),
+                                 TesseractNotFoundError=type("MissingEngine", (Exception,), {}))
+        dependencies = (engine, SimpleNamespace(open=lambda _: LargeImage()),
+                        SimpleNamespace(exif_transpose=lambda value: value))
+        with patch("khmereasytools.ocr._dependencies", return_value=dependencies):
+            with self.assertRaisesRegex(ValueError, "40 million"):
+                khocr_layout("large.png")
+        engine.image_to_data.assert_not_called()
+
     def test_invalid_options_fail_before_optional_imports(self):
         for options in ({"psm": 0}, {"psm": 2}, {"psm": 14}, {"psm": 6.5},
                         {"timeout": 0}, {"timeout": math.inf}, {"frame": -1},
