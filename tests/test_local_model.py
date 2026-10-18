@@ -1,8 +1,10 @@
 """Local HTTP protocol tests only; no model or translation-quality evaluation."""
 import http.client
+import io
 import json
 import os
 import threading
+from types import SimpleNamespace
 import unittest
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from unittest.mock import patch
@@ -80,6 +82,28 @@ class LocalModelTests(unittest.TestCase):
         with self.assertRaises(TypeError):
             khtranslate("ក", local_model=lambda text: text)
         self.assertEqual(self.requests, [])
+
+    def test_cli_invalid_local_configuration_never_reaches_google(self):
+        from khmereasytools.cli import main
+        for options in (["--model", ""], ["--base-url", self.url],
+                        ["--model", "fixture", "--base-url", ""]):
+            with self.subTest(options=options), patch("sys.stdin", SimpleNamespace(buffer=io.BytesIO(b"Hello"))), \
+                    patch("sys.stdout", SimpleNamespace(buffer=io.BytesIO())), patch("sys.stderr", io.StringIO()), \
+                    patch("khmereasytools.cli.khtranslate") as provider:
+                self.assertEqual(main(["translate"] + options), 2)
+                provider.assert_not_called()
+        self.assertEqual(self.requests, [])
+
+    def test_cli_local_translation_http_round_trip(self):
+        from khmereasytools.cli import main
+        output = io.BytesIO()
+        with patch("sys.stdin", SimpleNamespace(buffer=io.BytesIO(b"Hello"))), \
+                patch("sys.stdout", SimpleNamespace(buffer=output)), \
+                patch.dict(os.environ, {"GOOGLE_TRANSLATE_API_KEY": "must-not-be-used"}):
+            self.assertEqual(main(["translate", "--from", "en", "--to", "km", "--model", "fixture-local",
+                                   "--base-url", self.url]), 0)
+        self.assertEqual(output.getvalue().decode(), "សួស្តី & hello")
+        self.assertEqual(self.requests[0][1]["model"], "fixture-local")
 
     def test_http_failures_and_redirects_do_not_retry_or_echo_server_text(self):
         for status in (302, 404, 429, 500):

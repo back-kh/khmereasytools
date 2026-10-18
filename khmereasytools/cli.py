@@ -27,6 +27,17 @@ def _jsonable(value):
     return value
 
 
+def _local_model(args):
+    if args.model is None:
+        if args.base_url is not None:
+            raise ValueError("--base-url requires an explicit --model")
+        return None
+    options = {"timeout": args.timeout}
+    if args.base_url is not None:
+        options["base_url"] = args.base_url
+    return LocalModel(args.model, **options)
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Everyday Khmer text, search, and document tools.")
     parser.add_argument("--version", action="version", version=__version__)
@@ -67,7 +78,7 @@ def main(argv=None):
                 subparser.add_argument("--all", action="store_true", help="Require every query term")
             else:
                 subparser.add_argument("--model", help="Installed local Ollama model; omit for retrieval only")
-                subparser.add_argument("--base-url", default="http://127.0.0.1:11434", help="Local Ollama origin")
+                subparser.add_argument("--base-url", help="Local Ollama origin (default: http://127.0.0.1:11434)")
                 subparser.add_argument("--timeout", type=float, default=120.0)
         else:
             subparser.add_argument("file", nargs="?", default="-", help="UTF-8 file, or - for stdin")
@@ -91,7 +102,7 @@ def main(argv=None):
             subparser.add_argument("--from", dest="source", default="km", help="Source language code, or auto (default: km)")
             subparser.add_argument("--timeout", type=float, default=30.0)
             subparser.add_argument("--model", help="Use an installed local Ollama model instead of Google")
-            subparser.add_argument("--base-url", default="http://127.0.0.1:11434", help="Local Ollama origin")
+            subparser.add_argument("--base-url", help="Local Ollama origin (default: http://127.0.0.1:11434)")
         elif command == "extract":
             subparser.add_argument("--kind", action="append", choices=("url", "email", "phone", "date", "number"),
                                    help="Return only this kind; repeat as needed")
@@ -131,7 +142,7 @@ def main(argv=None):
                 with open(path, encoding="utf-8", newline="") as handle:
                     documents[path] = handle.read()
             if args.command == "rag":
-                model = LocalModel(args.model, base_url=args.base_url, timeout=args.timeout) if args.model else None
+                model = _local_model(args)
                 hits = khrag(args.query, documents, limit=args.limit, generator=model)
             else:
                 hits = khsearch(args.query, documents, limit=args.limit, match="all" if args.all else "any")
@@ -169,7 +180,7 @@ def main(argv=None):
         elif args.command == "digits":
             result = khdigits(text, target=args.target)
         elif args.command == "translate":
-            model = LocalModel(args.model, base_url=args.base_url, timeout=args.timeout) if args.model else None
+            model = _local_model(args)
             result = khtranslate(text, target=args.target, source=None if args.source == "auto" else args.source,
                                  timeout=args.timeout, local_model=model)
         else:

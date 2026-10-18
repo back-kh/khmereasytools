@@ -32,6 +32,8 @@ the environment is ignored on this path; supplying `api_key` together with a
 local model is an error. The client's own timeout applies. Truncated, empty,
 malformed and failed responses raise `TranslationError` through `khtranslate`.
 Unlike Google responses, local model text is not HTML-unescaped.
+The CLI rejects an empty `--model` and requires `--model` when `--base-url` is
+supplied; invalid local setup cannot silently select Google.
 
 This feature is included as a function only: no live local or cloud translation
 quality evaluation was performed. HTTP fixture tests validate the software
