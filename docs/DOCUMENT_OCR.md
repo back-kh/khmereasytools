@@ -8,6 +8,14 @@ printed-document comparison or supply a new modern phone-scan benchmark.
 The toolkit implementation is unchanged. Heavy baseline packages, model weights,
 page images and transcripts remain outside the installed package.
 
+The recorded execution design uses **three Mac profiles and two Linux CUDA
+profiles**. The [CUDA execution amendment](../benchmarks/accuracy/DOCUMENT_CUDA_EXECUTION.md)
+moves Paddle and DeepSeek before either system has an evaluation prediction.
+It preserves the selected images, checkpoint files and recognition arguments.
+The [per-system identity record](../benchmarks/accuracy/document-ocr/execution-amendment.json)
+retains both frozen tokens. The independent [Qwen extension](SMALL_VLM.md)
+covers only the 30 official test pages.
+
 ## Data availability and source quality
 
 The [source survey](../benchmarks/accuracy/document-ocr/data-survey.json) records
@@ -41,22 +49,25 @@ uncertainty. The [amendment](../benchmarks/accuracy/document-ocr/protocol-amendm
 explains a Surya integration correction: its default transport retries repetitive
 responses at higher temperatures, and RecognitionPredictor can invoke additional
 layout/block inference. The intended first-pass comparison explicitly disables
-those paths. The incomplete initial attempt remains recorded; all systems are
-rerun under the amended profile without changing source selection, references,
-weights, prompts or scalar generation limits.
+those paths. The incomplete initial attempt remains recorded. CPU profiles are
+rerun and Surya uses the amended first-pass transport. The later CUDA execution
+amendment changes the remaining MLX hosts and platform dependencies before
+their evaluation calls, retaining source selection, references, checkpoint
+bytes, prompts and scalar generation limits.
 
 | System | Evaluated profile |
 | --- | --- |
 | Tesseract fast | `khm+eng`, PSM 3, OEM 1; original integer LSTM models |
 | KhmerEasyTools fast | Same engine/models, auto preprocessing, engine reading order, no downstream segmentation |
 | Surya OCR 2 | Official GGUF, native full-page prompt/image processing, first pass, zero retries and no layout/block fallback |
-| PaddleOCR-VL 1.6 | Pinned MLX community 4-bit conversion, standalone VLM, `OCR:` prompt |
-| DeepSeek-OCR | Pinned MLX community 4-bit conversion, native processor and free-OCR prompt |
+| PaddleOCR-VL 1.6 | Pinned MLX community 4-bit conversion on CUDA, standalone VLM, `OCR:` prompt |
+| DeepSeek-OCR | Pinned MLX community 4-bit conversion on CUDA, native processor and free-OCR prompt |
 
 All VLMs use greedy decoding with a 4,096-token output cap. Surya batches four
 independent requests; other VLMs use batch one. Tesseract uses four CPU workers
 with `OMP_THREAD_LIMIT=1`. These concurrent local timings do not establish a
-controlled speed ranking. The MLX variants do not establish accuracy of their
+controlled speed ranking. Surya's per-page time is amortized batch time. The
+MLX variants do not establish accuracy of their
 unquantized originals or the complete Paddle document pipeline.
 
 Model and setup identities appear in the [model inventory](../benchmarks/accuracy/document-ocr/model-inventory.json)
@@ -68,10 +79,11 @@ Surya and DeepSeek setup checks also use a KHOB development page.
 
 ## Reproduction
 
-The evaluated VLM environment is **macOS on Apple Silicon**, with Python 3.11 and
-a local Metal-enabled `llama-server`. These profiles are separate from the
-toolkit's Windows/macOS/Linux installation tests. Keep several GiB free for
-external checkpoints and data; downloads are explicit and research-only.
+Tesseract and Surya use **macOS on Apple Silicon**, Python 3.11 and a local
+Metal-enabled `llama-server`. Paddle and DeepSeek use **Linux CUDA**, Python 3.10
+and a shared A100 80 GB GPU. These accuracy profiles are separate from the
+toolkit's Windows/macOS/Linux installation tests. External checkpoint and
+framework downloads are explicit and research-only.
 
 The recorded environment uses `surya-ocr==0.22.1`, `mlx-vlm==0.7.8`,
 `mlx==0.32.4`, `torch==2.14.1`, `transformers==5.20.1`, `Pillow==10.4.0`,
@@ -96,10 +108,6 @@ python -m venv .evaluation/document-env
 .evaluation/document-env/bin/python -I scripts/evaluate_document_ocr.py --system tesseract-fast
 .evaluation/document-env/bin/python -I scripts/evaluate_document_ocr.py --system khmereasytools-fast
 .evaluation/document-env/bin/python -I scripts/evaluate_document_ocr.py --system surya-2
-.evaluation/document-env/bin/python -I scripts/evaluate_document_ocr.py --system paddleocr-vl-1.6-4bit
-.evaluation/document-env/bin/python -I scripts/evaluate_document_ocr.py --system deepseek-ocr-4bit
-.evaluation/document-env/bin/python -I scripts/evaluate_document_ocr.py --report
-.evaluation/document-env/bin/python -I scripts/audit_document_ocr.py
 ```
 
 Install the local Tesseract executable and `llama-server` separately. The harness
@@ -107,6 +115,57 @@ requires toolkit runtime source bytes matching `b062be0`. It verifies checkpoint
 and input hashes. Freeze a new run only after setup controls; a changed
 environment receives a new token and cannot reuse an incompatible prediction
 cache. Retain any old frozen experiment rather than overwriting it.
+
+The CUDA environment retains the same MLX and MLX-VLM versions, with
+`mlx-cuda-12==0.32.4`, Torch 2.14.1 CPU, torchvision 0.29.1 CPU, Transformers
+5.20.1, Pillow 10.4.0 and NumPy 2.2.6. Its [95-archive framework inventory](../benchmarks/accuracy/document-ocr/cuda-execution/framework-inventory.json)
+records exact wheel hashes and original registry/vendor URLs. Download those
+archives explicitly and install them into a fresh Python 3.10 environment;
+`pip check` must pass. Keep it separate from the Qwen Torch/CUDA environment.
+
+The [blinded inventory](../benchmarks/accuracy/document-ocr/cuda-execution/source-inventory.json)
+contains the same 150 image identities without transcript text. For a fresh
+replication, derive this inventory from the newly frozen primary experiment,
+removing each page's `reference` field and recording its new source token.
+Copy only the selected PNGs, pinned Paddle/DeepSeek checkpoint files, inventory,
+framework inventory, evaluator and CUDA amendment to the inference host.
+Do not transfer `prepared.json` or released transcript files. Preserve the
+recorded image and checkpoint hashes.
+
+After checking the matrix and existing English/KHOB development calls, freeze
+the CUDA profile and run both complete 150-page profiles. Zero English control
+CER does not establish Khmer accuracy; the Paddle Khmer control remains capped.
+The recorded run
+uses physical GPU 2, a 16 GiB MLX allocator limit and disabled TF32. Existing
+server jobs remain running.
+
+```bash
+CUDA_VISIBLE_DEVICES=2 python scripts/evaluate_mlx_cuda.py --data-root .evaluation/document_mlx_cuda --device-control
+CUDA_VISIBLE_DEVICES=2 python scripts/evaluate_mlx_cuda.py --data-root .evaluation/document_mlx_cuda --system paddleocr-vl-1.6-4bit --smoke
+CUDA_VISIBLE_DEVICES=2 python scripts/evaluate_mlx_cuda.py --data-root .evaluation/document_mlx_cuda --system deepseek-ocr-4bit --smoke
+CUDA_VISIBLE_DEVICES=2 python scripts/evaluate_mlx_cuda.py --data-root .evaluation/document_mlx_cuda --freeze
+CUDA_VISIBLE_DEVICES=2 python scripts/evaluate_mlx_cuda.py --data-root .evaluation/document_mlx_cuda --system paddleocr-vl-1.6-4bit
+CUDA_VISIBLE_DEVICES=2 python scripts/evaluate_mlx_cuda.py --data-root .evaluation/document_mlx_cuda --system deepseek-ocr-4bit
+```
+
+Return `frozen.json` and all CUDA prediction directories to
+`.evaluation/document_mlx_cuda/server-run/`. Retain the matching local blinded
+input, model, framework and protocol files. The execution amendment records
+which systems use each token; a fresh replication must record its own tokens
+and zero prior Mac predictions for the moved systems before test calls.
+Then score locally and run the independent audit:
+
+```bash
+python -I scripts/report_document_ocr_cuda.py
+python -I scripts/audit_document_ocr.py
+```
+
+The reporter refuses incomplete profiles and checks the original frozen files,
+blinded selection, model identities, generation settings and execution order.
+It preserves per-system environments and writes no composite results until
+all five systems have 150 outputs. Different CUDA/Metal kernels and platform
+dependencies can change numerical behavior; cross-device prediction identity
+and conversion fidelity are not claimed.
 
 The optional `--with-wikisource` acquisition flag repeats the exclusion audit.
 Its live page inventory can change; use the pinned revisions and PDF hashes in

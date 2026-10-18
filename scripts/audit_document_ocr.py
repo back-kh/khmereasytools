@@ -9,10 +9,15 @@ import hashlib
 import json
 from pathlib import Path
 import random
+import sys
 import unicodedata
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from document_ocr_metrics import visible_text
+
 DATA = ROOT / ".evaluation/full_document_ocr"
+CUDA = ROOT / ".evaluation/document_mlx_cuda"
 PUBLIC = ROOT / "benchmarks/accuracy/document-ocr"
 SYSTEMS = ["tesseract-fast", "khmereasytools-fast", "surya-2",
            "paddleocr-vl-1.6-4bit", "deepseek-ocr-4bit"]
@@ -95,6 +100,70 @@ def read(path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def backend_profiles(public, source, pages):
+    """Check the declared devices without assigning CUDA outputs a Mac token."""
+    if public.get("schema_version", 1) == 1:
+        assert public["environment"] == source
+        return {system: source for system in SYSTEMS}
+    assert public["schema_version"] == 2
+    assert public["source_environment"] == source
+    cuda = read(CUDA / "server-run/frozen.json")
+    body = {k: v for k, v in cuda.items() if k != "token"}
+    assert digest_bytes(json.dumps(body, sort_keys=True).encode()) == cuda["token"]
+    assert cuda["source_evaluation_token"] == source["token"]
+    paths = {"evaluate_mlx_cuda.py": ROOT / "scripts/evaluate_mlx_cuda.py",
+             "inputs.json": CUDA / "inputs.json",
+             "model-inventory.json": CUDA / "model-inventory.json",
+             "protocol.md": CUDA / "protocol.md",
+             "framework-inventory.json": CUDA / "framework-inventory.json"}
+    assert set(cuda["files"]) == set(paths)
+    for name, expected in cuda["files"].items():
+        assert digest_bytes(paths[name].read_bytes()) == expected, name
+    selection = read(CUDA / "inputs.json")
+    assert selection["reference_text_supplied"] is False
+    assert selection["source_evaluation_token"] == source["token"]
+    assert selection["pages"] == [{k: v for k, v in p.items() if k != "reference"} for p in pages]
+    original_models = read(PUBLIC / "model-inventory.json")
+    assert read(CUDA / "model-inventory.json") == {
+        name: original_models[name] for name in
+        ["mlx-community/DeepSeek-OCR-4bit", "mlx-community/PaddleOCR-VL-1.6-4bit"]}
+    amendment = read(PUBLIC / "execution-amendment.json")
+    assert public["execution_amendment"] == amendment
+    assert amendment["source_evaluation_token"] == source["token"]
+    assert amendment["cuda_evaluation_token"] == cuda["token"]
+    assert amendment["retained_mac_systems"] == SYSTEMS[:3]
+    assert amendment["moved_systems"] == SYSTEMS[3:]
+    for system in SYSTEMS[3:]:
+        assert amendment["mac_prediction_counts_at_move"][system] == 0
+        assert not list((DATA / "predictions" / source["token"] / system).glob("*.json"))
+        assert len(list((CUDA / "server-run/predictions" / cuda["token"] / system).glob("*.json"))) == 150
+    for key, expected in dict(max_tokens=4096, timeout_seconds=240, temperature=0.0,
+                              seed=20261018, batch_size=1).items():
+        assert cuda[key] == expected
+    expected = {system: source if system in SYSTEMS[:3] else cuda for system in SYSTEMS}
+    assert public["backend_environments"] == expected
+    return expected
+
+
+def audit_cuda_source(record, page, source, cuda):
+    filename = digest_bytes(record["id"].encode()) + ".json"
+    path = CUDA / "server-run/predictions" / cuda["token"] / record["system"] / filename
+    assert digest_bytes(path.read_bytes()) == record["raw_record_sha256"]
+    raw = read(path)
+    for key in ["id", "system", "collection", "group", "source_split", "evaluation_token",
+                "source_evaluation_token", "image_sha256", "raw", "error", "generation_tokens",
+                "capped", "seconds", "started_utc", "peak_allocated_bytes", "formatted_prompt_sha256", "prompt"]:
+        assert raw[key] == record[key], key
+    assert raw["image_sha256"] == page["image_sha256"]
+    assert raw["source_evaluation_token"] == source["token"]
+    assert raw["started_utc"] >= cuda["created_utc"]
+    assert raw["started_utc"] >= read(PUBLIC / "execution-amendment.json")["created_utc"]
+    assert raw["prompt"] == cuda["prompts"][record["system"]]
+    controls = read(PUBLIC / "cuda-execution/setup-controls.json")["controls"]
+    assert raw["formatted_prompt_sha256"] == controls[
+        record["system"] + "-english-control"]["formatted_prompt_sha256"]
+
+
 def main():
     self_checks = self_check()
     frozen = read(DATA / "frozen.json")
@@ -127,18 +196,23 @@ def main():
     by_page = {p["id"]: p for p in pages}
     all_records, totals = {}, {}
     public = read(PUBLIC / "local-results.json")
-    assert public["environment"] == frozen
+    profiles = backend_profiles(public, frozen, pages)
     assert set(public["coverage"]) == set(SYSTEMS)
     for system in SYSTEMS:
         records = {}
-        for path in (DATA / "predictions" / frozen["token"] / system).glob("*.json"):
+        profile = profiles[system]
+        for path in (DATA / "predictions" / profile["token"] / system).glob("*.json"):
             record = read(path)
             assert path.stem == digest_bytes(record["id"].encode())
             assert record["id"] not in records
-            assert record["evaluation_token"] == frozen["token"]
+            assert record["evaluation_token"] == profile["token"]
             assert record["system"] == system
             page = by_page[record["id"]]
             assert all(record[k] == page[k] for k in ["id", "collection", "source_split", "group"])
+            if profile["token"] != frozen["token"]:
+                audit_cuda_source(record, page, frozen, profile)
+            if isinstance(record.get("raw"), str):
+                assert record["prediction"] == visible_text(record["raw"])
             assert score(page["reference"], record["prediction"]) == record["score"]
             records[record["id"]] = record
         assert set(records) == set(by_page), system + " is incomplete"
@@ -182,7 +256,8 @@ def main():
     assert native_test_count >= 157
     assert all(r["tests"] == native_test_count and not r["failures"] and not r["errors"] for r in native["records"])
     assert sum(r["real_ocr"] and r["real_pos"] and r["skipped"] == 1 for r in native["records"]) == 3
-    result = dict(evaluation_token=frozen["token"], source_revision=frozen["source_revision"],
+    result = dict(schema_version=public.get("schema_version", 1),
+                  source_evaluation_token=frozen["token"], source_revision=frozen["source_revision"],
                   auditor_sha256=digest_bytes(Path(__file__).read_bytes()),
                   independent_distance="Exact integer bit-vector Levenshtein; standard-library implementation",
                   distance_self_checks=self_checks, input_hashes_verified=150,
@@ -194,6 +269,7 @@ def main():
                   tesseract_toolkit_identical_compact_pages=identical,
                   repeated_cpu_attempts=repeated,
                   native_installation_records_verified=6, tests_per_native_run=native_test_count, summary=totals,
+                  backend_environment_tokens={system: profile["token"] for system, profile in profiles.items()},
                   notes=["Repeated CPU runs are repeatability evidence, not additional independent pages.",
                          "Source filename groups are not verified independent books.",
                          "This audit validates bookkeeping and exact edit counts, not transcript correctness."])

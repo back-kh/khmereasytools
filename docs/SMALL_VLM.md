@@ -6,6 +6,11 @@ in the [150-page study](DOCUMENT_OCR.md). It does not add 60 independent pages
 or extend the Qwen systems to the other 120 pages. The five original systems
 still cover all 150 pages.
 
+A subsequent [execution amendment](../benchmarks/accuracy/DOCUMENT_CUDA_EXECUTION.md)
+moves the primary Paddle and DeepSeek profiles to MLX CUDA before either has
+an evaluation prediction. The Qwen profile remains unchanged. The matched
+comparison therefore includes Mac GGUF, MLX CUDA and Torch CUDA implementations.
+
 The [protocol](../benchmarks/accuracy/SMALL_VLM_PROTOCOL.md) was written after
 the primary experiment began, before any Qwen evaluation predictions. This is
 an exploratory comparison. Neither model, prompt nor generation settings are
@@ -69,7 +74,7 @@ python scripts/report_small_vlm.py
 The reporter checks the frozen input/evaluator identities and independently
 recomputes edit counts using a separate standard-library implementation.
 Compact NFC code-point CER and descriptive paired filename-group intervals
-match the primary study. CUDA BF16 and Mac GGUF/MLX profiles have different
+match the primary study. CUDA BF16, Mac GGUF and MLX CUDA profiles have different
 implementations and precision; shared hardware and different batching prevent
 a controlled speed ranking. Public test membership does not establish absence
 from pretraining data.
