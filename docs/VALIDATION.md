@@ -13,17 +13,17 @@ Passing tests establish the documented contracts on checked inputs. They do not 
 | `khaudit` | Character/letter statistics, suspicious marks, controls, offsets | Diagnostics for review, not a spelling checker |
 | `khnormalize` | Conservative defaults, opt-ins, source maps, reversible edits, randomized idempotence | Selected text preparation is traceable |
 | `khdigits` | All digits in both directions, leading zeros, mixed scripts | Character translation preserves other text |
-| `khocr`, `khocr_layout`, `khanalyze` | Real image/PDF Tesseract calls, Khmer model, blank pages, page selection and geometry | Engine integration on synthetic fixtures; real-scan OCR accuracy remains unmeasured |
+| `khocr`, `khocr_layout`, `khanalyze` | Real image/PDF Tesseract calls plus 60 KHOB page images and 15 derived PDF pages | Default image OCR CER 18.07%; derived PDF CER 15.77%; output needs review |
 | `khlayout`, `khocr_overlay` | TSV validation, block/line/column order, offsets, drawing bounds and source protection | Geometric text-layout helpers, not semantic document classifiers |
-| `khpos` | Real installed khmer-nltk models, known verb/noun output, punctuation and empty text | Real backend execution; not an independent POS accuracy evaluation |
+| `khpos` | Actual backend on 1,018 ALT sentences plus a four-category khPOS proxy | ALT joint span F1 67.37%, with possible training overlap; proxy has partial tag coverage |
 | `khindex`, `khsearch` | Khmer retrieval, compound recall, BM25 score, digits/case, source offsets, original retrieval and errors | Functional keyword search, not a semantic/large-corpus benchmark |
 | `khtranslate` | Local HTTP protocol, credential/error/timeout handling; separately gated live checks | Live provider checks pending by user choice; translation quality unmeasured |
-| `khsentences` | Khmer/mixed punctuation, abbreviations, decimals, links, CRLF/paragraph/page boundaries, randomized source coverage | Documented sentence heuristic; not full UAX #29 or a linguistic benchmark |
-| `khextract` | Pattern/source offsets, digit folding, overlap priority, contact syntax, calendar validity, explicit date ambiguity | Structured text candidates, not verified contacts or general named entities |
+| `khsentences` | Contracts, 97 reconstructed ALT articles and 40 authored challenges | Internal-boundary F1 99.51% on reconstruction; 37/40 exact challenges after a fix; abbreviation/ellipsis limits remain |
+| `khextract` | Contracts plus 50 authored positive/negative cases | 50/50 exact after a phone-boundary fix; adapted development result, not independent precision/recall |
 | `khprocess` | UTF-8/BOM/newline mappings, invalid input, unchanged files, real image/PDF processing, original/cleaned coordinate contracts | Local workflow reuses existing core/OCR; OCR quality limits remain unchanged |
 | `khdoctor` | Missing packages/engine/language, timeouts, safe key presence, no optional imports, actual installed-environment setup checks | Read-only configuration report, not remote credential or model health verification |
 
-All 24 exported functions have executable tests. See [daily tools](DAILY_TOOLS.md), [segmentation protocol](EVALUATION.md), [OCR limits](OCR_LAYOUT.md), [search](SEARCH.md), and [translation](TRANSLATION.md) for the limits of each result.
+All 24 exported functions have executable tests. See [accuracy results and limitations](ACCURACY.md), [daily tools](DAILY_TOOLS.md), [segmentation protocol](EVALUATION.md), [OCR limits](OCR_LAYOUT.md), [search](SEARCH.md), and [translation](TRANSLATION.md).
 
 ## Reproduction
 

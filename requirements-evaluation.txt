@@ -1,0 +1,3 @@
+# Optional benchmark accelerators / PDF fixture creation only, never core deps.
+rapidfuzz>=3,<4
+reportlab>=4,<5

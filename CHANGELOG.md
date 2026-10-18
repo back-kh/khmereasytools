@@ -2,6 +2,9 @@
 
 ## 0.5.0.dev0 — unreleased
 
+- Add reproducible real-document OCR, annotated POS, reconstructed-article sentence, and authored extraction evaluations with baseline/adapted results and explicit data-quality/training-overlap limits.
+- Fix sentence splitting between consecutive initials and missed phone candidates before a sentence-ending period followed by a number.
+
 - Add dependency-free `khsentences`, `khextract`, `khprocess`, and `khdoctor`, with daily-use CLI commands and explicit source-offset/date-ambiguity contracts.
 - Extend actual image/PDF pipeline tests and installed-package validation reports with setup status, source revision, and wheel hashes.
 - Add local `khindex`/`khsearch` BM25 keyword retrieval with original-text results, snippets, source-token matches, and Khmer compound recall.

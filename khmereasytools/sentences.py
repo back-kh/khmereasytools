@@ -12,7 +12,8 @@ _ABBREVIATION = re.compile(
     r"(?<![A-Za-z])(?:Mr|Mrs|Ms|Dr|Prof|Sr|Jr|St|vs|etc)\."
     r"|(?<![A-Za-z])(?:[A-Za-z]\.){2,}"
     r"|(?:[\u1780-\u17a2]\.){2,}|។ល។", re.IGNORECASE)
-_INITIAL = re.compile(r"(?<![A-Za-z])[A-Z]\.(?=[ \t]+[A-Z][a-z])")
+_INITIAL = re.compile(
+    r"(?<![A-Za-z])[A-Z]\.(?=[ \t]+[A-Z](?:[a-z]|\.[ \t]))")
 _NUMBER_LABEL = re.compile(r"(?<![A-Za-z])No\.(?=[ \t]*[0-9០-៩])", re.IGNORECASE)
 _LINE = re.compile(r"\r\n|\r|\n|\f|\u2028|\u2029")
 

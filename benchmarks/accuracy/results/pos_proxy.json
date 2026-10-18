@@ -1,0 +1,66 @@
+{
+  "base_commit": "9e5e39738e630b3e17789ab20c46061c99ce1a07",
+  "runtime_python_sources_sha256": "b044bf6e91e361f0705cc983ddb2738ea0be63e899b3264388c0ee7fa034489e",
+  "python": "3.9.6",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "package_version": "0.5.0.dev0",
+  "protocol_sha256": "c4e1de18fd791df0707bb31fb6f164b8e5b6ad83c2072316956a3083c496c797",
+  "dataset": "khPOS OPEN-TEST, four-category mapping proxy",
+  "proxy_protocol_sha256": "4673da0255c080c9bbb4f6354fe5c3bac4026a899a80cb20c7b90d34d94a0a6d",
+  "word_sha256": "1b10b866263e6beb93cbf5c249ffc6a5d4d11dbc7beb90717c9f4e14cb152869",
+  "tag_sha256": "1714a6aeb0bedb1df6dde577a409799f6700bfd97f107cdf7c5a2624090b2cd4",
+  "mapping": {
+    "NN": "n",
+    "PN": "n",
+    "VB": "v",
+    "KAN": "."
+  },
+  "sentences": 1000,
+  "backend_version": "1.6",
+  "model_sha256": "2f690b1f40a81a615c5eb0c1059ba3e606e49840200b49343b15bf0bea09e63c",
+  "totals": {
+    "alignment_failures": 0,
+    "all_gold_tokens": 10778,
+    "gold": 5975,
+    "oracle_correct": 5554,
+    "noun_baseline_correct": 4329,
+    "public_boundary_correct": 4970,
+    "public_joint_correct": 4553
+  },
+  "mapped_gold_coverage": 0.5543700129894229,
+  "oracle_tag_accuracy": 0.9295397489539748,
+  "noun_baseline_accuracy": 0.7245188284518829,
+  "public_boundary_recall": 0.8317991631799163,
+  "public_joint_recall": 0.7620083682008368,
+  "per_original_tag": {
+    "KAN": {
+      "gold": 257,
+      "oracle_correct": 240,
+      "noun_baseline_correct": 0,
+      "public_boundary_correct": 257,
+      "public_joint_correct": 240
+    },
+    "NN": {
+      "gold": 2663,
+      "oracle_correct": 2567,
+      "noun_baseline_correct": 2663,
+      "public_boundary_correct": 2286,
+      "public_joint_correct": 2173
+    },
+    "PN": {
+      "gold": 1666,
+      "oracle_correct": 1461,
+      "noun_baseline_correct": 1666,
+      "public_boundary_correct": 1162,
+      "public_joint_correct": 963
+    },
+    "VB": {
+      "gold": 1389,
+      "oracle_correct": 1286,
+      "noun_baseline_correct": 0,
+      "public_boundary_correct": 1265,
+      "public_joint_correct": 1177
+    }
+  },
+  "limitations": "Partial tag coverage, annotation mismatch, no training-overlap audit. Not overall POS F1."
+}

@@ -4,6 +4,12 @@ Everyday Khmer tools: split words, search local text, read images or PDFs, and i
 
 The new **0.5.0.dev0** source version adds an **81,005-entry dictionary**, better segmentation, sentence splitting, structured extraction, one-call file processing, local search, optional translation, and setup diagnostics. PyPI 0.4.0 remains the published version until this update is released.
 
+[Accuracy evaluation](docs/ACCURACY.md) covers 60 real document images,
+15 derived PDF pages, two annotated POS corpora, and sentence/extraction
+challenges. Default OCR measured 18.07% character error rate on KHOB;
+segmentation plus POS measured 67.37% joint span F1 on ALT with possible
+training overlap. Review the output where errors matter.
+
 ## Install
 
 From this checkout:

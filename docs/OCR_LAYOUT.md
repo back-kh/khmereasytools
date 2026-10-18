@@ -43,4 +43,9 @@ A bundled synthetic four-line Khmer page and a two-page PDF exercise real Tesser
 
 Further evaluation needs independently transcribed real scans, varied fonts and resolution, rotated/noisy pages, and annotated multi-column layouts. OCR analysis does not add an accuracy-trained OCR model. The local engine and traineddata determine recognition behavior.
 
+[The accuracy evaluation](ACCURACY.md) measures all 60 KHOB level-1 images and
+15 derived PDF pages. Default image OCR CER is 18.07% on that sample. Annotation
+alignment problems limit its crop/layout diagnostics; semantic layout quality
+is not established.
+
 Sources: [Tesseract TSV and CLI documentation](https://tesseract-ocr.github.io/tessdoc/Command-Line-Usage.html), [pytesseract API](https://github.com/madmaze/pytesseract), and [pypdfium2 API and thread-safety guidance](https://pypdfium2.readthedocs.io/en/stable/python_api.html).

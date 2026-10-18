@@ -31,6 +31,12 @@ class SentenceTests(unittest.TestCase):
         self.assertEqual(ket.khsentences("ចូលhttps://example.com។ បន្ទាប់។"),
                          ["ចូលhttps://example.com។", "បន្ទាប់។"])
 
+    def test_consecutive_initials_before_a_surname(self):
+        self.assertEqual(ket.khsentences("Ask T. P. Jones. She can help."),
+                         ["Ask T. P. Jones.", "She can help."])
+        self.assertEqual(ket.khsentences("A. B. C. Evans arrived. We left."),
+                         ["A. B. C. Evans arrived.", "We left."])
+
     def test_wrapped_lines_paragraphs_and_pages(self):
         text = "first\r\nwrapped line\r\n\r\nsecond\fthird\u2029fourth"
         self.assertEqual(ket.khsentences(text), ["first\r\nwrapped line", "second", "third", "fourth"])
@@ -94,6 +100,17 @@ class ExtractionTests(unittest.TestCase):
         phones = ket.khextract(text, kinds=["phone"])
         self.assertEqual([item.value for item in phones], ["+85512345678", "+85512345678", "+855123456789"])
         self.assertEqual(len(phones), 3)
+
+    def test_phone_before_sentence_period_and_numeric_next_sentence(self):
+        self.assertEqual(
+            [item.text for item in ket.khextract("Call 016 234 567. 2030 is later.",
+                                                kinds=["phone"])],
+            ["016 234 567"])
+        self.assertEqual(ket.khextract("016234567890 016.234.567.89",
+                                      kinds=["phone"]), [])
+        self.assertEqual(
+            [item.value for item in ket.khextract("016.234.567", kinds=["phone"])],
+            ["+85516234567"])
 
     def test_link_trimming_balanced_brackets_and_overlap_filtering(self):
         text = "(https://example.com/a(b)). https://example.com/a.) a12@example.com"
