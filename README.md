@@ -28,6 +28,11 @@ The completed [146-image KH-FUNSD comparison](docs/KHFUNSD_OCR.md) and
 empty, failed and capped outputs. See [native function validation](docs/VALIDATION.md)
 for fresh Windows, macOS and Linux installation results.
 
+A [smaller printed-document diagnostic](docs/CLEAN_DOCUMENT_DIAGNOSTIC.md)
+retains 18 input-screened images in separate KHOB and KH-FUNSD tracks. It is a
+post hoc development sample with disclosed selection and reference limits;
+the larger comparisons remain unchanged.
+
 ## Install
 
 From this checkout:

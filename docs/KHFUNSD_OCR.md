@@ -4,6 +4,11 @@ This new study uses the author-identified KH-FUNSD folder: 148 files, 146 unique
 
 All 146 images remain included, including 491 literal `[ILLEGIBLE]` markers on 91 pages. Those markers contribute 5,401 of 55,867 compact reference code points. The predefined marker-free sensitivity subset has 55 pages and still does not certify reference completeness. Folder labels Digital/Scanned and distinct image hashes do not establish independent documents, camera conditions or mapping to all 158 documents described by the KH-FUNSD publication.
 
+A separate [focused document diagnostic](CLEAN_DOCUMENT_DIAGNOSTIC.md) retains
+eight business images after input/reference-flag screening, alongside ten KHOB
+digital-export pages in a different track. Its post hoc agreement results do
+not replace this full comparison or promote the references to human gold.
+
 [Frozen protocol](../benchmarks/accuracy/BUSINESS_OCR_PROTOCOL.md) · [counts and profiles](../benchmarks/accuracy/business-ocr/results.json) · [independent audit](../benchmarks/accuracy/business-ocr/consistency-audit.json)
 
 ## All 146 images

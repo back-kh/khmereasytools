@@ -1,0 +1,288 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-18T11:59:05.586552+00:00",
+  "analysis_sha256": "615d4e2490ae89badabc066c63e968fc57d183a909ef6189fa0ee666285b5e67",
+  "freeze_token": "9d7d5000d6e42f622866c9c11a0380061a3089d7f182faae4ca6ba9d28cf9d7c",
+  "selection_sha256": "f9e372594c2b9a8872de85518abefd9610c0014b7a1df04523e13769a7d0a4df",
+  "private_selected_count_records_sha256": "e28ecb5bdb48b9eefec2a7fb79e3a20a77f8eccca4810b405c768b44657e98c1",
+  "source_hashes": {
+    "benchmarks/accuracy/ocr-word-errors/results.json": "a9b3b71c9c59d17d38a4c54486618542fc4e10a7d111318a0bf181379d46579f",
+    "benchmarks/accuracy/business-ocr/results.json": "2386af3c6a98739e71ecd34aa14a1053d7f0ac588148649e3b5e5a3f4bd443cb",
+    "benchmarks/accuracy/business-ocr/consistency-audit.json": "0cad5eace4edc2a7cd76e377bf68c2e7fea665ec965eb770443068c1e9b91342",
+    ".evaluation/ocr_word_errors/results-with-count-records.json": "12a1b48396835092bd7f2a7300d1e317822e3bff0a69188e7286dbb70ec4e66f",
+    ".evaluation/business_ocr/scored-count-records.json": "c71d6a59f791812f034d8b01eed6a8b5b8d7a8d3fed2a4b7bde9405c2bc8301f"
+  },
+  "selected_by_track": {
+    "khfunsd-screened": 8,
+    "khob-digital": 10
+  },
+  "record_count": 60,
+  "reference_review": "Zero new independent human reviews; original references unchanged",
+  "summaries": {
+    "khfunsd-screened": {
+      "deepseek-ocr-4bit": {
+        "compact_cer": {
+          "substitutions": 1300,
+          "deletions": 138,
+          "insertions": 10532,
+          "reference_units": 2480,
+          "prediction_units": 12874,
+          "edits": 11970,
+          "error_rate": 4.826612903225806
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 66,
+          "deletions": 170,
+          "insertions": 791,
+          "reference_units": 419,
+          "prediction_units": 1040,
+          "edits": 1027,
+          "error_rate": 2.451073985680191
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 313,
+          "deletions": 88,
+          "insertions": 9300,
+          "reference_units": 728,
+          "prediction_units": 9940,
+          "edits": 9701,
+          "error_rate": 13.32554945054945
+        },
+        "samples": 8,
+        "empty": 0,
+        "errors": 0,
+        "capped": 4,
+        "capped_unknown": 0,
+        "exact_compact_units": 0
+      },
+      "khmereasytools-fast": {
+        "compact_cer": {
+          "substitutions": 201,
+          "deletions": 245,
+          "insertions": 61,
+          "reference_units": 2480,
+          "prediction_units": 2296,
+          "edits": 507,
+          "error_rate": 0.20443548387096774
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 69,
+          "deletions": 31,
+          "insertions": 27,
+          "reference_units": 419,
+          "prediction_units": 415,
+          "edits": 127,
+          "error_rate": 0.3031026252983294
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 75,
+          "deletions": 62,
+          "insertions": 69,
+          "reference_units": 728,
+          "prediction_units": 735,
+          "edits": 206,
+          "error_rate": 0.28296703296703296
+        },
+        "samples": 8,
+        "empty": 0,
+        "errors": 0,
+        "capped": 0,
+        "capped_unknown": 8,
+        "exact_compact_units": 0
+      },
+      "paddleocr-vl-1.6-4bit": {
+        "compact_cer": {
+          "substitutions": 996,
+          "deletions": 601,
+          "insertions": 3814,
+          "reference_units": 2480,
+          "prediction_units": 5693,
+          "edits": 5411,
+          "error_rate": 2.1818548387096772
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 132,
+          "deletions": 95,
+          "insertions": 2,
+          "reference_units": 419,
+          "prediction_units": 326,
+          "edits": 229,
+          "error_rate": 0.5465393794749404
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 334,
+          "deletions": 54,
+          "insertions": 4423,
+          "reference_units": 728,
+          "prediction_units": 5097,
+          "edits": 4811,
+          "error_rate": 6.608516483516484
+        },
+        "samples": 8,
+        "empty": 0,
+        "errors": 0,
+        "capped": 1,
+        "capped_unknown": 0,
+        "exact_compact_units": 0
+      },
+      "surya-2": {
+        "compact_cer": {
+          "substitutions": 24,
+          "deletions": 162,
+          "insertions": 58,
+          "reference_units": 2480,
+          "prediction_units": 2376,
+          "edits": 244,
+          "error_rate": 0.09838709677419355
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 20,
+          "deletions": 37,
+          "insertions": 10,
+          "reference_units": 419,
+          "prediction_units": 392,
+          "edits": 67,
+          "error_rate": 0.15990453460620524
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 18,
+          "deletions": 48,
+          "insertions": 40,
+          "reference_units": 728,
+          "prediction_units": 720,
+          "edits": 106,
+          "error_rate": 0.14560439560439561
+        },
+        "samples": 8,
+        "empty": 0,
+        "errors": 0,
+        "capped": 0,
+        "capped_unknown": 0,
+        "exact_compact_units": 0
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 217,
+          "deletions": 519,
+          "insertions": 168,
+          "reference_units": 2480,
+          "prediction_units": 2129,
+          "edits": 904,
+          "error_rate": 0.36451612903225805
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 70,
+          "deletions": 57,
+          "insertions": 40,
+          "reference_units": 419,
+          "prediction_units": 402,
+          "edits": 167,
+          "error_rate": 0.39856801909307876
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 80,
+          "deletions": 122,
+          "insertions": 106,
+          "reference_units": 728,
+          "prediction_units": 712,
+          "edits": 308,
+          "error_rate": 0.4230769230769231
+        },
+        "samples": 8,
+        "empty": 0,
+        "errors": 0,
+        "capped": 0,
+        "capped_unknown": 8,
+        "exact_compact_units": 0
+      }
+    },
+    "khob-digital": {
+      "ket-ocr": {
+        "compact_cer": {
+          "substitutions": 1044,
+          "deletions": 402,
+          "insertions": 918,
+          "reference_units": 19694,
+          "prediction_units": 20210,
+          "edits": 2364,
+          "error_rate": 0.12003655935818015
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 450,
+          "deletions": 15,
+          "insertions": 189,
+          "reference_units": 1189,
+          "prediction_units": 1363,
+          "edits": 654,
+          "error_rate": 0.5500420521446594
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 745,
+          "deletions": 48,
+          "insertions": 843,
+          "reference_units": 4307,
+          "prediction_units": 5102,
+          "edits": 1636,
+          "error_rate": 0.3798467610866032
+        },
+        "samples": 10,
+        "empty": 0,
+        "errors": 0,
+        "capped": 0,
+        "capped_unknown": 10,
+        "exact_compact_units": 0
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 1004,
+          "deletions": 587,
+          "insertions": 891,
+          "reference_units": 19694,
+          "prediction_units": 19998,
+          "edits": 2482,
+          "error_rate": 0.1260282319488169
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 466,
+          "deletions": 27,
+          "insertions": 144,
+          "reference_units": 1189,
+          "prediction_units": 1306,
+          "edits": 637,
+          "error_rate": 0.535744322960471
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 747,
+          "deletions": 88,
+          "insertions": 793,
+          "reference_units": 4307,
+          "prediction_units": 5012,
+          "edits": 1628,
+          "error_rate": 0.3779893197120966
+        },
+        "samples": 10,
+        "empty": 0,
+        "errors": 0,
+        "capped": 0,
+        "capped_unknown": 10,
+        "exact_compact_units": 0
+      }
+    }
+  },
+  "source_distance_audits_reused": true,
+  "source_audit_projections": {
+    "word": 26208,
+    "business": 2370
+  },
+  "notes": [
+    "Post hoc focused diagnostic after larger results were known; not an unseen test set.",
+    "Selection used source quality and reference flags, with no per-image OCR scores.",
+    "Reuses unchanged prior predictions and independently audited edit counts; no new inference.",
+    "Selected tracks are separate and must not be pooled.",
+    "All selected-system outputs retained, including empty, capped and failed calls.",
+    "KH-FUNSD references remain unreviewed machine-generated operational ground truth.",
+    "Digital exports may retain fine print, stamps and handwritten administrative fields.",
+    "Qwen is excluded because its earlier matched30 selection does not cover this complete track.",
+    "No guarantee that input screening lowers CER or establishes real-world accuracy."
+  ]
+}
