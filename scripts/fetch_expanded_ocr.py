@@ -24,9 +24,12 @@ COOLDOWN_UNTIL = 0.0
 def git_repository():
     path = DATA / "khmerst-git"
     if not (path / ".git").is_dir():
-        subprocess.run(["git", "-c", "http.version=HTTP/1.1", "clone", "--filter=blob:none",
+        subprocess.run(["git", "-c", "http.version=HTTP/1.1", "-c", "core.autocrlf=false",
+                        "clone", "--filter=blob:none",
                         "--no-checkout", "--depth", "1",
                         "https://gitlab.com/vannkinhnom123/khmerst.git", str(path)], check=True)
+    # Annotation identity is over upstream bytes, including line endings.
+    subprocess.run(["git", "config", "core.autocrlf", "false"], cwd=str(path), check=True)
     revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=str(path)).decode().strip()
     if revision != REVISION:
         subprocess.run(["git", "-c", "http.version=HTTP/1.1", "fetch", "--depth", "1",
@@ -58,7 +61,7 @@ def checkout_missing(git_path, rows):
     subprocess.run(["git", "sparse-checkout", "set", "--no-cone", "--stdin"],
                    cwd=str(git_path), input="\n".join("/" + p for p in missing) + "\n",
                    text=True, check=True)
-    subprocess.run(["git", "-c", "http.version=HTTP/1.1", "checkout", "--detach", REVISION],
+    subprocess.run(["git", "-c", "http.version=HTTP/1.1", "checkout", "--force", "--detach", REVISION],
                    cwd=str(git_path), check=True)
 
 
