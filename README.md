@@ -15,6 +15,8 @@ The [sub-10% OCR experiment](docs/OCR_TARGET.md) did not meet that target:
 the optional larger model scored 11.49% versus 11.43% for the default on the
 same 40 images. The default is unchanged. A swapped transcript/image pair
 was also found in development data; historical raw reports remain preserved.
+An additional adaptive `khm+eng` check improves this local image score to
+10.68%, still above target; use that existing explicit mode for mixed text.
 
 ## Install
 

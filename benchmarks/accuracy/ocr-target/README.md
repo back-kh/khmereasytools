@@ -5,6 +5,14 @@ See [interpretation](../../../docs/OCR_TARGET.md), the frozen
 [selection](../OCR_TARGET_SELECTION.md). No production algorithm changed.
 The sub-10% target is not met on the 40-image comparison.
 
+mixed/ records the later adaptive mixed-language follow-up. Its candidate
+was motivated by comparison-set inspection and is not new independent
+evidence. scripts/evaluate_mixed_ocr.py reproduces it with pinned fast Khmer
+and English models; the existing structured API/CLI already support this
+language choice. It improves the local image aggregate to 10.68%, still
+above target, and does not replace the Khmer-only default. Native mixed-ocr
+artifacts additionally measure the installed wheel on Windows/macOS/Linux.
+
 development/ preserves the original four prototype measurements on 20
 images. These records preceded the final installed-wheel harness. The fast
 prototype did not record its model hash; the pinned baseline/model is

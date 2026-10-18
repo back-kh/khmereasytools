@@ -3,6 +3,8 @@
 The overall target is **not met** on the current printed-document comparison.
 Keep the lightweight default. A larger official model and two additional
 settings did not justify changing everyday behavior or adding a new option.
+The later explicit mixed-language setting improves the local image score
+to 10.68%, still above target, using an existing API option.
 
 ## Fixed comparison
 
@@ -31,6 +33,22 @@ system model directory. No automatic model download, extra runtime package,
 or production model change was introduced. The zero-dependency core stays
 the same. The existing installed image/PDF APIs are used for both models;
 model selection is isolated in each evaluation subprocess.
+
+Native [accuracy run 39094944452](https://github.com/back-kh/khmereasytools/actions/runs/39094944452)
+completed successfully for runtime revision ebedf34b73e5a7ddfe785119da6c734c043879db:
+
+| OS | Fast image CER | Best image CER | Fast PDF CER | Best PDF CER |
+| --- | ---: | ---: | ---: | ---: |
+| Windows | 11.4272% | 11.4855% | 11.8617% | 11.5265% |
+| macOS | 11.4322% | 11.4892% | 11.8582% | 11.5265% |
+| Linux | 11.5116% | 11.5240% | 12.3938% | 12.0137% |
+
+The same wheel, model, image, annotation and derived-PDF hashes were
+verified across OSes for each profile. Tesseract versions differ. Both
+target flags are false on every OS. The [installation suite](https://github.com/back-kh/khmereasytools/actions/runs/39094944448)
+also passed: 142 tests passed and live translation was skipped on each OS.
+The mixed-language follow-up changes only evaluation/documentation; the
+production runtime is unchanged from this verified revision.
 
 To get strictly below 10% on these fixed references, the default would need
 at least 1,155 fewer edits. Neither passing integration tests nor the name
@@ -67,6 +85,47 @@ error rate. References are unchanged in this experiment. A separate audit
 and independently checked transcripts are needed before stronger claims.
 
 ## Reproduce and inspect
+
+### Additional mixed-language follow-up
+
+After inspecting the comparison, mef_4 visibly contained substantial English
+job titles. A separate, explicitly adaptive experiment tested the existing
+`lang="khm+eng"` setting, keeping the fast models, preprocessing and PSM 3.
+Development error fell from 18.9676% to 17.7254% (430 fewer edits), then the
+fixed mode scored 8,606 / 80,606 edits, **10.6766%**, on the same 40 images.
+It improved this comparison but still missed the target. Some Khmer-only
+pages regressed, so the default is unchanged. No new library feature is
+needed to use this mode:
+
+~~~python
+import khmereasytools as ket
+text = ket.khanalyze("scan.pdf", lang="khm+eng").text
+~~~
+
+~~~bash
+khmereasytools ocr scan.pdf --lang khm+eng
+~~~
+
+Install both language data files once if using this mode. The pinned fast
+English model is 4,113,088 bytes; both models total 5,560,014 bytes and stay
+outside the package. This candidate was motivated by comparison inspection,
+not an independent held-out discovery. Its separate [protocol](../benchmarks/accuracy/OCR_MIXED_PROTOCOL.md)
+and [development decision](../benchmarks/accuracy/OCR_MIXED_SELECTION.md)
+retain that provenance. A native mixed-ocr workflow evaluates the same
+40 images and 15 derived PDF pages through a fresh wheel on all three OSes.
+
+~~~bash
+python scripts/evaluate_mixed_ocr.py --prepare-models --partition reserved --pdf-transport
+~~~
+
+This explicit evaluation command downloads checksum-pinned models into
+ignored .evaluation if needed. Ordinary library calls never download models.
+Full predictions remain ignored; committed reports contain derived counts.
+The local derived-PDF score is 11.3747%, also above target. Mixed mode saves
+609 character edits on the 40 images; at least 546 further edits would need
+to be removed to get strictly below 10% on those fixed references.
+
+### Original single-language model comparison
 
 See the frozen [protocol](../benchmarks/accuracy/OCR_TARGET_PROTOCOL.md),
 [development selection](../benchmarks/accuracy/OCR_TARGET_SELECTION.md), and
