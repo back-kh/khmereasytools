@@ -1,0 +1,49 @@
+{
+  "files": {
+    "evaluate_mlx_cuda.py": "48ebb3da5832af74e4e45c9c73378f216eef721fed46513b079520e044cc2f6b",
+    "inputs.json": "e6521a5081bf6a774b7e5e6c310ea22ccefd098a5cb9f4436d4a79a5f42c9dd1",
+    "model-inventory.json": "c00dbeb4c2acd7c8ac052434ab8f19eef7d41d4a281ec092099f0abc07fd4c6a",
+    "protocol.md": "74859c8f8a302264efb7838bb8e752acd161955f3187a143778690b740f432f6",
+    "framework-inventory.json": "f59b8a32afda04cbed84627b9a1240a8ab1661cff94da4684f9850dc03d0f0dd"
+  },
+  "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+  "python": "3.10.12",
+  "platform": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+  "versions": {
+    "mlx": "0.32.4",
+    "mlx-cuda-12": "0.32.4",
+    "mlx-vlm": "0.7.8",
+    "mlx-audio": "0.5.9",
+    "torch": "2.14.1+cpu",
+    "torchvision": "0.29.1+cpu",
+    "transformers": "5.20.1",
+    "Pillow": "10.4.0",
+    "numpy": "2.2.6",
+    "nvidia-cublas-cu12": "12.9.1.4",
+    "nvidia-cufft-cu12": "11.4.1.4",
+    "nvidia-cusolver-cu12": "11.7.3.90",
+    "nvidia-cusparse-cu12": "12.5.8.93",
+    "nvidia-cuda-runtime-cu12": "12.9.79",
+    "nvidia-cuda-nvrtc-cu12": "12.9.86",
+    "nvidia-cudnn-cu12": "9.10.2.21",
+    "nvidia-nccl-cu12": "2.27.3",
+    "nvidia-nvjitlink-cu12": "12.9.86"
+  },
+  "gpu_query": "NVIDIA A100 80GB PCIe, 81920, 580.159.03",
+  "cuda_visible_devices": "2",
+  "mlx_default_device": "Device(gpu, 0)",
+  "mlx_memory_limit_bytes": 17179869184,
+  "mlx_enable_tf32": false,
+  "max_tokens": 4096,
+  "timeout_seconds": 240,
+  "temperature": 0.0,
+  "seed": 20261018,
+  "batch_size": 1,
+  "cpu_threads": 4,
+  "prompts": {
+    "paddleocr-vl-1.6-4bit": "OCR:",
+    "deepseek-ocr-4bit": "Free OCR."
+  },
+  "created_utc": "2026-10-18T07:39:40Z",
+  "token": "41e89f5042b38b221e90b463a72df3c0ef86aa1b3314393d003c40c904f02501"
+}
