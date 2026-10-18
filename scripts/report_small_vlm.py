@@ -30,10 +30,15 @@ def main():
              "inputs.json": DATA / "inputs.json",
              "model-inventory.json": DATA / "model-inventory.json",
              "protocol.md": DATA / "protocol.md"}
+    if set(frozen["files"]) != set(files):
+        raise ValueError("Unexpected frozen CUDA dependency inventory")
     for name, expected in frozen["files"].items():
         if sha256(files[name]) != expected:
             raise ValueError("Frozen CUDA input or evaluator differs: " + name)
     main_frozen = read(PRIMARY / "frozen.json")
+    main_body = {k: v for k, v in main_frozen.items() if k != "token"}
+    if hashlib.sha256(json.dumps(main_body, sort_keys=True).encode()).hexdigest() != main_frozen["token"]:
+        raise ValueError("Primary frozen identity token differs")
     inputs = read(DATA / "inputs.json")
     if inputs["source_evaluation_token"] != main_frozen["token"]:
         raise ValueError("Primary source experiment differs")
@@ -42,11 +47,14 @@ def main():
             raise ValueError("Primary frozen scoring/input dependency differs: " + relative)
     all_pages = read(PRIMARY / "prepared.json")["pages"]
     pages = {p["id"]: p for p in all_pages if p["source_split"] == "test"}
-    if len(pages) != 30 or {p["id"] for p in inputs["pages"]} != set(pages):
+    if (len(pages) != 30 or len(inputs["pages"]) != 30 or
+            {p["id"] for p in inputs["pages"]} != set(pages)):
         raise ValueError("Official test selection differs")
     for item in inputs["pages"]:
         page = pages[item["id"]]
-        if item["image_sha256"] != page["image_sha256"] or sha256(DATA / item["image"]) != page["image_sha256"]:
+        if (any(item[k] != page[k] for k in
+                ["collection", "source_split", "group", "image_sha256", "width", "height"]) or
+                sha256(DATA / item["image"]) != page["image_sha256"]):
             raise ValueError("Paired input image differs")
         if hashlib.sha256(page["reference"].encode()).hexdigest() != page["reference_sha256"]:
             raise ValueError("Released original reference differs")
@@ -64,18 +72,23 @@ def main():
     records, coverage, paired = [], {}, {}
     for system in SYSTEMS:
         directory = DATA / "server-run/predictions" / frozen["token"] / system
-        raw_rows = [read(p) for p in sorted(directory.glob("*.json"))]
+        raw_paths = sorted(directory.glob("*.json"))
+        raw_rows = [read(p) for p in raw_paths]
         if len(raw_rows) != 30 or len({r["id"] for r in raw_rows}) != 30 or {r["id"] for r in raw_rows} != set(pages):
             raise ValueError("Missing or duplicate CUDA predictions: " + system)
         by_id = {}
-        for raw in raw_rows:
+        for raw, path in zip(raw_rows, raw_paths):
             page = pages[raw["id"]]
             if (raw["evaluation_token"] != frozen["token"] or raw["system"] != system or
+                    path.stem != hashlib.sha256(raw["id"].encode()).hexdigest() or
                     raw["image_sha256"] != page["image_sha256"] or
                     any(raw[k] != page[k] for k in ["source_split", "group"])):
                 raise ValueError("CUDA prediction provenance differs")
             prediction = visible_text(raw["raw"])
             extra = {k: raw[k] for k in ["generation_tokens", "capped", "image_grid_thw", "peak_allocated_bytes"]}
+            extra.update(evaluation_token=frozen["token"],
+                         source_evaluation_token=main_frozen["token"],
+                         raw_record_sha256=sha256(path))
             row = scored_record(page, system, prediction, raw["seconds"], error=raw["error"], **extra)
             if independent_score(page["reference"], prediction) != row["score"]:
                 raise ValueError("Independent edit-distance audit differs")

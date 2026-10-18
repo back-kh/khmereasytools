@@ -256,9 +256,11 @@ def main():
     assert native_test_count >= 157
     assert all(r["tests"] == native_test_count and not r["failures"] and not r["errors"] for r in native["records"])
     assert sum(r["real_ocr"] and r["real_pos"] and r["skipped"] == 1 for r in native["records"]) == 3
-    result = dict(schema_version=public.get("schema_version", 1),
+    result = dict(schema_version=public.get("schema_version", 1), passed=True,
                   source_evaluation_token=frozen["token"], source_revision=frozen["source_revision"],
                   auditor_sha256=digest_bytes(Path(__file__).read_bytes()),
+                  results_sha256=digest_bytes((PUBLIC / "local-results.json").read_bytes()),
+                  native_validation_sha256=digest_bytes((PUBLIC / "native-validation.json").read_bytes()),
                   independent_distance="Exact integer bit-vector Levenshtein; standard-library implementation",
                   distance_self_checks=self_checks, input_hashes_verified=150,
                   unique_page_image_hashes=150, unique_raw_reference_hashes=150,

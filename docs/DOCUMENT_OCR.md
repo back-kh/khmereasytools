@@ -160,6 +160,19 @@ python -I scripts/report_document_ocr_cuda.py
 python -I scripts/audit_document_ocr.py
 ```
 
+After the separate Qwen report is also complete, run the optional post hoc
+generation diagnostic:
+
+```bash
+python -I scripts/analyze_document_generation.py
+```
+
+This requires both completed studies and their edit-count audits. It records
+compact output/reference length ratios and an explicitly defined overlapping
+eight-code-point reuse fraction. Reuse describes repeated text and is not an
+accuracy measure. The analysis leaves all predictions, token limits and CER
+unchanged; it does not report a clipped or deduplicated alternative score.
+
 The reporter refuses incomplete profiles and checks the original frozen files,
 blinded selection, model identities, generation settings and execution order.
 It preserves per-system environments and writes no composite results until
