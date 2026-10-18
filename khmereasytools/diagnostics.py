@@ -7,6 +7,7 @@ import platform
 import re
 import shutil
 import subprocess
+from subprocess import run as _run
 from typing import NamedTuple, Tuple
 
 
@@ -50,8 +51,8 @@ def khdoctor(*, timeout=5.0):
                        system, "Install tesseract-ocr and tesseract-ocr-khm using your system package manager.")
     if executable is not None:
         try:
-            result = subprocess.run([executable, "--list-langs"], stdout=subprocess.PIPE,
-                                    stderr=subprocess.PIPE, timeout=timeout, check=False)
+            result = _run([executable, "--list-langs"], stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE, timeout=timeout, check=False)
             languages = {line.strip() for line in result.stdout.decode("utf-8", errors="replace").splitlines()
                          if re.fullmatch(r"[A-Za-z0-9_/-]+", line.strip())}
             if result.returncode != 0:

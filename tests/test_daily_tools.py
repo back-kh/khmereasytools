@@ -185,7 +185,7 @@ class DoctorTests(unittest.TestCase):
         with patch("khmereasytools.diagnostics._available", side_effect=lambda name: name not in missing), \
                 patch("platform.system", return_value="Linux"), \
                 patch("shutil.which", return_value=executable), \
-                patch("subprocess.run", return_value=result):
+                patch("khmereasytools.diagnostics._run", return_value=result):
             return ket.khdoctor()
 
     def test_ready_configuration_and_no_key_disclosure(self):
@@ -218,7 +218,7 @@ class DoctorTests(unittest.TestCase):
         self.assertEqual(next(check for check in self.report(result=result).checks if check.name == "ocr").status, "error")
         with patch("khmereasytools.diagnostics._available", return_value=True), \
                 patch("shutil.which", return_value="/test/tesseract"), \
-                patch("subprocess.run", side_effect=subprocess.TimeoutExpired("tesseract", 5)):
+                patch("khmereasytools.diagnostics._run", side_effect=subprocess.TimeoutExpired("tesseract", 5)):
             report = ket.khdoctor()
         self.assertEqual(next(check for check in report.checks if check.name == "ocr").status, "error")
 
