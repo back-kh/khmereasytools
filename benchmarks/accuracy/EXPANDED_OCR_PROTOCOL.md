@@ -16,7 +16,9 @@ Only KHOB and KhmerST are source corpora, as requested by the author.
 2. KhmerST, original GitLab project 62344518 at revision
    ff64017769af17dee93384756019a975489a7fe0. Fetch all 1,544 original scene
    images and the 31 current JSON annotation files, verifying their Git blob
-   identities and recording SHA-256 hashes. Evaluate all usable annotated
+   identities and recording SHA-256 hashes. Prefer the original repository's
+   partial-clone bulk Git transport to avoid per-file API quotas; the optional
+   API transport must honor server cooldowns. Evaluate all usable annotated
    text regions, grouped by source image. This is a fixed public-corpus
    evaluation with no training here; it is not described as the authors'
    official test split or as guaranteed absent from Tesseract training.

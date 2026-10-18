@@ -5,6 +5,7 @@ from email.utils import parsedate_to_datetime
 import hashlib
 import json
 from pathlib import Path, PurePosixPath
+import subprocess
 import threading
 import time
 from urllib.parse import quote, urlencode
@@ -18,6 +19,47 @@ API = "https://gitlab.com/api/v4/projects/{}/repository/".format(PROJECT)
 DATA = ROOT / ".evaluation/expanded_ocr"
 COOLDOWN_LOCK = threading.Lock()
 COOLDOWN_UNTIL = 0.0
+
+
+def git_repository():
+    path = DATA / "khmerst-git"
+    if not (path / ".git").is_dir():
+        subprocess.run(["git", "-c", "http.version=HTTP/1.1", "clone", "--filter=blob:none",
+                        "--no-checkout", "--depth", "1",
+                        "https://gitlab.com/vannkinhnom123/khmerst.git", str(path)], check=True)
+    revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=str(path)).decode().strip()
+    if revision != REVISION:
+        subprocess.run(["git", "-c", "http.version=HTTP/1.1", "fetch", "--depth", "1",
+                        "origin", REVISION], cwd=str(path), check=True)
+    raw = subprocess.check_output(["git", "ls-tree", "-r", "-z", REVISION, "--",
+                                   "scene_img_data", "scene_json_data"], cwd=str(path))
+    rows = []
+    for entry in raw.split(b"\0"):
+        if not entry:
+            continue
+        fields, name = entry.split(b"\t", 1)
+        mode, kind, identity = fields.decode("ascii").split()
+        name = name.decode("utf-8")
+        rows.append(dict(id=identity, name=PurePosixPath(name).name,
+                         type=kind, path=name, mode=mode))
+    return path, rows
+
+
+def checkout_missing(git_path, rows):
+    missing = []
+    for row in rows:
+        path = DATA / "khmerst" / row["path"]
+        if not path.is_file() or blob_hash(path.read_bytes()) != row["id"]:
+            missing.append(row["path"])
+    if not missing:
+        return
+    # A partial clone retrieves all needed blobs in a bulk pack rather than
+    # consuming one unauthenticated API request per image.
+    subprocess.run(["git", "sparse-checkout", "set", "--no-cone", "--stdin"],
+                   cwd=str(git_path), input="\n".join("/" + p for p in missing) + "\n",
+                   text=True, check=True)
+    subprocess.run(["git", "-c", "http.version=HTTP/1.1", "checkout", "--detach", REVISION],
+                   cwd=str(git_path), check=True)
 
 
 def read_url(url, limit=64000000):
@@ -73,7 +115,7 @@ def blob_hash(data):
     return hashlib.sha1(b"blob " + str(len(data)).encode("ascii") + b"\0" + data).hexdigest()
 
 
-def fetch(row):
+def fetch(row, git_path=None):
     parts = PurePosixPath(row["path"]).parts
     if (len(parts) != 2 or parts[0] not in {"scene_img_data", "scene_json_data"}
             or any(c in row["path"] for c in ("\\", ":", "\0"))
@@ -87,8 +129,13 @@ def fetch(row):
         if blob_hash(data) == row["id"]:
             return dict(path=row["path"], bytes=len(data), git_blob=row["id"],
                         sha256=hashlib.sha256(data).hexdigest())
-    url = API + "files/" + quote(row["path"], safe="") + "/raw?ref=" + REVISION
-    data = read_url(url)
+    if git_path is None:
+        url = API + "files/" + quote(row["path"], safe="") + "/raw?ref=" + REVISION
+        data = read_url(url)
+    else:
+        data = (git_path / row["path"]).read_bytes()
+        if len(data) > 64000000:
+            raise ValueError("Source image exceeds byte bound")
     if blob_hash(data) != row["id"]:
         raise ValueError("Git blob mismatch for " + row["path"])
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -103,17 +150,23 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--images", action="store_true", help="Also fetch all 1544 original images")
     parser.add_argument("--workers", type=int, default=4)
+    parser.add_argument("--transport", choices=["git", "api"], default="git",
+                        help="Use bulk Git transport (default) or per-file GitLab API")
     args = parser.parse_args()
     if not 1 <= args.workers <= 12:
         parser.error("workers must be 1..12")
     DATA.mkdir(parents=True, exist_ok=True)
+    git_path, git_rows = git_repository() if args.transport == "git" else (None, None)
     catalog_path = DATA / "khmerst_catalog.json"
     if catalog_path.is_file():
         catalog = json.loads(catalog_path.read_text())
         if catalog.get("revision") != REVISION:
             raise ValueError("Catalog revision changed")
     else:
-        image_rows, json_rows = tree("scene_img_data"), tree("scene_json_data")
+        image_rows, json_rows = (([r for r in git_rows if r["path"].startswith("scene_img_data/")],
+                                 [r for r in git_rows if r["path"].startswith("scene_json_data/")])
+                                if git_rows is not None else
+                                (tree("scene_img_data"), tree("scene_json_data")))
         image_rows = [row for row in image_rows if row["type"] == "blob"]
         json_rows = [row for row in json_rows if row["path"].endswith(".json")]
         if len(image_rows) != 1544 or len(json_rows) != 31:
@@ -123,9 +176,14 @@ def main():
                        annotations=sorted(json_rows, key=lambda r: r["path"]))
         catalog_path.write_text(json.dumps(catalog, indent=2) + "\n")
     rows = catalog["annotations"] + (catalog["images"] if args.images else [])
+    if git_path is not None:
+        git_ids = {row["path"]: row["id"] for row in git_rows}
+        if any(git_ids.get(row["path"]) != row["id"] for row in rows):
+            raise ValueError("Git tree and catalog identities differ")
+        checkout_missing(git_path, rows)
     records, failures, byte_count, started = [], [], 0, time.monotonic()
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
-        futures = {pool.submit(fetch, row): row["path"] for row in rows}
+        futures = {pool.submit(fetch, row, git_path): row["path"] for row in rows}
         for completed, future in enumerate(as_completed(futures), 1):
             try:
                 record = future.result()
