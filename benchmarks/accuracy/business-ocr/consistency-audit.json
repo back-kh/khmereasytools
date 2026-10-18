@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "audit_sha256": "696bfbdbf984bf66a99b3141d8b782b5d575b9d82d723bcf659f3b46222d0adf",
+  "results_sha256": "2386af3c6a98739e71ecd34aa14a1053d7f0ac588148649e3b5e5a3f4bd443cb",
+  "private_count_records_sha256": "c71d6a59f791812f034d8b01eed6a8b5b8d7a8d3fed2a4b7bde9405c2bc8301f",
+  "reference_freeze_token": "a60817687e37ed1b441b21fb2ff45b009b430277c9fdda66f506d2a0c26bd634",
+  "image_hashes_verified": 146,
+  "prediction_records_verified": 790,
+  "independent_projections_verified": 2370,
+  "independent_aggregates_verified": 42,
+  "gpu_transfer_files_verified": 352,
+  "remote_transfer_inventory_sha256": "f468672e63aa1dd3a1405e3d344a3f3416892735eb5ef342c3d4209536c94cd8",
+  "bit_vector_dp_selfchecks": 1039,
+  "raw_record_inventory_sha256": "147c675ecd18bf37dab6b1231aaa846fd4e2f43ecf061e86862fe4ec399efbc2",
+  "notes": [
+    "Minimum distances and source lengths independently recomputed for every prediction.",
+    "S/D/I nonnegative sums checked; optimal alignment tie-breaking is not independently certified.",
+    "All failed/empty/capped predictions included; literal reference markers retained.",
+    "Machine-generated references remain unreviewed; passing audit does not certify reference quality."
+  ]
+}

@@ -1,6 +1,10 @@
 # Image and PDF OCR/layout
 
-Daily use needs only `khocr(file)` for text or `khanalyze(file)` for text plus layout. Both accept images and PDFs. Core text tools remain independent of all optional packages.
+KET-OCR names the Khmer Easy Tools preparation/layout pipeline using Tesseract;
+it is not a new trained recognizer. Use `ket_ocr(file)` for plain text with
+exception-based errors, or `khanalyze(file)` for text plus layout. Both accept
+images and PDFs. The older `khocr` keeps its legacy error-string behavior.
+Core text tools remain independent of all optional packages.
 
 ## Setup and default behavior
 

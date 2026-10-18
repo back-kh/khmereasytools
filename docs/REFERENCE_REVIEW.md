@@ -1,13 +1,19 @@
 # Reviewing the private business-image drafts
 
-The supplied folder contains 148 image files and 146 distinct images after two
-exact duplicate pairs are collapsed. Distinct image hashes do not establish
-independent documents, complete-page coverage, or correspondence with the 158
-documents in the published KH-FUNSD resource. The current Codex transcripts are
-annotation drafts. None is a human-reviewed OCR reference in the recorded run.
+The author identifies the supplied folder as KH-FUNSD. It contains 148 image
+files and 146 distinct images after two exact duplicate pairs are collapsed.
+Distinct image hashes do not establish independent documents, complete-page
+coverage, or an exact mapping to the 158 documents in the published resource.
+The Codex transcripts have not been independently human-reviewed.
 
-This workflow prepares a future modern-document study. It does not change the
-frozen historical OCR inputs or use drafts as gold labels.
+At the author's subsequent instruction, a separate comparison uses these frozen
+transcripts as operational ground truth, retaining literal `[ILLEGIBLE]` markers
+and disclosing that they are machine-generated and unreviewed. Its scores measure
+agreement with these references, not verified human transcription accuracy. See
+the [new comparison protocol](../benchmarks/accuracy/BUSINESS_OCR_PROTOCOL.md).
+This does not change the frozen historical OCR inputs or earlier authoring
+records. The review workflow below describes how to produce stronger future
+human-corrected references; it is not a claim that review has already happened.
 
 ## Establish the annotation unit
 

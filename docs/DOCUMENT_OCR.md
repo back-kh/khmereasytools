@@ -5,8 +5,13 @@ SleukRith pages distributed in CHURRO-DS. It is a handwriting stress test outsid
 the toolkit's printed-page design scope. It does not replace the small KHOB
 printed-document comparison or supply a new modern phone-scan benchmark.
 
-The toolkit implementation is unchanged. Heavy baseline packages, model weights,
+The evaluated recognition implementation is unchanged. Heavy baseline packages, model weights,
 page images and transcripts remain outside the installed package.
+
+A separate [146-image KH-FUNSD comparison](KHFUNSD_OCR.md) now uses frozen,
+author-designated Codex references with their unreviewed status disclosed. It
+does not replace this historical study. [Added WER and S/D/I diagnostics](OCR_WORD_METRICS.md)
+also preserve the original predictions and CER values.
 
 The recorded execution design uses **three Mac profiles and two Linux CUDA
 profiles**. The [CUDA execution amendment](../benchmarks/accuracy/DOCUMENT_CUDA_EXECUTION.md)

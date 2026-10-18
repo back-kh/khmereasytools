@@ -56,6 +56,20 @@ rag = KhmerRAG({"document.pdf": text})
 Offsets in this example refer to the extracted text, not positions in the PDF.
 Use `khanalyze` if you also need page-local layout boxes.
 
+For page-specific source IDs, build the collection from individual page results:
+
+```python
+from khmereasytools import khanalyze, KhmerRAG
+
+document = khanalyze("document.pdf", lang="khm+eng", segment=False)
+rag = KhmerRAG({"document.pdf#page-{}".format(page.number): page.layout.text
+                for page in document.pages})
+```
+
+When the local model runs on your own GPU server, forward its Ollama port over
+SSH and use the loopback URL. Local-only configuration must apply on that server.
+The toolkit does not install or start a remote model runtime.
+
 ```bash
 # UTF-8 text files; retrieval only:
 khmereasytools rag "សៀវភៅ" notes.txt other.txt

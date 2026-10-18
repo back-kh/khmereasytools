@@ -39,6 +39,10 @@ This feature is included as a function only: no live local or cloud translation
 quality evaluation was performed. HTTP fixture tests validate the software
 contract and do not measure translation accuracy.
 
+The `khdoctor` translation check reports Google-key presence. It does not probe
+or remember a separately configured `LocalModel`, so a missing Google key does
+not prevent the explicit local path from working.
+
 ## Google Cloud setup
 
 1. Create/select your Google Cloud project and enable Cloud Translation, with provider billing/quota settings appropriate to your use.

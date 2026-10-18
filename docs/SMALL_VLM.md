@@ -6,6 +6,11 @@ in the [150-page study](DOCUMENT_OCR.md). It does not add 60 independent pages
 or extend the Qwen systems to the other 120 pages. The five original systems
 still cover all 150 pages.
 
+The later [KH-FUNSD study](KHFUNSD_OCR.md) runs both Qwen models on another
+fixed matched 30-image subset of the 146 supplied business images. It has its
+own frozen references and execution profiles and does not alter these
+historical scores. Its ground truth is explicitly machine-generated and unreviewed.
+
 A subsequent [execution amendment](../benchmarks/accuracy/DOCUMENT_CUDA_EXECUTION.md)
 moves the primary Paddle and DeepSeek profiles to MLX CUDA before either has
 an evaluation prediction. The Qwen profile remains unchanged. The matched

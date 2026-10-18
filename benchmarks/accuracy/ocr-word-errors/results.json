@@ -1,7 +1,19 @@
 {
   "schema_version": 1,
-  "analysis_sha256": "c2282c95b92f655da6de478cfe4c2772acba05bec1069ccaf4bfc1fe010358e5",
-  "metric_token": "467b6f8e289ac3a1387621aa00ef2d6535d65f7c0669a3704206a1b867e9904f",
+  "analysis_sha256": "9a5b7da2cad812f3fe92325abd954e4a2d25b431514f25a481139fa17b8a53cf",
+  "metric_token": "9e53f81e4f59a2a769d305cad06457d03e6c58e16622df098ca7998a0cd3ed04",
+  "analysis_environment": {
+    "python": "3.11.15",
+    "unicode_database": "14.0.0",
+    "rapidfuzz": "3.14.6",
+    "installed_tokenizer_files": {
+      "segmentation.py": "2d2a8ffadfa3b650737483266c9fb554c06529419f85b11dce7df3f87ae83857",
+      "lexicon.py": "d5de159d298d9d7ec6ed063fa7aad8261085e72568306a93346e33e26d0c7aae",
+      "text_quality.py": "e354709fadbe6d34fc71aee68354e9eb43c7a8818802a6b4166ee306ee8f3f71",
+      "data/khmer_words.txt": "f398bea51287dc36d52d2482f0005ecff817733cedb84936fd8e5b72b73d9cf8",
+      "data/word_frequencies.txt": "b1f50d1f3a2085e9cb35db5fb66aff1453a9ba5b1a24400533f8644d7edbe42c"
+    }
+  },
   "inputs_and_metrics": {
     "scripts/ocr_word_metrics.py": "27de016505d98cc9285384ce8c849d5d5e4f6e57da4f5d80b13f1fa4999bfa50",
     "scripts/evaluation_metrics.py": "7bb38b67244e9df4f3dfc0e46938ee494224ab41a9921ebe19e4fb964792dcb3",
@@ -897,5 +909,5 @@
     "Historical Qwen results cover only the official 30 test pages.",
     "KET-OCR denotes the existing Tesseract-based toolkit pipeline, not an independent recognizer."
   ],
-  "private_count_records_sha256": "af0235ecde129ca3e6c95943d49434594b5f64b6f35db688c2e5c71ed811deb1"
+  "private_count_records_sha256": "12a1b48396835092bd7f2a7300d1e317822e3bff0a69188e7286dbb70ec4e66f"
 }

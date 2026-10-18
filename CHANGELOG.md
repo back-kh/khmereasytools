@@ -5,6 +5,9 @@
 - Add simple `KhmerRAG`/`khrag` with local BM25 passage retrieval, source offsets and optional explicit answer generation; no embeddings or vector database.
 - Add a standard-library `LocalModel` Ollama client shared by optional local translation and RAG, with bounded responses and no automatic downloads or cloud fallback. Translation remains a functional interface without a quality evaluation.
 - Name the existing Tesseract-based image/PDF pipeline KET-OCR; add `ket_ocr` with exception-based errors and a `ket-ocr` CLI alias.
+- Complete the KH-FUNSD comparison with five systems on 146 images and both Qwen profiles on the same 30 images; disclose the unreviewed Codex operational references and retain all failures/caps.
+- Add audited whitespace-unit/segmentation-assisted WER and historical S/D/I/serialization diagnostics without changing frozen CER or suppressing repetitive output.
+- Reject empty local-model CLI selections and incomplete local setup before any cloud translation call.
 
 - Measure the sub-10% OCR target with pinned fast/best models and native installed image/PDF checks; retain the lightweight default when the larger model does not improve the comparison. Document swapped development image/transcript pairings without altering historical raw scores.
 

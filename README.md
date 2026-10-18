@@ -9,7 +9,7 @@ and improved defaults. Segmentation F1 rises from 77.21% to 78.46% on khPOS;
 whole-word POS joint F1 rises modestly from 67.40% to 67.67% on ALT; OCR
 character error rate falls from 15.99% to 11.43% on 40 reserved page images.
 These samples have documented overlap/annotation limits. Review output where
-errors matter. Core tools remain dependency-free; the wheel is about 508 KiB.
+errors matter. Core tools remain dependency-free; the current wheel is about 515 KiB.
 
 The [sub-10% OCR experiment](docs/OCR_TARGET.md) did not meet that target:
 the optional larger model scored 11.49% versus 11.43% for the default on the
@@ -23,6 +23,10 @@ and an [exploratory small Qwen comparison](docs/SMALL_VLM.md). Their external
 frameworks and model weights are not toolkit requirements. A separate KH-FUNSD
 comparison uses author-designated, machine-generated references with their
 unreviewed status disclosed; they are not certified human transcripts.
+The completed [146-image KH-FUNSD comparison](docs/KHFUNSD_OCR.md) and
+[added WER and historical failure audit](docs/OCR_WORD_METRICS.md) retain all
+empty, failed and capped outputs. See [native function validation](docs/VALIDATION.md)
+for fresh Windows, macOS and Linux installation results.
 
 ## Install
 

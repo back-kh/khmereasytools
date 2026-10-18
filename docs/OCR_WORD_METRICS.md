@@ -72,6 +72,15 @@ failure under the recorded profiles, not proof that every implementation or
 checkpoint of these model families must fail. It does not demonstrate useful
 historical OCR, and WER does not rescue the result.
 
+A separate [serialization audit](../benchmarks/accuracy/ocr-word-errors/serialization-audit.json)
+finds 1,470 `bbox=` attributes in raw Surya output and zero in its scored text.
+None of the 810 historical outputs contains the checked DeepSeek `ref`/`det`
+markers. Paddle's 345,874 compact output code points contain zero characters
+in U+1780–U+17FF. These checks further describe the failure and rule out those
+specific formatting leftovers as its source; they do not certify every possible
+serialization format. Script-block membership is not language identification
+or proof of transcription correctness.
+
 The Qwen comparison remains restricted to the same 30 official historical test
 pages; see the metric JSON for its separate S/D/I and WER counts. No matched
 150-page Qwen result is claimed. Modern KH-FUNSD business images use a separate

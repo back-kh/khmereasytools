@@ -5,9 +5,13 @@ caches retain provenance; public output contains counts and hashes only.
 """
 from collections import defaultdict
 import hashlib
+import importlib.metadata
 import json
 from pathlib import Path
+import platform
 import sys
+import unicodedata
+from functools import lru_cache
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -33,6 +37,19 @@ def write(path, value):
     temp = path.with_suffix(path.suffix + ".tmp")
     temp.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
     temp.replace(path)
+
+
+@lru_cache(maxsize=1)
+def analysis_environment():
+    import khmereasytools
+    package = Path(khmereasytools.__file__).parent
+    names = ['segmentation.py', 'lexicon.py', 'text_quality.py',
+             'data/khmer_words.txt', 'data/word_frequencies.txt']
+    hashes = {name: digest(package / name) for name in names}
+    if any(sha != digest(ROOT / 'khmereasytools' / name) for name, sha in hashes.items()):
+        raise ValueError('Installed tokenizer dependencies differ from recorded source')
+    return dict(python=platform.python_version(), unicode_database=unicodedata.unidata_version,
+                rapidfuzz=importlib.metadata.version('rapidfuzz'), installed_tokenizer_files=hashes)
 
 
 def expanded_records():
@@ -99,6 +116,7 @@ def measured(item, metric_token):
     identity = {k: item[k] for k in ("id", "collection", "system", "raw_sha256")}
     identity["reference_sha256"] = hashlib.sha256(item["reference"].encode()).hexdigest()
     identity["metric_token"] = metric_token
+    identity["analysis_environment"] = analysis_environment()
     cache_key = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
     path = DATA / "measurements" / (cache_key + ".json")
     if path.exists():
@@ -135,7 +153,7 @@ def main():
     sources = ["benchmarks/accuracy/expanded-ocr/local-paired.json", "benchmarks/accuracy/document-ocr/local-results.json",
                "benchmarks/accuracy/small-vlm/local-results.json"]
     profile = {name: digest(ROOT / name) for name in paths + sources}
-    token = hashlib.sha256(json.dumps(profile, sort_keys=True).encode()).hexdigest()
+    token = hashlib.sha256(json.dumps(dict(files=profile, environment=analysis_environment()), sort_keys=True).encode()).hexdigest()
     rows = []
     for iterator in (expanded_records(), historical_records()):
         for item in iterator:
@@ -160,6 +178,7 @@ def main():
                       minimum_length_insertions=sum(r["minimum_length_insertions"] for r in selected))
         summary.setdefault(collection, {})[system] = values
     output = dict(schema_version=1, analysis_sha256=digest(Path(__file__)), metric_token=token,
+                  analysis_environment=analysis_environment(),
                   inputs_and_metrics=profile, summary=summary, records=rows,
                   independent_audit=dict(passed=True, bit_vector_dp_selfchecks=checks, predictions=len(rows),
                                          independently_checked_projections=3 * len(rows)),
