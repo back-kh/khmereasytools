@@ -2,21 +2,21 @@
 
 Passing tests establish the documented contracts on checked inputs. They do not establish universal linguistic accuracy. The source version is 0.5.0.dev0; PyPI 0.4.0 does not include the unreleased features.
 
-The [native installation run 39102214866](https://github.com/back-kh/khmereasytools/actions/runs/39102214866)
-passed at evaluation revision `85d0c7d74ddce198e83d5fba268dd586582d0a34`.
+The [native installation run 39104339050](https://github.com/back-kh/khmereasytools/actions/runs/39104339050)
+passed at evaluation revision `537bd5dabfccf80d52db8cf09c89ffefa1a0506f`.
 All three operating systems used the same wheel. Runtime Python source bytes
-remain identical to `b062be0`; fourteen research tests validate EXIF geometry, clustered scoring, serializer
+remain identical to `b062be0`; fifteen research tests validate EXIF geometry, clustered scoring, serializer
 handling, failure denominators and source-partition separation. The new
 full-page manuscript study keeps its models outside the runtime package.
 
 | Environment | Windows | macOS | Linux |
 | --- | --- | --- | --- |
-| Core installation | 143 passed, 14 skipped | 143 passed, 14 skipped | 143 passed, 14 skipped |
-| All optional extras | 156 passed, 1 skipped | 156 passed, 1 skipped | 156 passed, 1 skipped |
+| Core installation | 144 passed, 14 skipped | 144 passed, 14 skipped | 144 passed, 14 skipped |
+| All optional extras | 157 passed, 1 skipped | 157 passed, 1 skipped | 157 passed, 1 skipped |
 | Actual OCR and POS | Both executed | Both executed | Both executed |
 | Live translation | Pending | Pending | Pending |
 
-The suite has 157 tests with no failures in those runs. The single all-extras
+The suite has 158 tests with no failures in those runs. The single all-extras
 skip is live translation, left pending by user choice. The [machine-readable
 records](../benchmarks/accuracy/document-ocr/native-validation.json) retain the
 revision, common wheel hash, dependency versions, and backend flags. These

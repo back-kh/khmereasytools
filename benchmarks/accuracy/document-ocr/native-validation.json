@@ -1,17 +1,17 @@
 {
-  "workflow_run": 39102214866,
-  "url": "https://github.com/back-kh/khmereasytools/actions/runs/39102214866",
-  "source_revision": "85d0c7d74ddce198e83d5fba268dd586582d0a34",
+  "workflow_run": 39104339050,
+  "url": "https://github.com/back-kh/khmereasytools/actions/runs/39104339050",
+  "source_revision": "537bd5dabfccf80d52db8cf09c89ffefa1a0506f",
   "records": [
     {
       "platform": "macOS-14.8.9-arm64-arm-64bit",
       "python": "3.11.9",
-      "package_path": "/private/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/ket-installed-93kjzku6/environment/lib/python3.11/site-packages/khmereasytools/__init__.py",
+      "package_path": "/private/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/ket-installed-5o3lcub6/environment/lib/python3.11/site-packages/khmereasytools/__init__.py",
       "versions": {
         "khmereasytools": "0.5.0.dev0"
       },
-      "source_revision": "85d0c7d74ddce198e83d5fba268dd586582d0a34",
-      "wheel_sha256": "f02eb478392b84e2432ccf5a21d03d996a520630f908e40add0c6a8387a336ca",
+      "source_revision": "537bd5dabfccf80d52db8cf09c89ffefa1a0506f",
+      "wheel_sha256": "d40e6c953be5d6454baa43ca1df587b8066e454d9a489dbfe3027ccf8819e0a5",
       "doctor": {
         "core": "ready",
         "ocr": "missing",
@@ -45,7 +45,7 @@
         "khprocess",
         "khdoctor"
       ],
-      "tests": 157,
+      "tests": 158,
       "skipped": 14,
       "failures": 0,
       "errors": 0,
@@ -56,7 +56,7 @@
     {
       "platform": "macOS-14.8.9-arm64-arm-64bit",
       "python": "3.11.9",
-      "package_path": "/private/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/ket-installed-p1lhbj8m/environment/lib/python3.11/site-packages/khmereasytools/__init__.py",
+      "package_path": "/private/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/ket-installed-3hckwhkt/environment/lib/python3.11/site-packages/khmereasytools/__init__.py",
       "versions": {
         "khmereasytools": "0.5.0.dev0",
         "khmer-nltk": "1.6",
@@ -67,8 +67,8 @@
         "pytesseract": "0.3.13",
         "pypdfium2": "5.14.0"
       },
-      "source_revision": "85d0c7d74ddce198e83d5fba268dd586582d0a34",
-      "wheel_sha256": "f02eb478392b84e2432ccf5a21d03d996a520630f908e40add0c6a8387a336ca",
+      "source_revision": "537bd5dabfccf80d52db8cf09c89ffefa1a0506f",
+      "wheel_sha256": "d40e6c953be5d6454baa43ca1df587b8066e454d9a489dbfe3027ccf8819e0a5",
       "doctor": {
         "core": "ready",
         "ocr": "ready",
@@ -102,7 +102,7 @@
         "khprocess",
         "khdoctor"
       ],
-      "tests": 157,
+      "tests": 158,
       "skipped": 1,
       "failures": 0,
       "errors": 0,
@@ -113,12 +113,12 @@
     {
       "platform": "Linux-6.8.0-1064-azure-x86_64-with-glibc2.35",
       "python": "3.11.17",
-      "package_path": "/tmp/ket-installed-xwjl9sfg/environment/lib/python3.11/site-packages/khmereasytools/__init__.py",
+      "package_path": "/tmp/ket-installed-shxre9a1/environment/lib/python3.11/site-packages/khmereasytools/__init__.py",
       "versions": {
         "khmereasytools": "0.5.0.dev0"
       },
-      "source_revision": "85d0c7d74ddce198e83d5fba268dd586582d0a34",
-      "wheel_sha256": "f02eb478392b84e2432ccf5a21d03d996a520630f908e40add0c6a8387a336ca",
+      "source_revision": "537bd5dabfccf80d52db8cf09c89ffefa1a0506f",
+      "wheel_sha256": "d40e6c953be5d6454baa43ca1df587b8066e454d9a489dbfe3027ccf8819e0a5",
       "doctor": {
         "core": "ready",
         "ocr": "missing",
@@ -152,7 +152,7 @@
         "khprocess",
         "khdoctor"
       ],
-      "tests": 157,
+      "tests": 158,
       "skipped": 14,
       "failures": 0,
       "errors": 0,
@@ -163,7 +163,7 @@
     {
       "platform": "Linux-6.8.0-1064-azure-x86_64-with-glibc2.35",
       "python": "3.11.17",
-      "package_path": "/tmp/ket-installed-qwgsyajl/environment/lib/python3.11/site-packages/khmereasytools/__init__.py",
+      "package_path": "/tmp/ket-installed-uo6z0rln/environment/lib/python3.11/site-packages/khmereasytools/__init__.py",
       "versions": {
         "khmereasytools": "0.5.0.dev0",
         "khmer-nltk": "1.6",
@@ -174,8 +174,8 @@
         "pytesseract": "0.3.13",
         "pypdfium2": "5.14.0"
       },
-      "source_revision": "85d0c7d74ddce198e83d5fba268dd586582d0a34",
-      "wheel_sha256": "f02eb478392b84e2432ccf5a21d03d996a520630f908e40add0c6a8387a336ca",
+      "source_revision": "537bd5dabfccf80d52db8cf09c89ffefa1a0506f",
+      "wheel_sha256": "d40e6c953be5d6454baa43ca1df587b8066e454d9a489dbfe3027ccf8819e0a5",
       "doctor": {
         "core": "ready",
         "ocr": "ready",
@@ -209,7 +209,7 @@
         "khprocess",
         "khdoctor"
       ],
-      "tests": 157,
+      "tests": 158,
       "skipped": 1,
       "failures": 0,
       "errors": 0,
@@ -220,12 +220,12 @@
     {
       "platform": "Windows-10-10.0.26100-SP0",
       "python": "3.11.9",
-      "package_path": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ket-installed-fl4ymz37\\environment\\Lib\\site-packages\\khmereasytools\\__init__.py",
+      "package_path": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ket-installed-wapt8h8v\\environment\\Lib\\site-packages\\khmereasytools\\__init__.py",
       "versions": {
         "khmereasytools": "0.5.0.dev0"
       },
-      "source_revision": "85d0c7d74ddce198e83d5fba268dd586582d0a34",
-      "wheel_sha256": "f02eb478392b84e2432ccf5a21d03d996a520630f908e40add0c6a8387a336ca",
+      "source_revision": "537bd5dabfccf80d52db8cf09c89ffefa1a0506f",
+      "wheel_sha256": "d40e6c953be5d6454baa43ca1df587b8066e454d9a489dbfe3027ccf8819e0a5",
       "doctor": {
         "core": "ready",
         "ocr": "missing",
@@ -259,7 +259,7 @@
         "khprocess",
         "khdoctor"
       ],
-      "tests": 157,
+      "tests": 158,
       "skipped": 14,
       "failures": 0,
       "errors": 0,
@@ -270,7 +270,7 @@
     {
       "platform": "Windows-10-10.0.26100-SP0",
       "python": "3.11.9",
-      "package_path": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ket-installed-9j460pn6\\environment\\Lib\\site-packages\\khmereasytools\\__init__.py",
+      "package_path": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ket-installed-b0_8ietl\\environment\\Lib\\site-packages\\khmereasytools\\__init__.py",
       "versions": {
         "khmereasytools": "0.5.0.dev0",
         "khmer-nltk": "1.6",
@@ -281,8 +281,8 @@
         "pytesseract": "0.3.13",
         "pypdfium2": "5.14.0"
       },
-      "source_revision": "85d0c7d74ddce198e83d5fba268dd586582d0a34",
-      "wheel_sha256": "f02eb478392b84e2432ccf5a21d03d996a520630f908e40add0c6a8387a336ca",
+      "source_revision": "537bd5dabfccf80d52db8cf09c89ffefa1a0506f",
+      "wheel_sha256": "d40e6c953be5d6454baa43ca1df587b8066e454d9a489dbfe3027ccf8819e0a5",
       "doctor": {
         "core": "ready",
         "ocr": "ready",
@@ -316,7 +316,7 @@
         "khprocess",
         "khdoctor"
       ],
-      "tests": 157,
+      "tests": 158,
       "skipped": 1,
       "failures": 0,
       "errors": 0,

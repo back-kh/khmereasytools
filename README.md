@@ -18,6 +18,11 @@ was also found in development data; historical raw reports remain preserved.
 An additional adaptive `khm+eng` check improves this local image score to
 10.68%, still above target; use that existing explicit mode for mixed text.
 
+Separate research protocols cover a [150-page historical OCR study](docs/DOCUMENT_OCR.md)
+and an [exploratory small Qwen comparison](docs/SMALL_VLM.md). Their external
+frameworks and model weights are not toolkit requirements. Private
+model-generated transcription drafts are kept separate from OCR gold.
+
 ## Install
 
 From this checkout:
