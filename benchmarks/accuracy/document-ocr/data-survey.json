@@ -1,0 +1,63 @@
+{
+  "inspection_date": "2026-10-18",
+  "scope": "Public Khmer full-page image and text pairs, with historical manuscripts allowed as a separate stress test",
+  "sources": [
+    {
+      "name": "CHURRO-DS SleukRith subset",
+      "url": "https://huggingface.co/datasets/stanford-oval/churro-dataset",
+      "paper": "https://aclanthology.org/2025.emnlp-main.1763/",
+      "revision": "cbeaba69179d5de122fbbc9e97b2a7d97942f688",
+      "available_khmer_pages": 622,
+      "source_splits": {"train": 562, "dev": 30, "test": 30},
+      "selected_pages": 150,
+      "decision": "Include as historical handwriting stress test only",
+      "reference": "Released original_transcription; generated cleaned_transcription XML is not scored",
+      "terms": "Dataset card limits use to research; paper lists SleukRith research permission. No images or transcripts redistributed.",
+      "limitations": "Viewer JPEG delivery, inherited annotation uncertainty, historical orthography, provisional manuscript groups, and unknown pretrained-model overlap"
+    },
+    {
+      "name": "KH-FUNSD",
+      "url": "https://github.com/back-kh/KH-FUNSD",
+      "paper": "https://arxiv.org/abs/2512.11849",
+      "paper_document_count": 158,
+      "public_repository_files_at_inspection": ["README.md"],
+      "selected_pages": 0,
+      "decision": "Exclude from public-data experiment because image/annotation download is not provided",
+      "evidence": "README says release follows publication and data may be requested by email; no request was sent"
+    },
+    {
+      "name": "Khmer Document Corpus",
+      "url": "https://huggingface.co/datasets/Darachhat/khmer-document-corpus",
+      "selected_pages": 0,
+      "decision": "Exclude from CER comparison",
+      "evidence": "Version 0.1 card provides raw PDFs and metadata but explicitly lists OCR and reading-order annotations as unavailable",
+      "terms": "CC BY 4.0 covers organization and metadata; individual document rights differ"
+    },
+    {
+      "name": "Khmer pages on multilingual Wikisource",
+      "url": "https://wikisource.org/wiki/Wikisource:Main_Page/ភាសាខ្មែរ",
+      "page_namespace_candidates": 294,
+      "proofread_level_3_pages": 11,
+      "downloaded_page_images": 11,
+      "selected_pages": 0,
+      "decision": "Exclude entire candidate collection before inference",
+      "evidence": "Page 107688 omits visible printed header text and contains stray markup. Proofread status does not certify complete full-page OCR reference coverage.",
+      "terms": "No machine-readable original-file license was returned for the five PDFs; no files or transcriptions redistributed",
+      "records": "source-inventory.json excluded_pages"
+    },
+    {
+      "name": "KEPTA",
+      "url": "https://huggingface.co/datasets/SoyVitou/KEPTA",
+      "available_text_crops": 3383,
+      "selected_pages": 0,
+      "decision": "Printed recognition crops do not meet the full-page requirement"
+    },
+    {
+      "name": "Netra-OCR legal-document evaluation",
+      "url": "https://huggingface.co/Darayut/khmer-text-recognition",
+      "selected_pages": 0,
+      "decision": "Exclude from public-data experiment",
+      "evidence": "Model card identifies its legal-document evaluation data as not public"
+    }
+  ]
+}

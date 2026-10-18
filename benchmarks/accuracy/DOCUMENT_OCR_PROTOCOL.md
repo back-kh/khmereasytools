@@ -1,6 +1,16 @@
 # Full page Khmer OCR comparison protocol
 
-This protocol is fixed before predictions on any new evaluation page. Runtime
+The initial protocol was fixed before predictions on any new evaluation page.
+An implementation audit found hidden Surya transport temperature retries and
+layout/block fallbacks despite disabling its full-page regeneration option.
+The recorded amendment replaces that wrapper with the native single-pass VLM
+transport, explicitly disables both SDK and response retries, and retains raw
+visible recognized text. No Surya page record had completed when the initial
+run was stopped. Its completed 150-page CPU measurements are retained, and
+every system is rerun under the amended profile. Page selection, references,
+model weights, prompts and scalar token limits do not change; no accuracy
+result selects the amendment. See `document-ocr/protocol-amendment.json`.
+Runtime
 code remains the installed 0.5.0.dev0 wheel previously evaluated, whose Python
 source bytes match b062be0. No OCR model is trained or fine-tuned in this study.
 
@@ -53,11 +63,15 @@ test page. Pin every model file and checkpoint revision in `model-inventory.json
    also executes LSTM. This compares packaged pipelines, not an isolated
    preprocessing ablation.
 3. **Surya OCR 2:** `surya-ocr==0.22.1`, official
-   `datalab-to/surya-ocr-2-gguf` files, local llama.cpp Metal backend. Official
-   `RecognitionPredictor(full_page=True)`, no supplied layout and no
-   progressive-temperature regeneration. Four independent inference slots,
+   `datalab-to/surya-ocr-2-gguf` files, local llama.cpp Metal backend. Native
+   `high_accuracy_bbox` full-page prompt, image processor and transport,
+   explicit temperature 0 and zero SDK/response retries. No supplied layout,
+   repeat-triggered regeneration, blank-block removal, or layout/block fallback.
+   This is a **first-pass model profile**, not the default retrying document
+   pipeline. Four independent inference slots,
    batches of four pages, 4,096 output tokens per page; retain the final smaller
-   batch. The library's native full-page HTML prompt is unchanged.
+   batch. The library's native full-page HTML prompt is unchanged; all visible
+   text in its raw HTML is retained, including unparseable or repetitive text.
 4. **PaddleOCR-VL 1.6, MLX community 4-bit conversion:** pinned
    `mlx-community/PaddleOCR-VL-1.6-4bit`; native MLX-VLM implementation and
    checkpoint processor, prompt `OCR:`, temperature 0, maximum 4,096 output
@@ -78,8 +92,8 @@ Use at most four CPU workers and `OMP_THREAD_LIMIT=1` for Tesseract pipelines.
 Each backend call has a 240-second deadline; a Surya batch has an additional
 20-second client margin. Runtime/model setup failures make that system
 unavailable, not an invented 100%-CER result. Actual page-call failures are
-retained with empty output; partial returned Surya blocks are retained and
-flagged. Resume only with matching frozen hashes and environment versions.
+retained with empty output. Resume only with matching frozen hashes and
+environment versions.
 
 ## Scoring and interpretation
 
@@ -92,9 +106,8 @@ flagged. Resume only with matching frozen hashes and environment versions.
   Do not modernize spelling, fix Khmer Unicode sequences beyond NFC, select
   favorable outputs, or run a language model over predictions.
 - Report the 150-page aggregate and the source test/train partitions separately.
-  Include exact pages, empty outputs, failures and MLX token-cap hits. Surya's
-  high-level result does not expose decoder token counts, so its cap-hit count
-  is unknown rather than assumed zero.
+  Include exact pages, empty outputs, failures and token-cap hits for all three
+  VLM profiles. Do not treat cap hits as complete transcriptions.
 - Compare with plain Tesseract using 5,000 paired cluster-bootstrap replicates,
   seed 20261018. Groups are conservative manuscript-prefix heuristics from
   released filenames (27 selected groups), not independently verified book

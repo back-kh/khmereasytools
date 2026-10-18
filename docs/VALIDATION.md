@@ -2,22 +2,23 @@
 
 Passing tests establish the documented contracts on checked inputs. They do not establish universal linguistic accuracy. The source version is 0.5.0.dev0; PyPI 0.4.0 does not include the unreleased features.
 
-The [native installation run 39099422140](https://github.com/back-kh/khmereasytools/actions/runs/39099422140)
-passed at evaluation revision `e569c6a8d73ec06da8c6b55b1ecde073fee5b99a`.
+The [native installation run 39101672912](https://github.com/back-kh/khmereasytools/actions/runs/39101672912)
+passed at evaluation revision `97106807f84baa04f45c26a07720d119a109cd75`.
 All three operating systems used the same wheel. Runtime Python source bytes
-remain identical to `b062be0`; eight new tests validate the separate OCR
-research harness, including EXIF geometry and paired, clustered scoring.
+remain identical to `b062be0`; fourteen research tests validate EXIF geometry, clustered scoring, serializer
+handling, failure denominators and source-partition separation. The new
+full-page manuscript study keeps its models outside the runtime package.
 
 | Environment | Windows | macOS | Linux |
 | --- | --- | --- | --- |
-| Core installation | 137 passed, 14 skipped | 137 passed, 14 skipped | 137 passed, 14 skipped |
-| All optional extras | 150 passed, 1 skipped | 150 passed, 1 skipped | 150 passed, 1 skipped |
+| Core installation | 143 passed, 14 skipped | 143 passed, 14 skipped | 143 passed, 14 skipped |
+| All optional extras | 156 passed, 1 skipped | 156 passed, 1 skipped | 156 passed, 1 skipped |
 | Actual OCR and POS | Both executed | Both executed | Both executed |
 | Live translation | Pending | Pending | Pending |
 
-The suite has 151 tests with no failures in those runs. The single all-extras
+The suite has 157 tests with no failures in those runs. The single all-extras
 skip is live translation, left pending by user choice. The [machine-readable
-records](../benchmarks/accuracy/expanded-ocr/native-validation.json) retain the
+records](../benchmarks/accuracy/document-ocr/native-validation.json) retain the
 revision, common wheel hash, dependency versions, and backend flags. These
 are installation and contract checks, separate from dataset accuracy.
 

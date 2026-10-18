@@ -146,14 +146,20 @@ def surya_start():
         SURYA_MAX_TOKENS_FULL_PAGE=str(MAX_TOKENS), SURYA_INFERENCE_TIMEOUT_SECONDS=str(TIMEOUT),
         SURYA_FULLPAGE_REGEN="false", DISABLE_TQDM="true")
     from surya.inference import SuryaInferenceManager
-    from surya.recognition import RecognitionPredictor
     manager = SuryaInferenceManager(lazy=False)
-    return manager, RecognitionPredictor(manager)
+    from openai import OpenAI
+    client = OpenAI(api_key="EMPTY", base_url=manager.backend.handle.base_url,
+                    max_retries=0, timeout=TIMEOUT)
+    return manager, client
 
 
 def run_surya(pages, save):
     from PIL import Image
-    manager, predictor = surya_start()
+    # Settings are initialized at the first Surya import, so configure the
+    # pinned local checkpoint before importing its transport/schema modules.
+    manager, client = surya_start()
+    from surya.inference.backends.openai_client import chat_completions_batch
+    from surya.inference.schema import BatchInputItem, PROMPT_TYPE_HIGH_ACCURACY_BBOX
     try:
         for start in range(0, len(pages), 4):
             group = pages[start:start + 4]
@@ -165,9 +171,17 @@ def run_surya(pages, save):
                     images.append(im.convert("RGB"))
             begun = time.monotonic(); outputs = None; error = None
             try:
-                # The library batches independent pages through four inference slots.
+                # Use Surya's native full-page prompt and image processor, with
+                # explicit zero retries. RecognitionPredictor otherwise hides
+                # temperature retries and layout/block fallback behind this call.
                 signal.alarm(TIMEOUT + 20)
-                outputs = predictor(images, full_page=True)
+                batch = [BatchInputItem(image=im, prompt_type=PROMPT_TYPE_HIGH_ACCURACY_BBOX,
+                         max_tokens=MAX_TOKENS, temperature=0.0, top_p=0.1,
+                         metadata={"page_idx": i}) for i, im in enumerate(images)]
+                outputs = chat_completions_batch(batch, client=client,
+                    model_name=manager.backend.handle.model_name, max_tokens_default=MAX_TOKENS,
+                    temperature=0.0, timeout=TIMEOUT, max_workers=4, max_retries=0,
+                    request_logprobs_default=True)
             except Exception as exc:
                 error = type(exc).__name__ + ": " + str(exc)[:500]
             finally:
@@ -176,18 +190,21 @@ def run_surya(pages, save):
                     im.close()
             elapsed = time.monotonic() - begun
             for i, page in enumerate(group):
-                raw = outputs[i].model_dump() if outputs is not None else None
-                block_errors = sum(x.error for x in outputs[i].blocks) if outputs is not None else 0
-                text = "\n".join(visible_text(block.html) for block in sorted(outputs[i].blocks,
-                    key=lambda x: x.reading_order) if not block.skipped) if outputs is not None else ""
+                raw = outputs[i].raw if outputs is not None else None
+                inference_error = outputs[i].error if outputs is not None else False
+                tokens = outputs[i].token_count if outputs is not None else 0
+                text = visible_text(raw) if raw is not None else ""
                 record = scored_record(page, "surya-2", text, elapsed / len(group),
-                    error=error or ("block_errors=" + str(block_errors) if block_errors else None), raw=raw,
-                    batch_size=len(group), batch_seconds=elapsed, capped=None)
+                    error=error or ("inference_error" if inference_error else None), raw=raw,
+                    batch_size=len(group), batch_seconds=elapsed, generation_tokens=tokens,
+                    capped=tokens >= MAX_TOKENS)
                 save(record)
             if error:
+                client.close()
                 manager.stop()
-                manager, predictor = surya_start()
+                manager, client = surya_start()
     finally:
+        client.close()
         manager.stop()
 
 

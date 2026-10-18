@@ -1,0 +1,12 @@
+{
+  "initial_evaluation_token": "c642327c264ad204ff39f698d701ca7423e0cc9b186251c1a743cc82dc6cd68d",
+  "initial_source_revision": "97106807f84baa04f45c26a07720d119a109cd75",
+  "completed_calls": {
+    "tesseract-fast": 150,
+    "khmereasytools-fast": 150,
+    "surya-2": 0
+  },
+  "reason": "Native Surya transport retries repetitive responses at escalating temperatures; full-page RecognitionPredictor may also invoke layout/block fallback. These were not the intended first-pass VLM profile.",
+  "action": "Stop before any completed Surya page records; retain initial CPU outputs, amend the profile transparently, and rerun every system without changing page selection, model weights, prompts or scalar generation limits.",
+  "utc": "2026-10-18T05:53:08Z"
+}
