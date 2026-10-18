@@ -1,0 +1,49 @@
+{
+  "analysis": "Post hoc tokenizer-only check; no inference or parameter selection",
+  "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+  "analyzer_sha256": "8f8d007c9a9e75aff4e31ba86dd713bbdbad35c9287e0469236ea3c9d2cf6a27",
+  "input": "Released original_transcription; no special tokens or output-serialization overhead",
+  "models": {
+    "mlx-community/DeepSeek-OCR-4bit": {
+      "pages": 150,
+      "revision": "4958b6b0d46d7dc3cf27556989dab659996ea426",
+      "source_partition": "test and source-train",
+      "minimum": 160,
+      "median": 638.5,
+      "maximum": 974,
+      "references_exceeding_4096": 0
+    },
+    "mlx-community/PaddleOCR-VL-1.6-4bit": {
+      "pages": 150,
+      "revision": "c8987b277bdd8aaec8bd265d154f391bd03ad165",
+      "source_partition": "test and source-train",
+      "minimum": 128,
+      "median": 512.5,
+      "maximum": 793,
+      "references_exceeding_4096": 0
+    },
+    "Qwen/Qwen2.5-VL-3B-Instruct": {
+      "pages": 30,
+      "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+      "source_partition": "test",
+      "minimum": 434,
+      "median": 680.5,
+      "maximum": 777,
+      "references_exceeding_4096": 0
+    },
+    "Qwen/Qwen3-VL-2B-Instruct": {
+      "pages": 30,
+      "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+      "source_partition": "test",
+      "minimum": 434,
+      "median": 680.5,
+      "maximum": 777,
+      "references_exceeding_4096": 0
+    }
+  },
+  "limitations": [
+    "Surya GGUF tokenizer is not included in this check.",
+    "Text-only reference lengths do not prove full generated responses will fit the cap.",
+    "These counts do not establish recognition quality or justify removing capped outputs."
+  ]
+}

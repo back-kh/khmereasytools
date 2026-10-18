@@ -2,8 +2,8 @@
 
 Passing tests establish the documented contracts on checked inputs. They do not establish universal linguistic accuracy. The source version is 0.5.0.dev0; PyPI 0.4.0 does not include the unreleased features.
 
-The [native installation run 39104339050](https://github.com/back-kh/khmereasytools/actions/runs/39104339050)
-passed at evaluation revision `537bd5dabfccf80d52db8cf09c89ffefa1a0506f`.
+The [native installation run 39105913010](https://github.com/back-kh/khmereasytools/actions/runs/39105913010)
+passed at evaluation revision `88b468a4cb6fdad099f0da699e9add1a23bf935a`.
 All three operating systems used the same wheel. Runtime Python source bytes
 remain identical to `b062be0`; fifteen research tests validate EXIF geometry, clustered scoring, serializer
 handling, failure denominators and source-partition separation. The new

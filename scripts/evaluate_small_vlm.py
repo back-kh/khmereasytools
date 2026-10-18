@@ -120,13 +120,6 @@ def load(data, system, torch):
     directory = data / "models" / item["directory"]
     processor = AutoProcessor.from_pretrained(str(directory), local_files_only=True,
                                               trust_remote_code=False)
-    image_processor = processor.image_processor
-    if hasattr(image_processor, "min_pixels"):
-        image_processor.min_pixels = MIN_PIXELS
-    if hasattr(image_processor, "max_pixels"):
-        image_processor.max_pixels = MAX_PIXELS
-    if isinstance(getattr(image_processor, "size", None), dict):
-        image_processor.size = {"shortest_edge": MIN_PIXELS, "longest_edge": MAX_PIXELS}
     model_class = Qwen2_5_VLForConditionalGeneration if system == "qwen25-vl-3b" else Qwen3VLForConditionalGeneration
     model = model_class.from_pretrained(str(directory), dtype=torch.bfloat16,
         device_map={"": 0}, attn_implementation="sdpa", local_files_only=True,
@@ -137,6 +130,15 @@ def load(data, system, torch):
 
 def timeout(signum, frame):
     raise TimeoutError("Per-page deadline exceeded")
+
+
+def prepare_inputs(image, processor):
+    messages = [{"role": "user", "content": [{"type": "image", "image": image},
+                {"type": "text", "text": PROMPT}]}]
+    return processor.apply_chat_template(messages, tokenize=True,
+        add_generation_prompt=True, return_dict=True, return_tensors="pt",
+        processor_kwargs={"images_kwargs": {
+            "size": {"shortest_edge": MIN_PIXELS, "longest_edge": MAX_PIXELS}}})
 
 
 def infer(image_path, model, processor, torch):
@@ -150,10 +152,7 @@ def infer(image_path, model, processor, torch):
         signal.alarm(TIMEOUT)
         with Image.open(image_path) as source:
             image = source.convert("RGB")
-        messages = [{"role": "user", "content": [{"type": "image", "image": image},
-                    {"type": "text", "text": PROMPT}]}]
-        inputs = processor.apply_chat_template(messages, tokenize=True,
-            add_generation_prompt=True, return_dict=True, return_tensors="pt")
+        inputs = prepare_inputs(image, processor)
         grid = inputs["image_grid_thw"].tolist()
         patch = processor.image_processor.patch_size
         if any(row[1] * row[2] * patch * patch > MAX_PIXELS * 1.1 for row in grid):
