@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.5.0.dev0 — unreleased
+
+- Expand the bundled lexicon from 213 to 81,005 entries using a pinned, checksum-verified ICU adaptation under Unicode License V3.
+- Make global maximum-coverage segmentation the default, with custom vocabulary and an explicit legacy compatibility mode. Token boundaries intentionally change.
+- Add `khanalyze` for images and multi-page PDFs, with page-local boxes, lines/blocks/column hints, confidence, segmentation, and Khmer diagnostics.
+- Extend `khocr` to PDFs while retaining its simple text return and legacy error strings.
+- Add daily-use `ocr` CLI output (plain text by default), optional `--layout`, page selection, and image review overlays.
+- Keep core runtime dependencies empty; combine Pillow, pytesseract, and pypdfium2 in the optional `[ocr]` extra.
+- Add reproducible segmentation evaluation, data provenance, low-memory indexing, and real Khmer OCR/PDF CI tests.
+
+
 ## 0.4.0 — 2026-10-18
 
 ### Added

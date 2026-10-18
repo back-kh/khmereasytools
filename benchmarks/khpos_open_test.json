@@ -1,0 +1,54 @@
+{
+  "python": "3.9.6",
+  "corpus_sha256": "1b10b866263e6beb93cbf5c249ffc6a5d4d11dbc7beb90717c9f4e14cb152869",
+  "dictionary_sha256": "f398bea51287dc36d52d2482f0005ecff817733cedb84936fd8e5b72b73d9cf8",
+  "dictionary_entries": 81005,
+  "protocol": "Exact token spans; concatenate gold words; no training or tuning on this file.",
+  "gold_markup": "Remove _/~ and ZWSP",
+  "results": {
+    "v0.4_legacy_213": {
+      "sentences": 1000,
+      "gold_tokens": 10778,
+      "predicted_tokens": 2176,
+      "correct_tokens": 700,
+      "precision": 0.32169117647058826,
+      "recall": 0.06494711449248469,
+      "token_f1": 0.10807472595337349,
+      "exact_sentences": 1,
+      "seconds": 0.015566958999999998
+    },
+    "legacy_213_lossless_greedy": {
+      "sentences": 1000,
+      "gold_tokens": 10778,
+      "predicted_tokens": 6944,
+      "correct_tokens": 2698,
+      "precision": 0.388536866359447,
+      "recall": 0.25032473557246243,
+      "token_f1": 0.30448030696309675,
+      "exact_sentences": 9,
+      "seconds": 0.06013504200000001
+    },
+    "expanded_greedy": {
+      "sentences": 1000,
+      "gold_tokens": 10778,
+      "predicted_tokens": 11315,
+      "correct_tokens": 8438,
+      "precision": 0.7457357490057446,
+      "recall": 0.7828910744108369,
+      "token_f1": 0.7638618566966913,
+      "exact_sentences": 387,
+      "seconds": 0.09747095799999998
+    },
+    "expanded_coverage": {
+      "sentences": 1000,
+      "gold_tokens": 10778,
+      "predicted_tokens": 11281,
+      "correct_tokens": 8516,
+      "precision": 0.7548976154596224,
+      "recall": 0.7901280385971423,
+      "token_f1": 0.7721111564440819,
+      "exact_sentences": 386,
+      "seconds": 0.10326720900000003
+    }
+  }
+}

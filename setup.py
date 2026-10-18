@@ -7,7 +7,7 @@ with (Path(__file__).parent / "README.md").open(encoding="utf-8") as fh:
 
 setup(
     name="khmereasytools",
-    version="0.4.0",
+    version="0.5.0.dev0",
     author="Nimol Thuon",
     author_email="nimol.thuon@gmail.com",
     description="Lightweight Khmer NLP with traceable text cleanup, Unicode diagnostics, and source-aligned tokens.",
@@ -20,6 +20,7 @@ setup(
         "Changelog": "https://github.com/back-kh/khmereasytools/blob/main/CHANGELOG.md",
     },
     packages=find_packages(include=["khmereasytools", "khmereasytools.*"]),
+    package_data={"khmereasytools": ["data/*.txt", "data/*.json"]},
     entry_points={"console_scripts": ["khmereasytools=khmereasytools.cli:main"]},
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -30,10 +31,10 @@ setup(
     python_requires='>=3.6',
     install_requires=[], # No hard dependencies for core functions
     extras_require={
-        "ocr": ["pytesseract>=0.3.8", "Pillow>=9.0.0"],
+        "ocr": ["pytesseract>=0.3.8", "Pillow>=9.0.0", "pypdfium2>=4,<6"],
         "khmernltk": ["khmer-nltk>=1.6"],
         "all": [
-            "pytesseract>=0.3.8", "Pillow>=9.0.0",
+            "pytesseract>=0.3.8", "Pillow>=9.0.0", "pypdfium2>=4,<6",
             "khmer-nltk>=1.6"
         ]
     }

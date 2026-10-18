@@ -10,7 +10,11 @@ from .tools import (
     khocr,
     is_khmer,
 )
+from .documents import DocumentLayout, DocumentPage, khanalyze
+from .lexicon import get_khmer_dictionary
 from .segmentation import TokenSpan, khseg_spans
+from .ocr import (Box, LayoutColumn, OCRBlock, OCRError, OCRLine, OCRWord, PageLayout,
+                  khlayout, khocr_layout, khocr_overlay)
 from .text_quality import (
     NormalizationResult,
     TextAudit,
@@ -21,11 +25,14 @@ from .text_quality import (
     khnormalize,
 )
 
-__version__ = "0.4.0"
+__version__ = "0.5.0.dev0"
 
 __all__ = [
     "get_default_stop_words", "load_stop_words_from_file", "khfilter", "khseg",
     "khsyllable", "khpos", "khocr", "is_khmer", "khseg_spans", "khaudit",
     "khdigits", "khnormalize", "TokenSpan", "TextIssue", "TextAudit", "TextEdit",
-    "NormalizationResult", "__version__",
+    "NormalizationResult", "__version__", "get_khmer_dictionary",
+    "Box", "LayoutColumn", "OCRBlock", "OCRError", "OCRLine", "OCRWord",
+    "PageLayout", "khlayout", "khocr_layout", "khocr_overlay",
+    "DocumentLayout", "DocumentPage", "khanalyze",
 ]

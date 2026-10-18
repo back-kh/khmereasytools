@@ -1,0 +1,13 @@
+{
+  "source_repository": "https://github.com/unicode-org/icu",
+  "revision": "ad484f3d6c036ba06193ac7c3bc2233a53ab68b8",
+  "source_path": "icu4c/source/data/brkitr/dictionaries/khmerdict.txt",
+  "source_sha256": "87bee2d17cd5148aa36957eb05409eefc124de8ad519b81b789298ef3e60b5d9",
+  "source_entries": 81028,
+  "retained_entries": 80999,
+  "legacy_entries": 213,
+  "combined_entries": 81005,
+  "filter": "unique non-comment entries containing only Khmer-block letters/marks; no normalization",
+  "license": "Unicode-3.0",
+  "output_sha256": "f398bea51287dc36d52d2482f0005ecff817733cedb84936fd8e5b72b73d9cf8"
+}

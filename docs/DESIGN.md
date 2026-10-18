@@ -1,5 +1,7 @@
 # Design and evidence
 
+This document records the 0.4 design. In 0.5, segmentation defaults intentionally change; see [evaluation and migration](EVALUATION.md). The simple daily-use API and offline, optional OCR/PDF dependencies are described in the main README.
+
 ## Direction
 
 Make Khmer text preparation **inspectable**: show what was found, what was changed, and where it came from. This helps people maintain alignment between OCR output, cleaned corpora, and annotations. The package remains usable offline with no core runtime dependencies.

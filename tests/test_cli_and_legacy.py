@@ -24,6 +24,8 @@ class LegacyTests(unittest.TestCase):
 
     def test_stop_words(self):
         self.assertEqual(ket.khfilter("ខ្ញុំស្រឡាញ់ភាសាខ្មែរ", {"ខ្ញុំ"}), "ស្រឡាញ់ ភាសាខ្មែរ")
+        self.assertEqual(ket.khfilter("ខ្ញុំស្រឡាញ់ភាសាខ្មែរ", (word for word in ["", "ខ្ញុំ"])),
+                         "ស្រឡាញ់ ភាសាខ្មែរ")
         words = ket.get_default_stop_words()
         self.assertEqual(len(words), 379)
         words.clear()
@@ -34,7 +36,7 @@ class LegacyTests(unittest.TestCase):
         self.assertFalse(ket.is_khmer("Hello"))
 
     def test_core_does_not_import_optional_dependencies(self):
-        code = "import sys, khmereasytools; assert not {'khmernltk', 'pytesseract', 'PIL'} & set(sys.modules)"
+        code = "import sys, khmereasytools; assert not {'khmernltk', 'pytesseract', 'PIL', 'pypdfium2', 'numpy', 'cv2'} & set(sys.modules)"
         subprocess.run([sys.executable, "-c", code], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     def test_missing_extras_actionable_error(self):
