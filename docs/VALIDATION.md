@@ -4,6 +4,29 @@ Passing tests establish the documented contracts on checked inputs. They do not 
 
 ## Compact supervised KET-Tagger
 
+The [native installed-wheel run 39379944997](https://github.com/back-kh/khmereasytools/actions/runs/39379944997)
+passed at `cb988c499ec51d55b330da408142af8cfd0ea2cd`; the separate
+[PR run](https://github.com/back-kh/khmereasytools/actions/runs/39379948941)
+also passed all nine jobs. All environments used the same 798,076-byte wheel,
+SHA-256 `75ce4fd87fe1b2f338fa57a1eb6073805b66bec674c3a21f0b2c541219965048`.
+
+| Check | Windows | macOS | Linux |
+| --- | --- | --- | --- |
+| Fresh core install | 203 passed, 19 skipped | 203 passed, 19 skipped | 203 passed, 19 skipped |
+| Fresh all-extras install | 217 passed, 5 skipped | 217 passed, 5 skipped | 217 passed, 5 skipped |
+| Actual OCR and legacy native CRF | Both executed | Both executed | Both executed |
+| Full CLOSE/OPEN compact POS replay | Exact count match | Exact count match | Exact count match |
+
+Each suite discovered 222 tests with zero errors/failures. The five extras
+skips remain four optional RapidFuzz metric checks and live Google translation.
+The local research environment passed 221 and skipped only live translation.
+Core checks also passed Python 3.6/3.9/3.11/3.14/3.15. Three additional fresh
+core-only workers ran outside checkout, evaluating all 1,000 CLOSE and 1,000
+OPEN sentences and matching every frozen native/public POS and span count.
+They imported no optional ML backend. [Machine-readable records](../benchmarks/accuracy/tagger-v2/native-validation.json)
+identify all six installs and three corpus replays, their source/wheel/model
+hashes, platform/dependency versions and all 27 exported functions.
+
 The default tagger now uses separately licensed khPOS research weights with
 standard-library inference. [Data and accuracy](TAGGER.md) distinguish native
 23-label scores, public projections, the same ALT before/after comparison and

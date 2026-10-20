@@ -1,0 +1,611 @@
+{
+  "schema_version": 2,
+  "source_revision": "cb988c499ec51d55b330da408142af8cfd0ea2cd",
+  "workflow_run": 39379944997,
+  "url": "https://github.com/back-kh/khmereasytools/actions/runs/39379944997",
+  "wheel_size_bytes": 798076,
+  "wheel_sha256": "75ce4fd87fe1b2f338fa57a1eb6073805b66bec674c3a21f0b2c541219965048",
+  "runtime_python_sources_sha256": "8e6fafb99ffd6d6b8e160d4de03f88f3e4812ef35532e12d4feb0f993fb08136",
+  "model_sha256": "1a1de64d7686d0041b1bd3c5ee853224dc1152caed79f5fd59da8b5d0c6b49a6",
+  "records": [
+    {
+      "platform": "macOS-14.8.9-arm64-arm-64bit",
+      "python": "3.11.9",
+      "package_path": "/private/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/ket-installed-pz4z8d80/environment/lib/python3.11/site-packages/khmereasytools/__init__.py",
+      "versions": {
+        "khmereasytools": "0.5.0.dev0"
+      },
+      "source_revision": "cb988c499ec51d55b330da408142af8cfd0ea2cd",
+      "wheel_sha256": "75ce4fd87fe1b2f338fa57a1eb6073805b66bec674c3a21f0b2c541219965048",
+      "doctor": {
+        "core": "ready",
+        "ocr": "missing",
+        "pdf": "missing",
+        "pos": "missing",
+        "translation": "missing"
+      },
+      "functions": [
+        "get_default_stop_words",
+        "load_stop_words_from_file",
+        "khfilter",
+        "khseg",
+        "khsyllable",
+        "khpos",
+        "khocr",
+        "is_khmer",
+        "khseg_spans",
+        "khaudit",
+        "khdigits",
+        "khnormalize",
+        "get_khmer_dictionary",
+        "khtag",
+        "khlayout",
+        "khocr_layout",
+        "khocr_overlay",
+        "khanalyze",
+        "khindex",
+        "khsearch",
+        "khtranslate",
+        "khrag",
+        "ket_ocr",
+        "khsentences",
+        "khextract",
+        "khprocess",
+        "khdoctor"
+      ],
+      "tests": 222,
+      "skipped": 19,
+      "failures": 0,
+      "errors": 0,
+      "real_ocr": false,
+      "real_pos": false,
+      "live_translation": false
+    },
+    {
+      "platform": "macOS-14.8.9-arm64-arm-64bit",
+      "python": "3.11.9",
+      "package_path": "/private/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/ket-installed-2ig38f1y/environment/lib/python3.11/site-packages/khmereasytools/__init__.py",
+      "versions": {
+        "khmereasytools": "0.5.0.dev0",
+        "khmer-nltk": "1.6",
+        "sklearn-crfsuite": "0.5.0",
+        "python-crfsuite": "0.9.12",
+        "scikit-learn": "1.9.1",
+        "Pillow": "13.0.0",
+        "pytesseract": "0.3.13",
+        "pypdfium2": "5.14.0"
+      },
+      "source_revision": "cb988c499ec51d55b330da408142af8cfd0ea2cd",
+      "wheel_sha256": "75ce4fd87fe1b2f338fa57a1eb6073805b66bec674c3a21f0b2c541219965048",
+      "doctor": {
+        "core": "ready",
+        "ocr": "ready",
+        "pdf": "ready",
+        "pos": "ready",
+        "translation": "missing"
+      },
+      "functions": [
+        "get_default_stop_words",
+        "load_stop_words_from_file",
+        "khfilter",
+        "khseg",
+        "khsyllable",
+        "khpos",
+        "khocr",
+        "is_khmer",
+        "khseg_spans",
+        "khaudit",
+        "khdigits",
+        "khnormalize",
+        "get_khmer_dictionary",
+        "khtag",
+        "khlayout",
+        "khocr_layout",
+        "khocr_overlay",
+        "khanalyze",
+        "khindex",
+        "khsearch",
+        "khtranslate",
+        "khrag",
+        "ket_ocr",
+        "khsentences",
+        "khextract",
+        "khprocess",
+        "khdoctor"
+      ],
+      "tests": 222,
+      "skipped": 5,
+      "failures": 0,
+      "errors": 0,
+      "real_ocr": true,
+      "real_pos": true,
+      "live_translation": false
+    },
+    {
+      "platform": "Linux-6.8.0-1064-azure-x86_64-with-glibc2.35",
+      "python": "3.11.17",
+      "package_path": "/tmp/ket-installed-956b8ub1/environment/lib/python3.11/site-packages/khmereasytools/__init__.py",
+      "versions": {
+        "khmereasytools": "0.5.0.dev0"
+      },
+      "source_revision": "cb988c499ec51d55b330da408142af8cfd0ea2cd",
+      "wheel_sha256": "75ce4fd87fe1b2f338fa57a1eb6073805b66bec674c3a21f0b2c541219965048",
+      "doctor": {
+        "core": "ready",
+        "ocr": "missing",
+        "pdf": "missing",
+        "pos": "missing",
+        "translation": "missing"
+      },
+      "functions": [
+        "get_default_stop_words",
+        "load_stop_words_from_file",
+        "khfilter",
+        "khseg",
+        "khsyllable",
+        "khpos",
+        "khocr",
+        "is_khmer",
+        "khseg_spans",
+        "khaudit",
+        "khdigits",
+        "khnormalize",
+        "get_khmer_dictionary",
+        "khtag",
+        "khlayout",
+        "khocr_layout",
+        "khocr_overlay",
+        "khanalyze",
+        "khindex",
+        "khsearch",
+        "khtranslate",
+        "khrag",
+        "ket_ocr",
+        "khsentences",
+        "khextract",
+        "khprocess",
+        "khdoctor"
+      ],
+      "tests": 222,
+      "skipped": 19,
+      "failures": 0,
+      "errors": 0,
+      "real_ocr": false,
+      "real_pos": false,
+      "live_translation": false
+    },
+    {
+      "platform": "Linux-6.8.0-1064-azure-x86_64-with-glibc2.35",
+      "python": "3.11.17",
+      "package_path": "/tmp/ket-installed-n9rxod_v/environment/lib/python3.11/site-packages/khmereasytools/__init__.py",
+      "versions": {
+        "khmereasytools": "0.5.0.dev0",
+        "khmer-nltk": "1.6",
+        "sklearn-crfsuite": "0.5.0",
+        "python-crfsuite": "0.9.12",
+        "scikit-learn": "1.9.1",
+        "Pillow": "13.0.0",
+        "pytesseract": "0.3.13",
+        "pypdfium2": "5.14.0"
+      },
+      "source_revision": "cb988c499ec51d55b330da408142af8cfd0ea2cd",
+      "wheel_sha256": "75ce4fd87fe1b2f338fa57a1eb6073805b66bec674c3a21f0b2c541219965048",
+      "doctor": {
+        "core": "ready",
+        "ocr": "ready",
+        "pdf": "ready",
+        "pos": "ready",
+        "translation": "missing"
+      },
+      "functions": [
+        "get_default_stop_words",
+        "load_stop_words_from_file",
+        "khfilter",
+        "khseg",
+        "khsyllable",
+        "khpos",
+        "khocr",
+        "is_khmer",
+        "khseg_spans",
+        "khaudit",
+        "khdigits",
+        "khnormalize",
+        "get_khmer_dictionary",
+        "khtag",
+        "khlayout",
+        "khocr_layout",
+        "khocr_overlay",
+        "khanalyze",
+        "khindex",
+        "khsearch",
+        "khtranslate",
+        "khrag",
+        "ket_ocr",
+        "khsentences",
+        "khextract",
+        "khprocess",
+        "khdoctor"
+      ],
+      "tests": 222,
+      "skipped": 5,
+      "failures": 0,
+      "errors": 0,
+      "real_ocr": true,
+      "real_pos": true,
+      "live_translation": false
+    },
+    {
+      "platform": "Windows-10-10.0.26100-SP0",
+      "python": "3.11.9",
+      "package_path": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ket-installed-yjps35nv\\environment\\Lib\\site-packages\\khmereasytools\\__init__.py",
+      "versions": {
+        "khmereasytools": "0.5.0.dev0"
+      },
+      "source_revision": "cb988c499ec51d55b330da408142af8cfd0ea2cd",
+      "wheel_sha256": "75ce4fd87fe1b2f338fa57a1eb6073805b66bec674c3a21f0b2c541219965048",
+      "doctor": {
+        "core": "ready",
+        "ocr": "missing",
+        "pdf": "missing",
+        "pos": "missing",
+        "translation": "missing"
+      },
+      "functions": [
+        "get_default_stop_words",
+        "load_stop_words_from_file",
+        "khfilter",
+        "khseg",
+        "khsyllable",
+        "khpos",
+        "khocr",
+        "is_khmer",
+        "khseg_spans",
+        "khaudit",
+        "khdigits",
+        "khnormalize",
+        "get_khmer_dictionary",
+        "khtag",
+        "khlayout",
+        "khocr_layout",
+        "khocr_overlay",
+        "khanalyze",
+        "khindex",
+        "khsearch",
+        "khtranslate",
+        "khrag",
+        "ket_ocr",
+        "khsentences",
+        "khextract",
+        "khprocess",
+        "khdoctor"
+      ],
+      "tests": 222,
+      "skipped": 19,
+      "failures": 0,
+      "errors": 0,
+      "real_ocr": false,
+      "real_pos": false,
+      "live_translation": false
+    },
+    {
+      "platform": "Windows-10-10.0.26100-SP0",
+      "python": "3.11.9",
+      "package_path": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ket-installed-4q9fnxyd\\environment\\Lib\\site-packages\\khmereasytools\\__init__.py",
+      "versions": {
+        "khmereasytools": "0.5.0.dev0",
+        "khmer-nltk": "1.6",
+        "sklearn-crfsuite": "0.5.0",
+        "python-crfsuite": "0.9.12",
+        "scikit-learn": "1.9.1",
+        "Pillow": "13.0.0",
+        "pytesseract": "0.3.13",
+        "pypdfium2": "5.14.0"
+      },
+      "source_revision": "cb988c499ec51d55b330da408142af8cfd0ea2cd",
+      "wheel_sha256": "75ce4fd87fe1b2f338fa57a1eb6073805b66bec674c3a21f0b2c541219965048",
+      "doctor": {
+        "core": "ready",
+        "ocr": "ready",
+        "pdf": "ready",
+        "pos": "ready",
+        "translation": "missing"
+      },
+      "functions": [
+        "get_default_stop_words",
+        "load_stop_words_from_file",
+        "khfilter",
+        "khseg",
+        "khsyllable",
+        "khpos",
+        "khocr",
+        "is_khmer",
+        "khseg_spans",
+        "khaudit",
+        "khdigits",
+        "khnormalize",
+        "get_khmer_dictionary",
+        "khtag",
+        "khlayout",
+        "khocr_layout",
+        "khocr_overlay",
+        "khanalyze",
+        "khindex",
+        "khsearch",
+        "khtranslate",
+        "khrag",
+        "ket_ocr",
+        "khsentences",
+        "khextract",
+        "khprocess",
+        "khdoctor"
+      ],
+      "tests": 222,
+      "skipped": 5,
+      "failures": 0,
+      "errors": 0,
+      "real_ocr": true,
+      "real_pos": true,
+      "live_translation": false
+    }
+  ],
+  "corpus_replays": [
+    {
+      "platform": "macOS-14.8.9-arm64-arm-64bit",
+      "python": "3.11.9",
+      "package_path": "/private/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/ket-pos-corpus-6_sfwb5e/env/lib/python3.11/site-packages/khmereasytools/__init__.py",
+      "source_revision": "cb988c499ec51d55b330da408142af8cfd0ea2cd",
+      "model_sha256": "1a1de64d7686d0041b1bd3c5ee853224dc1152caed79f5fd59da8b5d0c6b49a6",
+      "wheel_sha256": "75ce4fd87fe1b2f338fa57a1eb6073805b66bec674c3a21f0b2c541219965048",
+      "model_license": "CC-BY-NC-SA-4.0",
+      "runtime_dependencies": [],
+      "datasets_sha256": {
+        "close.word": "790e20756490fb604baa930d701b3853e98725981c72ee867a45da2303e92505",
+        "close.tag": "23a849931f57b87e8c9369514772425813f99eb9daf87d59c0bfda48483af459",
+        "open.word": "1b10b866263e6beb93cbf5c249ffc6a5d4d11dbc7beb90717c9f4e14cb152869",
+        "open.tag": "1714a6aeb0bedb1df6dde577a409799f6700bfd97f107cdf7c5a2624090b2cd4"
+      },
+      "counts_match_frozen_reference": true,
+      "results": {
+        "close": {
+          "sentences": 1000,
+          "gold_tokens": 10397,
+          "native_correct": 9975,
+          "native_accuracy": 0.9594113686640378,
+          "segmentation": {
+            "correct": 9479,
+            "predicted": 10389,
+            "gold": 10397,
+            "precision": 0.9124073539320435,
+            "recall": 0.9117052996056555,
+            "f1": 0.9120561916674685
+          },
+          "joint_native": {
+            "correct": 9123,
+            "predicted": 10389,
+            "gold": 10397,
+            "precision": 0.8781403407450188,
+            "recall": 0.877464653265365,
+            "f1": 0.8778023669777735
+          },
+          "public_correct": 9797,
+          "public_joint": {
+            "correct": 8942,
+            "predicted": 10389,
+            "gold": 10397,
+            "precision": 0.8607180671864472,
+            "recall": 0.8600557853226892,
+            "f1": 0.8603867988068893
+          },
+          "alignment_failures": 0
+        },
+        "open": {
+          "sentences": 1000,
+          "gold_tokens": 10778,
+          "native_correct": 10329,
+          "native_accuracy": 0.9583410651326777,
+          "segmentation": {
+            "correct": 9841,
+            "predicted": 10717,
+            "gold": 10778,
+            "precision": 0.9182607072874872,
+            "recall": 0.9130636481722026,
+            "f1": 0.915654803442661
+          },
+          "joint_native": {
+            "correct": 9475,
+            "predicted": 10717,
+            "gold": 10778,
+            "precision": 0.8841093589623962,
+            "recall": 0.8791055854518464,
+            "f1": 0.8816003721795767
+          },
+          "public_correct": 10122,
+          "public_joint": {
+            "correct": 9268,
+            "predicted": 10717,
+            "gold": 10778,
+            "precision": 0.8647942521227956,
+            "recall": 0.8598997958804974,
+            "f1": 0.86234007908816
+          },
+          "alignment_failures": 0
+        }
+      }
+    },
+    {
+      "platform": "Linux-6.8.0-1064-azure-x86_64-with-glibc2.35",
+      "python": "3.11.17",
+      "package_path": "/tmp/ket-pos-corpus-3e5t3qbh/env/lib/python3.11/site-packages/khmereasytools/__init__.py",
+      "source_revision": "cb988c499ec51d55b330da408142af8cfd0ea2cd",
+      "model_sha256": "1a1de64d7686d0041b1bd3c5ee853224dc1152caed79f5fd59da8b5d0c6b49a6",
+      "wheel_sha256": "75ce4fd87fe1b2f338fa57a1eb6073805b66bec674c3a21f0b2c541219965048",
+      "model_license": "CC-BY-NC-SA-4.0",
+      "runtime_dependencies": [],
+      "datasets_sha256": {
+        "close.word": "790e20756490fb604baa930d701b3853e98725981c72ee867a45da2303e92505",
+        "close.tag": "23a849931f57b87e8c9369514772425813f99eb9daf87d59c0bfda48483af459",
+        "open.word": "1b10b866263e6beb93cbf5c249ffc6a5d4d11dbc7beb90717c9f4e14cb152869",
+        "open.tag": "1714a6aeb0bedb1df6dde577a409799f6700bfd97f107cdf7c5a2624090b2cd4"
+      },
+      "counts_match_frozen_reference": true,
+      "results": {
+        "close": {
+          "sentences": 1000,
+          "gold_tokens": 10397,
+          "native_correct": 9975,
+          "native_accuracy": 0.9594113686640378,
+          "segmentation": {
+            "correct": 9479,
+            "predicted": 10389,
+            "gold": 10397,
+            "precision": 0.9124073539320435,
+            "recall": 0.9117052996056555,
+            "f1": 0.9120561916674685
+          },
+          "joint_native": {
+            "correct": 9123,
+            "predicted": 10389,
+            "gold": 10397,
+            "precision": 0.8781403407450188,
+            "recall": 0.877464653265365,
+            "f1": 0.8778023669777735
+          },
+          "public_correct": 9797,
+          "public_joint": {
+            "correct": 8942,
+            "predicted": 10389,
+            "gold": 10397,
+            "precision": 0.8607180671864472,
+            "recall": 0.8600557853226892,
+            "f1": 0.8603867988068893
+          },
+          "alignment_failures": 0
+        },
+        "open": {
+          "sentences": 1000,
+          "gold_tokens": 10778,
+          "native_correct": 10329,
+          "native_accuracy": 0.9583410651326777,
+          "segmentation": {
+            "correct": 9841,
+            "predicted": 10717,
+            "gold": 10778,
+            "precision": 0.9182607072874872,
+            "recall": 0.9130636481722026,
+            "f1": 0.915654803442661
+          },
+          "joint_native": {
+            "correct": 9475,
+            "predicted": 10717,
+            "gold": 10778,
+            "precision": 0.8841093589623962,
+            "recall": 0.8791055854518464,
+            "f1": 0.8816003721795767
+          },
+          "public_correct": 10122,
+          "public_joint": {
+            "correct": 9268,
+            "predicted": 10717,
+            "gold": 10778,
+            "precision": 0.8647942521227956,
+            "recall": 0.8598997958804974,
+            "f1": 0.86234007908816
+          },
+          "alignment_failures": 0
+        }
+      }
+    },
+    {
+      "platform": "Windows-10-10.0.26100-SP0",
+      "python": "3.11.9",
+      "package_path": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ket-pos-corpus-j7arcv9e\\env\\Lib\\site-packages\\khmereasytools\\__init__.py",
+      "source_revision": "cb988c499ec51d55b330da408142af8cfd0ea2cd",
+      "model_sha256": "1a1de64d7686d0041b1bd3c5ee853224dc1152caed79f5fd59da8b5d0c6b49a6",
+      "wheel_sha256": "75ce4fd87fe1b2f338fa57a1eb6073805b66bec674c3a21f0b2c541219965048",
+      "model_license": "CC-BY-NC-SA-4.0",
+      "runtime_dependencies": [],
+      "datasets_sha256": {
+        "close.word": "790e20756490fb604baa930d701b3853e98725981c72ee867a45da2303e92505",
+        "close.tag": "23a849931f57b87e8c9369514772425813f99eb9daf87d59c0bfda48483af459",
+        "open.word": "1b10b866263e6beb93cbf5c249ffc6a5d4d11dbc7beb90717c9f4e14cb152869",
+        "open.tag": "1714a6aeb0bedb1df6dde577a409799f6700bfd97f107cdf7c5a2624090b2cd4"
+      },
+      "counts_match_frozen_reference": true,
+      "results": {
+        "close": {
+          "sentences": 1000,
+          "gold_tokens": 10397,
+          "native_correct": 9975,
+          "native_accuracy": 0.9594113686640378,
+          "segmentation": {
+            "correct": 9479,
+            "predicted": 10389,
+            "gold": 10397,
+            "precision": 0.9124073539320435,
+            "recall": 0.9117052996056555,
+            "f1": 0.9120561916674685
+          },
+          "joint_native": {
+            "correct": 9123,
+            "predicted": 10389,
+            "gold": 10397,
+            "precision": 0.8781403407450188,
+            "recall": 0.877464653265365,
+            "f1": 0.8778023669777735
+          },
+          "public_correct": 9797,
+          "public_joint": {
+            "correct": 8942,
+            "predicted": 10389,
+            "gold": 10397,
+            "precision": 0.8607180671864472,
+            "recall": 0.8600557853226892,
+            "f1": 0.8603867988068893
+          },
+          "alignment_failures": 0
+        },
+        "open": {
+          "sentences": 1000,
+          "gold_tokens": 10778,
+          "native_correct": 10329,
+          "native_accuracy": 0.9583410651326777,
+          "segmentation": {
+            "correct": 9841,
+            "predicted": 10717,
+            "gold": 10778,
+            "precision": 0.9182607072874872,
+            "recall": 0.9130636481722026,
+            "f1": 0.915654803442661
+          },
+          "joint_native": {
+            "correct": 9475,
+            "predicted": 10717,
+            "gold": 10778,
+            "precision": 0.8841093589623962,
+            "recall": 0.8791055854518464,
+            "f1": 0.8816003721795767
+          },
+          "public_correct": 10122,
+          "public_joint": {
+            "correct": 9268,
+            "predicted": 10717,
+            "gold": 10778,
+            "precision": 0.8647942521227956,
+            "recall": 0.8598997958804974,
+            "f1": 0.86234007908816
+          },
+          "alignment_failures": 0
+        }
+      }
+    }
+  ],
+  "notes": [
+    "Six fresh installed environments share one wheel: core 203 passed/19 skipped; extras 217 passed/5 skipped.",
+    "Actual OCR and legacy native CRF ran on all three operating systems; compact POS runs without native ML dependencies.",
+    "Three additional core-only installed workers replayed all 1,000 CLOSE and 1,000 OPEN sentences, matching frozen native/public accuracy and span counts exactly.",
+    "No training or test-set tuning occurs in CI. Corpus sources, model hash, wheel hash and runtime fingerprint are pinned.",
+    "Extras skips are four optional RapidFuzz metric checks and disabled live Google translation; local research environment passed 221 tests with only live translation skipped.",
+    "Software source is MIT; bundled research weights and derived vocabulary/counts are CC BY-NC-SA 4.0.",
+    "Gold-boundary native accuracy, unsegmented joint span F1 and public mapped labels are separate metrics. Fine roles remain heuristic."
+  ]
+}
