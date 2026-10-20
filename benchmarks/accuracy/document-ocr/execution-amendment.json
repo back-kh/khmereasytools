@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-10-18T07:40:31Z",
+  "reason": "User requested GPU server execution; native CUDA compatibility confirmed before these model test predictions",
+  "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+  "cuda_evaluation_token": "41e89f5042b38b221e90b463a72df3c0ef86aa1b3314393d003c40c904f02501",
+  "evaluator_source_revision": "20f8a9900f91c994fe11348bdf6fffd1a9aa937c",
+  "moved_systems": [
+    "paddleocr-vl-1.6-4bit",
+    "deepseek-ocr-4bit"
+  ],
+  "retained_mac_systems": [
+    "tesseract-fast",
+    "khmereasytools-fast",
+    "surya-2"
+  ],
+  "mac_prediction_counts_at_move": {
+    "tesseract-fast": 150,
+    "khmereasytools-fast": 150,
+    "surya-2": 112,
+    "paddleocr-vl-1.6-4bit": 0,
+    "deepseek-ocr-4bit": 0
+  },
+  "selection_changed": false,
+  "checkpoint_files_changed": false,
+  "recognition_arguments_changed": false,
+  "platform_dependencies_changed": true,
+  "requires_all_150_pages_per_system": true,
+  "notes": [
+    "No CUDA benchmark CER existed when the platform was selected.",
+    "Original primary protocol and files remain immutable.",
+    "Separate per-system environment tokens must be retained."
+  ]
+}

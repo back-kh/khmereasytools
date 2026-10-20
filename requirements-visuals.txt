@@ -1,0 +1,5 @@
+# Optional documentation authoring only; never installed by the runtime package.
+matplotlib==3.11.2
+fonttools==4.67.0
+uharfbuzz==0.56.3
+pypdf==6.21.1

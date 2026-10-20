@@ -1,0 +1,18 @@
+{
+  "kind": "Automated consistency audit, not independent annotation or human accuracy validation",
+  "rows": 3963,
+  "source_records": 1583,
+  "raw_prediction_scores_recomputed": 7926,
+  "paired_aggregates_and_intervals_reproduced": true,
+  "complete_expected_unit_set": true,
+  "reference_and_input_hashes_match": true,
+  "result_sha256": "e984240fc62dea8ff948c1d9026eb87de785d4c29c2c87e61c0afcbb4ab80839",
+  "source_inventory_sha256": "39abefa04a7b95a7ba78a6c67902af26c8b4af43f3866538c5a28e3efa726bbf",
+  "empty_outputs": {
+    "khmerst_clean_baseline": 994,
+    "khmerst_clean_toolkit": 964,
+    "khmerst_half_jpeg40_baseline": 89,
+    "khmerst_half_jpeg40_toolkit": 85,
+    "khob_half_jpeg40_baseline": 10
+  }
+}

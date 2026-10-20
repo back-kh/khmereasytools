@@ -1,38 +1,7 @@
 import csv
 import re
 
-# --- Built-in Dictionary for Segmentation ---
-def get_khmer_dictionary():
-    """
-    Return the small built-in dictionary (213 unique entries in version 0.3.8).
-    Coverage is limited; this is not a comprehensive Khmer lexicon.
-    """
-    return {
-        'ស្ថិតនៅ', 'ក្នុង', 'ខេត្ត', 'សៀមរាប', 'ប្រទេស', 'កម្ពុជា', 'សាលារៀន', 'សួស្តី',
-        'ខ្ញុំ', 'ស្រឡាញ់', 'ភាសាខ្មែរ', 'នេះ', 'គឺ', 'ជា', 'ស្ថិត', 'នៅ', 'វត្ត', 'បុរាណ',
-        'មាន', 'ព្រះវិហារ', 'ធំ', 'បំផុត', 'ពេល', 'សម្រាក', 'ព្រឹក', 'មនុស្ស', 'ច្រើន', 'កូន',
-        'សិស្ស', 'គ្រូ', 'បង្រៀន', 'សៀវភៅ', 'ប៊ិក', 'ខ្មៅដៃ', 'សាលា', 'រៀន', 'ទៅ', 'មក',
-        'ញ៉ាំ', 'បាយ', 'ទឹក', 'ដោះគោ', 'ឆ្ងាញ់', 'ផ្ទះ', 'ឡាន', 'ម៉ូតូ', 'កង់', 'ដើរ', 'រត់',
-        'លេង', 'ទាត់', 'បាល់', 'មិត្តភ័ក្តិ', 'ឪពុក', 'ម្តាយ', 'បង', 'ប្អូន', 'ប្រុស', 'ស្រី',
-        'លោកគ្រូ', 'អ្នកគ្រូ', 'មន្ទីរពេទ្យ', 'ឈឺ', 'ពេទ្យ', 'ថ្នាំ', 'ព្យាបាល', 'ជាសះស្បើយ',
-        'ទីផ្សារ', 'ទិញ', 'លក់', 'អីវ៉ាន់', 'បន្លែ', 'ផ្លែឈើ', 'សាច់', 'ត្រី', 'លុយ', 'កាក់',
-        'កុំព្យូទ័រ', 'ទូរស័ព្ទ', 'កម្មវិធី', 'អ៊ីនធឺណិត', 'គេហទំព័រ', 'សរសេរ', 'អាន', 'និយាយ',
-        'ស្តាប់', 'មើល', 'ទូរទស្សន៍', 'កុន', 'ចម្រៀង', 'ពិរោះ', 'ស្អាត', 'ល្អ', 'អាក្រក់',
-        'ខ្ពស់', 'ទាប', 'វែង', 'ខ្លី', 'ធំ', 'តូច', 'ថ្មី', 'ចាស់', 'ក្តៅ', 'ត្រជាក់', 'ថ្ងៃ',
-        'ខែ', 'ឆ្នាំ', 'ម៉ោង', 'នាទី', 'វិនាទី', 'ម្សិលមិញ', 'ថ្ងៃនេះ', 'ស្អែក', 'ព្រះអាទិត្យ',
-        'ព្រះចន្ទ', 'ផ្កាយ', 'មេឃ', 'ដី', 'ភ្នំ', 'សមុទ្រ', 'ទន្លេ', 'បឹង', 'ព្រៃ', 'ឈើ', 'ផ្កា',
-        'ក្រហម', 'ខៀវ', 'បៃតង', 'លឿង', 'ស', 'ខ្មៅ', 'ពណ៌', 'សំលៀកបំពាក់', 'អាវ', 'ខោ',
-        'ស្បែកជើង', 'មួក', 'វ៉ែនតា', 'ឆ្កែ', 'ឆ្មា', 'មាន់', 'ទា', 'គោ', 'ជ្រូក', 'ដំរី',
-        'ខ្លា', 'តោ', 'ស្វា', 'ពស់', 'ត្រី', 'សត្វ', 'ធ្វើការ', 'ក្រុមហ៊ុន', 'បុគ្គលិក',
-        'ចៅហ្វាយ', 'លិខិត', 'របាយការណ៍', 'ប្រជុំ', 'សំខាន់', 'គម្រោង', 'ជោគជ័យ', 'បរាជ័យ',
-        'ព្យាយាម', 'ឧស្សាហ៍', 'ខ្ជិល', 'ពូកែ', 'ខ្សោយ', 'ចំណេះដឹង', 'វិទ្យាសាស្ត្រ',
-        'គណិតវិទ្យា', 'ប្រវត្តិសាស្ត្រ', 'ភូមិសាស្ត្រ', 'សិល្បៈ', 'តន្ត្រី', 'កីឡា', 'សុខភាព',
-        'អាហារ', 'ភេសជ្ជៈ', 'ដំណេក', 'ភ្ញាក់', 'ដើរលេង', 'ដំណើរកម្សាន្ត', 'យន្តហោះ',
-        'កប៉ាល់', 'រថភ្លើង', 'ផ្លូវ', 'ស្ពាន', 'អគារ', 'ភូមិ', 'ឃុំ', 'ស្រុក', 'ខេត្ត', 'រាជធានី',
-        'ពិភពលោក', 'គ្រួសារ', 'សង្គម', 'រដ្ឋាភិបាល', 'នយោបាយ', 'សេដ្ឋកិច្ច', 'វប្បធម៌',
-        'ប្រពៃណី', 'ជំនឿ', 'សាសនា', 'ស្នេហា', 'មិត្តភាព', 'ក្តីសង្ឃឹម', 'ក្តីសុខ', 'ទុក្ខ',
-        'សប្បាយ', 'រីករាយ', 'កើតទុក្ខ', 'ខឹង', 'ខ្លាច', 'ភ្ញាក់ផ្អើល', 'ស្រស់ស្អាត', 'អស្ចារ្យ'
-    }
+from .lexicon import get_khmer_dictionary
 
 # --- Custom Segmentation Logic (Replaces external libraries) ---
 def longest_match_segmenter(text, dictionary):
@@ -143,34 +112,51 @@ def load_stop_words_from_file(file_path):
         print(f"Error: Stop words file not found at {file_path}")
     return stop_words
 
-def khfilter(text, stop_words=None):
+def khfilter(text, stop_words=None, *, custom_words=None, dictionary="expanded", strategy="frequency"):
     if stop_words is None:
         stop_words = get_default_stop_words()
-    dictionary = get_khmer_dictionary().union(stop_words)
-    words = longest_match_segmenter(text, dictionary)
+    stop_words = set(stop_words)
+    vocabulary = {word for word in stop_words if word}
+    if custom_words is not None:
+        from .segmentation import _validated_words
+        vocabulary.update(_validated_words(custom_words))
+    words = khseg(text, custom_words=vocabulary, dictionary=dictionary, strategy=strategy)
     filtered_words = [word for word in words if word not in stop_words]
     return " ".join(filtered_words)
 
-def khseg(text):
-    dictionary = get_khmer_dictionary()
-    return longest_match_segmenter(text, dictionary)
+def khseg(text, custom_words=None, *, dictionary="expanded", strategy="frequency"):
+    """Segment with bundled unigram costs and safe maximum-coverage paths.
+
+    Use dictionary='legacy', strategy='legacy' to reproduce version 0.4.
+    Whitespace and explicit ZWSP boundaries are omitted from this list API;
+    use khseg_spans for a lossless view.
+    """
+    from .segmentation import khseg_spans, _validated_words
+    from .text_quality import _require_text
+    _require_text(text)
+    if strategy == "legacy":
+        words = get_khmer_dictionary(dictionary) if isinstance(dictionary, str) else set(_validated_words(dictionary))
+        if custom_words is not None:
+            words.update(_validated_words(custom_words))
+        return longest_match_segmenter(text, words)
+    return [token.text for token in khseg_spans(
+        text, custom_words, dictionary=dictionary, strategy=strategy
+    ) if token.kind not in ("whitespace", "boundary")]
 
 def khsyllable(text):
     return syllable_segmenter(text)
 
-def khpos(text):
-    try:
-        from khmernltk import pos_tag as khmernltk_pos_tag
-    except ImportError as exc:
-        raise ImportError(
-            "POS dependencies are unavailable. Install khmereasytools[khmernltk] "
-            "(the distribution is named khmer-nltk)."
-        ) from exc
-    # POS tagging works best on space-separated text
-    segmented_text = " ".join(khseg(text))
-    return khmernltk_pos_tag(segmented_text)
+def khpos(text, *, custom_words=None):
+    """Tag chosen words directly with the optional POS CRF; no retokenization."""
+    from .pos import tag_text
+    return tag_text(text, custom_words=custom_words)
 
-def khocr(image_path):
+def khocr(image_path, *, pages=None, preprocess="auto"):
+    """Extract text from an image or PDF. Install the optional [ocr] extra.
+
+    Retains legacy image error strings. Use khanalyze for structured output
+    and exception-based error handling. pages selects 1-based PDF pages.
+    """
     try:
         import pytesseract
         from PIL import Image
@@ -179,8 +165,8 @@ def khocr(image_path):
             "OCR dependencies not installed. Install khmereasytools[ocr]."
         ) from exc
     try:
-        with Image.open(image_path) as image:
-            return pytesseract.image_to_string(image, lang='khm')
+        from .documents import khanalyze
+        return khanalyze(image_path, pages=pages, segment=False, preprocess=preprocess).text
     except FileNotFoundError:
         return f"Error: Image file not found at '{image_path}'"
     except Exception as e:

@@ -1,0 +1,28 @@
+{
+  "raw_image_files": 148,
+  "selected_distinct_images": 146,
+  "completed_drafts": 146,
+  "failed_calls": 0,
+  "human_reviewed": 0,
+  "empty_drafts": 0,
+  "distinct_nonempty_transcript_hashes": 146,
+  "exact_text_duplicate_groups": 0,
+  "images_in_exact_text_duplicate_groups": 0,
+  "uncertain_pages": 99,
+  "illegible_pages": 91,
+  "model_claimed_complete_pages": 53,
+  "generated_transcript_codepoints": 65397,
+  "draft_token": "e856482019979b9260e4e8d49cd6ae258857068d7309a264e52f16343e50b4d6",
+  "configured_model": {
+    "model": "gpt-6.1-sol",
+    "model_reasoning_effort": "max"
+  },
+  "generation_overrides": {
+    "model": "gpt-6.1-sol",
+    "model_reasoning_effort": "medium"
+  },
+  "cli_version": "codex-cli 0.162.0-alpha.17.2",
+  "resolved_model_snapshot": "Not exposed by this CLI response format",
+  "compiler_sha256": "8760f9190f000709785590a21d3fdd76e8b4bc9a09706d5c06aae096d0fc890c",
+  "interpretation": "Reference-authoring drafts only; no independent gold or OCR accuracy claim"
+}

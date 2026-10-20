@@ -7,4 +7,8 @@ dist/
 .pytest_cache/
 .coverage
 htmlcov/
+.evaluation/
+.evaluation
+.evaluation.drive-e-backup-*/
 .DS_Store
+validation-results/

@@ -1,0 +1,111 @@
+{
+  "base_commit": "9e5e39738e630b3e17789ab20c46061c99ce1a07",
+  "runtime_python_sources_sha256": "67cc75025f64d968f41db88f0d5b668972ef71d98de10959d9d8ed308dbf08f2",
+  "python": "3.9.6",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "package_version": "0.5.0.dev0",
+  "protocol_sha256": "c4e1de18fd791df0707bb31fb6f164b8e5b6ad83c2072316956a3083c496c797",
+  "dataset": "NICT Khmer ALT 2018-11-01, standard article test",
+  "corpus_sha256": "0c6457d4a3327f3dc0b381704cbad71af120e963bfa1cdb06765fa0ed0c9098a",
+  "split_sha256": "6d67d6bf5c4e7574116355d71ef927c66aca2f7ab7267b14591ea250f24ec722",
+  "sentences": 1018,
+  "gold_tokens": 36007,
+  "backend_version": "1.6",
+  "model_sha256": "2f690b1f40a81a615c5eb0c1059ba3e606e49840200b49343b15bf0bea09e63c",
+  "labels": [
+    "+",
+    ".",
+    "1",
+    "a",
+    "n",
+    "o",
+    "v"
+  ],
+  "training_overlap": "Possible: upstream trained on ALT; membership unavailable.",
+  "oracle_gold_token_accuracy": 0.9623406559835588,
+  "oracle_correct": 34651,
+  "majority_noun_oracle_accuracy": 0.41722442858333103,
+  "oracle_by_tag": {
+    "+": {
+      "gold": 1,
+      "correct": 0
+    },
+    ".": {
+      "gold": 1857,
+      "correct": 1854
+    },
+    "1": {
+      "gold": 955,
+      "correct": 907
+    },
+    "a": {
+      "gold": 1908,
+      "correct": 1598
+    },
+    "n": {
+      "gold": 15023,
+      "correct": 14624
+    },
+    "o": {
+      "gold": 5380,
+      "correct": 5166
+    },
+    "v": {
+      "gold": 10883,
+      "correct": 10502
+    }
+  },
+  "seconds": 3.601304584,
+  "methods": {
+    "public_khpos": {
+      "alignment_failures": 0,
+      "discarded_whitespace_pairs": 30799,
+      "predicted": 33966,
+      "gold": 36007,
+      "tagged_correct": 23569,
+      "token_correct": 24274,
+      "exact_tagged_sentences": 4,
+      "token_spans": {
+        "correct": 24274,
+        "predicted": 33966,
+        "gold": 36007,
+        "precision": 0.7146558323028911,
+        "recall": 0.6741466936984475,
+        "f1": 0.6938104697526188
+      },
+      "tagged_spans": {
+        "correct": 23569,
+        "predicted": 33966,
+        "gold": 36007,
+        "precision": 0.6938997821350763,
+        "recall": 0.6545671674952093,
+        "f1": 0.6736598402240864
+      }
+    },
+    "backend_raw": {
+      "alignment_failures": 0,
+      "discarded_whitespace_pairs": 0,
+      "predicted": 29484,
+      "gold": 36007,
+      "tagged_correct": 21156,
+      "token_correct": 21532,
+      "exact_tagged_sentences": 3,
+      "token_spans": {
+        "correct": 21532,
+        "predicted": 29484,
+        "gold": 36007,
+        "precision": 0.7302943969610636,
+        "recall": 0.5979948343377677,
+        "f1": 0.6575560000610771
+      },
+      "tagged_spans": {
+        "correct": 21156,
+        "predicted": 29484,
+        "gold": 36007,
+        "precision": 0.7175417175417176,
+        "recall": 0.5875524203627073,
+        "f1": 0.6460735062833061
+      }
+    }
+  }
+}

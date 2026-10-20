@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "audit_sha256": "35792c8e47797adf2fe797dae6bd3b39ea436678e8d994da19d661f5d887b565",
+  "results_sha256": "6453a25a0f96edc344c4fb508cd1c2533a7a23a38dd627c6d5814f0fdc586ff7",
+  "selection_sha256": "f9e372594c2b9a8872de85518abefd9610c0014b7a1df04523e13769a7d0a4df",
+  "candidate_images_screened": 20,
+  "selected_image_hashes_verified": 18,
+  "prediction_records_verified": 60,
+  "independent_distance_projections": 180,
+  "aggregate_system_tracks_verified": 7,
+  "bit_vector_dp_selfchecks": 1039,
+  "notes": [
+    "Separate input-eligibility and bit-vector distance implementations agree with published selection/counts.",
+    "All retained raw outputs, references, images, empty/error/cap flags and aggregate counts checked.",
+    "Assistant image screening is not human transcript review; post hoc selection is not an unseen test."
+  ]
+}

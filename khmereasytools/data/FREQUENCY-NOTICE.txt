@@ -1,0 +1,7 @@
+Segmentation frequencies adapted from SIL NRSI khmerlbdict.
+Copyright (c) 2015 SIL NRSI. Distributed under the upstream MIT notice;
+see SIL-LICENSE.txt. SIL attributes the source frequency list to SEALang.
+Source: https://raw.githubusercontent.com/silnrsi/khmerlbdict/54abc6b87f4ffa6a0c95c09836c7c86648002273/src/seafreq.txt
+Only existing dictionary entries are retained; no evaluation-derived
+vocabulary, counts, or trained weights are included.
+See frequency_manifest.json for source and output checksums.

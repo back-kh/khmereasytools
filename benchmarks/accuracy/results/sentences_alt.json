@@ -1,0 +1,39 @@
+{
+  "base_commit": "9e5e39738e630b3e17789ab20c46061c99ce1a07",
+  "runtime_python_sources_sha256": "b044bf6e91e361f0705cc983ddb2738ea0be63e899b3264388c0ee7fa034489e",
+  "python": "3.9.6",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "package_version": "0.5.0.dev0",
+  "protocol_sha256": "c4e1de18fd791df0707bb31fb6f164b8e5b6ad83c2072316956a3083c496c797",
+  "dataset": "ALT standard test article reconstruction",
+  "corpus_sha256": "0c6457d4a3327f3dc0b381704cbad71af120e963bfa1cdb06765fa0ed0c9098a",
+  "split_sha256": "6d67d6bf5c4e7574116355d71ef927c66aca2f7ab7267b14591ea250f24ec722",
+  "sentences": 1018,
+  "cases": 97,
+  "exact_cases": 90,
+  "spans": {
+    "correct": 1008,
+    "predicted": 1023,
+    "gold": 1018,
+    "precision": 0.9853372434017595,
+    "recall": 0.9901768172888016,
+    "f1": 0.9877511024007839
+  },
+  "boundaries": {
+    "correct": 919,
+    "predicted": 926,
+    "gold": 921,
+    "precision": 0.9924406047516199,
+    "recall": 0.997828447339848,
+    "f1": 0.9951272333513806
+  },
+  "imperfect_article_ids": [
+    "75158",
+    "204805",
+    "86992",
+    "114594",
+    "208980",
+    "24312",
+    "38665"
+  ]
+}

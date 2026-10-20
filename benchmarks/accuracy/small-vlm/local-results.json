@@ -1,0 +1,2044 @@
+{
+  "environment": {
+    "files": {
+      "evaluate_small_vlm.py": "b6a2144dc6fbff5b357a2d703af826f458b111ba6d4bec957b6912533ac0a015",
+      "inputs.json": "12533beb0980578bfd1d90be9116f9560f8afd0279e29005724139f16278698d",
+      "model-inventory.json": "0a59904fc8f8c80099fc74a824cdddccef7e9bc847c014cd83f5052ba60276b7",
+      "protocol.md": "9b645800dbbf9aac2f104774f00e08ab5da237f014508ac6929b75956a578cb0"
+    },
+    "python": "3.10.12",
+    "platform": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+    "versions": {
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "transformers": "5.20.1",
+      "accelerate": "1.10.1",
+      "Pillow": "10.4.0",
+      "huggingface-hub": "2.2.0",
+      "numpy": "2.2.6"
+    },
+    "cuda_runtime": "12.8",
+    "gpu": {
+      "name": "NVIDIA A100 80GB PCIe",
+      "total_memory_bytes": 85093777408,
+      "compute_capability": [
+        8,
+        0
+      ]
+    },
+    "cuda_visible_devices": "3",
+    "prompt": "Transcribe all visible text in this image exactly as written. Preserve Khmer and Latin characters, digits and punctuation. Read blocks from top to bottom and tables row by row, left to right. Do not translate, explain, summarize, correct spelling or invent missing text. Return only the transcription, without Markdown or formatting labels.",
+    "max_new_tokens": 4096,
+    "max_pixels": 1003520,
+    "min_pixels": 112896,
+    "timeout_seconds": 240,
+    "torch_allocator_memory_fraction": 0.2,
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "do_sample": false,
+    "seed": 20261018,
+    "batch_size": 1,
+    "created_utc": "2026-10-18T07:15:48Z",
+    "token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc"
+  },
+  "primary_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+  "reporter_sha256": "51cbff4c901d088490e9c1e05e2f11983c6984aeffd81749ab6ea3f1a5dafb15",
+  "coverage": {
+    "qwen25-vl-3b": {
+      "expected": 30,
+      "completed": 30,
+      "missing": []
+    },
+    "qwen3-vl-2b": {
+      "expected": 30,
+      "completed": 30,
+      "missing": []
+    }
+  },
+  "summary": {
+    "churro-sleuk": {
+      "qwen25-vl-3b": {
+        "reference_codepoints": 13201,
+        "codepoint_edits": 72308,
+        "spacefold_reference_codepoints": 16618,
+        "spacefold_codepoint_edits": 73887,
+        "reference_whitespace_units": 3447,
+        "whitespace_unit_edits": 5010,
+        "samples": 30,
+        "exact_compact": 0,
+        "compact_codepoint_cer": 5.477463828497841,
+        "spacefold_codepoint_cer": 4.446202912504513,
+        "whitespace_unit_error_rate": 1.453437771975631,
+        "failures": 0,
+        "empty": 0,
+        "capped": 11,
+        "capped_unknown": 0,
+        "groups": 14,
+        "median_seconds": 140.11168967746198,
+        "total_seconds": 4137.315703324974
+      },
+      "qwen3-vl-2b": {
+        "reference_codepoints": 13201,
+        "codepoint_edits": 90326,
+        "spacefold_reference_codepoints": 16618,
+        "spacefold_codepoint_edits": 97920,
+        "reference_whitespace_units": 3447,
+        "whitespace_unit_edits": 11040,
+        "samples": 30,
+        "exact_compact": 0,
+        "compact_codepoint_cer": 6.842360427240361,
+        "spacefold_codepoint_cer": 5.8924058250090265,
+        "whitespace_unit_error_rate": 3.202785030461271,
+        "failures": 0,
+        "empty": 0,
+        "capped": 30,
+        "capped_unknown": 0,
+        "groups": 14,
+        "median_seconds": 156.45084617100656,
+        "total_seconds": 4642.077769059688
+      }
+    },
+    "churro-sleuk-test": {
+      "qwen25-vl-3b": {
+        "reference_codepoints": 13201,
+        "codepoint_edits": 72308,
+        "spacefold_reference_codepoints": 16618,
+        "spacefold_codepoint_edits": 73887,
+        "reference_whitespace_units": 3447,
+        "whitespace_unit_edits": 5010,
+        "samples": 30,
+        "exact_compact": 0,
+        "compact_codepoint_cer": 5.477463828497841,
+        "spacefold_codepoint_cer": 4.446202912504513,
+        "whitespace_unit_error_rate": 1.453437771975631,
+        "failures": 0,
+        "empty": 0,
+        "capped": 11,
+        "capped_unknown": 0,
+        "groups": 14,
+        "median_seconds": 140.11168967746198,
+        "total_seconds": 4137.315703324974
+      },
+      "qwen3-vl-2b": {
+        "reference_codepoints": 13201,
+        "codepoint_edits": 90326,
+        "spacefold_reference_codepoints": 16618,
+        "spacefold_codepoint_edits": 97920,
+        "reference_whitespace_units": 3447,
+        "whitespace_unit_edits": 11040,
+        "samples": 30,
+        "exact_compact": 0,
+        "compact_codepoint_cer": 6.842360427240361,
+        "spacefold_codepoint_cer": 5.8924058250090265,
+        "whitespace_unit_error_rate": 3.202785030461271,
+        "failures": 0,
+        "empty": 0,
+        "capped": 30,
+        "capped_unknown": 0,
+        "groups": 14,
+        "median_seconds": 156.45084617100656,
+        "total_seconds": 4642.077769059688
+      }
+    }
+  },
+  "paired": {
+    "churro-sleuk-test": {
+      "qwen25-vl-3b": {
+        "source_groups": 14,
+        "toolkit_minus_baseline_cer_points": 451.18551624876903,
+        "percentile_95_interval": [
+          393.7548423037307,
+          495.88561970254597
+        ],
+        "bootstrap_replicates": 5000,
+        "bootstrap_seed": 20261018,
+        "interpretation": "Descriptive paired cluster interval; negative favors the named comparison model"
+      },
+      "qwen3-vl-2b": {
+        "source_groups": 14,
+        "toolkit_minus_baseline_cer_points": 587.675176123021,
+        "percentile_95_interval": [
+          544.5100103729393,
+          648.7323149795105
+        ],
+        "bootstrap_replicates": 5000,
+        "bootstrap_seed": 20261018,
+        "interpretation": "Descriptive paired cluster interval; negative favors the named comparison model"
+      }
+    }
+  },
+  "independent_audit": {
+    "input_images": 30,
+    "predictions": 60,
+    "distance_projections": 180,
+    "passed": true
+  },
+  "records": [
+    {
+      "id": "sleuk/389_pp_ttp_02_012",
+      "collection": "churro-sleuk",
+      "group": "sleuk/pp_ttp_02",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 170.343849491328,
+      "error": null,
+      "score": {
+        "reference_codepoints": 341,
+        "codepoint_edits": 2674,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 421,
+        "spacefold_codepoint_edits": 2674,
+        "reference_whitespace_units": 81,
+        "whitespace_unit_edits": 81
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          242
+        ]
+      ],
+      "peak_allocated_bytes": 7793898496,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "e043485d7764541dd6b6b19a3472b4d2d82b94bd1aecae29d5d75b57dc75cdf8"
+    },
+    {
+      "id": "sleuk/387_kandal_tekvil_02_013b",
+      "collection": "churro-sleuk",
+      "group": "sleuk/kandal_tekvil_02",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 119.97111878916621,
+      "error": null,
+      "score": {
+        "reference_codepoints": 518,
+        "codepoint_edits": 2297,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 652,
+        "spacefold_codepoint_edits": 2297,
+        "reference_whitespace_units": 135,
+        "whitespace_unit_edits": 135
+      },
+      "generation_tokens": 2891,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          22,
+          230
+        ]
+      ],
+      "peak_allocated_bytes": 7803124736,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "10519a8aad02923414f247727cc08cb02f48a9bca3e28ac7a265f9f70fd8893b"
+    },
+    {
+      "id": "sleuk/613_nl_a133_285_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a133",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 104.64427741616964,
+      "error": null,
+      "score": {
+        "reference_codepoints": 390,
+        "codepoint_edits": 2027,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 502,
+        "spacefold_codepoint_edits": 2027,
+        "reference_whitespace_units": 113,
+        "whitespace_unit_edits": 113
+      },
+      "generation_tokens": 2543,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          244
+        ]
+      ],
+      "peak_allocated_bytes": 7794265600,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "bc11e3f0ef59a9461528e01bf53ad66f35171feee5e813b76a4512908202a90e"
+    },
+    {
+      "id": "sleuk/585_nl_a133_298_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a133",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 126.2634053081274,
+      "error": null,
+      "score": {
+        "reference_codepoints": 396,
+        "codepoint_edits": 2328,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 517,
+        "spacefold_codepoint_edits": 2328,
+        "reference_whitespace_units": 122,
+        "whitespace_unit_edits": 122
+      },
+      "generation_tokens": 2891,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          246
+        ]
+      ],
+      "peak_allocated_bytes": 7794963968,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "9451a8b136aa0c3914d46a75061f200155a79ba4ba1a944c1431d83373074ca1"
+    },
+    {
+      "id": "sleuk/708_nl_a161_284_01",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a161",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 154.3157315067947,
+      "error": null,
+      "score": {
+        "reference_codepoints": 471,
+        "codepoint_edits": 2290,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 595,
+        "spacefold_codepoint_edits": 2290,
+        "reference_whitespace_units": 125,
+        "whitespace_unit_edits": 125
+      },
+      "generation_tokens": 2891,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          242
+        ]
+      ],
+      "peak_allocated_bytes": 7793898496,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "acc91af7cc5102b8b3c354b62cbdbb1d53b89005338ecf68607b3023d36a8199"
+    },
+    {
+      "id": "sleuk/120_pp_ttp_01_004",
+      "collection": "churro-sleuk",
+      "group": "sleuk/pp_ttp_01",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 105.38258850574493,
+      "error": null,
+      "score": {
+        "reference_codepoints": 336,
+        "codepoint_edits": 1854,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 414,
+        "spacefold_codepoint_edits": 1957,
+        "reference_whitespace_units": 79,
+        "whitespace_unit_edits": 182
+      },
+      "generation_tokens": 2544,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          24,
+          198
+        ]
+      ],
+      "peak_allocated_bytes": 7792202752,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "5552d4c27d45ef8299d630a4a7f3db44c85d611aa5f336a060c1579f08aa729b"
+    },
+    {
+      "id": "sleuk/010_nl_a158_253_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a158",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 170.3979008384049,
+      "error": null,
+      "score": {
+        "reference_codepoints": 483,
+        "codepoint_edits": 2986,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 610,
+        "spacefold_codepoint_edits": 3099,
+        "reference_whitespace_units": 128,
+        "whitespace_unit_edits": 241
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          244
+        ]
+      ],
+      "peak_allocated_bytes": 7794265600,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "48fbd54330d9e1bcb901c14367c396bfc8d3009b97a825bd317f6a7793a7a1f8"
+    },
+    {
+      "id": "sleuk/635_nl_a161_297_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a161",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 170.2466017641127,
+      "error": null,
+      "score": {
+        "reference_codepoints": 461,
+        "codepoint_edits": 2993,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 573,
+        "spacefold_codepoint_edits": 3121,
+        "reference_whitespace_units": 113,
+        "whitespace_unit_edits": 241
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          244
+        ]
+      ],
+      "peak_allocated_bytes": 7794265600,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "4e9fd86bb62d3be05aa735d4f29165b9d41b97f3a2aa5df203a6d656f2ad3ef1"
+    },
+    {
+      "id": "sleuk/285_efeo_048_02_64",
+      "collection": "churro-sleuk",
+      "group": "sleuk/efeo_048",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 168.52096680551767,
+      "error": null,
+      "score": {
+        "reference_codepoints": 295,
+        "codepoint_edits": 2049,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 374,
+        "spacefold_codepoint_edits": 2050,
+        "reference_whitespace_units": 80,
+        "whitespace_unit_edits": 80
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          232
+        ]
+      ],
+      "peak_allocated_bytes": 7785933312,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "bb171532273eeae44a9cdc08b156752f829117879df7e4bada7103431ba4bb47"
+    },
+    {
+      "id": "sleuk/515_nl_a157_224_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a157",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 172.42112396657467,
+      "error": null,
+      "score": {
+        "reference_codepoints": 472,
+        "codepoint_edits": 3160,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 600,
+        "spacefold_codepoint_edits": 3216,
+        "reference_whitespace_units": 129,
+        "whitespace_unit_edits": 185
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          236
+        ]
+      ],
+      "peak_allocated_bytes": 7791710208,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "4f6b748a10e3c3b0f3db8ffc621db02dc17d04d439cd2db3d6efe5bd1aef1e64"
+    },
+    {
+      "id": "sleuk/337_pp_ttp_02_013",
+      "collection": "churro-sleuk",
+      "group": "sleuk/pp_ttp_02",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 107.1345762386918,
+      "error": null,
+      "score": {
+        "reference_codepoints": 342,
+        "codepoint_edits": 1879,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 426,
+        "spacefold_codepoint_edits": 1976,
+        "reference_whitespace_units": 85,
+        "whitespace_unit_edits": 182
+      },
+      "generation_tokens": 2544,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          22,
+          226
+        ]
+      ],
+      "peak_allocated_bytes": 7797629440,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "55b1f4360b58385702cda14c7ecfcb3aefb992f9546ade5d736d395ad723a6f8"
+    },
+    {
+      "id": "sleuk/097_efeo_029_01_05",
+      "collection": "churro-sleuk",
+      "group": "sleuk/efeo_029",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 169.17965150997043,
+      "error": null,
+      "score": {
+        "reference_codepoints": 418,
+        "codepoint_edits": 2765,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 523,
+        "spacefold_codepoint_edits": 3070,
+        "reference_whitespace_units": 106,
+        "whitespace_unit_edits": 411
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          238
+        ]
+      ],
+      "peak_allocated_bytes": 7792326144,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "63e9c1333f64739accc65d1daba98ca7d957ed41551124c719889eb10b701ab9"
+    },
+    {
+      "id": "sleuk/546_nl_a133_283_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a133",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 120.98361134156585,
+      "error": null,
+      "score": {
+        "reference_codepoints": 415,
+        "codepoint_edits": 2287,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 515,
+        "spacefold_codepoint_edits": 2287,
+        "reference_whitespace_units": 101,
+        "whitespace_unit_edits": 101
+      },
+      "generation_tokens": 2891,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          246
+        ]
+      ],
+      "peak_allocated_bytes": 7794963968,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "792e9d338c22730170f27fedd9fdec83f37541ab7fff8c83b96e0149868098d0"
+    },
+    {
+      "id": "sleuk/560_nl_a161_297_01",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a161",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 138.23120586201549,
+      "error": null,
+      "score": {
+        "reference_codepoints": 481,
+        "codepoint_edits": 2414,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 596,
+        "spacefold_codepoint_edits": 2534,
+        "reference_whitespace_units": 116,
+        "whitespace_unit_edits": 236
+      },
+      "generation_tokens": 3300,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          244
+        ]
+      ],
+      "peak_allocated_bytes": 7794265600,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "de2f31febf56843ea12a6c278a3abe07084fbb0e3a44e7d49a80ee4c3e7ea0c0"
+    },
+    {
+      "id": "sleuk/488_nl_a161_271_01",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a161",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 123.52354572340846,
+      "error": null,
+      "score": {
+        "reference_codepoints": 515,
+        "codepoint_edits": 2246,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 633,
+        "spacefold_codepoint_edits": 2246,
+        "reference_whitespace_units": 119,
+        "whitespace_unit_edits": 119
+      },
+      "generation_tokens": 2891,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          244
+        ]
+      ],
+      "peak_allocated_bytes": 7794265600,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "7d25db182c510ce9582c5cb1db0b7a4bb221c0ae94080c80e9748ee1fb7e408d"
+    },
+    {
+      "id": "sleuk/299_nl_d856_118_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_d856",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 111.0410285256803,
+      "error": null,
+      "score": {
+        "reference_codepoints": 507,
+        "codepoint_edits": 2106,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 644,
+        "spacefold_codepoint_edits": 2106,
+        "reference_whitespace_units": 138,
+        "whitespace_unit_edits": 138
+      },
+      "generation_tokens": 2681,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          246
+        ]
+      ],
+      "peak_allocated_bytes": 7794963968,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "b86c35cd38d463d3a5f21c63a1ee68c247baddf070c1e302f49b65d1ee64161f"
+    },
+    {
+      "id": "sleuk/514_nl_a143_013_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a143",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 173.81148954853415,
+      "error": null,
+      "score": {
+        "reference_codepoints": 493,
+        "codepoint_edits": 3237,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 607,
+        "spacefold_codepoint_edits": 3279,
+        "reference_whitespace_units": 115,
+        "whitespace_unit_edits": 157
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          244
+        ]
+      ],
+      "peak_allocated_bytes": 7794265600,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "678143b8dc84fe9e9817c114f82088066451bf3afd0d9689d0f32b45172ac71d"
+    },
+    {
+      "id": "sleuk/636_nl_a143_020_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a143",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 155.19984708353877,
+      "error": null,
+      "score": {
+        "reference_codepoints": 409,
+        "codepoint_edits": 2718,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 508,
+        "spacefold_codepoint_edits": 2880,
+        "reference_whitespace_units": 100,
+        "whitespace_unit_edits": 262
+      },
+      "generation_tokens": 3665,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          244
+        ]
+      ],
+      "peak_allocated_bytes": 7794265600,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "e5293da10a5ac1673b77712df980e3c85c3384db7e6980774f4a20f3739890d0"
+    },
+    {
+      "id": "sleuk/593_nl_a143_045_01",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a143",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 118.03359489142895,
+      "error": null,
+      "score": {
+        "reference_codepoints": 422,
+        "codepoint_edits": 1928,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 526,
+        "spacefold_codepoint_edits": 1928,
+        "reference_whitespace_units": 105,
+        "whitespace_unit_edits": 105
+      },
+      "generation_tokens": 2529,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          238
+        ]
+      ],
+      "peak_allocated_bytes": 7792326144,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "0dd4cea336daf80531894a750137381777f7281f33d404b81367ba4ba40c568e"
+    },
+    {
+      "id": "sleuk/329_kandal_tekvil_01_024",
+      "collection": "churro-sleuk",
+      "group": "sleuk/kandal_tekvil_01",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 108.6847762465477,
+      "error": null,
+      "score": {
+        "reference_codepoints": 502,
+        "codepoint_edits": 1822,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 627,
+        "spacefold_codepoint_edits": 1878,
+        "reference_whitespace_units": 126,
+        "whitespace_unit_edits": 182
+      },
+      "generation_tokens": 2544,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          232
+        ]
+      ],
+      "peak_allocated_bytes": 7780630528,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "13987b5791c4877b499c85bd84a70bf40dee70d298689b413cbd7522d97f32d2"
+    },
+    {
+      "id": "sleuk/534_nl_a157_223_01",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a157",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 173.35834243521094,
+      "error": null,
+      "score": {
+        "reference_codepoints": 453,
+        "codepoint_edits": 3322,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 572,
+        "spacefold_codepoint_edits": 3322,
+        "reference_whitespace_units": 120,
+        "whitespace_unit_edits": 120
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          238
+        ]
+      ],
+      "peak_allocated_bytes": 7792326144,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "41f4bfbcd0906353d36be025002472e9071d12a7fdf83c200f4dc0789ada7df9"
+    },
+    {
+      "id": "sleuk/411_nl_a140_015_01",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a140",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 110.2710571102798,
+      "error": null,
+      "score": {
+        "reference_codepoints": 466,
+        "codepoint_edits": 1864,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 589,
+        "spacefold_codepoint_edits": 1923,
+        "reference_whitespace_units": 124,
+        "whitespace_unit_edits": 183
+      },
+      "generation_tokens": 2558,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          246
+        ]
+      ],
+      "peak_allocated_bytes": 7794963968,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "b4bae244eb72df76d696630bb52c53eff097d8e07541ffbc9043c7955061c72c"
+    },
+    {
+      "id": "sleuk/642_nl_a143_021_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a143",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 141.99217349290848,
+      "error": null,
+      "score": {
+        "reference_codepoints": 429,
+        "codepoint_edits": 2109,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 542,
+        "spacefold_codepoint_edits": 2109,
+        "reference_whitespace_units": 114,
+        "whitespace_unit_edits": 114
+      },
+      "generation_tokens": 2669,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          246
+        ]
+      ],
+      "peak_allocated_bytes": 7794963968,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "fbe2759f55f0fce330340e946bd028292b31f38673c2e94d7fa7a104cd139987"
+    },
+    {
+      "id": "sleuk/490_nl_a161_305_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a161",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 173.96111131459475,
+      "error": null,
+      "score": {
+        "reference_codepoints": 502,
+        "codepoint_edits": 3195,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 645,
+        "spacefold_codepoint_edits": 3195,
+        "reference_whitespace_units": 144,
+        "whitespace_unit_edits": 144
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          242
+        ]
+      ],
+      "peak_allocated_bytes": 7793898496,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "eff209527ce0965569740f0d22e9f4c123deda45adebf96cdbc22e77d4e16fa8"
+    },
+    {
+      "id": "sleuk/452_pp_ttp_02_009",
+      "collection": "churro-sleuk",
+      "group": "sleuk/pp_ttp_02",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 174.51821398362517,
+      "error": null,
+      "score": {
+        "reference_codepoints": 511,
+        "codepoint_edits": 3093,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 647,
+        "spacefold_codepoint_edits": 3249,
+        "reference_whitespace_units": 137,
+        "whitespace_unit_edits": 293
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          238
+        ]
+      ],
+      "peak_allocated_bytes": 7792326144,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "4a8e3e70864082ac274032e9e62ca9529a14adc7e7010e06b278d61f605bd982"
+    },
+    {
+      "id": "sleuk/492_nl_a161_275_01",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a161",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 157.5262115933001,
+      "error": null,
+      "score": {
+        "reference_codepoints": 370,
+        "codepoint_edits": 2972,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 463,
+        "spacefold_codepoint_edits": 2972,
+        "reference_whitespace_units": 94,
+        "whitespace_unit_edits": 94
+      },
+      "generation_tokens": 3689,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          244
+        ]
+      ],
+      "peak_allocated_bytes": 7794265600,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "a871a2a5f28cced98048dd14fd74e991b7b9b7acaef71ef4e8724105cf1d7a15"
+    },
+    {
+      "id": "sleuk/129_nl_a134_313_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a134",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 13.307769633829594,
+      "error": null,
+      "score": {
+        "reference_codepoints": 431,
+        "codepoint_edits": 528,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 550,
+        "spacefold_codepoint_edits": 543,
+        "reference_whitespace_units": 120,
+        "whitespace_unit_edits": 120
+      },
+      "generation_tokens": 315,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          250
+        ]
+      ],
+      "peak_allocated_bytes": 7799063040,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "968f3a1e346cb96d871550702baf77cb1d80ad3ecf5864bf931683f3df5f9907"
+    },
+    {
+      "id": "sleuk/326_nl_a140_031_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a140",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 122.2094553783536,
+      "error": null,
+      "score": {
+        "reference_codepoints": 445,
+        "codepoint_edits": 2299,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 564,
+        "spacefold_codepoint_edits": 2299,
+        "reference_whitespace_units": 120,
+        "whitespace_unit_edits": 120
+      },
+      "generation_tokens": 2897,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          246
+        ]
+      ],
+      "peak_allocated_bytes": 7794963968,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "8f1b9b5f6a3f228fb56639fafec63730377cea23acca9df6c4e2b5f25fca420b"
+    },
+    {
+      "id": "sleuk/396_kandal_tekvil_01_026",
+      "collection": "churro-sleuk",
+      "group": "sleuk/kandal_tekvil_01",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 175.4469540901482,
+      "error": null,
+      "score": {
+        "reference_codepoints": 486,
+        "codepoint_edits": 2989,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 614,
+        "spacefold_codepoint_edits": 3101,
+        "reference_whitespace_units": 129,
+        "whitespace_unit_edits": 241
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          240
+        ]
+      ],
+      "peak_allocated_bytes": 7793827840,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "1ddbfe6fcfdfcffb67d0b0e19967297bfccba20b00e1d12877bf77c9c838ff50"
+    },
+    {
+      "id": "sleuk/362_nl_a140_029_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a140",
+      "source_split": "test",
+      "system": "qwen25-vl-3b",
+      "seconds": 106.3935229294002,
+      "error": null,
+      "score": {
+        "reference_codepoints": 441,
+        "codepoint_edits": 1877,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 569,
+        "spacefold_codepoint_edits": 1931,
+        "reference_whitespace_units": 129,
+        "whitespace_unit_edits": 183
+      },
+      "generation_tokens": 2558,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          242
+        ]
+      ],
+      "peak_allocated_bytes": 7793898496,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "383a645d61ce625c1164fdf5dc28ca6983c379b40004ad7d72c22be99fd9acd4"
+    },
+    {
+      "id": "sleuk/389_pp_ttp_02_012",
+      "collection": "churro-sleuk",
+      "group": "sleuk/pp_ttp_02",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 164.07624650374055,
+      "error": null,
+      "score": {
+        "reference_codepoints": 341,
+        "codepoint_edits": 3281,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 421,
+        "spacefold_codepoint_edits": 3281,
+        "reference_whitespace_units": 81,
+        "whitespace_unit_edits": 81
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          210
+        ]
+      ],
+      "peak_allocated_bytes": 4935660544,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "476b429193ae26fb4f0d3ff1812351d5c6673507849b59eb9c657c43c50ad7de"
+    },
+    {
+      "id": "sleuk/387_kandal_tekvil_02_013b",
+      "collection": "churro-sleuk",
+      "group": "sleuk/kandal_tekvil_02",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 172.9347127750516,
+      "error": null,
+      "score": {
+        "reference_codepoints": 518,
+        "codepoint_edits": 2971,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 652,
+        "spacefold_codepoint_edits": 3152,
+        "reference_whitespace_units": 135,
+        "whitespace_unit_edits": 316
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          200
+        ]
+      ],
+      "peak_allocated_bytes": 4931631104,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "f1ec39329ee7c5e3660671e74aa2262e7ad0121b69132feadd460ce6f2207a8f"
+    },
+    {
+      "id": "sleuk/613_nl_a133_285_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a133",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 133.29652740061283,
+      "error": null,
+      "score": {
+        "reference_codepoints": 390,
+        "codepoint_edits": 2914,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 502,
+        "spacefold_codepoint_edits": 3174,
+        "reference_whitespace_units": 113,
+        "whitespace_unit_edits": 373
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          214
+        ]
+      ],
+      "peak_allocated_bytes": 4938160640,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "924380405aabaef1c5dc2e01802c67932c690cf044fe2f3ad78c95d550096adb"
+    },
+    {
+      "id": "sleuk/585_nl_a133_298_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a133",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 132.88729381933808,
+      "error": null,
+      "score": {
+        "reference_codepoints": 396,
+        "codepoint_edits": 2422,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 517,
+        "spacefold_codepoint_edits": 3120,
+        "reference_whitespace_units": 122,
+        "whitespace_unit_edits": 820
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          214
+        ]
+      ],
+      "peak_allocated_bytes": 4938160640,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "7ad4cd5865b5d56bad06fe64fc126b937abab12bc1eb535e0e7e7ba4e3c2c2dd"
+    },
+    {
+      "id": "sleuk/708_nl_a161_284_01",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a161",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 135.12996977940202,
+      "error": null,
+      "score": {
+        "reference_codepoints": 471,
+        "codepoint_edits": 3351,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 595,
+        "spacefold_codepoint_edits": 3351,
+        "reference_whitespace_units": 125,
+        "whitespace_unit_edits": 125
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          212
+        ]
+      ],
+      "peak_allocated_bytes": 4936086016,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "3de9a0b437a0182c085e4d7aa7ed2a9edcc57c275abe220e35cfef40ac18a03a"
+    },
+    {
+      "id": "sleuk/120_pp_ttp_01_004",
+      "collection": "churro-sleuk",
+      "group": "sleuk/pp_ttp_01",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 180.08205230161548,
+      "error": null,
+      "score": {
+        "reference_codepoints": 336,
+        "codepoint_edits": 2934,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 414,
+        "spacefold_codepoint_edits": 3368,
+        "reference_whitespace_units": 79,
+        "whitespace_unit_edits": 513
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          22,
+          172
+        ]
+      ],
+      "peak_allocated_bytes": 4935672832,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "5f68fca0605e59bc2dda61cd700a874bd294fb409be526670fd7c80ad149ee80"
+    },
+    {
+      "id": "sleuk/010_nl_a158_253_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a158",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 137.57783409953117,
+      "error": null,
+      "score": {
+        "reference_codepoints": 483,
+        "codepoint_edits": 2621,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 610,
+        "spacefold_codepoint_edits": 3176,
+        "reference_whitespace_units": 128,
+        "whitespace_unit_edits": 683
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          214
+        ]
+      ],
+      "peak_allocated_bytes": 4939160064,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "40ebc5f2875968a5c1893acdd855eaadd9087d56786fef64f7d5070753308b7f"
+    },
+    {
+      "id": "sleuk/635_nl_a161_297_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a161",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 133.98839162662625,
+      "error": null,
+      "score": {
+        "reference_codepoints": 461,
+        "codepoint_edits": 2633,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 573,
+        "spacefold_codepoint_edits": 3203,
+        "reference_whitespace_units": 113,
+        "whitespace_unit_edits": 683
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          214
+        ]
+      ],
+      "peak_allocated_bytes": 4938160640,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "22d9829bcf2c3917e316b331024dd42bbff565268f4a5accbebbf14745ab8c5d"
+    },
+    {
+      "id": "sleuk/285_efeo_048_02_64",
+      "collection": "churro-sleuk",
+      "group": "sleuk/efeo_048",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 190.02902042493224,
+      "error": null,
+      "score": {
+        "reference_codepoints": 295,
+        "codepoint_edits": 3017,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 374,
+        "spacefold_codepoint_edits": 3017,
+        "reference_whitespace_units": 80,
+        "whitespace_unit_edits": 80
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          204
+        ]
+      ],
+      "peak_allocated_bytes": 4932849152,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "a005fc9c0726a76b13359fbd286653eeeed488fa1a592a3417f51adf1a23b546"
+    },
+    {
+      "id": "sleuk/515_nl_a157_224_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a157",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 133.3148091249168,
+      "error": null,
+      "score": {
+        "reference_codepoints": 472,
+        "codepoint_edits": 2932,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 600,
+        "spacefold_codepoint_edits": 3315,
+        "reference_whitespace_units": 129,
+        "whitespace_unit_edits": 512
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          208
+        ]
+      ],
+      "peak_allocated_bytes": 4935683072,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "503951cd3001aef1e0a39afb489c1ac6bb75cc267c105eb63f90e52f7d94caff"
+    },
+    {
+      "id": "sleuk/337_pp_ttp_02_013",
+      "collection": "churro-sleuk",
+      "group": "sleuk/pp_ttp_02",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 154.7413118928671,
+      "error": null,
+      "score": {
+        "reference_codepoints": 342,
+        "codepoint_edits": 4041,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 426,
+        "spacefold_codepoint_edits": 4041,
+        "reference_whitespace_units": 85,
+        "whitespace_unit_edits": 85
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          198
+        ]
+      ],
+      "peak_allocated_bytes": 4930691072,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "77b30a605127412eea85d7dc1b832ee106142aa1011e14707659b49e294eb7cc"
+    },
+    {
+      "id": "sleuk/097_efeo_029_01_05",
+      "collection": "churro-sleuk",
+      "group": "sleuk/efeo_029",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 158.16038044914603,
+      "error": null,
+      "score": {
+        "reference_codepoints": 418,
+        "codepoint_edits": 3386,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 523,
+        "spacefold_codepoint_edits": 3386,
+        "reference_whitespace_units": 106,
+        "whitespace_unit_edits": 106
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          208
+        ]
+      ],
+      "peak_allocated_bytes": 4935691264,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "eab5d9723990f66349cd8e8d8fecf37a135bf0b10b1db2d73f0fd9ecd6e19a84"
+    },
+    {
+      "id": "sleuk/546_nl_a133_283_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a133",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 133.52518717572093,
+      "error": null,
+      "score": {
+        "reference_codepoints": 415,
+        "codepoint_edits": 2877,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 515,
+        "spacefold_codepoint_edits": 3149,
+        "reference_whitespace_units": 101,
+        "whitespace_unit_edits": 373
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          216
+        ]
+      ],
+      "peak_allocated_bytes": 4939507200,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "1c53be27bf079a64715855a05e2b0ebb69f0f5585d18b04cecf58acd72a9b1e0"
+    },
+    {
+      "id": "sleuk/560_nl_a161_297_01",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a161",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 133.23804046586156,
+      "error": null,
+      "score": {
+        "reference_codepoints": 481,
+        "codepoint_edits": 2855,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 596,
+        "spacefold_codepoint_edits": 3112,
+        "reference_whitespace_units": 116,
+        "whitespace_unit_edits": 373
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          214
+        ]
+      ],
+      "peak_allocated_bytes": 4938160640,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "e3327297f3fd1805212273dbebbc30dc76934a5427acf96e90992055ff7af309"
+    },
+    {
+      "id": "sleuk/488_nl_a161_271_01",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a161",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 163.95264368504286,
+      "error": null,
+      "score": {
+        "reference_codepoints": 515,
+        "codepoint_edits": 2399,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 633,
+        "spacefold_codepoint_edits": 3100,
+        "reference_whitespace_units": 119,
+        "whitespace_unit_edits": 820
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          214
+        ]
+      ],
+      "peak_allocated_bytes": 4938160640,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "29247984de5afe75a38eb4f32892bbe6e5fcaadfdc45457508874d2dcd4a8d4b"
+    },
+    {
+      "id": "sleuk/299_nl_d856_118_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_d856",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 175.48513991385698,
+      "error": null,
+      "score": {
+        "reference_codepoints": 507,
+        "codepoint_edits": 3168,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 644,
+        "spacefold_codepoint_edits": 3168,
+        "reference_whitespace_units": 138,
+        "whitespace_unit_edits": 138
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          214
+        ]
+      ],
+      "peak_allocated_bytes": 4938160640,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "2c81b1aca2189ec1c4d3bb46e1360a068d2cdec1da708b38783479720e283339"
+    },
+    {
+      "id": "sleuk/514_nl_a143_013_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a143",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 133.69891422614455,
+      "error": null,
+      "score": {
+        "reference_codepoints": 493,
+        "codepoint_edits": 3074,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 607,
+        "spacefold_codepoint_edits": 3164,
+        "reference_whitespace_units": 115,
+        "whitespace_unit_edits": 205
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          214
+        ]
+      ],
+      "peak_allocated_bytes": 4938160640,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "7ac56b7b6d3dd8bb9ac052f5fa753cd6e8f327ce03ca37df3cf73fb06a3ac439"
+    },
+    {
+      "id": "sleuk/636_nl_a143_020_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a143",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 133.57891435921192,
+      "error": null,
+      "score": {
+        "reference_codepoints": 409,
+        "codepoint_edits": 3155,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 508,
+        "spacefold_codepoint_edits": 3155,
+        "reference_whitespace_units": 100,
+        "whitespace_unit_edits": 100
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          214
+        ]
+      ],
+      "peak_allocated_bytes": 4938160640,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "c46ccf7e4eea7b902be68f0fa6c4f31343bff6b7525f5a78129599eb44a0dcfa"
+    },
+    {
+      "id": "sleuk/593_nl_a143_045_01",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a143",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 133.11158195137978,
+      "error": null,
+      "score": {
+        "reference_codepoints": 422,
+        "codepoint_edits": 3183,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 526,
+        "spacefold_codepoint_edits": 3183,
+        "reference_whitespace_units": 105,
+        "whitespace_unit_edits": 105
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          208
+        ]
+      ],
+      "peak_allocated_bytes": 4935683072,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "3026ac496347f6327a674c5bf6323fcdcb532a5d051f4aac885b71d1295997f4"
+    },
+    {
+      "id": "sleuk/329_kandal_tekvil_01_024",
+      "collection": "churro-sleuk",
+      "group": "sleuk/kandal_tekvil_01",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 180.8314687795937,
+      "error": null,
+      "score": {
+        "reference_codepoints": 502,
+        "codepoint_edits": 2972,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 627,
+        "spacefold_codepoint_edits": 3162,
+        "reference_whitespace_units": 126,
+        "whitespace_unit_edits": 316
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          204
+        ]
+      ],
+      "peak_allocated_bytes": 4932849152,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "8206c79023047cf680a19f72343eab0906df783a5380927463536876ff4fa213"
+    },
+    {
+      "id": "sleuk/534_nl_a157_223_01",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a157",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 135.65424671769142,
+      "error": null,
+      "score": {
+        "reference_codepoints": 453,
+        "codepoint_edits": 2653,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 572,
+        "spacefold_codepoint_edits": 3216,
+        "reference_whitespace_units": 120,
+        "whitespace_unit_edits": 683
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          208
+        ]
+      ],
+      "peak_allocated_bytes": 4935683072,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "0f0792db25e90a33e6c5f0d6c4e3fe9cbf03e2301071241d723360c681c3984e"
+    },
+    {
+      "id": "sleuk/411_nl_a140_015_01",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a140",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 165.45447229593992,
+      "error": null,
+      "score": {
+        "reference_codepoints": 466,
+        "codepoint_edits": 3154,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 589,
+        "spacefold_codepoint_edits": 3286,
+        "reference_whitespace_units": 124,
+        "whitespace_unit_edits": 256
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          214
+        ]
+      ],
+      "peak_allocated_bytes": 4938160640,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "f0373ef26f9cbe175159df728341118aec5a6fe74bd88771fb2106ce958fafbe"
+    },
+    {
+      "id": "sleuk/642_nl_a143_021_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a143",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 134.72337858378887,
+      "error": null,
+      "score": {
+        "reference_codepoints": 429,
+        "codepoint_edits": 3072,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 542,
+        "spacefold_codepoint_edits": 3251,
+        "reference_whitespace_units": 114,
+        "whitespace_unit_edits": 293
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          214
+        ]
+      ],
+      "peak_allocated_bytes": 4938160640,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "f4ef884ca553d929d62907b68b99ba63a444348df3ea5fda2cb4e2a08ce451c2"
+    },
+    {
+      "id": "sleuk/490_nl_a161_305_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a161",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 170.8357955776155,
+      "error": null,
+      "score": {
+        "reference_codepoints": 502,
+        "codepoint_edits": 3302,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 645,
+        "spacefold_codepoint_edits": 3302,
+        "reference_whitespace_units": 144,
+        "whitespace_unit_edits": 144
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          212
+        ]
+      ],
+      "peak_allocated_bytes": 4936086016,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "f2881a88f84d5ff2099ee37fd2524e89b9555fc2d4f1b7afda32586acedc1af0"
+    },
+    {
+      "id": "sleuk/452_pp_ttp_02_009",
+      "collection": "churro-sleuk",
+      "group": "sleuk/pp_ttp_02",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 173.38541896641254,
+      "error": null,
+      "score": {
+        "reference_codepoints": 511,
+        "codepoint_edits": 3282,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 647,
+        "spacefold_codepoint_edits": 3282,
+        "reference_whitespace_units": 137,
+        "whitespace_unit_edits": 137
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          208
+        ]
+      ],
+      "peak_allocated_bytes": 4935683072,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "aa3be10e12ef731c42302d9f069a1ad1736a1f35f8c64ae4cf77804d3430ef77"
+    },
+    {
+      "id": "sleuk/492_nl_a161_275_01",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a161",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 151.90679858252406,
+      "error": null,
+      "score": {
+        "reference_codepoints": 370,
+        "codepoint_edits": 2940,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 463,
+        "spacefold_codepoint_edits": 3359,
+        "reference_whitespace_units": 94,
+        "whitespace_unit_edits": 513
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          212
+        ]
+      ],
+      "peak_allocated_bytes": 4936086016,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "78cfd5d18f7453749bda7a9e06651e1f2536c490e2d74c63a1a6864e93a1cd98"
+    },
+    {
+      "id": "sleuk/129_nl_a134_313_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a134",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 174.47936652973294,
+      "error": null,
+      "score": {
+        "reference_codepoints": 431,
+        "codepoint_edits": 2659,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 550,
+        "spacefold_codepoint_edits": 3222,
+        "reference_whitespace_units": 120,
+        "whitespace_unit_edits": 683
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          220
+        ]
+      ],
+      "peak_allocated_bytes": 4930216448,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "7ba08a3b95ff1e8329bd313e6768c514a17a0db2ce25965c61b4f7d5f15ec29a"
+    },
+    {
+      "id": "sleuk/326_nl_a140_031_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a140",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 167.99540270864964,
+      "error": null,
+      "score": {
+        "reference_codepoints": 445,
+        "codepoint_edits": 2882,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 564,
+        "spacefold_codepoint_edits": 3135,
+        "reference_whitespace_units": 120,
+        "whitespace_unit_edits": 373
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          214
+        ]
+      ],
+      "peak_allocated_bytes": 4938160640,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "f1f97261ca468de1cb96022038e3650b4e91d6a109c33de93d3d9c2974e152ef"
+    },
+    {
+      "id": "sleuk/396_kandal_tekvil_01_026",
+      "collection": "churro-sleuk",
+      "group": "sleuk/kandal_tekvil_01",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 177.37947580218315,
+      "error": null,
+      "score": {
+        "reference_codepoints": 486,
+        "codepoint_edits": 2998,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 614,
+        "spacefold_codepoint_edits": 3892,
+        "reference_whitespace_units": 129,
+        "whitespace_unit_edits": 1022
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          210
+        ]
+      ],
+      "peak_allocated_bytes": 4935660544,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "72d71c582079f2e22f48aba8f772bb27da4b9de331dbffc53e302740b7ae23f5"
+    },
+    {
+      "id": "sleuk/362_nl_a140_029_02",
+      "collection": "churro-sleuk",
+      "group": "sleuk/nl_a140",
+      "source_split": "test",
+      "system": "qwen3-vl-2b",
+      "seconds": 176.62297254055738,
+      "error": null,
+      "score": {
+        "reference_codepoints": 441,
+        "codepoint_edits": 3198,
+        "exact_compact": false,
+        "spacefold_reference_codepoints": 569,
+        "spacefold_codepoint_edits": 3198,
+        "reference_whitespace_units": 129,
+        "whitespace_unit_edits": 129
+      },
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          212
+        ]
+      ],
+      "peak_allocated_bytes": 4936086016,
+      "evaluation_token": "f80b3ea4478af5c6f0af41f131b16db6aa40f2ec86f675b69d0247e3efd765bc",
+      "source_evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+      "raw_record_sha256": "d891e1900249dfa80f56ca18e7affab5f0e7b0b806e38db6555e45a2a8f62e8c"
+    }
+  ],
+  "notes": [
+    "Exploratory addition; both Qwen models cover only the 30 official source-test pages.",
+    "Original BF16 CUDA Qwen implementations differ from the Mac VLM profiles.",
+    "Shared GPU and different batching prevent a controlled speed ranking.",
+    "Private business-image model drafts are not gold and are not scored here."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "source": "silnrsi/khmerlbdict src/seafreq.txt",
+  "revision": "54abc6b87f4ffa6a0c95c09836c7c86648002273",
+  "source_url": "https://raw.githubusercontent.com/silnrsi/khmerlbdict/54abc6b87f4ffa6a0c95c09836c7c86648002273/src/seafreq.txt",
+  "source_sha256": "213ce026b8e20cdf70ef38a8ebc4cca0117ebbe65dabac4c8483d99eebb53efd",
+  "license": "MIT, copyright 2015 SIL NRSI",
+  "license_sha256": "73ceaad383a32a95b19bff137ed34717715a4f4b101145b135d7d756a97e669d",
+  "upstream_origin": "SEALang Khmer frequency-based wordlist, as attributed by SIL NRSI",
+  "output_sha256": "b1f50d1f3a2085e9cb35db5fb66aff1453a9ba5b1a24400533f8644d7edbe42c",
+  "entries": 16546,
+  "total_count": 6383167,
+  "skipped": 1364,
+  "adaptation": "Exact existing dictionary intersection; positive integer counts; sum duplicates; sorted UTF-8 TSV. No new vocabulary or evaluation data."
+}

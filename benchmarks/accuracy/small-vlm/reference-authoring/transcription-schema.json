@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "page_id": {
+      "type": "string"
+    },
+    "transcript": {
+      "type": "string"
+    },
+    "uncertain_spans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "reason"
+        ]
+      }
+    },
+    "reading_order_notes": {
+      "type": "string"
+    },
+    "legibility": {
+      "type": "string",
+      "enum": [
+        "clear",
+        "mixed",
+        "poor"
+      ]
+    },
+    "complete": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "page_id",
+    "transcript",
+    "uncertain_spans",
+    "reading_order_notes",
+    "legibility",
+    "complete"
+  ]
+}

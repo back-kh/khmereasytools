@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-10-18T10:31:27Z",
+  "system": "qwen3-vl-2b",
+  "previous_profile_token": "2b506c0c9df011bc9db4c10e56c72aad510d8b56e0e86893682107b97355b69f",
+  "previous_prediction_count": 0,
+  "reason": "GPU3 became available; run Qwen3 concurrently without queueing behind Qwen2.5. Do not alter recognition, model, image selection, scoring or resource limits.",
+  "old_cuda_visible_devices": "2",
+  "new_cuda_visible_devices": "3",
+  "reference_freeze_token": "a60817687e37ed1b441b21fb2ff45b009b430277c9fdda66f506d2a0c26bd634",
+  "stopped_orchestrator_pid": 2223215,
+  "retained_qwen25_child_pid": 2223216
+}

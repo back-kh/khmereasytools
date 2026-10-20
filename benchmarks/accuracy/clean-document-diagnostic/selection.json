@@ -1,0 +1,2671 @@
+{
+  "schema_version": 1,
+  "frozen_utc": "2026-10-18T11:58:54.618076+00:00",
+  "candidate_manifest_sha256": "2b9a25bd8aba12fb4ea0c65e764ad6a117714e5a4f56568c6ace05910d5ef786",
+  "visual_screen_sha256": "aeee1134ae9a575fd6ba39bfb5a245817c3d78986e435f075ae5d5f626aca70b",
+  "candidate_selection_token": "174be60b3ef23e89aab4d364cf8955ddec95a2ad274773e3fb7ccad1ae41fe65",
+  "design": "Post hoc input-screened diagnostic; previous results already known",
+  "selected_pages": [
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-5fbf06f968745524",
+      "category": "quotes",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        1700,
+        2200
+      ],
+      "khmer_letter_marks": 246,
+      "group": "khf-5fbf06f968745524",
+      "image_sha256": "79edc0840c6d4ec412ae021fb101e53b6de5b6f269597723971f115711feb782",
+      "reference_sha256": "4f82756730fa5788a57e4ea78a709008c6ad821279b9d5f1cc052734f457eabc",
+      "reference_policy": "Unreviewed machine-generated operational ground truth",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-7147703009de0fbf",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        634,
+        1054
+      ],
+      "khmer_letter_marks": 210,
+      "group": "khf-7147703009de0fbf",
+      "image_sha256": "c5f668ffb9d41231bd8049f5c2434691af4003388e76a5295afc3f91d06b07a5",
+      "reference_sha256": "bb2f8a37cf4c056d6ba4b8f81b196f85d1af50ba32cba038d83e583fc0009ed6",
+      "reference_policy": "Unreviewed machine-generated operational ground truth",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-7814830a774fe667",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        851,
+        1280
+      ],
+      "khmer_letter_marks": 174,
+      "group": "khf-7814830a774fe667",
+      "image_sha256": "1a130bdd51298599896de75d06c72d04c980e9e6f6129adabea32ac8385d675d",
+      "reference_sha256": "2588daed6eb5a07e3d0172a08dca6b69100eb1b3cf19539f19876cf111b293ae",
+      "reference_policy": "Unreviewed machine-generated operational ground truth",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-9c00cce24608dd66",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        576,
+        1280
+      ],
+      "khmer_letter_marks": 106,
+      "group": "khf-9c00cce24608dd66",
+      "image_sha256": "99d2f991b854422a0a0490c2e898283de257774620a870f480bfd7980e2dfece",
+      "reference_sha256": "3cf913719d427e857ec26e82147c5d84a8dc7ae9c20ef9ea0babeacd8b178a32",
+      "reference_policy": "Unreviewed machine-generated operational ground truth",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-ac1b2d246c540137",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        943,
+        1280
+      ],
+      "khmer_letter_marks": 143,
+      "group": "khf-ac1b2d246c540137",
+      "image_sha256": "e6f2df43ffd47e4da73c247ae12ef62201c4abc97f19767119f0f84b425c98da",
+      "reference_sha256": "ffdcf72eedef533ba29d4a711ab2862b1cf6fdd622f3e3dabae78ecc3807ac1c",
+      "reference_policy": "Unreviewed machine-generated operational ground truth",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-c21c46a69bb802d6",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        874,
+        1280
+      ],
+      "khmer_letter_marks": 174,
+      "group": "khf-c21c46a69bb802d6",
+      "image_sha256": "fad1cbacbcfd4baf3d2113c42a4877a6cd5289870dc55e5fdba7736a12d11006",
+      "reference_sha256": "c2ba515e10d4963714a0b5757bc93c586a2927736aca3941ebe3d35391bfc3eb",
+      "reference_policy": "Unreviewed machine-generated operational ground truth",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-d60e7a7e9562c028",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        591,
+        1280
+      ],
+      "khmer_letter_marks": 88,
+      "group": "khf-d60e7a7e9562c028",
+      "image_sha256": "07449b5b25a23e1d2b389d0df72d15dd1e1f805f48dfa9a337e1c84df12495d4",
+      "reference_sha256": "44fff7a533a2d7010a2b5d42f6670f2fa233485c1b2df4ebf62d00efd73c238f",
+      "reference_policy": "Unreviewed machine-generated operational ground truth",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-d9d04b29d28e13d6",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        851,
+        1280
+      ],
+      "khmer_letter_marks": 174,
+      "group": "khf-d9d04b29d28e13d6",
+      "image_sha256": "7b772902d2f48d6d9a37046d82c4a35b7b270822c84a207f731e1c612b6efd15",
+      "reference_sha256": "c6e13dae68a45aa9fb17c139a3a629cbacb0788ca245593f2f9dbc6f2304a67e",
+      "reference_policy": "Unreviewed machine-generated operational ground truth",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/goc_1",
+      "group": "goc_1",
+      "image_sha256": "52b8d1fba89a09ab9c85c6a8ccc34171d63750d1d0c73ccbdf4b5756b8a9ae77",
+      "dimensions": [
+        596,
+        842
+      ],
+      "reference_sha256": "6ec31e300e2c74065eb6d45095d41d0f2c96924f46480d7e217fae385ce1b660",
+      "reference_policy": "Existing upstream transcript; no new independent human review",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/mef_2",
+      "group": "mef_2",
+      "image_sha256": "17112e03a5a21f7efff1084ca273f88e21a88ac9c26e9c73e5b136565fb04c3d",
+      "dimensions": [
+        595,
+        841
+      ],
+      "reference_sha256": "c518b6f4b26ee85405135c7e10a700c8ea8d94618726b0fa5c3258c5f0d6c99d",
+      "reference_policy": "Existing upstream transcript; no new independent human review",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/mef_4",
+      "group": "mef_4",
+      "image_sha256": "19c2d06e9b71e315a9509e4020eeda91a29a7b52ed47d3152dd8f21401c18103",
+      "dimensions": [
+        595,
+        842
+      ],
+      "reference_sha256": "d22010063d20bb21b73aa346f132e47ed1dfaf445f4512b405b4f31c77087a37",
+      "reference_policy": "Existing upstream transcript; no new independent human review",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/mlvt_1",
+      "group": "mlvt_1",
+      "image_sha256": "9b7defde2da719753b978f796711b7c6a8713f63568946345ac15d14afaeb636",
+      "dimensions": [
+        595,
+        842
+      ],
+      "reference_sha256": "dbbc27610f4970e7c895e4525b4e3d647a8afa18b0926bcf609eba370cb7f123",
+      "reference_policy": "Existing upstream transcript; no new independent human review",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/moh_1",
+      "group": "moh_1",
+      "image_sha256": "9f2257a2363a41472eceb9db20bb6d8bc52400444f52f374e36c56d0e1e7c400",
+      "dimensions": [
+        906,
+        1280
+      ],
+      "reference_sha256": "94e4a5631f9b971d09a8fe1e4b69f462b6e7016b99e67391882ac8078f635fef",
+      "reference_policy": "Existing upstream transcript; no new independent human review",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/pm_1",
+      "group": "pm_1",
+      "image_sha256": "8e57c432d817495aa25c547cd754a7edb448f69a49670749e1da990ae6988e0a",
+      "dimensions": [
+        904,
+        1280
+      ],
+      "reference_sha256": "a2a942c38a8aecea6c8c8490674a8ce20b8e78938f3d95d582ab9c426fc8c29b",
+      "reference_policy": "Existing upstream transcript; no new independent human review",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/pp_gov_1",
+      "group": "pp_gov_1",
+      "image_sha256": "5565eb905aad85629fbecc14d0088835c5d27c93554f8dd2bb3f22556758de11",
+      "dimensions": [
+        595,
+        841
+      ],
+      "reference_sha256": "175d97cc746742498624af928219980a70b616bd3ecbc8e6a1c2f2b0a8018f06",
+      "reference_policy": "Existing upstream transcript; no new independent human review",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/pp_gov_2",
+      "group": "pp_gov_2",
+      "image_sha256": "55b784c2466a693901b0281a1d0fb0255f72b254e7c046a3d5758ce045d80536",
+      "dimensions": [
+        905,
+        1280
+      ],
+      "reference_sha256": "31a3eea5c2397e9204d774d91f6922a7174ae1cb4a07aaf29f5a72bbfb2d1c17",
+      "reference_policy": "Existing upstream transcript; no new independent human review",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/pp_gov_3",
+      "group": "pp_gov_3",
+      "image_sha256": "f119e520cf0dfe98016c5c88c29f6b177389a03d72814678c5741cce798be16e",
+      "dimensions": [
+        905,
+        1280
+      ],
+      "reference_sha256": "ce065cdbb3c085d4cf23342d838e3c49731577dd530c77c41bc31ab7088ee8ee",
+      "reference_policy": "Existing upstream transcript; no new independent human review",
+      "human_reviewed": false,
+      "reference_complete": false
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/pp_gov_4",
+      "group": "pp_gov_4",
+      "image_sha256": "39c711d7d1f750b451544372bd8877df1bc2eb2d48c8d45d9f707fcc668777c8",
+      "dimensions": [
+        897,
+        1280
+      ],
+      "reference_sha256": "d262b72a86f5d897eebca7a42b7c0b98a6c2d36a77c249a30abee38e1dc2533f",
+      "reference_policy": "Existing upstream transcript; no new independent human review",
+      "human_reviewed": false,
+      "reference_complete": false
+    }
+  ],
+  "candidates_by_track": {
+    "khfunsd-screened": 10,
+    "khob-digital": 10
+  },
+  "selected_by_track": {
+    "khfunsd-screened": 8,
+    "khob-digital": 10
+  },
+  "visual_decisions": [
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-1b49fae5b2e24d89",
+      "decision": "reject",
+      "reason": "Notification banner covers the top receipt interface; dark low-contrast fine labels. Excluded on visible obstruction, without prediction access."
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-38c16a21c41112d8",
+      "decision": "reject",
+      "reason": "Notification banner overlays the top receipt interface; decorative background. Excluded on visible obstruction, without prediction access."
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-5fbf06f968745524",
+      "decision": "accept",
+      "reason": "Full upright printed quotation with readable text and no visible obstruction. Mild skew and scan speckle remain; this is not a pristine scan."
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-7147703009de0fbf",
+      "decision": "accept",
+      "reason": "Upright readable rendered receipt on a light background; no visible clipping or notification overlay."
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-7814830a774fe667",
+      "decision": "accept",
+      "reason": "Upright readable light-background rendered receipt; no visible obstruction. Shares a template with other retained receipts."
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-9c00cce24608dd66",
+      "decision": "accept",
+      "reason": "Upright light-background rendered receipt; principal text and small labels are visible. Fine print remains small; no claim of character-perfect reference review."
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-ac1b2d246c540137",
+      "decision": "accept",
+      "reason": "Upright readable rendered receipt; grey labels remain visible on a light background; no visible clipping or overlay."
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-c21c46a69bb802d6",
+      "decision": "accept",
+      "reason": "Upright readable light-background rendered receipt; no visible obstruction. Shares a template with other retained receipts."
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-d60e7a7e9562c028",
+      "decision": "accept",
+      "reason": "Upright rendered receipt with readable main panel and no notification obstruction. Fine print is small; dark surrounding interface retained."
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-d9d04b29d28e13d6",
+      "decision": "accept",
+      "reason": "Upright readable light-background rendered receipt; no visible obstruction. Shares a template with other retained receipts."
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/goc_1",
+      "decision": "accept",
+      "reason": "Upright complete page with readable main printed body and no gross obstruction. Existing fine print, stamps, signatures or handwritten administrative fields are retained; digital-export track does not imply pristine pixels or a verified transcript."
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/mef_2",
+      "decision": "accept",
+      "reason": "Upright complete page with readable main printed body and no gross obstruction. Existing fine print, stamps, signatures or handwritten administrative fields are retained; digital-export track does not imply pristine pixels or a verified transcript."
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/mef_4",
+      "decision": "accept",
+      "reason": "Upright complete page with readable main printed body and no gross obstruction. Existing fine print, stamps, signatures or handwritten administrative fields are retained; digital-export track does not imply pristine pixels or a verified transcript."
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/mlvt_1",
+      "decision": "accept",
+      "reason": "Upright complete page with readable main printed body and no gross obstruction. Existing fine print, stamps, signatures or handwritten administrative fields are retained; digital-export track does not imply pristine pixels or a verified transcript."
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/moh_1",
+      "decision": "accept",
+      "reason": "Upright complete page with readable main printed body and no gross obstruction. Existing fine print, stamps, signatures or handwritten administrative fields are retained; digital-export track does not imply pristine pixels or a verified transcript."
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/pm_1",
+      "decision": "accept",
+      "reason": "Upright complete page with readable main printed body and no gross obstruction. Existing fine print, stamps, signatures or handwritten administrative fields are retained; digital-export track does not imply pristine pixels or a verified transcript."
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/pp_gov_1",
+      "decision": "accept",
+      "reason": "Upright complete page with readable main printed body and no gross obstruction. Existing fine print, stamps, signatures or handwritten administrative fields are retained; digital-export track does not imply pristine pixels or a verified transcript."
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/pp_gov_2",
+      "decision": "accept",
+      "reason": "Upright complete page with readable main printed body and no gross obstruction. Existing fine print, stamps, signatures or handwritten administrative fields are retained; digital-export track does not imply pristine pixels or a verified transcript."
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/pp_gov_3",
+      "decision": "accept",
+      "reason": "Upright complete page with readable main printed body and no gross obstruction. Existing fine print, stamps, signatures or handwritten administrative fields are retained; digital-export track does not imply pristine pixels or a verified transcript."
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-1/pp_gov_4",
+      "decision": "accept",
+      "reason": "Upright complete page with readable main printed body and no gross obstruction. Existing fine print, stamps, signatures or handwritten administrative fields are retained; digital-export track does not imply pristine pixels or a verified transcript."
+    }
+  ],
+  "metadata_exclusions": [
+    {
+      "track": "khob-digital",
+      "id": "task-2/goc_1",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-2/mef_2",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-2/mef_4",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-2/mlvt_1",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-2/moh_1",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-2/pm_1",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-2/pp_gov_1",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-2/pp_gov_2",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-2/pp_gov_3",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-2/pp_gov_4",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-3/goc_1",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-3/mef_2",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-3/mef_4",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-3/mlvt_1",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-3/moh_1",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-3/pm_1",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-3/pp_gov_1",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-3/pp_gov_2",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-3/pp_gov_3",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-3/pp_gov_4",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-4/goc_1",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-4/mef_2",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-4/mef_4",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-4/mlvt_1",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-4/moh_1",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-4/pm_1",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-4/pp_gov_1",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-4/pp_gov_2",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-4/pp_gov_3",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khob-digital",
+      "id": "task-4/pp_gov_4",
+      "reasons": [
+        "other_acquisition"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-00baef8896ef1093",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-0142d0152e331454",
+      "category": "quotes",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        1654,
+        2339
+      ],
+      "khmer_letter_marks": 390,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-0173b6875941e909",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 67,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-05557ec82a91efaa",
+      "category": "quotes",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        731,
+        554
+      ],
+      "khmer_letter_marks": 117,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-087663ab8871b79a",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        883,
+        1280
+      ],
+      "khmer_letter_marks": 9,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-0c40751e0dbb20ce",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "khmer_letter_marks": 184,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-0df8d21a133f2e7e",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1021,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-0f75c3edc587b773",
+      "category": "quotes",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        1700,
+        2200
+      ],
+      "khmer_letter_marks": 255,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-104ea993229cf4c6",
+      "category": "receipts",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 64,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-105902a4d849157f",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 104,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-1213b10a7b17f357",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        583,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-1251a63af5b4de22",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        591,
+        1280
+      ],
+      "khmer_letter_marks": 140,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-135d83fd2bf8cade",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        597,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-1497fcbbddb1da10",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        701,
+        700
+      ],
+      "khmer_letter_marks": 157,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-16d531febfc23080",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        928,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-18c0fefa6b95ebcd",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        591,
+        1280
+      ],
+      "khmer_letter_marks": 211,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-1bdb2b05b73e1284",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 146,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-1e53c13ef4de77be",
+      "category": "quotes",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        876,
+        1133
+      ],
+      "khmer_letter_marks": 182,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-1ea7ec91315d9f1c",
+      "category": "quotes",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        729,
+        446
+      ],
+      "khmer_letter_marks": 18,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-1f4a2e1398c5c88e",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        575,
+        1280
+      ],
+      "khmer_letter_marks": 176,
+      "reasons": [
+        "recorded_reference_uncertainty"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-2098606147b5fc5a",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 148,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-27fea7e58b1d69a5",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        290,
+        903
+      ],
+      "khmer_letter_marks": 94,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-2d83f6353a17aa27",
+      "category": "quotes",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        1700,
+        2200
+      ],
+      "khmer_letter_marks": 503,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-2e9ca93d3ab5f939",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        707,
+        708
+      ],
+      "khmer_letter_marks": 135,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-3534100138269e4f",
+      "category": "receipts",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 63,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-36d71fc8a9015b7a",
+      "category": "invoices",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        810,
+        859
+      ],
+      "khmer_letter_marks": 310,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-37c2109daef3a806",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 77,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-3b39b28676af7232",
+      "category": "invoices",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1700,
+        2200
+      ],
+      "khmer_letter_marks": 193,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-3c391748ae077284",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        591,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-3c9193030e260431",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        609,
+        436
+      ],
+      "khmer_letter_marks": 73,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-3f6f2a35d67d50e2",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 32,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-3f739d4bb6b1d296",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 398,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-404b3420e90db8a0",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 152,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-42b1d4b5bf8354af",
+      "category": "receipts",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 50,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-48b41c674943d086",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1080,
+        954
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-49f681f69dce082a",
+      "category": "quotes",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        1738,
+        2637
+      ],
+      "khmer_letter_marks": 339,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-4a64e7fb7cd56fb9",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 205,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-4c0a7a6879d6cf2b",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1089,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-4ce15ac449d8b734",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 169,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-4fbb10c4d29d09a5",
+      "category": "invoices",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1700,
+        2200
+      ],
+      "khmer_letter_marks": 183,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-5166134a9c5e8283",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-51e4ffa4391740c7",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 136,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-520454f05683836a",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-52047d99028285f6",
+      "category": "invoices",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        808,
+        810
+      ],
+      "khmer_letter_marks": 74,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-594ad4d5033f24ef",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        894,
+        1280
+      ],
+      "khmer_letter_marks": 90,
+      "reasons": [
+        "recorded_reference_uncertainty"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-5a68f89b8fc963bc",
+      "category": "quotes",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        1700,
+        2200
+      ],
+      "khmer_letter_marks": 214,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-5e3ad0edfe51e316",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 117,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-5fd2a06fde8805c5",
+      "category": "invoices",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1654,
+        2338
+      ],
+      "khmer_letter_marks": 451,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-6011d51da37ea036",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        338,
+        450
+      ],
+      "khmer_letter_marks": 157,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-616d830081bac166",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        968,
+        1069
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-61b064367c765b26",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        698,
+        701
+      ],
+      "khmer_letter_marks": 126,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-6329da0874737dd7",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 75,
+      "reasons": [
+        "recorded_reference_uncertainty"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-6353e0b04ca89577",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 28,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-6403a76ad3651475",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 73,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-643c9193953e26e0",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        1920,
+        2560
+      ],
+      "khmer_letter_marks": 762,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-6761a38c3d3b65bc",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        799,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-6808932d39a0334a",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1198,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-684fe06264d34c1a",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 151,
+      "reasons": [
+        "recorded_reference_uncertainty"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-6c4664601764c39f",
+      "category": "quotes",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        969,
+        1364
+      ],
+      "khmer_letter_marks": 193,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-6c6a562ef7ab8b50",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1189,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-7358ba4291d85057",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        964,
+        1280
+      ],
+      "khmer_letter_marks": 97,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-75bc14a49a1ff0e1",
+      "category": "invoices",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1981,
+        2200
+      ],
+      "khmer_letter_marks": 370,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-777d3b83a7b90152",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1928,
+        2560
+      ],
+      "khmer_letter_marks": 75,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-779a4074d9e01752",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        338,
+        450
+      ],
+      "khmer_letter_marks": 28,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-79b7a22ae2c7fd2b",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1095,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-7b8b63672fdb885a",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1233,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-7e2164b7e3287b7f",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        350,
+        800
+      ],
+      "khmer_letter_marks": 193,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-7ed844713bfda6d6",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        703,
+        701
+      ],
+      "khmer_letter_marks": 151,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-87935c89fe487846",
+      "category": "invoices",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1700,
+        2200
+      ],
+      "khmer_letter_marks": 387,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-87c21ad04b0250e9",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        591,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-88bf2bcdcbe0d75f",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 208,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-88c37a15b1677d88",
+      "category": "invoices",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        889,
+        715
+      ],
+      "khmer_letter_marks": 278,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-8a6065584fe80d92",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        591,
+        1280
+      ],
+      "khmer_letter_marks": 15,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-8bc496fbcb019568",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        591,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-8cce88a62a904e26",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-8e50abdcc43797b3",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        958,
+        1280
+      ],
+      "khmer_letter_marks": 19,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-8eb7ebb09e4aa723",
+      "category": "receipts",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        2016,
+        2560
+      ],
+      "khmer_letter_marks": 225,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-8fbf7763f699cc62",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        591,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-910549481a09559c",
+      "category": "quotes",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        951,
+        1332
+      ],
+      "khmer_letter_marks": 334,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-912dd551e444d7d1",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1233,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-93390fdb01f97759",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        183,
+        275
+      ],
+      "khmer_letter_marks": 11,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-9e0d4ad61660fc31",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "khmer_letter_marks": 206,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-9fa1155c9d5cb98d",
+      "category": "receipts",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 93,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-a16a9fa050daf3cb",
+      "category": "invoices",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        664,
+        878
+      ],
+      "khmer_letter_marks": 278,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-a1843f95384cab50",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        640,
+        477
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-a389fcf64a2a577d",
+      "category": "receipts",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 123,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-a3d040496aa226fa",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        590,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-a3d053df2e9d8130",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 70,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-a496a0ed9ea325d4",
+      "category": "quotes",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        729,
+        615
+      ],
+      "khmer_letter_marks": 39,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-a68c088217bb3480",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 119,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-a971817b91cadcc2",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        590,
+        1280
+      ],
+      "khmer_letter_marks": 88,
+      "reasons": [
+        "recorded_reference_uncertainty"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-a9bbfc8264939a4b",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        964,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-add7066a049fd40a",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        699,
+        716
+      ],
+      "khmer_letter_marks": 164,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-b12bae8a9579fd6f",
+      "category": "invoices",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        810,
+        819
+      ],
+      "khmer_letter_marks": 153,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-b2f72c90eec468fc",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1178,
+        2560
+      ],
+      "khmer_letter_marks": 15,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-b8f4360ece04e18b",
+      "category": "receipts",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        550,
+        733
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-bee39ea2acf91b8a",
+      "category": "quotes",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        1700,
+        2200
+      ],
+      "khmer_letter_marks": 226,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-bfcf782c248b34df",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        816,
+        1280
+      ],
+      "khmer_letter_marks": 19,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-c0b4209a126dbe36",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        470,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-c26484e723820d88",
+      "category": "invoices",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        915,
+        1280
+      ],
+      "khmer_letter_marks": 410,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-c544c7bfcf50ec05",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        912,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-c6df9e7f79ced1d6",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        576,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-c869b5d52fcc12ae",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1011,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-cb363028198684a4",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1075,
+        1280
+      ],
+      "khmer_letter_marks": 19,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-cbbba9834cc18179",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 65,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-ccafc7aa5723a758",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        328,
+        782
+      ],
+      "khmer_letter_marks": 58,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-ce1f84ade24435a9",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1110,
+        1277
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-d30245139383d5b5",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        813,
+        1280
+      ],
+      "khmer_letter_marks": 9,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-d44528bd11df3e06",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 75,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-d4a3728f0d285352",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1260,
+        1496
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-d7a91f4adf0a2d98",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1056,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-d7f786098bc0d658",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 80,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-da0c6ed88bf1cf96",
+      "category": "quotes",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        1700,
+        2200
+      ],
+      "khmer_letter_marks": 325,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-db306e347fa1f966",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1182,
+        2560
+      ],
+      "khmer_letter_marks": 182,
+      "reasons": [
+        "recorded_reference_uncertainty"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-db4ad774744a681e",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        526,
+        1140
+      ],
+      "khmer_letter_marks": 147,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-dfbd1c21b1e014fc",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        591,
+        1280
+      ],
+      "khmer_letter_marks": 75,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-e280f573290b4dd2",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        1920,
+        2560
+      ],
+      "khmer_letter_marks": 116,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-e38442ceaeb65207",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        576,
+        1280
+      ],
+      "khmer_letter_marks": 88,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-e5463c06034b8f17",
+      "category": "quotes",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        1700,
+        2200
+      ],
+      "khmer_letter_marks": 216,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-e66dfa3295f328c9",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1233,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-e76b82446f10908b",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1189,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-e79ad07259acc52a",
+      "category": "receipts",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 100,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-e91a0cacff675105",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1178,
+        2560
+      ],
+      "khmer_letter_marks": 15,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-e98ffd5c47cef177",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        964,
+        1280
+      ],
+      "khmer_letter_marks": 75,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-ee0c8cac514dbf2b",
+      "category": "quotes",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        729,
+        615
+      ],
+      "khmer_letter_marks": 59,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-eefd497902c9605c",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        562,
+        1280
+      ],
+      "khmer_letter_marks": 189,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-efb2d8bf310faecf",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1010,
+        571
+      ],
+      "khmer_letter_marks": 163,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-f08965a88ab0eb43",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 134,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-f19e0255c0f42ba1",
+      "category": "invoices",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        811,
+        538
+      ],
+      "khmer_letter_marks": 155,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-f4f0724466bf0e27",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        589,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-f57b225b3852fc52",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        470,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks",
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-f79d40e2c779e75f",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        1155,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-f8bc14630de19fcb",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        433,
+        787
+      ],
+      "khmer_letter_marks": 103,
+      "reasons": [
+        "below_declared_image_dimensions"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-fba12ad58e0eb805",
+      "category": "invoices",
+      "acquisition_folder": "Scanned",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "khmer_letter_marks": 41,
+      "reasons": [
+        "recorded_reference_uncertainty",
+        "literal_unreadable_marker",
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-fcfc2d1e1b63c67b",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        948,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    },
+    {
+      "track": "khfunsd-screened",
+      "id": "khf-fece49fd8b3e7b51",
+      "category": "receipts",
+      "acquisition_folder": "Digital",
+      "dimensions": [
+        591,
+        1280
+      ],
+      "khmer_letter_marks": 0,
+      "reasons": [
+        "fewer_than_50_khmer_letters_and_marks"
+      ]
+    }
+  ],
+  "prediction_access_for_selection": false,
+  "new_human_reference_reviews": 0,
+  "freeze_token": "9d7d5000d6e42f622866c9c11a0380061a3089d7f182faae4ca6ba9d28cf9d7c",
+  "private_final_selection_sha256": "8a339bc07690299646c1c4370708933b3c25c33fa9530c7714814cc502a8ae51"
+}

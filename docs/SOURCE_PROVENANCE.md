@@ -14,3 +14,5 @@ The inherited 213-entry word dictionary and 379-entry stop-word set were preserv
 The legacy README's claimed outputs for keyword extraction and syllabification did not match the recovered implementation. Updated examples avoid implying accuracy that the implementation does not provide. The unrelated `KH-HTML-Parser` example is unchanged and still requires BeautifulSoup separately.
 
 The old root initializer and stale checked-in `PKG-INFO` were removed. Build metadata is now generated from `setup.py`, and `pyproject.toml` declares the build backend. The restored implementation was first prepared as **0.4.0.dev0**, then promoted to **0.4.0** for the requested PyPI release.
+
+For 0.5 development, the original dictionary is retained as `data/legacy_words.txt`, with the expanded ICU adaptation and its separate license described in [DICTIONARY.md](DICTIONARY.md). The legacy decoder remains explicitly selectable.

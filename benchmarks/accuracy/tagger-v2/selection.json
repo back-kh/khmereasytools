@@ -1,0 +1,790 @@
+{
+  "protocol_sha256": "5b73d7735e734ad12cdd965302feaaf8f754cf5ae754004d85437a12e8b1985a",
+  "partition_manifest_sha256": "9a460ec00c28e2477c4fdb157bd00cd265ae4cd1ddc4999e78076457aed1a28d",
+  "candidates": [
+    {
+      "c1": 0.1,
+      "segmentation": "frequency",
+      "file": "candidate-0.1.json.gz",
+      "sha256": "8bef537d2ee9c2bb8a47e5370546c3fabae0ceed66373bfdce9dde3f779e1f1a",
+      "bytes": 244671,
+      "development": {
+        "sentences": 1098,
+        "tokens": 11600,
+        "native_correct": 11146,
+        "native_accuracy": 0.9608620689655173,
+        "answer_rate": 1.0,
+        "lexical_coverage": 0.9786206896551725,
+        "unseen_tokens": 248,
+        "unseen_correct": 190,
+        "unseen_accuracy": 0.7661290322580645,
+        "majority_word_baseline_correct": 10794,
+        "majority_word_baseline_accuracy": 0.9305172413793104,
+        "native_export_disagreements": 0,
+        "segmentation": {
+          "correct": 9478,
+          "predicted": 12417,
+          "gold": 11600,
+          "precision": 0.7633083675606024,
+          "recall": 0.8170689655172414,
+          "f1": 0.7892742640629554
+        },
+        "joint_native": {
+          "correct": 9096,
+          "predicted": 12417,
+          "gold": 11600,
+          "precision": 0.7325440927760328,
+          "recall": 0.7841379310344827,
+          "f1": 0.7574634633801057
+        },
+        "alignment_failures": 0,
+        "per_tag": {
+          "AB": {
+            "gold": 4,
+            "predicted": 2,
+            "correct": 2
+          },
+          "AUX": {
+            "gold": 220,
+            "predicted": 223,
+            "correct": 216
+          },
+          "CC": {
+            "gold": 263,
+            "predicted": 254,
+            "correct": 248
+          },
+          "CD": {
+            "gold": 330,
+            "predicted": 331,
+            "correct": 330
+          },
+          "DBL": {
+            "gold": 31,
+            "predicted": 31,
+            "correct": 31
+          },
+          "DT": {
+            "gold": 389,
+            "predicted": 389,
+            "correct": 387
+          },
+          "ETC": {
+            "gold": 1,
+            "predicted": 1,
+            "correct": 1
+          },
+          "IN": {
+            "gold": 1194,
+            "predicted": 1212,
+            "correct": 1159
+          },
+          "JJ": {
+            "gold": 393,
+            "predicted": 383,
+            "correct": 338
+          },
+          "KAN": {
+            "gold": 260,
+            "predicted": 260,
+            "correct": 260
+          },
+          "M": {
+            "gold": 37,
+            "predicted": 38,
+            "correct": 36
+          },
+          "NN": {
+            "gold": 2838,
+            "predicted": 2869,
+            "correct": 2779
+          },
+          "PA": {
+            "gold": 88,
+            "predicted": 78,
+            "correct": 71
+          },
+          "PN": {
+            "gold": 1791,
+            "predicted": 1781,
+            "correct": 1757
+          },
+          "PRO": {
+            "gold": 1117,
+            "predicted": 1122,
+            "correct": 1106
+          },
+          "QT": {
+            "gold": 11,
+            "predicted": 11,
+            "correct": 11
+          },
+          "RB": {
+            "gold": 588,
+            "predicted": 581,
+            "correct": 540
+          },
+          "RPN": {
+            "gold": 150,
+            "predicted": 150,
+            "correct": 150
+          },
+          "SYM": {
+            "gold": 201,
+            "predicted": 201,
+            "correct": 201
+          },
+          "UH": {
+            "gold": 7,
+            "predicted": 7,
+            "correct": 7
+          },
+          "VB": {
+            "gold": 1495,
+            "predicted": 1518,
+            "correct": 1391
+          },
+          "VB_JJ": {
+            "predicted": 129,
+            "gold": 157,
+            "correct": 97
+          },
+          "VCOM": {
+            "gold": 35,
+            "predicted": 29,
+            "correct": 28
+          }
+        },
+        "seconds": 1.2649461669999997
+      }
+    },
+    {
+      "c1": 0.1,
+      "segmentation": "model",
+      "file": "candidate-0.1.json.gz",
+      "sha256": "8bef537d2ee9c2bb8a47e5370546c3fabae0ceed66373bfdce9dde3f779e1f1a",
+      "bytes": 244671,
+      "development": {
+        "sentences": 1098,
+        "tokens": 11600,
+        "native_correct": 11146,
+        "native_accuracy": 0.9608620689655173,
+        "answer_rate": 1.0,
+        "lexical_coverage": 0.9786206896551725,
+        "unseen_tokens": 248,
+        "unseen_correct": 190,
+        "unseen_accuracy": 0.7661290322580645,
+        "majority_word_baseline_correct": 10794,
+        "majority_word_baseline_accuracy": 0.9305172413793104,
+        "native_export_disagreements": 0,
+        "segmentation": {
+          "correct": 10590,
+          "predicted": 11571,
+          "gold": 11600,
+          "precision": 0.9152190821882292,
+          "recall": 0.9129310344827586,
+          "f1": 0.9140736265159035
+        },
+        "joint_native": {
+          "correct": 10196,
+          "predicted": 11571,
+          "gold": 11600,
+          "precision": 0.8811684383372224,
+          "recall": 0.8789655172413793,
+          "f1": 0.8800655992404298
+        },
+        "alignment_failures": 0,
+        "per_tag": {
+          "AB": {
+            "gold": 4,
+            "predicted": 2,
+            "correct": 2
+          },
+          "AUX": {
+            "gold": 220,
+            "predicted": 223,
+            "correct": 216
+          },
+          "CC": {
+            "gold": 263,
+            "predicted": 254,
+            "correct": 248
+          },
+          "CD": {
+            "gold": 330,
+            "predicted": 331,
+            "correct": 330
+          },
+          "DBL": {
+            "gold": 31,
+            "predicted": 31,
+            "correct": 31
+          },
+          "DT": {
+            "gold": 389,
+            "predicted": 389,
+            "correct": 387
+          },
+          "ETC": {
+            "gold": 1,
+            "predicted": 1,
+            "correct": 1
+          },
+          "IN": {
+            "gold": 1194,
+            "predicted": 1212,
+            "correct": 1159
+          },
+          "JJ": {
+            "gold": 393,
+            "predicted": 383,
+            "correct": 338
+          },
+          "KAN": {
+            "gold": 260,
+            "predicted": 260,
+            "correct": 260
+          },
+          "M": {
+            "gold": 37,
+            "predicted": 38,
+            "correct": 36
+          },
+          "NN": {
+            "gold": 2838,
+            "predicted": 2869,
+            "correct": 2779
+          },
+          "PA": {
+            "gold": 88,
+            "predicted": 78,
+            "correct": 71
+          },
+          "PN": {
+            "gold": 1791,
+            "predicted": 1781,
+            "correct": 1757
+          },
+          "PRO": {
+            "gold": 1117,
+            "predicted": 1122,
+            "correct": 1106
+          },
+          "QT": {
+            "gold": 11,
+            "predicted": 11,
+            "correct": 11
+          },
+          "RB": {
+            "gold": 588,
+            "predicted": 581,
+            "correct": 540
+          },
+          "RPN": {
+            "gold": 150,
+            "predicted": 150,
+            "correct": 150
+          },
+          "SYM": {
+            "gold": 201,
+            "predicted": 201,
+            "correct": 201
+          },
+          "UH": {
+            "gold": 7,
+            "predicted": 7,
+            "correct": 7
+          },
+          "VB": {
+            "gold": 1495,
+            "predicted": 1518,
+            "correct": 1391
+          },
+          "VB_JJ": {
+            "predicted": 129,
+            "gold": 157,
+            "correct": 97
+          },
+          "VCOM": {
+            "gold": 35,
+            "predicted": 29,
+            "correct": 28
+          }
+        },
+        "seconds": 1.2245434589999995
+      }
+    },
+    {
+      "c1": 0.5,
+      "segmentation": "frequency",
+      "file": "candidate-0.5.json.gz",
+      "sha256": "a5004f62530934a241d864241502deb210f5bed23ed62db6a10a23de5a63be3a",
+      "bytes": 156282,
+      "development": {
+        "sentences": 1098,
+        "tokens": 11600,
+        "native_correct": 11135,
+        "native_accuracy": 0.9599137931034483,
+        "answer_rate": 1.0,
+        "lexical_coverage": 0.9786206896551725,
+        "unseen_tokens": 248,
+        "unseen_correct": 186,
+        "unseen_accuracy": 0.75,
+        "majority_word_baseline_correct": 10794,
+        "majority_word_baseline_accuracy": 0.9305172413793104,
+        "native_export_disagreements": 0,
+        "segmentation": {
+          "correct": 9478,
+          "predicted": 12417,
+          "gold": 11600,
+          "precision": 0.7633083675606024,
+          "recall": 0.8170689655172414,
+          "f1": 0.7892742640629554
+        },
+        "joint_native": {
+          "correct": 9097,
+          "predicted": 12417,
+          "gold": 11600,
+          "precision": 0.7326246275267778,
+          "recall": 0.7842241379310345,
+          "f1": 0.7575467377274431
+        },
+        "alignment_failures": 0,
+        "per_tag": {
+          "AB": {
+            "gold": 4,
+            "predicted": 3,
+            "correct": 2
+          },
+          "AUX": {
+            "gold": 220,
+            "predicted": 222,
+            "correct": 215
+          },
+          "CC": {
+            "gold": 263,
+            "predicted": 251,
+            "correct": 246
+          },
+          "CD": {
+            "gold": 330,
+            "predicted": 330,
+            "correct": 329
+          },
+          "DBL": {
+            "gold": 31,
+            "predicted": 31,
+            "correct": 31
+          },
+          "DT": {
+            "gold": 389,
+            "predicted": 390,
+            "correct": 388
+          },
+          "ETC": {
+            "gold": 1,
+            "predicted": 1,
+            "correct": 1
+          },
+          "IN": {
+            "gold": 1194,
+            "predicted": 1214,
+            "correct": 1160
+          },
+          "JJ": {
+            "gold": 393,
+            "predicted": 380,
+            "correct": 334
+          },
+          "KAN": {
+            "gold": 260,
+            "predicted": 260,
+            "correct": 260
+          },
+          "M": {
+            "gold": 37,
+            "predicted": 37,
+            "correct": 35
+          },
+          "NN": {
+            "gold": 2838,
+            "predicted": 2870,
+            "correct": 2771
+          },
+          "PA": {
+            "gold": 88,
+            "predicted": 80,
+            "correct": 73
+          },
+          "PN": {
+            "gold": 1791,
+            "predicted": 1783,
+            "correct": 1755
+          },
+          "PRO": {
+            "gold": 1117,
+            "predicted": 1119,
+            "correct": 1104
+          },
+          "QT": {
+            "gold": 11,
+            "predicted": 11,
+            "correct": 11
+          },
+          "RB": {
+            "gold": 588,
+            "predicted": 585,
+            "correct": 543
+          },
+          "RPN": {
+            "gold": 150,
+            "predicted": 150,
+            "correct": 150
+          },
+          "SYM": {
+            "gold": 201,
+            "predicted": 201,
+            "correct": 201
+          },
+          "UH": {
+            "gold": 7,
+            "predicted": 7,
+            "correct": 7
+          },
+          "VB": {
+            "gold": 1495,
+            "predicted": 1522,
+            "correct": 1394
+          },
+          "VB_JJ": {
+            "predicted": 125,
+            "gold": 157,
+            "correct": 98
+          },
+          "VCOM": {
+            "gold": 35,
+            "predicted": 28,
+            "correct": 27
+          }
+        },
+        "seconds": 1.2100619170000009
+      }
+    },
+    {
+      "c1": 0.5,
+      "segmentation": "model",
+      "file": "candidate-0.5.json.gz",
+      "sha256": "a5004f62530934a241d864241502deb210f5bed23ed62db6a10a23de5a63be3a",
+      "bytes": 156282,
+      "development": {
+        "sentences": 1098,
+        "tokens": 11600,
+        "native_correct": 11135,
+        "native_accuracy": 0.9599137931034483,
+        "answer_rate": 1.0,
+        "lexical_coverage": 0.9786206896551725,
+        "unseen_tokens": 248,
+        "unseen_correct": 186,
+        "unseen_accuracy": 0.75,
+        "majority_word_baseline_correct": 10794,
+        "majority_word_baseline_accuracy": 0.9305172413793104,
+        "native_export_disagreements": 0,
+        "segmentation": {
+          "correct": 10590,
+          "predicted": 11571,
+          "gold": 11600,
+          "precision": 0.9152190821882292,
+          "recall": 0.9129310344827586,
+          "f1": 0.9140736265159035
+        },
+        "joint_native": {
+          "correct": 10187,
+          "predicted": 11571,
+          "gold": 11600,
+          "precision": 0.8803906317517933,
+          "recall": 0.8781896551724138,
+          "f1": 0.8792887661300763
+        },
+        "alignment_failures": 0,
+        "per_tag": {
+          "AB": {
+            "gold": 4,
+            "predicted": 3,
+            "correct": 2
+          },
+          "AUX": {
+            "gold": 220,
+            "predicted": 222,
+            "correct": 215
+          },
+          "CC": {
+            "gold": 263,
+            "predicted": 251,
+            "correct": 246
+          },
+          "CD": {
+            "gold": 330,
+            "predicted": 330,
+            "correct": 329
+          },
+          "DBL": {
+            "gold": 31,
+            "predicted": 31,
+            "correct": 31
+          },
+          "DT": {
+            "gold": 389,
+            "predicted": 390,
+            "correct": 388
+          },
+          "ETC": {
+            "gold": 1,
+            "predicted": 1,
+            "correct": 1
+          },
+          "IN": {
+            "gold": 1194,
+            "predicted": 1214,
+            "correct": 1160
+          },
+          "JJ": {
+            "gold": 393,
+            "predicted": 380,
+            "correct": 334
+          },
+          "KAN": {
+            "gold": 260,
+            "predicted": 260,
+            "correct": 260
+          },
+          "M": {
+            "gold": 37,
+            "predicted": 37,
+            "correct": 35
+          },
+          "NN": {
+            "gold": 2838,
+            "predicted": 2870,
+            "correct": 2771
+          },
+          "PA": {
+            "gold": 88,
+            "predicted": 80,
+            "correct": 73
+          },
+          "PN": {
+            "gold": 1791,
+            "predicted": 1783,
+            "correct": 1755
+          },
+          "PRO": {
+            "gold": 1117,
+            "predicted": 1119,
+            "correct": 1104
+          },
+          "QT": {
+            "gold": 11,
+            "predicted": 11,
+            "correct": 11
+          },
+          "RB": {
+            "gold": 588,
+            "predicted": 585,
+            "correct": 543
+          },
+          "RPN": {
+            "gold": 150,
+            "predicted": 150,
+            "correct": 150
+          },
+          "SYM": {
+            "gold": 201,
+            "predicted": 201,
+            "correct": 201
+          },
+          "UH": {
+            "gold": 7,
+            "predicted": 7,
+            "correct": 7
+          },
+          "VB": {
+            "gold": 1495,
+            "predicted": 1522,
+            "correct": 1394
+          },
+          "VB_JJ": {
+            "predicted": 125,
+            "gold": 157,
+            "correct": 98
+          },
+          "VCOM": {
+            "gold": 35,
+            "predicted": 28,
+            "correct": 27
+          }
+        },
+        "seconds": 1.167740792
+      }
+    }
+  ],
+  "selected": {
+    "c1": 0.1,
+    "segmentation": "model",
+    "file": "candidate-0.1.json.gz",
+    "sha256": "8bef537d2ee9c2bb8a47e5370546c3fabae0ceed66373bfdce9dde3f779e1f1a",
+    "bytes": 244671,
+    "development": {
+      "sentences": 1098,
+      "tokens": 11600,
+      "native_correct": 11146,
+      "native_accuracy": 0.9608620689655173,
+      "answer_rate": 1.0,
+      "lexical_coverage": 0.9786206896551725,
+      "unseen_tokens": 248,
+      "unseen_correct": 190,
+      "unseen_accuracy": 0.7661290322580645,
+      "majority_word_baseline_correct": 10794,
+      "majority_word_baseline_accuracy": 0.9305172413793104,
+      "native_export_disagreements": 0,
+      "segmentation": {
+        "correct": 10590,
+        "predicted": 11571,
+        "gold": 11600,
+        "precision": 0.9152190821882292,
+        "recall": 0.9129310344827586,
+        "f1": 0.9140736265159035
+      },
+      "joint_native": {
+        "correct": 10196,
+        "predicted": 11571,
+        "gold": 11600,
+        "precision": 0.8811684383372224,
+        "recall": 0.8789655172413793,
+        "f1": 0.8800655992404298
+      },
+      "alignment_failures": 0,
+      "per_tag": {
+        "AB": {
+          "gold": 4,
+          "predicted": 2,
+          "correct": 2
+        },
+        "AUX": {
+          "gold": 220,
+          "predicted": 223,
+          "correct": 216
+        },
+        "CC": {
+          "gold": 263,
+          "predicted": 254,
+          "correct": 248
+        },
+        "CD": {
+          "gold": 330,
+          "predicted": 331,
+          "correct": 330
+        },
+        "DBL": {
+          "gold": 31,
+          "predicted": 31,
+          "correct": 31
+        },
+        "DT": {
+          "gold": 389,
+          "predicted": 389,
+          "correct": 387
+        },
+        "ETC": {
+          "gold": 1,
+          "predicted": 1,
+          "correct": 1
+        },
+        "IN": {
+          "gold": 1194,
+          "predicted": 1212,
+          "correct": 1159
+        },
+        "JJ": {
+          "gold": 393,
+          "predicted": 383,
+          "correct": 338
+        },
+        "KAN": {
+          "gold": 260,
+          "predicted": 260,
+          "correct": 260
+        },
+        "M": {
+          "gold": 37,
+          "predicted": 38,
+          "correct": 36
+        },
+        "NN": {
+          "gold": 2838,
+          "predicted": 2869,
+          "correct": 2779
+        },
+        "PA": {
+          "gold": 88,
+          "predicted": 78,
+          "correct": 71
+        },
+        "PN": {
+          "gold": 1791,
+          "predicted": 1781,
+          "correct": 1757
+        },
+        "PRO": {
+          "gold": 1117,
+          "predicted": 1122,
+          "correct": 1106
+        },
+        "QT": {
+          "gold": 11,
+          "predicted": 11,
+          "correct": 11
+        },
+        "RB": {
+          "gold": 588,
+          "predicted": 581,
+          "correct": 540
+        },
+        "RPN": {
+          "gold": 150,
+          "predicted": 150,
+          "correct": 150
+        },
+        "SYM": {
+          "gold": 201,
+          "predicted": 201,
+          "correct": 201
+        },
+        "UH": {
+          "gold": 7,
+          "predicted": 7,
+          "correct": 7
+        },
+        "VB": {
+          "gold": 1495,
+          "predicted": 1518,
+          "correct": 1391
+        },
+        "VB_JJ": {
+          "predicted": 129,
+          "gold": 157,
+          "correct": 97
+        },
+        "VCOM": {
+          "gold": 35,
+          "predicted": 29,
+          "correct": 28
+        }
+      },
+      "seconds": 1.2245434589999995
+    }
+  },
+  "selected_sha256": "1a1de64d7686d0041b1bd3c5ee853224dc1152caed79f5fd59da8b5d0c6b49a6",
+  "selected_bytes": 244666,
+  "train_digest": "9f67c3cb61f3cb015465c025be4acdd2305a97843edec5a45cf5f3095278e439",
+  "status": "Frozen after development selection, before reserved predictions."
+}

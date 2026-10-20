@@ -1,0 +1,538 @@
+{
+  "name": "improved_reserved",
+  "partition": "reserved",
+  "metadata": {
+    "runtime_sources_sha256": "0cdc69814d5b32074167079373c147f5d87fd1c9234848bd9971d98dba42765c",
+    "dictionary_sha256": "f398bea51287dc36d52d2482f0005ecff817733cedb84936fd8e5b72b73d9cf8",
+    "frequencies_sha256": "b1f50d1f3a2085e9cb35db5fb66aff1453a9ba5b1a24400533f8644d7edbe42c",
+    "python": "3.9.6",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "dependencies": {
+      "khmer-nltk": "1.6",
+      "sklearn-crfsuite": "0.5.0",
+      "python-crfsuite": "0.9.11",
+      "scikit-learn": "1.6.1",
+      "numpy": "2.0.2",
+      "Pillow": "11.3.0",
+      "pytesseract": "0.3.13",
+      "pypdfium2": "5.14.0"
+    },
+    "protocol_sha256": "bf1f49e6aa96b97c64488140f0d7a2fcce257e488f2e75c8dca57b4bee02486a",
+    "script_sha256": "08a7eb2395b612952cd2afe7b13e84e7244bd5efc77ed0115ae30815989b9683"
+  },
+  "alt_words": {
+    "sentences": 1018,
+    "gold_tokens": 26551,
+    "seconds": 1.9281810419999998,
+    "metrics": {
+      "segmentation": {
+        "correct": 20293,
+        "predicted": 32884,
+        "gold": 26551,
+        "precision": 0.6171086242549568,
+        "recall": 0.7643026627998946,
+        "f1": 0.6828636325397494,
+        "exact_sentences": 15,
+        "alignment_failures": 0
+      },
+      "pos_boundaries": {
+        "correct": 20293,
+        "predicted": 32884,
+        "gold": 26551,
+        "precision": 0.6171086242549568,
+        "recall": 0.7643026627998946,
+        "f1": 0.6828636325397494,
+        "exact_sentences": 15,
+        "alignment_failures": 0
+      },
+      "pos_joint": {
+        "correct": 20109,
+        "predicted": 32884,
+        "gold": 26551,
+        "precision": 0.6115131979077971,
+        "recall": 0.7573726036684117,
+        "f1": 0.676671994615967,
+        "exact_sentences": 14,
+        "alignment_failures": 0
+      }
+    }
+  },
+  "khpos_segmentation": {
+    "sentences": 1000,
+    "gold_tokens": 10778,
+    "seconds": 0.14452675000000026,
+    "metrics": {
+      "segmentation": {
+        "correct": 8783,
+        "predicted": 11610,
+        "gold": 10778,
+        "precision": 0.7565030146425495,
+        "recall": 0.8149007236964186,
+        "f1": 0.784616758978024,
+        "exact_sentences": 399,
+        "alignment_failures": 0
+      }
+    }
+  },
+  "word_model_loaded": false,
+  "pos_model_loaded": true,
+  "text_process_peak_rss_mib": 142.15625,
+  "ocr": {
+    "public_default": {
+      "reference_codepoints": 80606,
+      "codepoint_edits": 9215,
+      "spacefold_reference_codepoints": 85585,
+      "spacefold_codepoint_edits": 9845,
+      "reference_whitespace_units": 4979,
+      "whitespace_unit_edits": 2621,
+      "samples": 40,
+      "exact_compact": 0,
+      "compact_codepoint_cer": 0.11432151452745454,
+      "spacefold_codepoint_cer": 0.11503183969153473,
+      "whitespace_unit_error_rate": 0.5264109258887327,
+      "seconds": 43.021695417,
+      "per_page": [
+        {
+          "id": "task-1/goc_1",
+          "image_sha256": "52b8d1fba89a09ab9c85c6a8ccc34171d63750d1d0c73ccbdf4b5756b8a9ae77",
+          "reference_codepoints": 1154,
+          "codepoint_edits": 62,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1239,
+          "spacefold_codepoint_edits": 65,
+          "reference_whitespace_units": 86,
+          "whitespace_unit_edits": 14
+        },
+        {
+          "id": "task-1/mef_2",
+          "image_sha256": "17112e03a5a21f7efff1084ca273f88e21a88ac9c26e9c73e5b136565fb04c3d",
+          "reference_codepoints": 1884,
+          "codepoint_edits": 224,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1982,
+          "spacefold_codepoint_edits": 242,
+          "reference_whitespace_units": 99,
+          "whitespace_unit_edits": 67
+        },
+        {
+          "id": "task-1/mef_4",
+          "image_sha256": "19c2d06e9b71e315a9509e4020eeda91a29a7b52ed47d3152dd8f21401c18103",
+          "reference_codepoints": 2542,
+          "codepoint_edits": 514,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2707,
+          "spacefold_codepoint_edits": 539,
+          "reference_whitespace_units": 166,
+          "whitespace_unit_edits": 115
+        },
+        {
+          "id": "task-1/mlvt_1",
+          "image_sha256": "9b7defde2da719753b978f796711b7c6a8713f63568946345ac15d14afaeb636",
+          "reference_codepoints": 1908,
+          "codepoint_edits": 189,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2030,
+          "spacefold_codepoint_edits": 198,
+          "reference_whitespace_units": 123,
+          "whitespace_unit_edits": 29
+        },
+        {
+          "id": "task-1/moh_1",
+          "image_sha256": "9f2257a2363a41472eceb9db20bb6d8bc52400444f52f374e36c56d0e1e7c400",
+          "reference_codepoints": 1762,
+          "codepoint_edits": 130,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1855,
+          "spacefold_codepoint_edits": 140,
+          "reference_whitespace_units": 94,
+          "whitespace_unit_edits": 29
+        },
+        {
+          "id": "task-1/pm_1",
+          "image_sha256": "8e57c432d817495aa25c547cd754a7edb448f69a49670749e1da990ae6988e0a",
+          "reference_codepoints": 2173,
+          "codepoint_edits": 82,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2294,
+          "spacefold_codepoint_edits": 97,
+          "reference_whitespace_units": 117,
+          "whitespace_unit_edits": 48
+        },
+        {
+          "id": "task-1/pp_gov_1",
+          "image_sha256": "5565eb905aad85629fbecc14d0088835c5d27c93554f8dd2bb3f22556758de11",
+          "reference_codepoints": 2071,
+          "codepoint_edits": 343,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2191,
+          "spacefold_codepoint_edits": 381,
+          "reference_whitespace_units": 117,
+          "whitespace_unit_edits": 100
+        },
+        {
+          "id": "task-1/pp_gov_2",
+          "image_sha256": "55b784c2466a693901b0281a1d0fb0255f72b254e7c046a3d5758ce045d80536",
+          "reference_codepoints": 2175,
+          "codepoint_edits": 291,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2288,
+          "spacefold_codepoint_edits": 329,
+          "reference_whitespace_units": 114,
+          "whitespace_unit_edits": 86
+        },
+        {
+          "id": "task-1/pp_gov_3",
+          "image_sha256": "f119e520cf0dfe98016c5c88c29f6b177389a03d72814678c5741cce798be16e",
+          "reference_codepoints": 1852,
+          "codepoint_edits": 280,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1970,
+          "spacefold_codepoint_edits": 309,
+          "reference_whitespace_units": 118,
+          "whitespace_unit_edits": 74
+        },
+        {
+          "id": "task-1/pp_gov_4",
+          "image_sha256": "39c711d7d1f750b451544372bd8877df1bc2eb2d48c8d45d9f707fcc668777c8",
+          "reference_codepoints": 2173,
+          "codepoint_edits": 283,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2326,
+          "spacefold_codepoint_edits": 309,
+          "reference_whitespace_units": 154,
+          "whitespace_unit_edits": 89
+        },
+        {
+          "id": "task-2/goc_1",
+          "image_sha256": "7bc3879dc390f89e36a0c6f16fac7d28c92bd85747adcfe03fa0f5985cd83f1b",
+          "reference_codepoints": 1154,
+          "codepoint_edits": 64,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1239,
+          "spacefold_codepoint_edits": 66,
+          "reference_whitespace_units": 86,
+          "whitespace_unit_edits": 15
+        },
+        {
+          "id": "task-2/mef_2",
+          "image_sha256": "9650f1959a410d65b64594c090788dd1881ca35aa1fdfb5a9143160e1a0e4867",
+          "reference_codepoints": 1884,
+          "codepoint_edits": 257,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1982,
+          "spacefold_codepoint_edits": 272,
+          "reference_whitespace_units": 99,
+          "whitespace_unit_edits": 72
+        },
+        {
+          "id": "task-2/mef_4",
+          "image_sha256": "fe18280a0773f213e65d7069cc968a88a0e5bf26d6495d2531fbe27da396a4aa",
+          "reference_codepoints": 2542,
+          "codepoint_edits": 533,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2707,
+          "spacefold_codepoint_edits": 561,
+          "reference_whitespace_units": 166,
+          "whitespace_unit_edits": 129
+        },
+        {
+          "id": "task-2/mlvt_1",
+          "image_sha256": "bb622c630eee6f7b715414bd14ae538e6df0fbac09df1ede321b4317885c0f60",
+          "reference_codepoints": 1908,
+          "codepoint_edits": 84,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2030,
+          "spacefold_codepoint_edits": 91,
+          "reference_whitespace_units": 123,
+          "whitespace_unit_edits": 29
+        },
+        {
+          "id": "task-2/moh_1",
+          "image_sha256": "a5d2fdf241a98be50cbb630b98dad985f9d1d181d067715d7ceb68c22f0b5488",
+          "reference_codepoints": 1762,
+          "codepoint_edits": 119,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1855,
+          "spacefold_codepoint_edits": 130,
+          "reference_whitespace_units": 94,
+          "whitespace_unit_edits": 28
+        },
+        {
+          "id": "task-2/pm_1",
+          "image_sha256": "aea24301ceac370f187e94369cebc9385f98c379f37aa8a0662675083a4645d4",
+          "reference_codepoints": 2173,
+          "codepoint_edits": 86,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2294,
+          "spacefold_codepoint_edits": 101,
+          "reference_whitespace_units": 117,
+          "whitespace_unit_edits": 47
+        },
+        {
+          "id": "task-2/pp_gov_1",
+          "image_sha256": "1aef54a89d57e7edd6cc2b7266fbf57380e2a322e23c2a77da398491099119f3",
+          "reference_codepoints": 2231,
+          "codepoint_edits": 243,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2370,
+          "spacefold_codepoint_edits": 263,
+          "reference_whitespace_units": 136,
+          "whitespace_unit_edits": 89
+        },
+        {
+          "id": "task-2/pp_gov_2",
+          "image_sha256": "e54bc26b041f1289dda2d10c99d7d35f58d9138710e5318a855f18b0e889f9e4",
+          "reference_codepoints": 2334,
+          "codepoint_edits": 225,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2467,
+          "spacefold_codepoint_edits": 254,
+          "reference_whitespace_units": 134,
+          "whitespace_unit_edits": 76
+        },
+        {
+          "id": "task-2/pp_gov_3",
+          "image_sha256": "ddaab5b43d6cdd78d89e8ba675874217ea5701e2a27b77b102ed78c1f4508656",
+          "reference_codepoints": 2011,
+          "codepoint_edits": 177,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2148,
+          "spacefold_codepoint_edits": 190,
+          "reference_whitespace_units": 137,
+          "whitespace_unit_edits": 63
+        },
+        {
+          "id": "task-2/pp_gov_4",
+          "image_sha256": "e51d7f776f3d57ad8c5db4cae4a75e58c764d73781fd62d29c925100694aa8fb",
+          "reference_codepoints": 2332,
+          "codepoint_edits": 216,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2504,
+          "spacefold_codepoint_edits": 236,
+          "reference_whitespace_units": 173,
+          "whitespace_unit_edits": 98
+        },
+        {
+          "id": "task-3/goc_1",
+          "image_sha256": "b1531e5d3295ce687d17b075d959f884ac5354c05512fb3c5579bdad79ca56fd",
+          "reference_codepoints": 1154,
+          "codepoint_edits": 60,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1239,
+          "spacefold_codepoint_edits": 68,
+          "reference_whitespace_units": 86,
+          "whitespace_unit_edits": 20
+        },
+        {
+          "id": "task-3/mef_2",
+          "image_sha256": "98c0ea4edfd4d139a1c4e9788e60487a792a123a15eb730a8f52738c87d49f7b",
+          "reference_codepoints": 1884,
+          "codepoint_edits": 231,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1982,
+          "spacefold_codepoint_edits": 239,
+          "reference_whitespace_units": 99,
+          "whitespace_unit_edits": 59
+        },
+        {
+          "id": "task-3/mef_4",
+          "image_sha256": "1f2be3c3c3fabefe134d8874ec025b3fad53dd1906d71c06ca9b316c0f9d634b",
+          "reference_codepoints": 2542,
+          "codepoint_edits": 636,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2707,
+          "spacefold_codepoint_edits": 656,
+          "reference_whitespace_units": 166,
+          "whitespace_unit_edits": 118
+        },
+        {
+          "id": "task-3/mlvt_1",
+          "image_sha256": "f2331e109fc2922c17650e2590ffe767add7fe1fc3f700840cd6808dd72d9684",
+          "reference_codepoints": 1908,
+          "codepoint_edits": 162,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2030,
+          "spacefold_codepoint_edits": 178,
+          "reference_whitespace_units": 123,
+          "whitespace_unit_edits": 37
+        },
+        {
+          "id": "task-3/moh_1",
+          "image_sha256": "425e33fb6166a5cb4225c6d05c07cb59382e6905a073c7a4242724d91536fd28",
+          "reference_codepoints": 1762,
+          "codepoint_edits": 38,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1855,
+          "spacefold_codepoint_edits": 42,
+          "reference_whitespace_units": 94,
+          "whitespace_unit_edits": 22
+        },
+        {
+          "id": "task-3/pm_1",
+          "image_sha256": "af191dbfb596bd64e91e77e45dd7fb0e3ab86086df643e431694a9ddf5b11c2b",
+          "reference_codepoints": 2130,
+          "codepoint_edits": 142,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2247,
+          "spacefold_codepoint_edits": 157,
+          "reference_whitespace_units": 113,
+          "whitespace_unit_edits": 46
+        },
+        {
+          "id": "task-3/pp_gov_1",
+          "image_sha256": "eab3f5541134cf239b3d06fc673d22ecf563b229c73e29526afc5af504499206",
+          "reference_codepoints": 2232,
+          "codepoint_edits": 253,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2371,
+          "spacefold_codepoint_edits": 271,
+          "reference_whitespace_units": 136,
+          "whitespace_unit_edits": 93
+        },
+        {
+          "id": "task-3/pp_gov_2",
+          "image_sha256": "9c9595468e96677247e4a85f2e1f6944dec3a8ceb3ab2f75b4fee0a9363523f0",
+          "reference_codepoints": 2334,
+          "codepoint_edits": 152,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2467,
+          "spacefold_codepoint_edits": 159,
+          "reference_whitespace_units": 134,
+          "whitespace_unit_edits": 50
+        },
+        {
+          "id": "task-3/pp_gov_3",
+          "image_sha256": "aafa328a25c39535277209abd914dd673509c2dc9f3c0adebe8902a5e9eac1a5",
+          "reference_codepoints": 2011,
+          "codepoint_edits": 205,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2148,
+          "spacefold_codepoint_edits": 216,
+          "reference_whitespace_units": 137,
+          "whitespace_unit_edits": 65
+        },
+        {
+          "id": "task-3/pp_gov_4",
+          "image_sha256": "bbd13fec190b89a317e9f66631eb656d3929072e13ec2a9d6b7460aa72efc3a4",
+          "reference_codepoints": 2332,
+          "codepoint_edits": 352,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2504,
+          "spacefold_codepoint_edits": 364,
+          "reference_whitespace_units": 173,
+          "whitespace_unit_edits": 97
+        },
+        {
+          "id": "task-4/goc_1",
+          "image_sha256": "25fbcc83f60ac4c6eb80000346603c50a8110914ca89fd66669d1fd4487db806",
+          "reference_codepoints": 1154,
+          "codepoint_edits": 68,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1239,
+          "spacefold_codepoint_edits": 71,
+          "reference_whitespace_units": 86,
+          "whitespace_unit_edits": 20
+        },
+        {
+          "id": "task-4/mef_2",
+          "image_sha256": "2ca9180cea8ac4507f7141445d8fe4a598326a4d33e1de60d62c3587a36ab405",
+          "reference_codepoints": 1884,
+          "codepoint_edits": 401,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1982,
+          "spacefold_codepoint_edits": 423,
+          "reference_whitespace_units": 99,
+          "whitespace_unit_edits": 84
+        },
+        {
+          "id": "task-4/mef_4",
+          "image_sha256": "ad107089de2529765ecfa4efc51252afdcb9743aa9f95d68453f57937c58e576",
+          "reference_codepoints": 2542,
+          "codepoint_edits": 597,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2707,
+          "spacefold_codepoint_edits": 625,
+          "reference_whitespace_units": 166,
+          "whitespace_unit_edits": 126
+        },
+        {
+          "id": "task-4/mlvt_1",
+          "image_sha256": "c63f716b82b33637b62c8a978c3d3d1aff1026ffdc6edb37a192adbc0bf29232",
+          "reference_codepoints": 1908,
+          "codepoint_edits": 119,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2030,
+          "spacefold_codepoint_edits": 127,
+          "reference_whitespace_units": 123,
+          "whitespace_unit_edits": 48
+        },
+        {
+          "id": "task-4/moh_1",
+          "image_sha256": "261a715d15e753774810bdaa05da8b56a30c3403e3369c7b433241b1cad0a429",
+          "reference_codepoints": 1762,
+          "codepoint_edits": 58,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 1855,
+          "spacefold_codepoint_edits": 65,
+          "reference_whitespace_units": 94,
+          "whitespace_unit_edits": 31
+        },
+        {
+          "id": "task-4/pm_1",
+          "image_sha256": "afff7661e8fa2d778de1ab17e5c1d159175161b4abce7a53513e97a130d77cff",
+          "reference_codepoints": 2130,
+          "codepoint_edits": 148,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2247,
+          "spacefold_codepoint_edits": 163,
+          "reference_whitespace_units": 113,
+          "whitespace_unit_edits": 47
+        },
+        {
+          "id": "task-4/pp_gov_1",
+          "image_sha256": "0dd1991a0d2735b23e143061111b7c703763a94655d582ce3ad1562e9edea6aa",
+          "reference_codepoints": 2232,
+          "codepoint_edits": 342,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2372,
+          "spacefold_codepoint_edits": 363,
+          "reference_whitespace_units": 137,
+          "whitespace_unit_edits": 108
+        },
+        {
+          "id": "task-4/pp_gov_2",
+          "image_sha256": "c39b5cf8f5f6952cfcb5446ae89ea1c57a13f93a070ceaf0a8e357800a96be51",
+          "reference_codepoints": 2335,
+          "codepoint_edits": 266,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2469,
+          "spacefold_codepoint_edits": 277,
+          "reference_whitespace_units": 135,
+          "whitespace_unit_edits": 59
+        },
+        {
+          "id": "task-4/pp_gov_3",
+          "image_sha256": "f7ecb62461e976e11ad02f217ee57224877563ba3e4567c5a21b8a8c44644132",
+          "reference_codepoints": 2012,
+          "codepoint_edits": 273,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2150,
+          "spacefold_codepoint_edits": 286,
+          "reference_whitespace_units": 138,
+          "whitespace_unit_edits": 83
+        },
+        {
+          "id": "task-4/pp_gov_4",
+          "image_sha256": "0684d67899dfad4c6180e83688904b020069beee05cfd9ae28b91c7e97c1be92",
+          "reference_codepoints": 2333,
+          "codepoint_edits": 310,
+          "exact_compact": false,
+          "spacefold_reference_codepoints": 2506,
+          "spacefold_codepoint_edits": 322,
+          "reference_whitespace_units": 174,
+          "whitespace_unit_edits": 111
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "reason": "User requested Mac outputs and data on Drive F; administrative storage migration, with unchanged benchmark profile",
+  "utc": "2026-10-18T06:18:53Z",
+  "evaluation_token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3",
+  "completed_before_migration": {
+    "tesseract-fast": 150,
+    "khmereasytools-fast": 150,
+    "surya-2": 20,
+    "paddleocr-vl-1.6-4bit": 0,
+    "deepseek-ocr-4bit": 0
+  },
+  "inflight_calls": "Incomplete requests are interrupted, retained in logs, and resumed without selecting outputs by accuracy",
+  "resumed_utc": "2026-10-18T06:24:49Z",
+  "verification": "Full rsync checksum synchronization succeeded; every frozen protocol/input file hash rechecked before atomic path switch",
+  "verification_log_sha256": "f287cd457f3a4abad444da05f74683aed21fd930ccd7f00becdf656cdf4cf138"
+}

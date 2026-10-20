@@ -1,0 +1,2043 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "analysis_sha256": "c6a3b3fcd33073719e2a9aa547fb0e083e4887cfdea0ddb32f2afb3835cf12a2",
+  "analysis_environment": {
+    "python": "3.11.15",
+    "unicode_database": "14.0.0",
+    "rapidfuzz": "3.14.6",
+    "installed_tokenizer_files": {
+      "segmentation.py": "2d2a8ffadfa3b650737483266c9fb554c06529419f85b11dce7df3f87ae83857",
+      "lexicon.py": "d5de159d298d9d7ec6ed063fa7aad8261085e72568306a93346e33e26d0c7aae",
+      "text_quality.py": "e354709fadbe6d34fc71aee68354e9eb43c7a8818802a6b4166ee306ee8f3f71",
+      "data/khmer_words.txt": "f398bea51287dc36d52d2482f0005ecff817733cedb84936fd8e5b72b73d9cf8",
+      "data/word_frequencies.txt": "b1f50d1f3a2085e9cb35db5fb66aff1453a9ba5b1a24400533f8644d7edbe42c"
+    }
+  },
+  "reference_freeze": {
+    "created_utc": "2026-10-18T10:14:19Z",
+    "source_selection_sha256": "6aff9e2008418110d1a4cb0d959ff4c7bd8e30da898eb6b12c79f4ba2afd91f3",
+    "references_sha256": "8921b9649826141fde8e6ddfec89254149afe609f563600e585965bb8cb884d4",
+    "protocol_sha256": "a24b7147f28a4103cd6190c97602a284d1021a29ad1ff150b52e1f4e4edd485c",
+    "prepared_by_sha256": "51121d91637f94340f029b4052703a7dc72ce1a9706c14208c8c697f9c79228f",
+    "reference_policy": "Author-designated machine-generated operational ground truth; zero independently human-reviewed pages; literal markers retained",
+    "pages": 146,
+    "qwen_pages": 30,
+    "strata": [
+      {
+        "category": "invoices",
+        "acquisition_folder": "Digital",
+        "pages": 12,
+        "qwen_pages": 2
+      },
+      {
+        "category": "invoices",
+        "acquisition_folder": "Scanned",
+        "pages": 22,
+        "qwen_pages": 5
+      },
+      {
+        "category": "quotes",
+        "acquisition_folder": "Digital",
+        "pages": 1,
+        "qwen_pages": 0
+      },
+      {
+        "category": "quotes",
+        "acquisition_folder": "Scanned",
+        "pages": 15,
+        "qwen_pages": 3
+      },
+      {
+        "category": "receipts",
+        "acquisition_folder": "Digital",
+        "pages": 88,
+        "qwen_pages": 18
+      },
+      {
+        "category": "receipts",
+        "acquisition_folder": "Scanned",
+        "pages": 8,
+        "qwen_pages": 2
+      }
+    ],
+    "reference_hashes": {
+      "khf-5fd2a06fde8805c5": "c105c7a106b23043b91e67df653bbcb7f18452cbf6461110c75dc277b2943d33",
+      "khf-75bc14a49a1ff0e1": "20b2ff280c1a81b297f6b3c300689b7f03c09348b845fdf9cac6c19ebde559a3",
+      "khf-a16a9fa050daf3cb": "b5724c889254823aaf39c097fc1ce703af51c11ceee5c9b22f3c8d256ffebacb",
+      "khf-f19e0255c0f42ba1": "97cf3d9c96b2beaed596544186a4cfab17a178fc55bfbb18b2ffbb52ae4e48a0",
+      "khf-88c37a15b1677d88": "0c3730c0c4c96d11c561c503157292598aa026053fa2b6cf91cfafc1ca5b87a8",
+      "khf-36d71fc8a9015b7a": "0e93b197f3aef0b1d0e202d1bf422c85676ad895c759d77fcbfed4cebdfa3a1b",
+      "khf-52047d99028285f6": "277456826d17d1032fbd479134572cd6f0982f9929c72c966b4cc7ef5643200c",
+      "khf-b12bae8a9579fd6f": "085b85c171b3cca327078ea5bcc22b7e0b144b8e16247f1f4a9bac8c90618d53",
+      "khf-3b39b28676af7232": "56f5468bca17204ed89a49d402ed4abb86812d1f00732d6858e1118209cd27ae",
+      "khf-4fbb10c4d29d09a5": "ae0f9f0d5e0f9ed7e26f1123b5130ecc389193ff819730307584ea357afd20f4",
+      "khf-87935c89fe487846": "95b9d60ace5354c4ad868845495524f7e2c37e1e4fc69b4671c3cdeac1013a78",
+      "khf-c26484e723820d88": "81ef51fd62983b64309517f12dbb581d36e7eb593ec8bfafb1c08a732dfb25ab",
+      "khf-0173b6875941e909": "5d0c5bcbca51f4212163b9d5e465bdf12e1e16724d15f448b0c79606a9890130",
+      "khf-5e3ad0edfe51e316": "9e7ddfd4ab9dbb0702ab331c19d960a5f4d7d13aa51438e177d0ec025bf36d83",
+      "khf-6353e0b04ca89577": "aab51e0d44b1aae08688e58f61b50655edf9a3ad0dd5fe412429b80a4df820aa",
+      "khf-1bdb2b05b73e1284": "6881e5cd1e5d3c29724c2e4dac7bb4e0814d30d31466301fc50f9f4b64df6c1f",
+      "khf-cbbba9834cc18179": "fde6cf5d966312a3acb02b010e0f165e1c381aa9ba89adea50b283b8bcfc2178",
+      "khf-51e4ffa4391740c7": "83a7b37efb5c6d8de20e73a77f8cfcf8882898e42954e2244eb5510b36863d71",
+      "khf-3f739d4bb6b1d296": "c30781fba6126df18f294f736ce8159c0178fdfaa0b3bff0ee9be17fca0ec11c",
+      "khf-88bf2bcdcbe0d75f": "bbceeae812a75deea9e2a92729e2ac3557c29f06a791a7dfab936f8c82e752d8",
+      "khf-a68c088217bb3480": "f2777071999ee00bae3687ede60a050cd6c9973be09aa5f1a43e4f4a60f7d1cd",
+      "khf-a1843f95384cab50": "64e4bfc8c0f69f38836830583496d392ee6aacaf419d1963573dddef0096b873",
+      "khf-404b3420e90db8a0": "b8b21cd1ba30fe2b78eb469d316461299b90d766bda3e2c7f4f84379fcd8d403",
+      "khf-93390fdb01f97759": "53bb54661fbb5b14ed6bfa43806facb8dd32ec81c380ee169f5293ba8328990f",
+      "khf-2098606147b5fc5a": "da034fa25cf38d45b1995beddf88efe6fa8a12ed5f9c77b5accf43bec2fc5f43",
+      "khf-f08965a88ab0eb43": "a2ae2ad87fa2acbf3164118f032b75a51bcf28068b9a25c573c4be777f38cae9",
+      "khf-4a64e7fb7cd56fb9": "d6dd8ddceab3dc383e1a1bd48d7cc4a32b2ad8df38db7e4cef288572699a43be",
+      "khf-37c2109daef3a806": "6a2d1eb5e68bb25f80e1859f3810bf32ed64bf3cebbfe1302f3c8ebff8f032a5",
+      "khf-643c9193953e26e0": "5ee78371870fe0369b7d918555d44775e66279168942a0ab2f9720ca357907e4",
+      "khf-105902a4d849157f": "94b4dff5b853c3445e91040c8b2d8923845cc0aed30b362dcbe160051b1d85ef",
+      "khf-e280f573290b4dd2": "94a02317049e99a1bb3e30dc085829665b09351a3c81792f9ba9b1d359643aa3",
+      "khf-6011d51da37ea036": "695ef5b200ad708cd59fbdf7beca79fe33cfb2718bb803199253f7baee9f6bea",
+      "khf-779a4074d9e01752": "7c16fb20ae5dbf6aed9e6da73c503d9fdcfdc011654e60e27407a14f0652413b",
+      "khf-fba12ad58e0eb805": "4ee08075d910a591619327eed6f860021270371c6f232af1748faa4625c232b3",
+      "khf-1ea7ec91315d9f1c": "798e5b17d6ba4f13f6f2fc6a64139eac0c929f6dfa0d1f3b5683b46eb91be79c",
+      "khf-2d83f6353a17aa27": "e0f70c84f923fbf292b3cb151b671675c9de2bd86be5f463b8d6c03adc57a352",
+      "khf-6c4664601764c39f": "5814a194e36cc507e47e7b81022246ed17557d1343b87ec1bc9c2e3de96eb224",
+      "khf-da0c6ed88bf1cf96": "74f6ace11c8c220801d2cb637a44197ac041707a359850e757cc0b2ae61948dd",
+      "khf-1e53c13ef4de77be": "1585ae6b1e4ce363a45ef15fa5ecf5283d116965160bdd53822d9051ea686160",
+      "khf-49f681f69dce082a": "83ed1dc05bbf488f702bbf30ce1769cdb33cdf4da29767445c5297b95fbdf20f",
+      "khf-bee39ea2acf91b8a": "aa35ecc8e42957dd59e7b08ad66341e255463c50ddd6f72a3f334a72c353ca4b",
+      "khf-5a68f89b8fc963bc": "08a0e2d8f7084425c5afa3e8c345c5330eecdc19c18080f533f4c100779b00d2",
+      "khf-e5463c06034b8f17": "c2e04409ddf27899788aab53c326d256632a4da0091c84fd8dd1915c5afd23df",
+      "khf-0f75c3edc587b773": "a2458f204ef58947ee3ea6a33a0821d8db37d639a6e586b97035bb0a727a7b69",
+      "khf-05557ec82a91efaa": "59288eda7222d80e12bf1e556dee2aed1e133e75a93dfa86d318b13489933125",
+      "khf-ee0c8cac514dbf2b": "c6868fa3256929756b5a2c991b3cd49c72a7474ed93b1472bffc3e03abb82d5a",
+      "khf-a496a0ed9ea325d4": "eb1b91675677417c8694cb0913e16f2f84c8e06e121547f7f000ed7095eee870",
+      "khf-5fbf06f968745524": "4f82756730fa5788a57e4ea78a709008c6ad821279b9d5f1cc052734f457eabc",
+      "khf-0142d0152e331454": "a9809859b3935637922ed072052c4114a910bba1813b96741496eb70703266da",
+      "khf-910549481a09559c": "b48ab875667ecf8eed94612023cde772e77b79638aeae59dc08164490fa880cb",
+      "khf-f79d40e2c779e75f": "fa8001303418a79e1a64dca7550bf706b7c06383e80e1ef03ed214474824fc25",
+      "khf-e76b82446f10908b": "70b7fa3d41ccf446183697fc85ba62227bb3a3cea2493ad0b0665a57eaaad2e9",
+      "khf-c869b5d52fcc12ae": "a0ee9bdc472f1f7be5c3f3ea3c300e0defff43f9957b54dd797258d1be649e08",
+      "khf-cb363028198684a4": "1e6162f762aeb17881d3de5a3fa818676153b1634732293990f94b6c2bbbb797",
+      "khf-6c6a562ef7ab8b50": "fe25d3771361b81f7bc62626deb7145ac660a0e984d4acf971e0b8feac3e5109",
+      "khf-1213b10a7b17f357": "3a6d74100a0b3640942e3a5df2f56de9c552eb889c432bd8aaf3904eda95885a",
+      "khf-616d830081bac166": "4b6a57a64a1f037e5b33105e56c5ad018855e6fa1d47b1f7547b37e3672e0da8",
+      "khf-4ce15ac449d8b734": "bf1d160491a4ea719194e02b9ed151ad23f52062cb9c7154e67d4d16d8834ab2",
+      "khf-d44528bd11df3e06": "498c1ce89c8b32b594e02dfa71b1b82abb6086c9f2d9f40fe9663d943028420b",
+      "khf-fcfc2d1e1b63c67b": "39dfea17a82b8160ab819fdc12fa5f5930edbbe3da5681ddff32f13a5a3e670a",
+      "khf-ce1f84ade24435a9": "0ce2d3ff9e555e113dfbcc840a3eb56c34545652d492bb055cb2a5e19fe9916b",
+      "khf-1f4a2e1398c5c88e": "42d792761b3ed8b0e499a867dcc1849d9d8c3b4a6a2fe864fbcd82a7c3c1904a",
+      "khf-c6df9e7f79ced1d6": "66d72c862ac53d2b95e317a638e89c9c9753ce8c96478575863ab83869194db7",
+      "khf-d4a3728f0d285352": "5c7210203202deca8dddc77aaa18e82517f2c0b503f3ad7ae02cb28b2531fd15",
+      "khf-594ad4d5033f24ef": "b8a23babb6adf5b5cd83b7344e6e245466938204ff9719c9445ea78323a87486",
+      "khf-6761a38c3d3b65bc": "dae80608d5f41c9d97b2d21aa3cf718f30da5c4759373e27e89320210b525b55",
+      "khf-a3d040496aa226fa": "ad0818a9d63fba1835653346685f7a63b7348c9e6d5a90a8e678fdc2e411cc20",
+      "khf-777d3b83a7b90152": "4a5a5d9c5efef9bda2a999f579b5af672e0349a3aeb800c4facdb01b0127e658",
+      "khf-4c0a7a6879d6cf2b": "2a60235bf59ea77f519ccf25659da605f1165787779deac5c0a37b86c448dd92",
+      "khf-684fe06264d34c1a": "790822072488ac2211a472688a359f3db76518b27e19048977e8ad78f65ba457",
+      "khf-e91a0cacff675105": "a0b5b1b112d6859e859e43c271e10f53e6e6db4e73fb78ceceeecd398339d1c3",
+      "khf-d9d04b29d28e13d6": "c6e13dae68a45aa9fb17c139a3a629cbacb0788ca245593f2f9dbc6f2304a67e",
+      "khf-8a6065584fe80d92": "a27456a7a70877d7ed26787a6d27f0fc717ca788d634040ac86b4fbf9304c941",
+      "khf-ac1b2d246c540137": "ffdcf72eedef533ba29d4a711ab2862b1cf6fdd622f3e3dabae78ecc3807ac1c",
+      "khf-0c40751e0dbb20ce": "e9719527a143c81843a99af480f7c62be12ae980b52954ac4b638d8f2a08592f",
+      "khf-5166134a9c5e8283": "fb55b55f54a5a07d7576e4b1502ba820cbd513b21dd94c96345120dd22fc18fb",
+      "khf-9c00cce24608dd66": "3cf913719d427e857ec26e82147c5d84a8dc7ae9c20ef9ea0babeacd8b178a32",
+      "khf-8bc496fbcb019568": "9153ae5210d1153c1538afa4d730662675205b411f564cda1e3cc3ec6c0ed60b",
+      "khf-087663ab8871b79a": "1b5308c06f570750209edbc8827b401189531d2beb4ad159c8b63697836ce3b2",
+      "khf-d7f786098bc0d658": "624fe445af4ca38efaa33607d3dba7106ea5ca57902e877d3fc606f9534a82fe",
+      "khf-8cce88a62a904e26": "5309df6cb9049b2c2318db8a98f52420585f597f16f285d8c7283283da246f63",
+      "khf-3c391748ae077284": "e52903b2ab4fff4e8d15301f1b4f3e839012d28bd07569ce59e0a0ad1c222e96",
+      "khf-6329da0874737dd7": "2d78784321529e11a1b05a4b63099cb13947877df50ed47eb2c750c9d20a1e33",
+      "khf-c544c7bfcf50ec05": "8342a00f2bce0269729f803bd71dd15b245fe9789db69ef41c591f9f4be9314f",
+      "khf-e38442ceaeb65207": "e36eaf6890c5ee8fefbc2ebdbbd815af7dc8cfbdc9c8bf74af75ecc7c2d1458d",
+      "khf-a3d053df2e9d8130": "de8fed5f8a8ae5aad0bf2dd87289ae47e9512b73ce372d936bf5ca10b5a76c29",
+      "khf-8fbf7763f699cc62": "cce3165899c0573372db8fd8325d842339a168fc34d1cfc3f1ff50a49c476197",
+      "khf-7358ba4291d85057": "2f11b2d4eeb52caea08127eb01dc21208e66250b2b6c60c023aa37be5cb467a7",
+      "khf-520454f05683836a": "e15187ff47191f5e2828404bfb2274a8c92272198a1994546dfef8708962bbb4",
+      "khf-c0b4209a126dbe36": "d6705b7781ef02d97e8ccf29ec12a608d73e77ed89d7fa99e8d10f8660807389",
+      "khf-3f6f2a35d67d50e2": "a7820864b1d7b29fe2cc7b2025e61b32cc1e11fecf848abf569a08c9c113e308",
+      "khf-48b41c674943d086": "b7b8ca9570dbc008e2d55b66f42ac689310aded8df6dfcd9c6635087595febfa",
+      "khf-a9bbfc8264939a4b": "0bfdec6c87442eff1ee3edf1fb0bbfb20b3b5f0478643efa801eb394bdb935d2",
+      "khf-7147703009de0fbf": "bb2f8a37cf4c056d6ba4b8f81b196f85d1af50ba32cba038d83e583fc0009ed6",
+      "khf-c21c46a69bb802d6": "c2ba515e10d4963714a0b5757bc93c586a2927736aca3941ebe3d35391bfc3eb",
+      "khf-f57b225b3852fc52": "5e4bf88e0e1c5fac2093cfeb8c0a4140ec798f73d30bc40dab688494de318cde",
+      "khf-e98ffd5c47cef177": "feaeeca113ceb3c4daf51501337d41f5d2e828afd1a9ffedc740cd42d61e8dcf",
+      "khf-bfcf782c248b34df": "3821a112f88bda691687394e33cb27f2c9b3262d7c47c2204a371fb69cd80766",
+      "khf-0df8d21a133f2e7e": "ee1f629c87d880f6db0281c413c1bbf82ca419e0869dd026b7dd267980bd0512",
+      "khf-eefd497902c9605c": "e3702fdaff669c33be3905790319ad3b9efba2530e808ba780a53d3f91696823",
+      "khf-1251a63af5b4de22": "9ad8cc806f12c21daa9d6ebf8c39dacca60dd41fde90b14a39d91dd185a6d653",
+      "khf-16d531febfc23080": "3296f22db661ac081151b838a2f5b8c789c40d4fe7620f95ab18f4f50e835d7e",
+      "khf-a971817b91cadcc2": "5d1dbdc5b41bf33e907a46cc4d92998f55e30592e4d65f24805289d438c45fd6",
+      "khf-1b49fae5b2e24d89": "29688171894b2fc0188506db05836966ea67903b1a58a86b5e86ffa29385a109",
+      "khf-fece49fd8b3e7b51": "fb68cb36475e03a01769c8eacb71fa47240322a5d437f3462d40c7bf39430c8c",
+      "khf-d7a91f4adf0a2d98": "987c557ff95154a501dfd7a2a4a7654949de941e3f2b3ad505a2f012344b272f",
+      "khf-79b7a22ae2c7fd2b": "0591fbccaa37900012b4362802638cdfed44b39666d20d93819c62e277964f34",
+      "khf-d30245139383d5b5": "004fa8812bf46fb5948e3bbf037396e31b9bcba4f60efe5e424cde397033f72e",
+      "khf-87c21ad04b0250e9": "bb94a2b8d56517e45ed4849dc47645d64d15a1cc6a6af07ebdcd264c1aead04c",
+      "khf-6403a76ad3651475": "5b35f858612b671768977114d509f4fe462876162a809e8c6782316bcee11b88",
+      "khf-db306e347fa1f966": "df05cd31a5e9d15af3d1e971fb18a21f32c84ba011776ca5b20bdcb0d3048880",
+      "khf-7814830a774fe667": "2588daed6eb5a07e3d0172a08dca6b69100eb1b3cf19539f19876cf111b293ae",
+      "khf-00baef8896ef1093": "b47231dadd7880c93ac1f9275931af496bde1db2381a38362a9fa540efb929f2",
+      "khf-8e50abdcc43797b3": "95c045ca8358cbc213ba1d63b0ae10eb4c8efdf533bc6fe369f85abe5c01f319",
+      "khf-7b8b63672fdb885a": "862f985225498dc6118e72d9fce465d41f1e006f9b001721337a2e390d3ac8f5",
+      "khf-9e0d4ad61660fc31": "da1df592a9eb74373cb8e0f8d3591c3a5e89c75ded2211efa9ae7594685340f0",
+      "khf-38c16a21c41112d8": "6f228394dad848ab2737e432850edabdbab65b17458889eb85bfbb5e4354d530",
+      "khf-f4f0724466bf0e27": "5fba91265ae063da914ce9f16cae8f1367f9d8bfcf4a7f6aa5bdb08ce7339171",
+      "khf-6808932d39a0334a": "f7cd3aa7247dadf82fbb95bc06929b6b50a900bd340b2c7f0312ea0d4905b614",
+      "khf-b2f72c90eec468fc": "2e85778fd68032fb11dc1f4c669061055096a70d824d067f47942fffbec9ec0a",
+      "khf-912dd551e444d7d1": "66823ce0903d32f7b7c947423dc50c7bb55b29c553b450a0a65fdc8ef204332d",
+      "khf-18c0fefa6b95ebcd": "269cfda9c741c584b7fd758584c29cd5ab5f7df71325d96a966ae3cad05c6fe5",
+      "khf-135d83fd2bf8cade": "4d156bb5cb355ada67ab21fd897f694e9ef671594c2a138c4f12dc66256c930d",
+      "khf-dfbd1c21b1e014fc": "851c6e0ff8c915d5690f6ca9a2585e94e74fefd44125e36ef3e843123b0af65c",
+      "khf-e66dfa3295f328c9": "d3307cb376af47ef253b38483b8dcd81126cbc955657df99d066dea00fbe57b9",
+      "khf-d60e7a7e9562c028": "44fff7a533a2d7010a2b5d42f6670f2fa233485c1b2df4ebf62d00efd73c238f",
+      "khf-27fea7e58b1d69a5": "dd8ea098ed17c7b3dfcfd423afeade943aaff16d21f79f988b6599a18db51222",
+      "khf-7e2164b7e3287b7f": "b2934b028895c3167732a3efd7a30acc4deceaf563af36f357a4f6db75d16f95",
+      "khf-ccafc7aa5723a758": "a2185af4c6160723323a3196c0c80d239cbc0fe9e3671fd2f337c9f79831111c",
+      "khf-f8bc14630de19fcb": "2c1151b92c7e7f9306a488af6f25a9472298edc234a1333433c60eec0bce0b54",
+      "khf-db4ad774744a681e": "fde5dc00ff729d6cda7d1c98fab9fe1a86b87e90288aee35c709697bbf6a58f4",
+      "khf-61b064367c765b26": "587a8002128463eb9a6c7dbef51aa4cfd93b6f640c64b4254c9ae269fbe2fc9e",
+      "khf-add7066a049fd40a": "bfc99e8162433e9bdff00aa6fd45b4ca812bea930b8c5b4b3151101ede047140",
+      "khf-7ed844713bfda6d6": "9b921172e6bfa6cbc1c3deb3844ce8f3536e6c6293fcd991839f84f2a3df9947",
+      "khf-1497fcbbddb1da10": "724ce19994b7f43dce1468beb27e42af2d2d7fdfe3a01c903a2f61a64693a2f2",
+      "khf-2e9ca93d3ab5f939": "32e8a95f340861da1833fc65a13c01bd5477f16b0740a3ac32f6076b9064de07",
+      "khf-3c9193030e260431": "203aa640c66d6244ff67e1bcaa26c32697988a32dbfb0276688269de7efce38f",
+      "khf-efb2d8bf310faecf": "611e9037f469b45d41e85bd2f6471e20ad75fc88b61a5f07059000b26f7b29a9",
+      "khf-42b1d4b5bf8354af": "f52ed3072fb46e10f6c08d94cc3436842f0c3d28b03473c16364282bd44a1817",
+      "khf-3534100138269e4f": "c70c6077df74d6cbca9686f1a6d3e775938717bb0a42f50edc71022ac365f3ff",
+      "khf-9fa1155c9d5cb98d": "09a214f9c5117c63c1d72f4cf31300f7228df8fb9906ca5844bf16400b255124",
+      "khf-104ea993229cf4c6": "7ae5c9f73d2a006ab61ebb4b1d113f1b4ce63b3f578950c7b5e0eefc0157473e",
+      "khf-8eb7ebb09e4aa723": "ded1a76a671063f318237a7e822300bf0ff97105531c7c2bcb2800dbd26e6f8c",
+      "khf-a389fcf64a2a577d": "146a5a99426aa9a1cc01fd3e03811bf30ffa69f043f49a0283cc264046f0fe07",
+      "khf-e79ad07259acc52a": "0e1792b222dee467aa044e0846f61960346ca3b0bb068c6e81b829f5db93f438",
+      "khf-b8f4360ece04e18b": "01226b81145db64e370a54526d3be719f1bf490a4bf928caba7772cd021c3b72"
+    },
+    "metric_files": {
+      "scripts/evaluation_metrics.py": "7bb38b67244e9df4f3dfc0e46938ee494224ab41a9921ebe19e4fb964792dcb3",
+      "scripts/document_ocr_metrics.py": "45bb0a2c72a49e60585d2721fc82e0cba3ad1c0b792d2283e854922b35c7ee37",
+      "scripts/ocr_word_metrics.py": "27de016505d98cc9285384ce8c849d5d5e4f6e57da4f5d80b13f1fa4999bfa50",
+      "khmereasytools/segmentation.py": "2d2a8ffadfa3b650737483266c9fb554c06529419f85b11dce7df3f87ae83857",
+      "khmereasytools/lexicon.py": "d5de159d298d9d7ec6ed063fa7aad8261085e72568306a93346e33e26d0c7aae",
+      "khmereasytools/data/khmer_words.txt": "f398bea51287dc36d52d2482f0005ecff817733cedb84936fd8e5b72b73d9cf8",
+      "khmereasytools/data/word_frequencies.txt": "b1f50d1f3a2085e9cb35db5fb66aff1453a9ba5b1a24400533f8644d7edbe42c"
+    },
+    "token": "a60817687e37ed1b441b21fb2ff45b009b430277c9fdda66f506d2a0c26bd634"
+  },
+  "execution_profiles": {
+    "cpu": {
+      "backend": "cpu",
+      "reused_adapter": {
+        "files": {
+          "benchmarks/accuracy/DOCUMENT_OCR_PROTOCOL.md": "90aabdbc015f6f9dcdfb9ba23f588cb1ef77db652c096d855f35654703d96793",
+          "scripts/evaluate_document_ocr.py": "e6a80c5b7a6b0a139a7991fbf25aebfba6035b0539a9d25a9b321517650eed05",
+          "scripts/document_ocr_metrics.py": "45bb0a2c72a49e60585d2721fc82e0cba3ad1c0b792d2283e854922b35c7ee37",
+          "scripts/evaluation_metrics.py": "7bb38b67244e9df4f3dfc0e46938ee494224ab41a9921ebe19e4fb964792dcb3",
+          "scripts/fetch_document_ocr.py": "0b4d9fdc74592f2730fc3e331de6e523fb8fe886d1f0cc72ac892a4de7d63c36",
+          ".evaluation/full_document_ocr/prepared.json": "99d97e1f3eed0bad103235269ea7733566f8c64160af67288907d28477c45f9e",
+          "benchmarks/accuracy/document-ocr/source-inventory.json": "1792ea9694a928471766e7b317cf67c2eee3ac4d4344794b04b5cb1fba79281d",
+          "benchmarks/accuracy/document-ocr/model-inventory.json": "f48c6e33bfbf0858a6edddf3b29b3a17d1e78464740dd1341a4ea3f167f5fec0"
+        },
+        "versions": {
+          "khmereasytools": "0.5.0.dev0",
+          "pillow": "10.4.0",
+          "pytesseract": "0.3.13",
+          "surya-ocr": "0.22.1",
+          "mlx-vlm": "0.7.8",
+          "mlx": "0.32.4",
+          "torch": "2.14.1",
+          "transformers": "5.20.1",
+          "pypdfium2": "5.14.0",
+          "rapidfuzz": "3.14.6",
+          "numpy": "2.4.6",
+          "beautifulsoup4": "4.15.0"
+        },
+        "python": "3.11.15",
+        "platform": "macOS-26.5.1-arm64-arm-64bit",
+        "tesseract": "tesseract 5.5.2",
+        "llama_cpp": "version: 9430 (d48a56eff)\nbuilt with AppleClang 21.0.0.21000099 for Darwin arm64\n",
+        "runtime_sha256": "3974d5c4ff1ebd4818717afb57542a67b3ebe45f2efb6525ae645977797c0aaa",
+        "tessdata": {
+          "khm": "47f110575341b322052f3becbefee61a3ecf1ef549352b5d4d33d28afe30d099",
+          "eng": "7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2"
+        },
+        "max_tokens": 4096,
+        "timeout_seconds": 240,
+        "surya_batch_size": 4
+      },
+      "files": {
+        "evaluate_business_ocr.py": "b29b02adde041620392a0a97386ed50572ef271fad355ae8f2c3d515872bad42",
+        "inputs.json": "236734037076d14c3b1c9d09ce91f012b142e688afda5ed97a3f5593660e1d95",
+        "protocol.md": "a24b7147f28a4103cd6190c97602a284d1021a29ad1ff150b52e1f4e4edd485c"
+      },
+      "reference_freeze_token": "a60817687e37ed1b441b21fb2ff45b009b430277c9fdda66f506d2a0c26bd634",
+      "expected_pages": 146,
+      "created_utc": "2026-10-18T10:14:33Z",
+      "token": "1e99f99252a956dd5889090e27af803d0aaee85011789a3b5e5396ab59dabfb7"
+    },
+    "surya": {
+      "backend": "surya",
+      "reused_adapter": {
+        "files": {
+          "benchmarks/accuracy/DOCUMENT_OCR_PROTOCOL.md": "90aabdbc015f6f9dcdfb9ba23f588cb1ef77db652c096d855f35654703d96793",
+          "scripts/evaluate_document_ocr.py": "e6a80c5b7a6b0a139a7991fbf25aebfba6035b0539a9d25a9b321517650eed05",
+          "scripts/document_ocr_metrics.py": "45bb0a2c72a49e60585d2721fc82e0cba3ad1c0b792d2283e854922b35c7ee37",
+          "scripts/evaluation_metrics.py": "7bb38b67244e9df4f3dfc0e46938ee494224ab41a9921ebe19e4fb964792dcb3",
+          "scripts/fetch_document_ocr.py": "0b4d9fdc74592f2730fc3e331de6e523fb8fe886d1f0cc72ac892a4de7d63c36",
+          ".evaluation/full_document_ocr/prepared.json": "99d97e1f3eed0bad103235269ea7733566f8c64160af67288907d28477c45f9e",
+          "benchmarks/accuracy/document-ocr/source-inventory.json": "1792ea9694a928471766e7b317cf67c2eee3ac4d4344794b04b5cb1fba79281d",
+          "benchmarks/accuracy/document-ocr/model-inventory.json": "f48c6e33bfbf0858a6edddf3b29b3a17d1e78464740dd1341a4ea3f167f5fec0"
+        },
+        "versions": {
+          "khmereasytools": "0.5.0.dev0",
+          "pillow": "10.4.0",
+          "pytesseract": "0.3.13",
+          "surya-ocr": "0.22.1",
+          "mlx-vlm": "0.7.8",
+          "mlx": "0.32.4",
+          "torch": "2.14.1",
+          "transformers": "5.20.1",
+          "pypdfium2": "5.14.0",
+          "rapidfuzz": "3.14.6",
+          "numpy": "2.4.6",
+          "beautifulsoup4": "4.15.0"
+        },
+        "python": "3.11.15",
+        "platform": "macOS-26.5.1-arm64-arm-64bit",
+        "tesseract": "tesseract 5.5.2",
+        "llama_cpp": "version: 9430 (d48a56eff)\nbuilt with AppleClang 21.0.0.21000099 for Darwin arm64\n",
+        "runtime_sha256": "3974d5c4ff1ebd4818717afb57542a67b3ebe45f2efb6525ae645977797c0aaa",
+        "tessdata": {
+          "khm": "47f110575341b322052f3becbefee61a3ecf1ef549352b5d4d33d28afe30d099",
+          "eng": "7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2"
+        },
+        "max_tokens": 4096,
+        "timeout_seconds": 240,
+        "surya_batch_size": 4
+      },
+      "files": {
+        "evaluate_business_ocr.py": "b29b02adde041620392a0a97386ed50572ef271fad355ae8f2c3d515872bad42",
+        "inputs.json": "236734037076d14c3b1c9d09ce91f012b142e688afda5ed97a3f5593660e1d95",
+        "protocol.md": "a24b7147f28a4103cd6190c97602a284d1021a29ad1ff150b52e1f4e4edd485c"
+      },
+      "reference_freeze_token": "a60817687e37ed1b441b21fb2ff45b009b430277c9fdda66f506d2a0c26bd634",
+      "expected_pages": 146,
+      "created_utc": "2026-10-18T10:14:36Z",
+      "token": "b427a66102fa3d83fef17d8cc8e6778493d6941ffd9c4d128c9ab1c938e1a14e"
+    },
+    "mlx": {
+      "backend": "mlx",
+      "reused_adapter": {
+        "files": {
+          "evaluate_mlx_cuda.py": "48ebb3da5832af74e4e45c9c73378f216eef721fed46513b079520e044cc2f6b",
+          "inputs.json": "236734037076d14c3b1c9d09ce91f012b142e688afda5ed97a3f5593660e1d95",
+          "model-inventory.json": "c00dbeb4c2acd7c8ac052434ab8f19eef7d41d4a281ec092099f0abc07fd4c6a",
+          "protocol.md": "a24b7147f28a4103cd6190c97602a284d1021a29ad1ff150b52e1f4e4edd485c",
+          "framework-inventory.json": "f59b8a32afda04cbed84627b9a1240a8ab1661cff94da4684f9850dc03d0f0dd"
+        },
+        "source_evaluation_token": "a60817687e37ed1b441b21fb2ff45b009b430277c9fdda66f506d2a0c26bd634",
+        "python": "3.10.12",
+        "platform": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+        "versions": {
+          "mlx": "0.32.4",
+          "mlx-cuda-12": "0.32.4",
+          "mlx-vlm": "0.7.8",
+          "mlx-audio": "0.5.9",
+          "torch": "2.14.1+cpu",
+          "torchvision": "0.29.1+cpu",
+          "transformers": "5.20.1",
+          "Pillow": "10.4.0",
+          "numpy": "2.2.6",
+          "nvidia-cublas-cu12": "12.9.1.4",
+          "nvidia-cufft-cu12": "11.4.1.4",
+          "nvidia-cusolver-cu12": "11.7.3.90",
+          "nvidia-cusparse-cu12": "12.5.8.93",
+          "nvidia-cuda-runtime-cu12": "12.9.79",
+          "nvidia-cuda-nvrtc-cu12": "12.9.86",
+          "nvidia-cudnn-cu12": "9.10.2.21",
+          "nvidia-nccl-cu12": "2.27.3",
+          "nvidia-nvjitlink-cu12": "12.9.86"
+        },
+        "gpu_query": "NVIDIA A100 80GB PCIe, 81920, 580.159.03",
+        "cuda_visible_devices": "2",
+        "mlx_default_device": "Device(gpu, 0)",
+        "mlx_memory_limit_bytes": 17179869184,
+        "mlx_enable_tf32": false,
+        "max_tokens": 4096,
+        "timeout_seconds": 240,
+        "temperature": 0.0,
+        "seed": 20261018,
+        "batch_size": 1,
+        "cpu_threads": 4,
+        "prompts": {
+          "paddleocr-vl-1.6-4bit": "OCR:",
+          "deepseek-ocr-4bit": "Free OCR."
+        }
+      },
+      "files": {
+        "evaluate_business_ocr.py": "b29b02adde041620392a0a97386ed50572ef271fad355ae8f2c3d515872bad42",
+        "inputs.json": "236734037076d14c3b1c9d09ce91f012b142e688afda5ed97a3f5593660e1d95",
+        "protocol.md": "a24b7147f28a4103cd6190c97602a284d1021a29ad1ff150b52e1f4e4edd485c"
+      },
+      "reference_freeze_token": "a60817687e37ed1b441b21fb2ff45b009b430277c9fdda66f506d2a0c26bd634",
+      "expected_pages": 146,
+      "created_utc": "2026-10-18T10:15:20Z",
+      "token": "26750b29f23ee71f04b33a44563c02e41f5b11c2f4aedc14c880f052e2b53bed"
+    },
+    "qwen": {
+      "backend": "qwen",
+      "reused_adapter": {
+        "files": {
+          "evaluate_small_vlm.py": "b6a2144dc6fbff5b357a2d703af826f458b111ba6d4bec957b6912533ac0a015",
+          "inputs.json": "236734037076d14c3b1c9d09ce91f012b142e688afda5ed97a3f5593660e1d95",
+          "model-inventory.json": "0a59904fc8f8c80099fc74a824cdddccef7e9bc847c014cd83f5052ba60276b7",
+          "protocol.md": "a24b7147f28a4103cd6190c97602a284d1021a29ad1ff150b52e1f4e4edd485c"
+        },
+        "python": "3.10.12",
+        "platform": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+        "versions": {
+          "torch": "2.8.0",
+          "torchvision": "0.23.0",
+          "transformers": "5.20.1",
+          "accelerate": "1.10.1",
+          "Pillow": "10.4.0",
+          "huggingface-hub": "2.2.0",
+          "numpy": "2.2.6"
+        },
+        "cuda_runtime": "12.8",
+        "gpu": {
+          "name": "NVIDIA A100 80GB PCIe",
+          "total_memory_bytes": 85093777408,
+          "compute_capability": [
+            8,
+            0
+          ]
+        },
+        "cuda_visible_devices": "2",
+        "prompt": "Transcribe all visible text in this image exactly as written. Preserve Khmer and Latin characters, digits and punctuation. Read blocks from top to bottom and tables row by row, left to right. Do not translate, explain, summarize, correct spelling or invent missing text. Return only the transcription, without Markdown or formatting labels.",
+        "max_new_tokens": 4096,
+        "max_pixels": 1003520,
+        "min_pixels": 112896,
+        "timeout_seconds": 240,
+        "torch_allocator_memory_fraction": 0.2,
+        "dtype": "bfloat16",
+        "attention": "sdpa",
+        "do_sample": false,
+        "seed": 20261018,
+        "batch_size": 1
+      },
+      "files": {
+        "evaluate_business_ocr.py": "b29b02adde041620392a0a97386ed50572ef271fad355ae8f2c3d515872bad42",
+        "inputs.json": "236734037076d14c3b1c9d09ce91f012b142e688afda5ed97a3f5593660e1d95",
+        "protocol.md": "a24b7147f28a4103cd6190c97602a284d1021a29ad1ff150b52e1f4e4edd485c"
+      },
+      "reference_freeze_token": "a60817687e37ed1b441b21fb2ff45b009b430277c9fdda66f506d2a0c26bd634",
+      "expected_pages": 30,
+      "created_utc": "2026-10-18T10:15:44Z",
+      "token": "2b506c0c9df011bc9db4c10e56c72aad510d8b56e0e86893682107b97355b69f"
+    },
+    "qwen3": {
+      "backend": "qwen",
+      "reused_adapter": {
+        "files": {
+          "evaluate_small_vlm.py": "b6a2144dc6fbff5b357a2d703af826f458b111ba6d4bec957b6912533ac0a015",
+          "inputs.json": "236734037076d14c3b1c9d09ce91f012b142e688afda5ed97a3f5593660e1d95",
+          "model-inventory.json": "0a59904fc8f8c80099fc74a824cdddccef7e9bc847c014cd83f5052ba60276b7",
+          "protocol.md": "a24b7147f28a4103cd6190c97602a284d1021a29ad1ff150b52e1f4e4edd485c"
+        },
+        "python": "3.10.12",
+        "platform": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+        "versions": {
+          "torch": "2.8.0",
+          "torchvision": "0.23.0",
+          "transformers": "5.20.1",
+          "accelerate": "1.10.1",
+          "Pillow": "10.4.0",
+          "huggingface-hub": "2.2.0",
+          "numpy": "2.2.6"
+        },
+        "cuda_runtime": "12.8",
+        "gpu": {
+          "name": "NVIDIA A100 80GB PCIe",
+          "total_memory_bytes": 85093777408,
+          "compute_capability": [
+            8,
+            0
+          ]
+        },
+        "cuda_visible_devices": "3",
+        "prompt": "Transcribe all visible text in this image exactly as written. Preserve Khmer and Latin characters, digits and punctuation. Read blocks from top to bottom and tables row by row, left to right. Do not translate, explain, summarize, correct spelling or invent missing text. Return only the transcription, without Markdown or formatting labels.",
+        "max_new_tokens": 4096,
+        "max_pixels": 1003520,
+        "min_pixels": 112896,
+        "timeout_seconds": 240,
+        "torch_allocator_memory_fraction": 0.2,
+        "dtype": "bfloat16",
+        "attention": "sdpa",
+        "do_sample": false,
+        "seed": 20261018,
+        "batch_size": 1
+      },
+      "files": {
+        "evaluate_business_ocr.py": "b29b02adde041620392a0a97386ed50572ef271fad355ae8f2c3d515872bad42",
+        "inputs.json": "236734037076d14c3b1c9d09ce91f012b142e688afda5ed97a3f5593660e1d95",
+        "protocol.md": "a24b7147f28a4103cd6190c97602a284d1021a29ad1ff150b52e1f4e4edd485c"
+      },
+      "reference_freeze_token": "a60817687e37ed1b441b21fb2ff45b009b430277c9fdda66f506d2a0c26bd634",
+      "expected_pages": 30,
+      "created_utc": "2026-10-18T10:31:27Z",
+      "execution_amendment_sha256": "850af33349e5996cb8ee8a3451ff7ca517e4b9b62b0b2c0c38c9025bb371586e",
+      "token": "1c08deb1b5550d74f87c35ccd50520e325a567197600bd4bba76d3d19e3e4dd7"
+    }
+  },
+  "coverage": {
+    "tesseract-fast": {
+      "expected": 146,
+      "completed": 146,
+      "missing": 0
+    },
+    "khmereasytools-fast": {
+      "expected": 146,
+      "completed": 146,
+      "missing": 0
+    },
+    "surya-2": {
+      "expected": 146,
+      "completed": 146,
+      "missing": 0
+    },
+    "paddleocr-vl-1.6-4bit": {
+      "expected": 146,
+      "completed": 146,
+      "missing": 0
+    },
+    "deepseek-ocr-4bit": {
+      "expected": 146,
+      "completed": 146,
+      "missing": 0
+    },
+    "qwen25-vl-3b": {
+      "expected": 30,
+      "completed": 30,
+      "missing": 0
+    },
+    "qwen3-vl-2b": {
+      "expected": 30,
+      "completed": 30,
+      "missing": 0
+    }
+  },
+  "summary": {
+    "acquisition-Digital": {
+      "deepseek-ocr-4bit": {
+        "compact_cer": {
+          "substitutions": 9552,
+          "deletions": 2047,
+          "insertions": 110611,
+          "reference_units": 29598,
+          "prediction_units": 138162,
+          "edits": 122210,
+          "error_rate": 4.1289952023785395
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 1341,
+          "deletions": 625,
+          "insertions": 15045,
+          "reference_units": 4957,
+          "prediction_units": 19377,
+          "edits": 17011,
+          "error_rate": 3.431712729473472
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 2794,
+          "deletions": 765,
+          "insertions": 86338,
+          "reference_units": 8948,
+          "prediction_units": 94521,
+          "edits": 89897,
+          "error_rate": 10.046602592758159
+        },
+        "samples": 101,
+        "errors": 0,
+        "empty": 0,
+        "capped": 27,
+        "capped_unknown": 0,
+        "marker_pages": 47
+      },
+      "khmereasytools-fast": {
+        "compact_cer": {
+          "substitutions": 2886,
+          "deletions": 6039,
+          "insertions": 1508,
+          "reference_units": 29598,
+          "prediction_units": 25067,
+          "edits": 10433,
+          "error_rate": 0.35249003311034527
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 859,
+          "deletions": 880,
+          "insertions": 409,
+          "reference_units": 4957,
+          "prediction_units": 4486,
+          "edits": 2148,
+          "error_rate": 0.4333266088359895
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 1274,
+          "deletions": 1739,
+          "insertions": 903,
+          "reference_units": 8948,
+          "prediction_units": 8112,
+          "edits": 3916,
+          "error_rate": 0.4376396960214573
+        },
+        "samples": 101,
+        "errors": 0,
+        "empty": 3,
+        "capped": 0,
+        "capped_unknown": 101,
+        "marker_pages": 47
+      },
+      "paddleocr-vl-1.6-4bit": {
+        "compact_cer": {
+          "substitutions": 11032,
+          "deletions": 4662,
+          "insertions": 79087,
+          "reference_units": 29598,
+          "prediction_units": 104023,
+          "edits": 94781,
+          "error_rate": 3.2022771808906008
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 1068,
+          "deletions": 1277,
+          "insertions": 5671,
+          "reference_units": 4957,
+          "prediction_units": 9351,
+          "edits": 8016,
+          "error_rate": 1.617107121242687
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 2614,
+          "deletions": 1786,
+          "insertions": 40186,
+          "reference_units": 8948,
+          "prediction_units": 47348,
+          "edits": 44586,
+          "error_rate": 4.982789450156459
+        },
+        "samples": 101,
+        "errors": 0,
+        "empty": 0,
+        "capped": 24,
+        "capped_unknown": 0,
+        "marker_pages": 47
+      },
+      "surya-2": {
+        "compact_cer": {
+          "substitutions": 2171,
+          "deletions": 2794,
+          "insertions": 4868,
+          "reference_units": 29598,
+          "prediction_units": 31672,
+          "edits": 9833,
+          "error_rate": 0.3322183931346713
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 576,
+          "deletions": 638,
+          "insertions": 444,
+          "reference_units": 4957,
+          "prediction_units": 4763,
+          "edits": 1658,
+          "error_rate": 0.33447649788178335
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 784,
+          "deletions": 915,
+          "insertions": 1398,
+          "reference_units": 8948,
+          "prediction_units": 9431,
+          "edits": 3097,
+          "error_rate": 0.34611086276262854
+        },
+        "samples": 101,
+        "errors": 0,
+        "empty": 0,
+        "capped": 7,
+        "capped_unknown": 0,
+        "marker_pages": 47
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 3001,
+          "deletions": 7119,
+          "insertions": 1374,
+          "reference_units": 29598,
+          "prediction_units": 23853,
+          "edits": 11494,
+          "error_rate": 0.3883370498006622
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 928,
+          "deletions": 1006,
+          "insertions": 349,
+          "reference_units": 4957,
+          "prediction_units": 4300,
+          "edits": 2283,
+          "error_rate": 0.4605608230784749
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 1289,
+          "deletions": 2035,
+          "insertions": 769,
+          "reference_units": 8948,
+          "prediction_units": 7682,
+          "edits": 4093,
+          "error_rate": 0.45742065265981224
+        },
+        "samples": 101,
+        "errors": 0,
+        "empty": 6,
+        "capped": 0,
+        "capped_unknown": 101,
+        "marker_pages": 47
+      }
+    },
+    "acquisition-Scanned": {
+      "deepseek-ocr-4bit": {
+        "compact_cer": {
+          "substitutions": 17257,
+          "deletions": 1227,
+          "insertions": 135748,
+          "reference_units": 26269,
+          "prediction_units": 160790,
+          "edits": 154232,
+          "error_rate": 5.871255091552781
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 2496,
+          "deletions": 902,
+          "insertions": 18943,
+          "reference_units": 4209,
+          "prediction_units": 22250,
+          "edits": 22341,
+          "error_rate": 5.307911617961511
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 6073,
+          "deletions": 486,
+          "insertions": 58321,
+          "reference_units": 8415,
+          "prediction_units": 66250,
+          "edits": 64880,
+          "error_rate": 7.710041592394534
+        },
+        "samples": 45,
+        "errors": 0,
+        "empty": 0,
+        "capped": 36,
+        "capped_unknown": 0,
+        "marker_pages": 44
+      },
+      "khmereasytools-fast": {
+        "compact_cer": {
+          "substitutions": 8409,
+          "deletions": 8052,
+          "insertions": 3138,
+          "reference_units": 26269,
+          "prediction_units": 21355,
+          "edits": 19599,
+          "error_rate": 0.7460885454337812
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 1902,
+          "deletions": 1178,
+          "insertions": 459,
+          "reference_units": 4209,
+          "prediction_units": 3490,
+          "edits": 3539,
+          "error_rate": 0.8408172962698979
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 3720,
+          "deletions": 2103,
+          "insertions": 1166,
+          "reference_units": 8415,
+          "prediction_units": 7478,
+          "edits": 6989,
+          "error_rate": 0.8305407011289364
+        },
+        "samples": 45,
+        "errors": 0,
+        "empty": 0,
+        "capped": 0,
+        "capped_unknown": 45,
+        "marker_pages": 44
+      },
+      "paddleocr-vl-1.6-4bit": {
+        "compact_cer": {
+          "substitutions": 17914,
+          "deletions": 1906,
+          "insertions": 112752,
+          "reference_units": 26269,
+          "prediction_units": 137115,
+          "edits": 132572,
+          "error_rate": 5.046709048688569
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 2620,
+          "deletions": 895,
+          "insertions": 20017,
+          "reference_units": 4209,
+          "prediction_units": 23331,
+          "edits": 23532,
+          "error_rate": 5.590876692801141
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 5395,
+          "deletions": 1314,
+          "insertions": 61847,
+          "reference_units": 8415,
+          "prediction_units": 68948,
+          "edits": 68556,
+          "error_rate": 8.146880570409982
+        },
+        "samples": 45,
+        "errors": 0,
+        "empty": 1,
+        "capped": 32,
+        "capped_unknown": 0,
+        "marker_pages": 44
+      },
+      "surya-2": {
+        "compact_cer": {
+          "substitutions": 9149,
+          "deletions": 2962,
+          "insertions": 16967,
+          "reference_units": 26269,
+          "prediction_units": 40274,
+          "edits": 29078,
+          "error_rate": 1.106932125318817
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 1690,
+          "deletions": 557,
+          "insertions": 2337,
+          "reference_units": 4209,
+          "prediction_units": 5989,
+          "edits": 4584,
+          "error_rate": 1.0890947968638631
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 2950,
+          "deletions": 1168,
+          "insertions": 4447,
+          "reference_units": 8415,
+          "prediction_units": 11694,
+          "edits": 8565,
+          "error_rate": 1.017825311942959
+        },
+        "samples": 45,
+        "errors": 0,
+        "empty": 1,
+        "capped": 16,
+        "capped_unknown": 0,
+        "marker_pages": 44
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 7948,
+          "deletions": 9578,
+          "insertions": 1869,
+          "reference_units": 26269,
+          "prediction_units": 18560,
+          "edits": 19395,
+          "error_rate": 0.738322737827858
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 1738,
+          "deletions": 1527,
+          "insertions": 306,
+          "reference_units": 4209,
+          "prediction_units": 2988,
+          "edits": 3571,
+          "error_rate": 0.8484200522689475
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 3241,
+          "deletions": 2836,
+          "insertions": 730,
+          "reference_units": 8415,
+          "prediction_units": 6309,
+          "edits": 6807,
+          "error_rate": 0.8089126559714795
+        },
+        "samples": 45,
+        "errors": 0,
+        "empty": 1,
+        "capped": 0,
+        "capped_unknown": 45,
+        "marker_pages": 44
+      }
+    },
+    "all-146": {
+      "deepseek-ocr-4bit": {
+        "compact_cer": {
+          "substitutions": 26809,
+          "deletions": 3274,
+          "insertions": 246359,
+          "reference_units": 55867,
+          "prediction_units": 298952,
+          "edits": 276442,
+          "error_rate": 4.948216299425421
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 3837,
+          "deletions": 1527,
+          "insertions": 33988,
+          "reference_units": 9166,
+          "prediction_units": 41627,
+          "edits": 39352,
+          "error_rate": 4.293257691468471
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 8867,
+          "deletions": 1251,
+          "insertions": 144659,
+          "reference_units": 17363,
+          "prediction_units": 160771,
+          "edits": 154777,
+          "error_rate": 8.914185336635374
+        },
+        "samples": 146,
+        "errors": 0,
+        "empty": 0,
+        "capped": 63,
+        "capped_unknown": 0,
+        "marker_pages": 91
+      },
+      "khmereasytools-fast": {
+        "compact_cer": {
+          "substitutions": 11295,
+          "deletions": 14091,
+          "insertions": 4646,
+          "reference_units": 55867,
+          "prediction_units": 46422,
+          "edits": 30032,
+          "error_rate": 0.5375624250451966
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 2761,
+          "deletions": 2058,
+          "insertions": 868,
+          "reference_units": 9166,
+          "prediction_units": 7976,
+          "edits": 5687,
+          "error_rate": 0.6204451232816932
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 4994,
+          "deletions": 3842,
+          "insertions": 2069,
+          "reference_units": 17363,
+          "prediction_units": 15590,
+          "edits": 10905,
+          "error_rate": 0.6280596671082186
+        },
+        "samples": 146,
+        "errors": 0,
+        "empty": 3,
+        "capped": 0,
+        "capped_unknown": 146,
+        "marker_pages": 91
+      },
+      "paddleocr-vl-1.6-4bit": {
+        "compact_cer": {
+          "substitutions": 28946,
+          "deletions": 6568,
+          "insertions": 191839,
+          "reference_units": 55867,
+          "prediction_units": 241138,
+          "edits": 227353,
+          "error_rate": 4.069540157874953
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 3688,
+          "deletions": 2172,
+          "insertions": 25688,
+          "reference_units": 9166,
+          "prediction_units": 32682,
+          "edits": 31548,
+          "error_rate": 3.4418503163866463
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 8009,
+          "deletions": 3100,
+          "insertions": 102033,
+          "reference_units": 17363,
+          "prediction_units": 116296,
+          "edits": 113142,
+          "error_rate": 6.516270229798998
+        },
+        "samples": 146,
+        "errors": 0,
+        "empty": 1,
+        "capped": 56,
+        "capped_unknown": 0,
+        "marker_pages": 91
+      },
+      "surya-2": {
+        "compact_cer": {
+          "substitutions": 11320,
+          "deletions": 5756,
+          "insertions": 21835,
+          "reference_units": 55867,
+          "prediction_units": 71946,
+          "edits": 38911,
+          "error_rate": 0.6964934576762668
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 2266,
+          "deletions": 1195,
+          "insertions": 2781,
+          "reference_units": 9166,
+          "prediction_units": 10752,
+          "edits": 6242,
+          "error_rate": 0.6809949814531966
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 3734,
+          "deletions": 2083,
+          "insertions": 5845,
+          "reference_units": 17363,
+          "prediction_units": 21125,
+          "edits": 11662,
+          "error_rate": 0.6716581235961527
+        },
+        "samples": 146,
+        "errors": 0,
+        "empty": 1,
+        "capped": 23,
+        "capped_unknown": 0,
+        "marker_pages": 91
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 10949,
+          "deletions": 16697,
+          "insertions": 3243,
+          "reference_units": 55867,
+          "prediction_units": 42413,
+          "edits": 30889,
+          "error_rate": 0.5529024289831206
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 2666,
+          "deletions": 2533,
+          "insertions": 655,
+          "reference_units": 9166,
+          "prediction_units": 7288,
+          "edits": 5854,
+          "error_rate": 0.6386646301549204
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 4530,
+          "deletions": 4871,
+          "insertions": 1499,
+          "reference_units": 17363,
+          "prediction_units": 13991,
+          "edits": 10900,
+          "error_rate": 0.6277716984392098
+        },
+        "samples": 146,
+        "errors": 0,
+        "empty": 7,
+        "capped": 0,
+        "capped_unknown": 146,
+        "marker_pages": 91
+      }
+    },
+    "category-invoices": {
+      "deepseek-ocr-4bit": {
+        "compact_cer": {
+          "substitutions": 13600,
+          "deletions": 784,
+          "insertions": 99556,
+          "reference_units": 21041,
+          "prediction_units": 119813,
+          "edits": 113940,
+          "error_rate": 5.4151418658809
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 2076,
+          "deletions": 694,
+          "insertions": 14439,
+          "reference_units": 3353,
+          "prediction_units": 17098,
+          "edits": 17209,
+          "error_rate": 5.132418729495973
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 4643,
+          "deletions": 394,
+          "insertions": 41968,
+          "reference_units": 6510,
+          "prediction_units": 48084,
+          "edits": 47005,
+          "error_rate": 7.220430107526882
+        },
+        "samples": 34,
+        "errors": 0,
+        "empty": 0,
+        "capped": 22,
+        "capped_unknown": 0,
+        "marker_pages": 33
+      },
+      "khmereasytools-fast": {
+        "compact_cer": {
+          "substitutions": 5921,
+          "deletions": 6802,
+          "insertions": 2518,
+          "reference_units": 21041,
+          "prediction_units": 16757,
+          "edits": 15241,
+          "error_rate": 0.7243477021054132
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 1410,
+          "deletions": 1071,
+          "insertions": 269,
+          "reference_units": 3353,
+          "prediction_units": 2551,
+          "edits": 2750,
+          "error_rate": 0.8201610498061438
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 2697,
+          "deletions": 1905,
+          "insertions": 839,
+          "reference_units": 6510,
+          "prediction_units": 5444,
+          "edits": 5441,
+          "error_rate": 0.8357910906298003
+        },
+        "samples": 34,
+        "errors": 0,
+        "empty": 0,
+        "capped": 0,
+        "capped_unknown": 34,
+        "marker_pages": 33
+      },
+      "paddleocr-vl-1.6-4bit": {
+        "compact_cer": {
+          "substitutions": 15836,
+          "deletions": 1300,
+          "insertions": 87416,
+          "reference_units": 21041,
+          "prediction_units": 107157,
+          "edits": 104552,
+          "error_rate": 4.9689653533577305
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 2119,
+          "deletions": 926,
+          "insertions": 14245,
+          "reference_units": 3353,
+          "prediction_units": 16672,
+          "edits": 17290,
+          "error_rate": 5.156576200417536
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 4164,
+          "deletions": 1520,
+          "insertions": 37745,
+          "reference_units": 6510,
+          "prediction_units": 42735,
+          "edits": 43429,
+          "error_rate": 6.671121351766513
+        },
+        "samples": 34,
+        "errors": 0,
+        "empty": 0,
+        "capped": 27,
+        "capped_unknown": 0,
+        "marker_pages": 33
+      },
+      "surya-2": {
+        "compact_cer": {
+          "substitutions": 7621,
+          "deletions": 2004,
+          "insertions": 15673,
+          "reference_units": 21041,
+          "prediction_units": 34710,
+          "edits": 25298,
+          "error_rate": 1.202319281402975
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 1485,
+          "deletions": 488,
+          "insertions": 2261,
+          "reference_units": 3353,
+          "prediction_units": 5126,
+          "edits": 4234,
+          "error_rate": 1.2627497763197137
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 2520,
+          "deletions": 816,
+          "insertions": 4143,
+          "reference_units": 6510,
+          "prediction_units": 9837,
+          "edits": 7479,
+          "error_rate": 1.148847926267281
+        },
+        "samples": 34,
+        "errors": 0,
+        "empty": 1,
+        "capped": 8,
+        "capped_unknown": 0,
+        "marker_pages": 33
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 5644,
+          "deletions": 7932,
+          "insertions": 1342,
+          "reference_units": 21041,
+          "prediction_units": 14451,
+          "edits": 14918,
+          "error_rate": 0.7089967206881802
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 1291,
+          "deletions": 1317,
+          "insertions": 154,
+          "reference_units": 3353,
+          "prediction_units": 2190,
+          "edits": 2762,
+          "error_rate": 0.823739934387116
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 2339,
+          "deletions": 2402,
+          "insertions": 488,
+          "reference_units": 6510,
+          "prediction_units": 4596,
+          "edits": 5229,
+          "error_rate": 0.8032258064516129
+        },
+        "samples": 34,
+        "errors": 0,
+        "empty": 1,
+        "capped": 0,
+        "capped_unknown": 34,
+        "marker_pages": 33
+      }
+    },
+    "category-quotes": {
+      "deepseek-ocr-4bit": {
+        "compact_cer": {
+          "substitutions": 4409,
+          "deletions": 419,
+          "insertions": 24279,
+          "reference_units": 7008,
+          "prediction_units": 30868,
+          "edits": 29107,
+          "error_rate": 4.153396118721461
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 525,
+          "deletions": 213,
+          "insertions": 2634,
+          "reference_units": 919,
+          "prediction_units": 3340,
+          "edits": 3372,
+          "error_rate": 3.6692056583242656
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 1378,
+          "deletions": 206,
+          "insertions": 13051,
+          "reference_units": 2044,
+          "prediction_units": 14889,
+          "edits": 14635,
+          "error_rate": 7.159980430528376
+        },
+        "samples": 16,
+        "errors": 0,
+        "empty": 0,
+        "capped": 11,
+        "capped_unknown": 0,
+        "marker_pages": 15
+      },
+      "khmereasytools-fast": {
+        "compact_cer": {
+          "substitutions": 2102,
+          "deletions": 1375,
+          "insertions": 869,
+          "reference_units": 7008,
+          "prediction_units": 6502,
+          "edits": 4346,
+          "error_rate": 0.620148401826484
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 453,
+          "deletions": 107,
+          "insertions": 205,
+          "reference_units": 919,
+          "prediction_units": 1017,
+          "edits": 765,
+          "error_rate": 0.8324265505984766
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 888,
+          "deletions": 234,
+          "insertions": 443,
+          "reference_units": 2044,
+          "prediction_units": 2253,
+          "edits": 1565,
+          "error_rate": 0.7656555772994129
+        },
+        "samples": 16,
+        "errors": 0,
+        "empty": 0,
+        "capped": 0,
+        "capped_unknown": 16,
+        "marker_pages": 15
+      },
+      "paddleocr-vl-1.6-4bit": {
+        "compact_cer": {
+          "substitutions": 4976,
+          "deletions": 783,
+          "insertions": 35649,
+          "reference_units": 7008,
+          "prediction_units": 41874,
+          "edits": 41408,
+          "error_rate": 5.908675799086758
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 516,
+          "deletions": 231,
+          "insertions": 3897,
+          "reference_units": 919,
+          "prediction_units": 4585,
+          "edits": 4644,
+          "error_rate": 5.053318824809575
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 1501,
+          "deletions": 170,
+          "insertions": 26960,
+          "reference_units": 2044,
+          "prediction_units": 28834,
+          "edits": 28631,
+          "error_rate": 14.0073385518591
+        },
+        "samples": 16,
+        "errors": 0,
+        "empty": 1,
+        "capped": 11,
+        "capped_unknown": 0,
+        "marker_pages": 15
+      },
+      "surya-2": {
+        "compact_cer": {
+          "substitutions": 1212,
+          "deletions": 1189,
+          "insertions": 831,
+          "reference_units": 7008,
+          "prediction_units": 6650,
+          "edits": 3232,
+          "error_rate": 0.4611872146118721
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 238,
+          "deletions": 197,
+          "insertions": 50,
+          "reference_units": 919,
+          "prediction_units": 772,
+          "edits": 485,
+          "error_rate": 0.5277475516866159
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 353,
+          "deletions": 434,
+          "insertions": 234,
+          "reference_units": 2044,
+          "prediction_units": 1844,
+          "edits": 1021,
+          "error_rate": 0.49951076320939336
+        },
+        "samples": 16,
+        "errors": 0,
+        "empty": 0,
+        "capped": 8,
+        "capped_unknown": 0,
+        "marker_pages": 15
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 2124,
+          "deletions": 1398,
+          "insertions": 817,
+          "reference_units": 7008,
+          "prediction_units": 6427,
+          "edits": 4339,
+          "error_rate": 0.6191495433789954
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 460,
+          "deletions": 118,
+          "insertions": 174,
+          "reference_units": 919,
+          "prediction_units": 975,
+          "edits": 752,
+          "error_rate": 0.8182807399347116
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 863,
+          "deletions": 273,
+          "insertions": 382,
+          "reference_units": 2044,
+          "prediction_units": 2153,
+          "edits": 1518,
+          "error_rate": 0.7426614481409002
+        },
+        "samples": 16,
+        "errors": 0,
+        "empty": 0,
+        "capped": 0,
+        "capped_unknown": 16,
+        "marker_pages": 15
+      }
+    },
+    "category-receipts": {
+      "deepseek-ocr-4bit": {
+        "compact_cer": {
+          "substitutions": 8800,
+          "deletions": 2071,
+          "insertions": 122524,
+          "reference_units": 27818,
+          "prediction_units": 148271,
+          "edits": 133395,
+          "error_rate": 4.795276439715292
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 1236,
+          "deletions": 620,
+          "insertions": 16915,
+          "reference_units": 4894,
+          "prediction_units": 21189,
+          "edits": 18771,
+          "error_rate": 3.8355128729055985
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 2846,
+          "deletions": 651,
+          "insertions": 89640,
+          "reference_units": 8809,
+          "prediction_units": 97798,
+          "edits": 93137,
+          "error_rate": 10.572936769213305
+        },
+        "samples": 96,
+        "errors": 0,
+        "empty": 0,
+        "capped": 30,
+        "capped_unknown": 0,
+        "marker_pages": 43
+      },
+      "khmereasytools-fast": {
+        "compact_cer": {
+          "substitutions": 3272,
+          "deletions": 5914,
+          "insertions": 1259,
+          "reference_units": 27818,
+          "prediction_units": 23163,
+          "edits": 10445,
+          "error_rate": 0.3754763103026817
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 898,
+          "deletions": 880,
+          "insertions": 394,
+          "reference_units": 4894,
+          "prediction_units": 4408,
+          "edits": 2172,
+          "error_rate": 0.44380874540253373
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 1409,
+          "deletions": 1703,
+          "insertions": 787,
+          "reference_units": 8809,
+          "prediction_units": 7893,
+          "edits": 3899,
+          "error_rate": 0.44261550686797596
+        },
+        "samples": 96,
+        "errors": 0,
+        "empty": 3,
+        "capped": 0,
+        "capped_unknown": 96,
+        "marker_pages": 43
+      },
+      "paddleocr-vl-1.6-4bit": {
+        "compact_cer": {
+          "substitutions": 8134,
+          "deletions": 4485,
+          "insertions": 68774,
+          "reference_units": 27818,
+          "prediction_units": 92107,
+          "edits": 81393,
+          "error_rate": 2.9259112804658853
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 1053,
+          "deletions": 1015,
+          "insertions": 7546,
+          "reference_units": 4894,
+          "prediction_units": 11425,
+          "edits": 9614,
+          "error_rate": 1.9644462607274213
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 2344,
+          "deletions": 1410,
+          "insertions": 37328,
+          "reference_units": 8809,
+          "prediction_units": 44727,
+          "edits": 41082,
+          "error_rate": 4.663639459643546
+        },
+        "samples": 96,
+        "errors": 0,
+        "empty": 0,
+        "capped": 18,
+        "capped_unknown": 0,
+        "marker_pages": 43
+      },
+      "surya-2": {
+        "compact_cer": {
+          "substitutions": 2487,
+          "deletions": 2563,
+          "insertions": 5331,
+          "reference_units": 27818,
+          "prediction_units": 30586,
+          "edits": 10381,
+          "error_rate": 0.3731756416708606
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 543,
+          "deletions": 510,
+          "insertions": 470,
+          "reference_units": 4894,
+          "prediction_units": 4854,
+          "edits": 1523,
+          "error_rate": 0.3111973845525133
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 861,
+          "deletions": 833,
+          "insertions": 1468,
+          "reference_units": 8809,
+          "prediction_units": 9444,
+          "edits": 3162,
+          "error_rate": 0.3589510727664888
+        },
+        "samples": 96,
+        "errors": 0,
+        "empty": 0,
+        "capped": 7,
+        "capped_unknown": 0,
+        "marker_pages": 43
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 3181,
+          "deletions": 7367,
+          "insertions": 1084,
+          "reference_units": 27818,
+          "prediction_units": 21535,
+          "edits": 11632,
+          "error_rate": 0.4181465238334891
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 915,
+          "deletions": 1098,
+          "insertions": 327,
+          "reference_units": 4894,
+          "prediction_units": 4123,
+          "edits": 2340,
+          "error_rate": 0.4781364936657131
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 1328,
+          "deletions": 2196,
+          "insertions": 629,
+          "reference_units": 8809,
+          "prediction_units": 7242,
+          "edits": 4153,
+          "error_rate": 0.47144965376319675
+        },
+        "samples": 96,
+        "errors": 0,
+        "empty": 6,
+        "capped": 0,
+        "capped_unknown": 96,
+        "marker_pages": 43
+      }
+    },
+    "marker-free-sensitivity": {
+      "deepseek-ocr-4bit": {
+        "compact_cer": {
+          "substitutions": 2631,
+          "deletions": 766,
+          "insertions": 40153,
+          "reference_units": 13805,
+          "prediction_units": 53192,
+          "edits": 43550,
+          "error_rate": 3.1546541108294095
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 313,
+          "deletions": 338,
+          "insertions": 4680,
+          "reference_units": 2610,
+          "prediction_units": 6952,
+          "edits": 5331,
+          "error_rate": 2.042528735632184
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 739,
+          "deletions": 327,
+          "insertions": 27686,
+          "reference_units": 4184,
+          "prediction_units": 31543,
+          "edits": 28752,
+          "error_rate": 6.871892925430211
+        },
+        "samples": 55,
+        "errors": 0,
+        "empty": 0,
+        "capped": 10,
+        "capped_unknown": 0,
+        "marker_pages": 0
+      },
+      "khmereasytools-fast": {
+        "compact_cer": {
+          "substitutions": 731,
+          "deletions": 1806,
+          "insertions": 546,
+          "reference_units": 13805,
+          "prediction_units": 12545,
+          "edits": 3083,
+          "error_rate": 0.22332488228902572
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 301,
+          "deletions": 316,
+          "insertions": 225,
+          "reference_units": 2610,
+          "prediction_units": 2519,
+          "edits": 842,
+          "error_rate": 0.3226053639846743
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 354,
+          "deletions": 515,
+          "insertions": 383,
+          "reference_units": 4184,
+          "prediction_units": 4052,
+          "edits": 1252,
+          "error_rate": 0.29923518164435947
+        },
+        "samples": 55,
+        "errors": 0,
+        "empty": 1,
+        "capped": 0,
+        "capped_unknown": 55,
+        "marker_pages": 0
+      },
+      "paddleocr-vl-1.6-4bit": {
+        "compact_cer": {
+          "substitutions": 1942,
+          "deletions": 2234,
+          "insertions": 11376,
+          "reference_units": 13805,
+          "prediction_units": 22947,
+          "edits": 15552,
+          "error_rate": 1.12654835204636
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 298,
+          "deletions": 427,
+          "insertions": 451,
+          "reference_units": 2610,
+          "prediction_units": 2634,
+          "edits": 1176,
+          "error_rate": 0.45057471264367815
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 578,
+          "deletions": 530,
+          "insertions": 8396,
+          "reference_units": 4184,
+          "prediction_units": 12050,
+          "edits": 9504,
+          "error_rate": 2.27151051625239
+        },
+        "samples": 55,
+        "errors": 0,
+        "empty": 0,
+        "capped": 3,
+        "capped_unknown": 0,
+        "marker_pages": 0
+      },
+      "surya-2": {
+        "compact_cer": {
+          "substitutions": 143,
+          "deletions": 1511,
+          "insertions": 220,
+          "reference_units": 13805,
+          "prediction_units": 12514,
+          "edits": 1874,
+          "error_rate": 0.1357479174212242
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 81,
+          "deletions": 336,
+          "insertions": 43,
+          "reference_units": 2610,
+          "prediction_units": 2317,
+          "edits": 460,
+          "error_rate": 0.17624521072796934
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 90,
+          "deletions": 448,
+          "insertions": 124,
+          "reference_units": 4184,
+          "prediction_units": 3860,
+          "edits": 662,
+          "error_rate": 0.15822179732313577
+        },
+        "samples": 55,
+        "errors": 0,
+        "empty": 0,
+        "capped": 3,
+        "capped_unknown": 0,
+        "marker_pages": 0
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 745,
+          "deletions": 2319,
+          "insertions": 522,
+          "reference_units": 13805,
+          "prediction_units": 12008,
+          "edits": 3586,
+          "error_rate": 0.2597609561752988
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 336,
+          "deletions": 367,
+          "insertions": 200,
+          "reference_units": 2610,
+          "prediction_units": 2443,
+          "edits": 903,
+          "error_rate": 0.34597701149425286
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 374,
+          "deletions": 627,
+          "insertions": 329,
+          "reference_units": 4184,
+          "prediction_units": 3886,
+          "edits": 1330,
+          "error_rate": 0.3178776290630975
+        },
+        "samples": 55,
+        "errors": 0,
+        "empty": 2,
+        "capped": 0,
+        "capped_unknown": 55,
+        "marker_pages": 0
+      }
+    },
+    "matched-30": {
+      "deepseek-ocr-4bit": {
+        "compact_cer": {
+          "substitutions": 5631,
+          "deletions": 223,
+          "insertions": 65163,
+          "reference_units": 10538,
+          "prediction_units": 75478,
+          "edits": 71017,
+          "error_rate": 6.739134560637692
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 770,
+          "deletions": 341,
+          "insertions": 9326,
+          "reference_units": 1798,
+          "prediction_units": 10783,
+          "edits": 10437,
+          "error_rate": 5.804783092324805
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 1936,
+          "deletions": 95,
+          "insertions": 41010,
+          "reference_units": 3319,
+          "prediction_units": 44234,
+          "edits": 43041,
+          "error_rate": 12.968062669478758
+        },
+        "samples": 30,
+        "errors": 0,
+        "empty": 0,
+        "capped": 16,
+        "capped_unknown": 0,
+        "marker_pages": 18
+      },
+      "khmereasytools-fast": {
+        "compact_cer": {
+          "substitutions": 2199,
+          "deletions": 2442,
+          "insertions": 1083,
+          "reference_units": 10538,
+          "prediction_units": 9179,
+          "edits": 5724,
+          "error_rate": 0.5431770734484722
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 547,
+          "deletions": 377,
+          "insertions": 124,
+          "reference_units": 1798,
+          "prediction_units": 1545,
+          "edits": 1048,
+          "error_rate": 0.5828698553948832
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 957,
+          "deletions": 679,
+          "insertions": 409,
+          "reference_units": 3319,
+          "prediction_units": 3049,
+          "edits": 2045,
+          "error_rate": 0.6161494426031937
+        },
+        "samples": 30,
+        "errors": 0,
+        "empty": 1,
+        "capped": 0,
+        "capped_unknown": 30,
+        "marker_pages": 18
+      },
+      "paddleocr-vl-1.6-4bit": {
+        "compact_cer": {
+          "substitutions": 5477,
+          "deletions": 1263,
+          "insertions": 41215,
+          "reference_units": 10538,
+          "prediction_units": 50490,
+          "edits": 47955,
+          "error_rate": 4.55067375213513
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 834,
+          "deletions": 342,
+          "insertions": 8301,
+          "reference_units": 1798,
+          "prediction_units": 9757,
+          "edits": 9477,
+          "error_rate": 5.270856507230256
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 1602,
+          "deletions": 503,
+          "insertions": 17107,
+          "reference_units": 3319,
+          "prediction_units": 19923,
+          "edits": 19212,
+          "error_rate": 5.788490509189515
+        },
+        "samples": 30,
+        "errors": 0,
+        "empty": 1,
+        "capped": 13,
+        "capped_unknown": 0,
+        "marker_pages": 18
+      },
+      "qwen25-vl-3b": {
+        "compact_cer": {
+          "substitutions": 4835,
+          "deletions": 1229,
+          "insertions": 39517,
+          "reference_units": 10538,
+          "prediction_units": 48826,
+          "edits": 45581,
+          "error_rate": 4.325393812867717
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 764,
+          "deletions": 274,
+          "insertions": 6747,
+          "reference_units": 1798,
+          "prediction_units": 8271,
+          "edits": 7785,
+          "error_rate": 4.329810901001112
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 1589,
+          "deletions": 356,
+          "insertions": 16158,
+          "reference_units": 3319,
+          "prediction_units": 19121,
+          "edits": 18103,
+          "error_rate": 5.4543537210003015
+        },
+        "samples": 30,
+        "errors": 0,
+        "empty": 0,
+        "capped": 11,
+        "capped_unknown": 0,
+        "marker_pages": 18
+      },
+      "qwen3-vl-2b": {
+        "compact_cer": {
+          "substitutions": 6308,
+          "deletions": 138,
+          "insertions": 56527,
+          "reference_units": 10538,
+          "prediction_units": 66927,
+          "edits": 62973,
+          "error_rate": 5.975801859935472
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 993,
+          "deletions": 128,
+          "insertions": 10960,
+          "reference_units": 1798,
+          "prediction_units": 12630,
+          "edits": 12081,
+          "error_rate": 6.7191323692992215
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 1946,
+          "deletions": 126,
+          "insertions": 27081,
+          "reference_units": 3319,
+          "prediction_units": 30274,
+          "edits": 29153,
+          "error_rate": 8.783669780054232
+        },
+        "samples": 30,
+        "errors": 0,
+        "empty": 0,
+        "capped": 19,
+        "capped_unknown": 0,
+        "marker_pages": 18
+      },
+      "surya-2": {
+        "compact_cer": {
+          "substitutions": 2741,
+          "deletions": 1156,
+          "insertions": 5149,
+          "reference_units": 10538,
+          "prediction_units": 14531,
+          "edits": 9046,
+          "error_rate": 0.8584171569557791
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 512,
+          "deletions": 253,
+          "insertions": 398,
+          "reference_units": 1798,
+          "prediction_units": 1943,
+          "edits": 1163,
+          "error_rate": 0.6468298109010011
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 862,
+          "deletions": 365,
+          "insertions": 1224,
+          "reference_units": 3319,
+          "prediction_units": 4178,
+          "edits": 2451,
+          "error_rate": 0.7384754444109671
+        },
+        "samples": 30,
+        "errors": 0,
+        "empty": 0,
+        "capped": 6,
+        "capped_unknown": 0,
+        "marker_pages": 18
+      },
+      "tesseract-fast": {
+        "compact_cer": {
+          "substitutions": 2421,
+          "deletions": 2819,
+          "insertions": 833,
+          "reference_units": 10538,
+          "prediction_units": 8552,
+          "edits": 6073,
+          "error_rate": 0.5762953122034542
+        },
+        "whitespace_unit_wer": {
+          "substitutions": 556,
+          "deletions": 441,
+          "insertions": 94,
+          "reference_units": 1798,
+          "prediction_units": 1451,
+          "edits": 1091,
+          "error_rate": 0.6067853170189099
+        },
+        "segmentation_assisted_wer": {
+          "substitutions": 955,
+          "deletions": 774,
+          "insertions": 302,
+          "reference_units": 3319,
+          "prediction_units": 2847,
+          "edits": 2031,
+          "error_rate": 0.6119313046098223
+        },
+        "samples": 30,
+        "errors": 0,
+        "empty": 3,
+        "capped": 0,
+        "capped_unknown": 30,
+        "marker_pages": 18
+      }
+    }
+  },
+  "reference_summary": {
+    "pages": 146,
+    "human_reviewed": 0,
+    "uncertain_pages": 99,
+    "illegible_pages": 91,
+    "literal_illegible_markers": 491,
+    "categories": {
+      "invoices": 34,
+      "quotes": 16,
+      "receipts": 96
+    }
+  },
+  "independent_audit": {
+    "passed": true,
+    "predictions": 790,
+    "independently_checked_projections": 2370,
+    "bit_vector_dp_selfchecks": 1039
+  },
+  "interpretation": "Agreement with author-designated Codex-generated unreviewed operational ground truth; not verified human OCR accuracy.",
+  "notes": [
+    "KET-OCR is the existing Tesseract-based KhmerEasyTools pipeline, system ID khmereasytools-fast.",
+    "All pages retain literal [ILLEGIBLE] markers; marker-free sensitivity is separate and predefined.",
+    "Qwen covers the identical frozen matched30 subset; compare with matched30 primary results only.",
+    "Distinct image hashes do not certify independent documents, complete references or original158-unit dataset mapping.",
+    "Whitespace-unit and segmentation-assisted WER are not human-gold Khmer word WER.",
+    "No clipping, repeated-output repair, selective exclusion or failed-call retry.",
+    "Shared GPUs and different hosts preclude a controlled speed ranking; Qwen3 moved to GPU3 before its first prediction, with a separately hashed execution amendment."
+  ],
+  "private_count_records_sha256": "c71d6a59f791812f034d8b01eed6a8b5b8d7a8d3fed2a4b7bde9405c2bc8301f"
+}

@@ -1,0 +1,357 @@
+{
+  "status": "Exploratory coarse compatibility diagnostic, not fine POS/particle accuracy.",
+  "metadata": {
+    "base_commit": "0779eca9d2c5003404f24992349566e764bd442d",
+    "runtime_python_sources_sha256": "5b8cc1e6a111947d3210b3e2d989da7b1b808f50701c9e28048189d13dc041a2",
+    "python": "3.9.6",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "protocol_sha256": "b05fa1ce0cd772e89eb2c58f23cd1cc1b5fefc40c07206c589596459bd70762b",
+    "script_sha256": "29160a1131f8f5d93cc871408475d1dfa9432fa60d8246a11ed16c43990fbc48",
+    "alt_files_sha256": {
+      "km-nova-181101.zip": "0c6457d4a3327f3dc0b381704cbad71af120e963bfa1cdb06765fa0ed0c9098a",
+      "URL-test.txt": "6d67d6bf5c4e7574116355d71ef927c66aca2f7ab7267b14591ea250f24ec722",
+      "data_km.km-tok.nova": "58f76c6fcb26a35459dc1b36c850079540164c30f4453b14b174bd673babefa7",
+      "data_km.km-tag.nova": "768636329898c17932d565ee4c2d4a4bff292ec84d40fe0e5c3b31200105895b"
+    },
+    "runtime_tagging_sha256": "0fbff1ec11efdb7df723963a6f1a9f7f26910bd28c34871c972fb9341e7e95a2",
+    "authored_lexicon_entries": 312,
+    "projection": {
+      "NOUN": "n",
+      "PROPN": "n",
+      "PRON": "n",
+      "VERB": "v",
+      "ADJ": "a",
+      "DET": "a",
+      "ADV": "o",
+      "ADP": "o",
+      "AUX": "o",
+      "CCONJ": "o",
+      "SCONJ": "o",
+      "PART": "o",
+      "NUM": "1",
+      "PUNCT": ".",
+      "INTJ": "+",
+      "SYM": "+",
+      "X": "X"
+    },
+    "copula_projection": "v",
+    "crf_model_sha256": "2f690b1f40a81a615c5eb0c1059ba3e606e49840200b49343b15bf0bea09e63c"
+  },
+  "authored_development": {
+    "status": "Authored development assertions, partial annotations; not independent accuracy.",
+    "cases": 37,
+    "passed": 36,
+    "cases_sha256": "b3b23cf3122c3c0d85be81e8216e64d41713cf56735f8d3b32551b04717c2ff4",
+    "per_case": [
+      {
+        "id": "basic-reading",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "progressive",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "negative-pair",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "prohibition",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "question",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "question-tail",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "negative-response",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "future",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "negative-future",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "auxiliary-chain",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "preverbal-baan",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "lexical-baan",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "postverbal-baan",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "habitual",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "modal",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "necessity",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "classifier-digits",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "classifier-word-number",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "classifier-noun-use",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "demonstrative-after-noun",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "demonstrative-pronoun",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "coordinator",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "completion",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "hery-conjunction",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "locative",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "locative-verb",
+        "specified_assertions_passed": false
+      },
+      {
+        "id": "locative-verb-explicit-boundaries",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "reduplication",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "polite-response",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "directive-final",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "lexical-chos",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "manner",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "adjectival-speed",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "degree",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "additive-final",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "empty",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "separators-only",
+        "specified_assertions_passed": true
+      }
+    ]
+  },
+  "ket_tagger": {
+    "sentences": 1018,
+    "seconds": 0.532320125,
+    "gold_boundaries": {
+      "tokens": 26551,
+      "correct": 9985,
+      "covered": 12426,
+      "coverage": 0.46800497156415954,
+      "all_token_coarse_accuracy": 0.37606869797747733,
+      "selective_coarse_accuracy": 0.8035570577820699,
+      "lexical_tokens": 24529,
+      "lexical_covered": 10419,
+      "lexical_correct": 7988,
+      "confusion": {
+        ".": {
+          ".": 1743,
+          "o": 10
+        },
+        "1": {
+          "1": 254,
+          "X": 15
+        },
+        "a": {
+          "1": 81,
+          "X": 971,
+          "a": 239,
+          "n": 355,
+          "o": 62
+        },
+        "n": {
+          "X": 7672,
+          "a": 3,
+          "n": 1632,
+          "o": 655
+        },
+        "o": {
+          "X": 2273,
+          "a": 2,
+          "n": 36,
+          "o": 2608,
+          "v": 29
+        },
+        "v": {
+          "+": 2,
+          "X": 3194,
+          "a": 2,
+          "n": 2,
+          "o": 1202,
+          "v": 3509
+        }
+      }
+    },
+    "reconstructed_text": {
+      "segmentation": {
+        "correct": 20293,
+        "predicted": 32884,
+        "gold": 26551,
+        "precision": 0.6171086242549568,
+        "recall": 0.7643026627998946,
+        "f1": 0.6828636325397494
+      },
+      "joint_coarse": {
+        "correct": 9153,
+        "predicted": 32884,
+        "gold": 26551,
+        "precision": 0.2783420508453959,
+        "recall": 0.34473277842642464,
+        "f1": 0.3080003365020611
+      },
+      "unknown_tokens": 18466,
+      "predicted_tag_counts": {
+        "+": 58,
+        ".": 1894,
+        "1": 1012,
+        "X": 18466,
+        "a": 440,
+        "n": 2800,
+        "o": 4715,
+        "v": 3499
+      },
+      "alignment_failures": 0
+    }
+  },
+  "optional_crf": {
+    "sentences": 1018,
+    "seconds": 2.016696292,
+    "gold_boundaries": {
+      "tokens": 26551,
+      "correct": 26379,
+      "covered": 26551,
+      "coverage": 1.0,
+      "all_token_coarse_accuracy": 0.9935219012466574,
+      "selective_coarse_accuracy": 0.9935219012466574,
+      "lexical_tokens": 24529,
+      "lexical_covered": 24529,
+      "lexical_correct": 24374,
+      "confusion": {
+        ".": {
+          ".": 1753
+        },
+        "1": {
+          "1": 252,
+          "a": 16,
+          "n": 1
+        },
+        "a": {
+          "1": 12,
+          "a": 1644,
+          "n": 36,
+          "o": 6,
+          "v": 10
+        },
+        "n": {
+          "a": 21,
+          "n": 9920,
+          "o": 4,
+          "v": 17
+        },
+        "o": {
+          "a": 10,
+          "n": 7,
+          "o": 4929,
+          "v": 2
+        },
+        "v": {
+          "a": 4,
+          "n": 14,
+          "o": 12,
+          "v": 7881
+        }
+      }
+    },
+    "reconstructed_text": {
+      "segmentation": {
+        "correct": 20293,
+        "predicted": 32884,
+        "gold": 26551,
+        "precision": 0.6171086242549568,
+        "recall": 0.7643026627998946,
+        "f1": 0.6828636325397494
+      },
+      "joint_coarse": {
+        "correct": 20109,
+        "predicted": 32884,
+        "gold": 26551,
+        "precision": 0.6115131979077971,
+        "recall": 0.7573726036684117,
+        "f1": 0.676671994615967
+      },
+      "unknown_tokens": 0,
+      "predicted_tag_counts": {
+        ".": 1980,
+        "1": 950,
+        "a": 1866,
+        "n": 14335,
+        "o": 4971,
+        "v": 8782
+      },
+      "alignment_failures": 0
+    }
+  }
+}

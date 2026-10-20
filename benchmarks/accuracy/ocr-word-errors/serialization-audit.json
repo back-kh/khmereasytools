@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "analysis_sha256": "286d523b6383ffffb8b78728d84888bd9e2388b8e413f1ac51d52f1849ea8a3b",
+  "source_results_sha256": {
+    "document-ocr": "ec7a9feb79e2c8a3ba8c2754e12e507bc77c73b2186493299d3d523bf8a79402",
+    "small-vlm": "e5d00e881b3dfe65411b00998dab004794e98e95cc1d4cef4b1a809fd2e4736f"
+  },
+  "summary": {
+    "deepseek-ocr-4bit": {
+      "samples": 150,
+      "compact_prediction_codepoints": 533711,
+      "khmer_block_codepoints": 15143,
+      "decimal_codepoints": 153705,
+      "raw_ref_det_marker_occurrences": 0,
+      "visible_bbox_assignments": 0,
+      "raw_bbox_assignments": 0
+    },
+    "khmereasytools-fast": {
+      "samples": 150,
+      "compact_prediction_codepoints": 24669,
+      "khmer_block_codepoints": 4729,
+      "decimal_codepoints": 2782,
+      "raw_ref_det_marker_occurrences": 0,
+      "visible_bbox_assignments": 0,
+      "raw_bbox_assignments": 0
+    },
+    "paddleocr-vl-1.6-4bit": {
+      "samples": 150,
+      "compact_prediction_codepoints": 345874,
+      "khmer_block_codepoints": 0,
+      "decimal_codepoints": 161164,
+      "raw_ref_det_marker_occurrences": 0,
+      "visible_bbox_assignments": 0,
+      "raw_bbox_assignments": 0
+    },
+    "qwen25-vl-3b": {
+      "samples": 30,
+      "compact_prediction_codepoints": 76037,
+      "khmer_block_codepoints": 75503,
+      "decimal_codepoints": 2073,
+      "raw_ref_det_marker_occurrences": 0,
+      "visible_bbox_assignments": 0,
+      "raw_bbox_assignments": 0
+    },
+    "qwen3-vl-2b": {
+      "samples": 30,
+      "compact_prediction_codepoints": 93867,
+      "khmer_block_codepoints": 93852,
+      "decimal_codepoints": 0,
+      "raw_ref_det_marker_occurrences": 0,
+      "visible_bbox_assignments": 0,
+      "raw_bbox_assignments": 0
+    },
+    "surya-2": {
+      "samples": 150,
+      "compact_prediction_codepoints": 377270,
+      "khmer_block_codepoints": 123482,
+      "decimal_codepoints": 755,
+      "raw_ref_det_marker_occurrences": 0,
+      "visible_bbox_assignments": 0,
+      "raw_bbox_assignments": 1470
+    },
+    "tesseract-fast": {
+      "samples": 150,
+      "compact_prediction_codepoints": 24669,
+      "khmer_block_codepoints": 4729,
+      "decimal_codepoints": 2782,
+      "raw_ref_det_marker_occurrences": 0,
+      "visible_bbox_assignments": 0,
+      "raw_bbox_assignments": 0
+    }
+  },
+  "raw_record_count": 810,
+  "private_count_record_inventory_sha256": "f2781e1169b1c354c3c0e4a18941ac50b40c5af234244cac5528bf13f74ce7c9",
+  "notes": [
+    "Posthoc descriptive counts; no predictions or CER scores are changed.",
+    "Khmer-block membership is U+1780..U+17FF, not language identification or transcription correctness.",
+    "Counts use compact NFC predictions; bbox assignments are literal serializer checks.",
+    "Qwen summaries cover only30 historical test pages; other systems cover150.",
+    "Absence of checked serialization markers does not certify every possible output format."
+  ]
+}

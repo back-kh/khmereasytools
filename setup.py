@@ -7,34 +7,38 @@ with (Path(__file__).parent / "README.md").open(encoding="utf-8") as fh:
 
 setup(
     name="khmereasytools",
-    version="0.4.0",
+    version="0.5.0.dev0",
     author="Nimol Thuon",
     author_email="nimol.thuon@gmail.com",
-    description="Lightweight Khmer NLP with traceable text cleanup, Unicode diagnostics, and source-aligned tokens.",
+    description="Lightweight Khmer text, local search, optional translation, and image/PDF OCR tools.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/back-kh/khmereasytools",
     project_urls={
         "Source": "https://github.com/back-kh/khmereasytools",
+        "KET-Tagger Guide": "https://github.com/back-kh/khmereasytools/blob/main/docs/TAGGER.md",
         "Issues": "https://github.com/back-kh/khmereasytools/issues",
         "Changelog": "https://github.com/back-kh/khmereasytools/blob/main/CHANGELOG.md",
     },
     packages=find_packages(include=["khmereasytools", "khmereasytools.*"]),
+    package_data={"khmereasytools": ["data/*.txt", "data/*.json", "data/research/*.json", "data/research/*.json.gz", "data/research/*.txt"]},
+    license="MIT AND CC-BY-NC-SA-4.0",
+    license_files=["LICENSE", "khmereasytools/data/research/LICENSE.txt"],
     entry_points={"console_scripts": ["khmereasytools=khmereasytools.cli:main"]},
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
+        "License :: Free for non-commercial use",
         "Operating System :: OS Independent",
         "Topic :: Text Processing :: Linguistic",
     ],
     python_requires='>=3.6',
     install_requires=[], # No hard dependencies for core functions
     extras_require={
-        "ocr": ["pytesseract>=0.3.8", "Pillow>=9.0.0"],
-        "khmernltk": ["khmer-nltk>=1.6"],
+        "ocr": ["pytesseract>=0.3.8", "Pillow>=9.0.0", "pypdfium2>=4,<6"],
+        "khmernltk": ["khmer-nltk>=1.6,<2"],
         "all": [
-            "pytesseract>=0.3.8", "Pillow>=9.0.0",
-            "khmer-nltk>=1.6"
+            "pytesseract>=0.3.8", "Pillow>=9.0.0", "pypdfium2>=4,<6",
+            "khmer-nltk>=1.6,<2"
         ]
     }
 )

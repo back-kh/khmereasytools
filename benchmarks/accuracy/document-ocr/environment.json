@@ -1,0 +1,41 @@
+{
+  "files": {
+    "benchmarks/accuracy/DOCUMENT_OCR_PROTOCOL.md": "90aabdbc015f6f9dcdfb9ba23f588cb1ef77db652c096d855f35654703d96793",
+    "scripts/evaluate_document_ocr.py": "e6a80c5b7a6b0a139a7991fbf25aebfba6035b0539a9d25a9b321517650eed05",
+    "scripts/document_ocr_metrics.py": "45bb0a2c72a49e60585d2721fc82e0cba3ad1c0b792d2283e854922b35c7ee37",
+    "scripts/evaluation_metrics.py": "7bb38b67244e9df4f3dfc0e46938ee494224ab41a9921ebe19e4fb964792dcb3",
+    "scripts/fetch_document_ocr.py": "0b4d9fdc74592f2730fc3e331de6e523fb8fe886d1f0cc72ac892a4de7d63c36",
+    ".evaluation/full_document_ocr/prepared.json": "99d97e1f3eed0bad103235269ea7733566f8c64160af67288907d28477c45f9e",
+    "benchmarks/accuracy/document-ocr/source-inventory.json": "1792ea9694a928471766e7b317cf67c2eee3ac4d4344794b04b5cb1fba79281d",
+    "benchmarks/accuracy/document-ocr/model-inventory.json": "f48c6e33bfbf0858a6edddf3b29b3a17d1e78464740dd1341a4ea3f167f5fec0"
+  },
+  "versions": {
+    "khmereasytools": "0.5.0.dev0",
+    "pillow": "10.4.0",
+    "pytesseract": "0.3.13",
+    "surya-ocr": "0.22.1",
+    "mlx-vlm": "0.7.8",
+    "mlx": "0.32.4",
+    "torch": "2.14.1",
+    "transformers": "5.20.1",
+    "pypdfium2": "5.14.0",
+    "rapidfuzz": "3.14.6",
+    "numpy": "2.4.6",
+    "beautifulsoup4": "4.15.0"
+  },
+  "python": "3.11.15",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "tesseract": "tesseract 5.5.2",
+  "llama_cpp": "version: 9430 (d48a56eff)\nbuilt with AppleClang 21.0.0.21000099 for Darwin arm64\n",
+  "runtime_sha256": "3974d5c4ff1ebd4818717afb57542a67b3ebe45f2efb6525ae645977797c0aaa",
+  "tessdata": {
+    "khm": "47f110575341b322052f3becbefee61a3ecf1ef549352b5d4d33d28afe30d099",
+    "eng": "7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2"
+  },
+  "max_tokens": 4096,
+  "timeout_seconds": 240,
+  "surya_batch_size": 4,
+  "source_revision": "85d0c7d74ddce198e83d5fba268dd586582d0a34",
+  "created_utc": "2026-10-18T05:56:29Z",
+  "token": "2b75fc64024edc9a9a64d92df22998ac21fb39886918a82797bd0dcd201bd9c3"
+}

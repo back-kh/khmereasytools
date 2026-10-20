@@ -1,0 +1,30 @@
+{
+  "source_selection_sha256": "6aff9e2008418110d1a4cb0d959ff4c7bd8e30da898eb6b12c79f4ba2afd91f3",
+  "prompt_sha256": "1b4dd3a7ac5b6492d87d530a85c337f5db4fbf0a6c6c56b0f06d2d1718c4c958",
+  "schema_sha256": "497767c7e2ffe3b2bc0395cde45c29e781070092a0bf0636651b36c7dc1beb6a",
+  "cli_version": "codex-cli 0.162.0-alpha.17.2",
+  "configured_model": {
+    "model": "gpt-6.1-sol",
+    "model_reasoning_effort": "max"
+  },
+  "resolved_model_snapshot": "Not exposed by this CLI response format",
+  "reference_type": "Model-generated drafts; not human-reviewed gold",
+  "control_score": {
+    "reference_codepoints": 128,
+    "codepoint_edits": 0,
+    "exact_compact": true,
+    "spacefold_reference_codepoints": 152,
+    "spacefold_codepoint_edits": 0,
+    "reference_whitespace_units": 25,
+    "whitespace_unit_edits": 0
+  },
+  "timeout_seconds": 600,
+  "canonical_image_profile": "EXIF transpose and RGB PNG; no deskew, crop, enlargement, or contrast adjustment",
+  "generation_overrides": {
+    "model": "gpt-6.1-sol",
+    "model_reasoning_effort": "medium"
+  },
+  "annotation_design_note": "Setup-only max-effort attempt interrupted during user-requested storage migration before any KH-FUNSD transcript completed. Use medium effort for literal reference drafting; this setting was not selected by benchmark accuracy.",
+  "runner_sha256": "531a1ce8d83305117a46fe97f49fd928e45960324303171afcec04a6af69100c",
+  "token": "e856482019979b9260e4e8d49cd6ae258857068d7309a264e52f16343e50b4d6"
+}

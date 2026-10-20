@@ -1,0 +1,170 @@
+{
+  "base_commit": "9e5e39738e630b3e17789ab20c46061c99ce1a07",
+  "runtime_python_sources_sha256": "67cc75025f64d968f41db88f0d5b668972ef71d98de10959d9d8ed308dbf08f2",
+  "python": "3.9.6",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "package_version": "0.5.0.dev0",
+  "protocol_sha256": "c4e1de18fd791df0707bb31fb6f164b8e5b6ad83c2072316956a3083c496c797",
+  "dataset": "Agent-authored engineering challenges; not human-independent gold",
+  "cases_sha256": "f60692ffe0ddb01635f66cc05bd043e117e5ab77492c08d250476d7a8f030d69",
+  "sentences": {
+    "cases": 40,
+    "exact_cases": 36,
+    "spans": {
+      "correct": 70,
+      "predicted": 76,
+      "gold": 76,
+      "precision": 0.9210526315789473,
+      "recall": 0.9210526315789473,
+      "f1": 0.9210526315789473
+    },
+    "boundaries": {
+      "correct": 36,
+      "predicted": 38,
+      "gold": 38,
+      "precision": 0.9473684210526315,
+      "recall": 0.9473684210526315,
+      "f1": 0.9473684210526315
+    },
+    "failures": [
+      {
+        "id": "s10",
+        "exact": false,
+        "spans": [
+          0,
+          1,
+          2
+        ],
+        "boundaries": [
+          0,
+          0,
+          1
+        ],
+        "predicted": [
+          "It happened in the U.S. We visited later."
+        ]
+      },
+      {
+        "id": "s11",
+        "exact": false,
+        "spans": [
+          0,
+          1,
+          2
+        ],
+        "boundaries": [
+          0,
+          0,
+          1
+        ],
+        "predicted": [
+          "Bring pens, paper, etc. We leave at noon."
+        ]
+      },
+      {
+        "id": "s34",
+        "exact": false,
+        "spans": [
+          1,
+          3,
+          2
+        ],
+        "boundaries": [
+          1,
+          2,
+          1
+        ],
+        "predicted": [
+          "I...",
+          "I am unsure.",
+          "Are you sure?"
+        ]
+      },
+      {
+        "id": "s37",
+        "exact": false,
+        "spans": [
+          1,
+          3,
+          2
+        ],
+        "boundaries": [
+          1,
+          2,
+          1
+        ],
+        "predicted": [
+          "The author is J.",
+          "R. Smith.",
+          "He writes."
+        ]
+      }
+    ]
+  },
+  "extraction": {
+    "correct": 49,
+    "predicted": 49,
+    "gold": 50,
+    "precision": 1.0,
+    "recall": 0.98,
+    "f1": 0.98989898989899,
+    "cases": 50,
+    "exact_cases": 49,
+    "value_correct": 49,
+    "value_accuracy_on_matched": 1.0,
+    "by_kind": {
+      "date": {
+        "correct": 12,
+        "predicted": 12,
+        "gold": 12,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "value_correct": 12
+      },
+      "email": {
+        "correct": 5,
+        "predicted": 5,
+        "gold": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "value_correct": 5
+      },
+      "number": {
+        "correct": 14,
+        "predicted": 14,
+        "gold": 14,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "value_correct": 14
+      },
+      "phone": {
+        "correct": 9,
+        "predicted": 9,
+        "gold": 10,
+        "precision": 1.0,
+        "recall": 0.9,
+        "f1": 0.9473684210526315,
+        "value_correct": 9
+      },
+      "url": {
+        "correct": 9,
+        "predicted": 9,
+        "gold": 9,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "value_correct": 9
+      }
+    },
+    "failures": [
+      {
+        "id": "e16",
+        "exact": false,
+        "predicted": []
+      }
+    ]
+  }
+}

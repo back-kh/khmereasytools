@@ -1,0 +1,86 @@
+{
+  "evaluator_source_revision": "1208ad3",
+  "preflight": {
+    "images_per_model": 32,
+    "models": 2,
+    "test_predictions": 0,
+    "maximum_actual_pixels": {
+      "Qwen/Qwen2.5-VL-3B-Instruct": 991760,
+      "Qwen/Qwen3-VL-2B-Instruct": 995328
+    }
+  },
+  "controls": {
+    "qwen25-vl-3b-english-control": {
+      "characters": 152,
+      "generation_tokens": 52,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          50,
+          100
+        ]
+      ],
+      "error": null,
+      "score": {
+        "reference_codepoints": 128,
+        "codepoint_edits": 0,
+        "exact_compact": true,
+        "spacefold_reference_codepoints": 152,
+        "spacefold_codepoint_edits": 0,
+        "reference_whitespace_units": 25,
+        "whitespace_unit_edits": 0
+      }
+    },
+    "qwen25-vl-3b-khob-development": {
+      "characters": 2562,
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          60,
+          42
+        ]
+      ],
+      "error": null
+    },
+    "qwen3-vl-2b-english-control": {
+      "characters": 152,
+      "generation_tokens": 52,
+      "capped": false,
+      "image_grid_thw": [
+        [
+          1,
+          44,
+          88
+        ]
+      ],
+      "error": null,
+      "score": {
+        "reference_codepoints": 128,
+        "codepoint_edits": 0,
+        "exact_compact": true,
+        "spacefold_reference_codepoints": 152,
+        "spacefold_codepoint_edits": 0,
+        "reference_whitespace_units": 25,
+        "whitespace_unit_edits": 0
+      }
+    },
+    "qwen3-vl-2b-khob-development": {
+      "characters": 3512,
+      "generation_tokens": 4096,
+      "capped": true,
+      "image_grid_thw": [
+        [
+          1,
+          52,
+          38
+        ]
+      ],
+      "error": null
+    }
+  },
+  "scope": "Setup controls only; no new-corpus OCR accuracy claim",
+  "initial_preflight": "An image-budget guard rejected the initial English control. Explicit native processor kwargs corrected ignored SizeDict settings before any Qwen test prediction. Earlier logs are retained privately."
+}

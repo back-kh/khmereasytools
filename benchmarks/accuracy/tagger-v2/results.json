@@ -1,0 +1,1267 @@
+{
+  "metadata": {
+    "base_commit": "325c1c59b14bc66a9c023283653e081f16de8592",
+    "runtime_python_sources_sha256": "8e6fafb99ffd6d6b8e160d4de03f88f3e4812ef35532e12d4feb0f993fb08136",
+    "protocol_sha256": "5b73d7735e734ad12cdd965302feaaf8f754cf5ae754004d85437a12e8b1985a",
+    "selection_sha256": "b98e20d93c190d31dd65aff495338d6184a22095f615ab2af5bf0584f11e5613",
+    "partitions_sha256": "9a460ec00c28e2477c4fdb157bd00cd265ae4cd1ddc4999e78076457aed1a28d",
+    "model_sha256": "1a1de64d7686d0041b1bd3c5ee853224dc1152caed79f5fd59da8b5d0c6b49a6",
+    "model_bytes": 244666,
+    "model_vocabulary_entries": 7121,
+    "state_features": 18772,
+    "python": "3.9.6",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "model_license": "CC-BY-NC-SA-4.0",
+    "software_license": "MIT",
+    "script_sha256": "3d3cafc28d1b75b0e850d7e75f21742e8a98f83fcb887bd359fb90366d359dfc"
+  },
+  "partition_audit": {
+    "train_sentences": 9827,
+    "development_sentences": 1098,
+    "removed_test_matches": 1023,
+    "removed_duplicates": 52,
+    "conflicting_duplicates": 1,
+    "exact_train_dev_test_text_overlap": 0,
+    "note": "No source document IDs; related templates/articles may remain."
+  },
+  "authored_development": {
+    "status": "Authored development assertions, partial annotations; not independent accuracy.",
+    "cases": 37,
+    "passed": 34,
+    "cases_sha256": "b3b23cf3122c3c0d85be81e8216e64d41713cf56735f8d3b32551b04717c2ff4",
+    "per_case": [
+      {
+        "id": "basic-reading",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "progressive",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "negative-pair",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "prohibition",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "question",
+        "specified_assertions_passed": false
+      },
+      {
+        "id": "question-tail",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "negative-response",
+        "specified_assertions_passed": false
+      },
+      {
+        "id": "future",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "negative-future",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "auxiliary-chain",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "preverbal-baan",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "lexical-baan",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "postverbal-baan",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "habitual",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "modal",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "necessity",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "classifier-digits",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "classifier-word-number",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "classifier-noun-use",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "demonstrative-after-noun",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "demonstrative-pronoun",
+        "specified_assertions_passed": false
+      },
+      {
+        "id": "coordinator",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "completion",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "hery-conjunction",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "locative",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "locative-verb",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "locative-verb-explicit-boundaries",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "reduplication",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "polite-response",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "directive-final",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "lexical-chos",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "manner",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "adjectival-speed",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "degree",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "additive-final",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "empty",
+        "specified_assertions_passed": true
+      },
+      {
+        "id": "separators-only",
+        "specified_assertions_passed": true
+      }
+    ]
+  },
+  "performance": {
+    "import_and_first_tag_ms": 118.933917,
+    "peak_rss_mib": 53.25,
+    "warm_median_ms": 0.5799170000000409,
+    "warm_p95_ms": 0.6032500000001662,
+    "warm_repetitions": 100,
+    "input_codepoints": 43,
+    "note": "Local single-process diagnostics, not a cross-device performance guarantee."
+  },
+  "close": {
+    "native_23_labels": {
+      "sentences": 1000,
+      "tokens": 10397,
+      "native_correct": 9975,
+      "native_accuracy": 0.9594113686640378,
+      "answer_rate": 1.0,
+      "lexical_coverage": 0.9773973261517745,
+      "unseen_tokens": 235,
+      "unseen_correct": 179,
+      "unseen_accuracy": 0.7617021276595745,
+      "majority_word_baseline_correct": 9718,
+      "majority_word_baseline_accuracy": 0.934692699817255,
+      "native_export_disagreements": null,
+      "segmentation": {
+        "correct": 9479,
+        "predicted": 10389,
+        "gold": 10397,
+        "precision": 0.9124073539320435,
+        "recall": 0.9117052996056555,
+        "f1": 0.9120561916674685
+      },
+      "joint_native": {
+        "correct": 9123,
+        "predicted": 10389,
+        "gold": 10397,
+        "precision": 0.8781403407450188,
+        "recall": 0.877464653265365,
+        "f1": 0.8778023669777735
+      },
+      "alignment_failures": 0,
+      "per_tag": {
+        "AB": {
+          "gold": 5,
+          "predicted": 5,
+          "correct": 5
+        },
+        "AUX": {
+          "gold": 198,
+          "predicted": 202,
+          "correct": 197
+        },
+        "CC": {
+          "gold": 208,
+          "predicted": 198,
+          "correct": 195
+        },
+        "CD": {
+          "gold": 276,
+          "predicted": 276,
+          "correct": 274
+        },
+        "DBL": {
+          "gold": 32,
+          "predicted": 32,
+          "correct": 32
+        },
+        "DT": {
+          "gold": 349,
+          "predicted": 346,
+          "correct": 345
+        },
+        "IN": {
+          "gold": 1053,
+          "predicted": 1080,
+          "correct": 1019
+        },
+        "JJ": {
+          "gold": 355,
+          "predicted": 347,
+          "correct": 300
+        },
+        "KAN": {
+          "gold": 236,
+          "predicted": 236,
+          "correct": 236
+        },
+        "M": {
+          "gold": 30,
+          "predicted": 31,
+          "correct": 30
+        },
+        "NN": {
+          "gold": 2550,
+          "predicted": 2553,
+          "correct": 2480
+        },
+        "PA": {
+          "predicted": 62,
+          "gold": 70,
+          "correct": 59
+        },
+        "PN": {
+          "gold": 1735,
+          "predicted": 1726,
+          "correct": 1708
+        },
+        "PRO": {
+          "gold": 1022,
+          "predicted": 1021,
+          "correct": 1012
+        },
+        "QT": {
+          "gold": 1,
+          "predicted": 1,
+          "correct": 1
+        },
+        "RB": {
+          "gold": 463,
+          "predicted": 469,
+          "correct": 429
+        },
+        "RPN": {
+          "gold": 140,
+          "predicted": 139,
+          "correct": 139
+        },
+        "SYM": {
+          "gold": 193,
+          "predicted": 193,
+          "correct": 193
+        },
+        "UH": {
+          "gold": 1,
+          "predicted": 1,
+          "correct": 1
+        },
+        "VB": {
+          "gold": 1328,
+          "predicted": 1349,
+          "correct": 1228
+        },
+        "VB_JJ": {
+          "gold": 123,
+          "correct": 71,
+          "predicted": 107
+        },
+        "VCOM": {
+          "predicted": 23,
+          "gold": 29,
+          "correct": 21
+        }
+      },
+      "seconds": 1.013478666
+    },
+    "rules_public": {
+      "sentences": 1000,
+      "seconds": 0.2027292919999999,
+      "gold_boundaries": {
+        "tokens": 10397,
+        "correct": 2645,
+        "covered": 3966,
+        "coverage": 0.3814561892853708,
+        "confusion": {
+          "ADJ": {
+            "ADJ": 47,
+            "ADP": 7,
+            "ADV": 37,
+            "AUX": 7,
+            "NOUN": 1,
+            "VERB": 22,
+            "X": 357
+          },
+          "ADP": {
+            "ADP": 372,
+            "ADV": 12,
+            "AUX": 27,
+            "CCONJ": 14,
+            "VERB": 121,
+            "X": 507
+          },
+          "ADV": {
+            "ADJ": 1,
+            "ADV": 62,
+            "AUX": 3,
+            "CCONJ": 43,
+            "NOUN": 12,
+            "PART": 11,
+            "SCONJ": 3,
+            "VERB": 19,
+            "X": 235
+          },
+          "AUX": {
+            "ADP": 17,
+            "AUX": 56,
+            "VERB": 125
+          },
+          "CCONJ": {
+            "ADP": 1,
+            "CCONJ": 165,
+            "NOUN": 1,
+            "SCONJ": 20,
+            "X": 21
+          },
+          "DET": {
+            "DET": 27,
+            "PRON": 234,
+            "X": 88
+          },
+          "INTJ": {
+            "X": 1
+          },
+          "NOUN": {
+            "ADV": 11,
+            "NOUN": 476,
+            "NUM": 2,
+            "PRON": 11,
+            "VERB": 2,
+            "X": 2083
+          },
+          "NUM": {
+            "NUM": 270,
+            "X": 6
+          },
+          "PART": {
+            "PART": 140,
+            "VERB": 16,
+            "X": 21
+          },
+          "PRON": {
+            "ADJ": 1,
+            "DET": 5,
+            "PRON": 334,
+            "SCONJ": 140,
+            "X": 682
+          },
+          "PROPN": {
+            "ADJ": 15,
+            "ADV": 3,
+            "AUX": 7,
+            "DET": 2,
+            "NOUN": 26,
+            "NUM": 10,
+            "PRON": 6,
+            "PROPN": 64,
+            "VERB": 9,
+            "X": 1593
+          },
+          "PUNCT": {
+            "PUNCT": 236
+          },
+          "SYM": {
+            "PUNCT": 192,
+            "X": 1
+          },
+          "VERB": {
+            "ADP": 2,
+            "AUX": 123,
+            "VERB": 396,
+            "X": 836
+          }
+        },
+        "all_token_mapped_upos_accuracy": 0.2544003077810907,
+        "selective_mapped_upos_accuracy": 0.6669188098840141
+      },
+      "reconstructed_text": {
+        "segmentation": {
+          "correct": 8477,
+          "predicted": 11168,
+          "gold": 10397,
+          "precision": 0.7590436962750716,
+          "recall": 0.815331345580456,
+          "f1": 0.786181312311616
+        },
+        "unknown_tokens": 6911,
+        "predicted_tag_counts": {
+          "ADJ": 71,
+          "ADP": 428,
+          "ADV": 101,
+          "AUX": 291,
+          "CCONJ": 221,
+          "DET": 45,
+          "INTJ": 2,
+          "NOUN": 507,
+          "NUM": 288,
+          "PART": 154,
+          "PRON": 595,
+          "PROPN": 62,
+          "PUNCT": 451,
+          "SCONJ": 162,
+          "SYM": 35,
+          "VERB": 844,
+          "X": 6911
+        },
+        "alignment_failures": 0,
+        "joint_mapped_upos": {
+          "correct": 2398,
+          "predicted": 11168,
+          "gold": 10397,
+          "precision": 0.21472063037249284,
+          "recall": 0.2306434548427431,
+          "f1": 0.22239740319962903
+        }
+      }
+    },
+    "compact_public": {
+      "sentences": 1000,
+      "seconds": 1.0645756670000002,
+      "gold_boundaries": {
+        "tokens": 10397,
+        "correct": 9797,
+        "covered": 10397,
+        "coverage": 1.0,
+        "confusion": {
+          "ADJ": {
+            "ADJ": 381,
+            "ADP": 10,
+            "ADV": 11,
+            "CCONJ": 1,
+            "NOUN": 23,
+            "PRON": 1,
+            "PROPN": 1,
+            "VERB": 50
+          },
+          "ADP": {
+            "ADJ": 6,
+            "ADP": 1019,
+            "ADV": 7,
+            "CCONJ": 1,
+            "VERB": 20
+          },
+          "ADV": {
+            "ADJ": 9,
+            "ADP": 6,
+            "ADV": 355,
+            "NOUN": 3,
+            "PART": 1,
+            "VERB": 15
+          },
+          "AUX": {
+            "AUX": 197,
+            "VERB": 1
+          },
+          "CCONJ": {
+            "ADP": 1,
+            "ADV": 11,
+            "CCONJ": 195,
+            "VERB": 1
+          },
+          "DET": {
+            "ADJ": 3,
+            "DET": 345,
+            "VERB": 1
+          },
+          "INTJ": {
+            "INTJ": 1
+          },
+          "NOUN": {
+            "ADJ": 18,
+            "ADP": 4,
+            "ADV": 1,
+            "NOUN": 2516,
+            "NUM": 2,
+            "PRON": 8,
+            "PROPN": 13,
+            "VERB": 23
+          },
+          "NUM": {
+            "ADJ": 1,
+            "NUM": 274,
+            "VERB": 1
+          },
+          "PART": {
+            "ADP": 1,
+            "ADV": 3,
+            "NOUN": 3,
+            "PART": 166,
+            "VERB": 4
+          },
+          "PRON": {
+            "ADJ": 2,
+            "ADV": 1,
+            "NOUN": 7,
+            "PRON": 1151,
+            "VERB": 1
+          },
+          "PROPN": {
+            "ADJ": 3,
+            "ADV": 1,
+            "NOUN": 21,
+            "PROPN": 1708,
+            "VERB": 2
+          },
+          "PUNCT": {
+            "PUNCT": 236
+          },
+          "SYM": {
+            "PUNCT": 192,
+            "SYM": 1
+          },
+          "VERB": {
+            "ADJ": 31,
+            "ADP": 39,
+            "ADV": 5,
+            "AUX": 5,
+            "CCONJ": 1,
+            "DET": 1,
+            "INTJ": 1,
+            "NOUN": 16,
+            "PART": 2,
+            "PROPN": 4,
+            "VERB": 1252
+          }
+        },
+        "all_token_mapped_upos_accuracy": 0.9422910454938924,
+        "selective_mapped_upos_accuracy": 0.9422910454938924
+      },
+      "reconstructed_text": {
+        "segmentation": {
+          "correct": 9479,
+          "predicted": 10389,
+          "gold": 10397,
+          "precision": 0.9124073539320435,
+          "recall": 0.9117052996056555,
+          "f1": 0.9120561916674685
+        },
+        "unknown_tokens": 0,
+        "predicted_tag_counts": {
+          "ADJ": 384,
+          "ADP": 1046,
+          "ADV": 398,
+          "AUX": 199,
+          "CCONJ": 198,
+          "DET": 339,
+          "INTJ": 2,
+          "NOUN": 2460,
+          "NUM": 509,
+          "PART": 162,
+          "PRON": 1151,
+          "PROPN": 1732,
+          "PUNCT": 441,
+          "SYM": 8,
+          "VERB": 1360
+        },
+        "alignment_failures": 0,
+        "joint_mapped_upos": {
+          "correct": 8942,
+          "predicted": 10389,
+          "gold": 10397,
+          "precision": 0.8607180671864472,
+          "recall": 0.8600557853226892,
+          "f1": 0.8603867988068893
+        }
+      }
+    }
+  },
+  "open": {
+    "native_23_labels": {
+      "sentences": 1000,
+      "tokens": 10778,
+      "native_correct": 10329,
+      "native_accuracy": 0.9583410651326777,
+      "answer_rate": 1.0,
+      "lexical_coverage": 0.9761551308220449,
+      "unseen_tokens": 257,
+      "unseen_correct": 176,
+      "unseen_accuracy": 0.6848249027237354,
+      "majority_word_baseline_correct": 10047,
+      "majority_word_baseline_accuracy": 0.9321766561514195,
+      "native_export_disagreements": null,
+      "segmentation": {
+        "correct": 9841,
+        "predicted": 10717,
+        "gold": 10778,
+        "precision": 0.9182607072874872,
+        "recall": 0.9130636481722026,
+        "f1": 0.915654803442661
+      },
+      "joint_native": {
+        "correct": 9475,
+        "predicted": 10717,
+        "gold": 10778,
+        "precision": 0.8841093589623962,
+        "recall": 0.8791055854518464,
+        "f1": 0.8816003721795767
+      },
+      "alignment_failures": 0,
+      "per_tag": {
+        "AB": {
+          "gold": 7,
+          "predicted": 7,
+          "correct": 7
+        },
+        "AUX": {
+          "gold": 220,
+          "predicted": 224,
+          "correct": 217
+        },
+        "CC": {
+          "gold": 240,
+          "predicted": 231,
+          "correct": 227
+        },
+        "CD": {
+          "gold": 286,
+          "predicted": 286,
+          "correct": 285
+        },
+        "DBL": {
+          "gold": 28,
+          "predicted": 28,
+          "correct": 28
+        },
+        "DT": {
+          "gold": 375,
+          "predicted": 375,
+          "correct": 371
+        },
+        "ETC": {
+          "gold": 1,
+          "predicted": 1,
+          "correct": 1
+        },
+        "IN": {
+          "gold": 1088,
+          "predicted": 1085,
+          "correct": 1040
+        },
+        "JJ": {
+          "gold": 362,
+          "predicted": 348,
+          "correct": 307
+        },
+        "KAN": {
+          "gold": 257,
+          "predicted": 257,
+          "correct": 257
+        },
+        "M": {
+          "gold": 31,
+          "predicted": 31,
+          "correct": 31
+        },
+        "NN": {
+          "gold": 2663,
+          "predicted": 2700,
+          "correct": 2610
+        },
+        "PA": {
+          "gold": 70,
+          "predicted": 64,
+          "correct": 60
+        },
+        "PN": {
+          "gold": 1666,
+          "predicted": 1656,
+          "correct": 1639
+        },
+        "PRO": {
+          "gold": 1035,
+          "predicted": 1030,
+          "correct": 1024
+        },
+        "QT": {
+          "gold": 5,
+          "predicted": 5,
+          "correct": 5
+        },
+        "RB": {
+          "gold": 536,
+          "predicted": 516,
+          "correct": 485
+        },
+        "RPN": {
+          "gold": 133,
+          "predicted": 134,
+          "correct": 133
+        },
+        "SYM": {
+          "gold": 217,
+          "predicted": 217,
+          "correct": 217
+        },
+        "UH": {
+          "gold": 4,
+          "predicted": 2,
+          "correct": 2
+        },
+        "VB": {
+          "gold": 1389,
+          "predicted": 1440,
+          "correct": 1285
+        },
+        "VB_JJ": {
+          "gold": 138,
+          "predicted": 114,
+          "correct": 75
+        },
+        "VCOM": {
+          "gold": 27,
+          "predicted": 27,
+          "correct": 23
+        }
+      },
+      "seconds": 1.001364584
+    },
+    "rules_public": {
+      "sentences": 1000,
+      "seconds": 0.18653866699999977,
+      "gold_boundaries": {
+        "tokens": 10778,
+        "correct": 2848,
+        "covered": 4239,
+        "coverage": 0.39330116904806084,
+        "confusion": {
+          "ADJ": {
+            "ADJ": 55,
+            "ADP": 6,
+            "ADV": 32,
+            "AUX": 6,
+            "NOUN": 2,
+            "VERB": 26,
+            "X": 373
+          },
+          "ADP": {
+            "ADP": 383,
+            "ADV": 12,
+            "AUX": 40,
+            "CCONJ": 18,
+            "VERB": 108,
+            "X": 527
+          },
+          "ADV": {
+            "ADJ": 1,
+            "ADV": 68,
+            "AUX": 1,
+            "CCONJ": 45,
+            "NOUN": 21,
+            "NUM": 1,
+            "PART": 16,
+            "SCONJ": 10,
+            "VERB": 18,
+            "X": 260
+          },
+          "AUX": {
+            "ADP": 32,
+            "AUX": 82,
+            "VERB": 106
+          },
+          "CCONJ": {
+            "CCONJ": 176,
+            "NOUN": 1,
+            "SCONJ": 43,
+            "X": 20
+          },
+          "DET": {
+            "DET": 29,
+            "PRON": 240,
+            "X": 106
+          },
+          "INTJ": {
+            "X": 4
+          },
+          "NOUN": {
+            "ADV": 16,
+            "NOUN": 487,
+            "PRON": 8,
+            "SCONJ": 1,
+            "VERB": 1,
+            "X": 2188
+          },
+          "NUM": {
+            "NUM": 278,
+            "X": 8
+          },
+          "PART": {
+            "PART": 170,
+            "PRON": 1,
+            "VERB": 12,
+            "X": 16
+          },
+          "PRON": {
+            "DET": 13,
+            "NOUN": 4,
+            "PRON": 366,
+            "SCONJ": 133,
+            "X": 652
+          },
+          "PROPN": {
+            "ADJ": 9,
+            "AUX": 9,
+            "DET": 2,
+            "NOUN": 19,
+            "NUM": 8,
+            "PRON": 7,
+            "PROPN": 57,
+            "VERB": 15,
+            "X": 1540
+          },
+          "PUNCT": {
+            "PUNCT": 257
+          },
+          "SYM": {
+            "PUNCT": 217
+          },
+          "VERB": {
+            "ADJ": 1,
+            "ADV": 1,
+            "AUX": 129,
+            "VERB": 440,
+            "X": 845
+          }
+        },
+        "all_token_mapped_upos_accuracy": 0.2642419743922806,
+        "selective_mapped_upos_accuracy": 0.6718565699457419
+      },
+      "reconstructed_text": {
+        "segmentation": {
+          "correct": 8783,
+          "predicted": 11610,
+          "gold": 10778,
+          "precision": 0.7565030146425495,
+          "recall": 0.8149007236964186,
+          "f1": 0.784616758978024
+        },
+        "unknown_tokens": 7069,
+        "predicted_tag_counts": {
+          "ADJ": 64,
+          "ADP": 472,
+          "ADV": 113,
+          "AUX": 311,
+          "CCONJ": 240,
+          "DET": 53,
+          "INTJ": 2,
+          "NOUN": 521,
+          "NUM": 294,
+          "PART": 187,
+          "PRON": 637,
+          "PROPN": 55,
+          "PUNCT": 499,
+          "SCONJ": 186,
+          "SYM": 62,
+          "VERB": 845,
+          "X": 7069
+        },
+        "alignment_failures": 0,
+        "joint_mapped_upos": {
+          "correct": 2590,
+          "predicted": 11610,
+          "gold": 10778,
+          "precision": 0.223083548664944,
+          "recall": 0.24030432362219337,
+          "f1": 0.2313739503305342
+        }
+      }
+    },
+    "compact_public": {
+      "sentences": 1000,
+      "seconds": 1.095133958,
+      "gold_boundaries": {
+        "tokens": 10778,
+        "correct": 10122,
+        "covered": 10778,
+        "coverage": 1.0,
+        "confusion": {
+          "ADJ": {
+            "ADJ": 388,
+            "ADP": 6,
+            "ADV": 5,
+            "DET": 2,
+            "NOUN": 27,
+            "PROPN": 1,
+            "VERB": 71
+          },
+          "ADP": {
+            "ADJ": 9,
+            "ADP": 1040,
+            "ADV": 7,
+            "NOUN": 4,
+            "PART": 1,
+            "PROPN": 1,
+            "VERB": 26
+          },
+          "ADV": {
+            "ADJ": 10,
+            "ADP": 8,
+            "ADV": 390,
+            "CCONJ": 3,
+            "DET": 1,
+            "NOUN": 4,
+            "PRON": 1,
+            "PROPN": 2,
+            "VERB": 22
+          },
+          "AUX": {
+            "AUX": 217,
+            "VERB": 3
+          },
+          "CCONJ": {
+            "ADJ": 1,
+            "ADP": 1,
+            "ADV": 10,
+            "CCONJ": 227,
+            "VERB": 1
+          },
+          "DET": {
+            "ADJ": 3,
+            "ADV": 1,
+            "DET": 371
+          },
+          "INTJ": {
+            "INTJ": 2,
+            "VERB": 2
+          },
+          "NOUN": {
+            "ADJ": 13,
+            "ADP": 3,
+            "ADV": 2,
+            "CCONJ": 1,
+            "NOUN": 2648,
+            "PRON": 3,
+            "PROPN": 9,
+            "VERB": 22
+          },
+          "NUM": {
+            "NOUN": 1,
+            "NUM": 285
+          },
+          "PART": {
+            "ADP": 2,
+            "PART": 190,
+            "PRON": 1,
+            "PROPN": 1,
+            "VERB": 5
+          },
+          "PRON": {
+            "NOUN": 10,
+            "PRON": 1157,
+            "PROPN": 1
+          },
+          "PROPN": {
+            "ADJ": 4,
+            "NOUN": 17,
+            "PRON": 2,
+            "PROPN": 1639,
+            "VERB": 4
+          },
+          "PUNCT": {
+            "PUNCT": 257
+          },
+          "SYM": {
+            "PUNCT": 217
+          },
+          "VERB": {
+            "ADJ": 34,
+            "ADP": 25,
+            "ADV": 5,
+            "AUX": 7,
+            "DET": 1,
+            "NOUN": 27,
+            "NUM": 1,
+            "PART": 3,
+            "PROPN": 2,
+            "VERB": 1311
+          }
+        },
+        "all_token_mapped_upos_accuracy": 0.9391352755613286,
+        "selective_mapped_upos_accuracy": 0.9391352755613286
+      },
+      "reconstructed_text": {
+        "segmentation": {
+          "correct": 9841,
+          "predicted": 10717,
+          "gold": 10778,
+          "precision": 0.9182607072874872,
+          "recall": 0.9130636481722026,
+          "f1": 0.915654803442661
+        },
+        "unknown_tokens": 0,
+        "predicted_tag_counts": {
+          "ADJ": 394,
+          "ADP": 1060,
+          "ADV": 429,
+          "AUX": 220,
+          "CCONJ": 232,
+          "DET": 363,
+          "INTJ": 3,
+          "NOUN": 2623,
+          "NUM": 450,
+          "PART": 180,
+          "PRON": 1157,
+          "PROPN": 1674,
+          "PUNCT": 485,
+          "SYM": 4,
+          "VERB": 1443
+        },
+        "alignment_failures": 0,
+        "joint_mapped_upos": {
+          "correct": 9268,
+          "predicted": 10717,
+          "gold": 10778,
+          "precision": 0.8647942521227956,
+          "recall": 0.8598997958804974,
+          "f1": 0.86234007908816
+        }
+      }
+    }
+  },
+  "alt": {
+    "note": "Previously observed cross-corpus diagnostic; lossy seven-class NOVA projection, not fine POS gold.",
+    "rules": {
+      "sentences": 1018,
+      "seconds": 0.497180792,
+      "gold_boundaries": {
+        "tokens": 26551,
+        "correct": 9985,
+        "covered": 12426,
+        "coverage": 0.46800497156415954,
+        "all_token_coarse_accuracy": 0.37606869797747733,
+        "selective_coarse_accuracy": 0.8035570577820699,
+        "lexical_tokens": 24529,
+        "lexical_covered": 10419,
+        "lexical_correct": 7988,
+        "confusion": {
+          ".": {
+            ".": 1743,
+            "o": 10
+          },
+          "1": {
+            "1": 254,
+            "X": 15
+          },
+          "a": {
+            "1": 81,
+            "X": 971,
+            "a": 239,
+            "n": 355,
+            "o": 62
+          },
+          "n": {
+            "X": 7672,
+            "a": 3,
+            "n": 1632,
+            "o": 655
+          },
+          "o": {
+            "X": 2273,
+            "a": 2,
+            "n": 36,
+            "o": 2608,
+            "v": 29
+          },
+          "v": {
+            "+": 2,
+            "X": 3194,
+            "a": 2,
+            "n": 2,
+            "o": 1202,
+            "v": 3509
+          }
+        }
+      },
+      "reconstructed_text": {
+        "segmentation": {
+          "correct": 20293,
+          "predicted": 32884,
+          "gold": 26551,
+          "precision": 0.6171086242549568,
+          "recall": 0.7643026627998946,
+          "f1": 0.6828636325397494
+        },
+        "joint_coarse": {
+          "correct": 9153,
+          "predicted": 32884,
+          "gold": 26551,
+          "precision": 0.2783420508453959,
+          "recall": 0.34473277842642464,
+          "f1": 0.3080003365020611
+        },
+        "unknown_tokens": 18466,
+        "predicted_tag_counts": {
+          "+": 58,
+          ".": 1894,
+          "1": 1012,
+          "X": 18466,
+          "a": 440,
+          "n": 2800,
+          "o": 4715,
+          "v": 3499
+        },
+        "alignment_failures": 0
+      }
+    },
+    "compact": {
+      "sentences": 1018,
+      "seconds": 3.353582874999999,
+      "gold_boundaries": {
+        "tokens": 26551,
+        "correct": 21526,
+        "covered": 26551,
+        "coverage": 1.0,
+        "all_token_coarse_accuracy": 0.8107415916537983,
+        "selective_coarse_accuracy": 0.8107415916537983,
+        "lexical_tokens": 24529,
+        "lexical_covered": 24529,
+        "lexical_correct": 19529,
+        "confusion": {
+          ".": {
+            ".": 1743,
+            "o": 10
+          },
+          "1": {
+            "1": 254,
+            "a": 2,
+            "n": 11,
+            "v": 2
+          },
+          "a": {
+            "1": 94,
+            "a": 1227,
+            "n": 242,
+            "o": 100,
+            "v": 45
+          },
+          "n": {
+            "+": 1,
+            "1": 36,
+            "a": 182,
+            "n": 9539,
+            "o": 42,
+            "v": 162
+          },
+          "o": {
+            "1": 1,
+            "a": 205,
+            "n": 114,
+            "o": 4528,
+            "v": 100
+          },
+          "v": {
+            "1": 1,
+            "a": 297,
+            "n": 193,
+            "o": 3185,
+            "v": 4235
+          }
+        }
+      },
+      "reconstructed_text": {
+        "segmentation": {
+          "correct": 20009,
+          "predicted": 31285,
+          "gold": 26551,
+          "precision": 0.6395716797187151,
+          "recall": 0.7536062671839102,
+          "f1": 0.6919219863061069
+        },
+        "joint_coarse": {
+          "correct": 16640,
+          "predicted": 31285,
+          "gold": 26551,
+          "precision": 0.5318842895956528,
+          "recall": 0.6267183910210539,
+          "f1": 0.575420153537589
+        },
+        "unknown_tokens": 0,
+        "predicted_tag_counts": {
+          "+": 43,
+          ".": 1894,
+          "1": 1213,
+          "a": 2125,
+          "n": 14153,
+          "o": 7457,
+          "v": 4400
+        },
+        "alignment_failures": 0
+      }
+    }
+  },
+  "role_adapter_amendment": {
+    "initial_results_sha256": "7096f00243960ef8c976d45c85646f964b6dadc37bf0e1db728008d5ec9329bf",
+    "amendment_sha256": "7ffcc919a962e11f723d5edfb2474a9c0b47e125ec0819e5a2fc2a05c8cf3d72",
+    "native_public_pos_and_span_counts_unchanged": true,
+    "status": "Adapted authored role development; no independent role gold or model retuning."
+  }
+}
