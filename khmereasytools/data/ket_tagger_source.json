@@ -1,0 +1,41 @@
+{
+  "extracted_from_toolkit_revision": "53531e420e6f8dc0a70a0e2cf37332ebcab0615b",
+  "files": {
+    "khmereasytools/compact_pos.py": "56a21d6b73ab15b5b034b72c9e916f433b3a783b00ea260f14d4f29e6ab3f815",
+    "khmereasytools/data/research/LICENSE.txt": "2877229ef97e129af74d04e11bb785c720d0645fcbc5a138de78a1b2562c522f",
+    "khmereasytools/data/research/ket_pos_v2.json.gz": "1a1de64d7686d0041b1bd3c5ee853224dc1152caed79f5fd59da8b5d0c6b49a6",
+    "khmereasytools/data/research/manifest.json": "85a659ae9d7ec634f1aa7bf9afc7335a9a8c3271c105c0cf4f346d035eb4fa38",
+    "khmereasytools/tagging.py": "5f868ec89e9339dc2a8ea1fc91dbae21197a41805392eb51cc9042e419522ecd",
+    "scripts/check_tagger_source.py": "7809c4c744cd0461cacf5c468302519415459f44fe22c0a0ae1a5f950942d807",
+    "scripts/evaluate_tagger.py": "62f7761ac1f0f27c7b33187ccc736a7cbb13cf3f22f2286dda3ae93174c0de2f",
+    "scripts/evaluate_trained_tagger.py": "3d3cafc28d1b75b0e850d7e75f21742e8a98f83fcb887bd359fb90366d359dfc",
+    "scripts/run_tagger_accuracy_ci.py": "1129ee1df5350ecd1c30e05922d4875f2aed856423156cf7dc8df3707b38c387",
+    "scripts/train_compact_tagger.py": "ed6b58daaf6cffd2dc36cacd9f6be71d5d507bff1657600f2bba169f81616f59",
+    "tests/fixtures/tagger_cases.json": "b3b23cf3122c3c0d85be81e8216e64d41713cf56735f8d3b32551b04717c2ff4",
+    "tests/test_compact_pos.py": "a9cb34cb2708a0152890214b758aedf0c082293f7892b00727c3f7112b7be23b",
+    "tests/test_tagger_evaluation.py": "53c47267e0cd64f6eef4bac43b668e2367bb316a822fb81a78c2557f27379a91",
+    "tests/test_tagger_partitions.py": "72e783bb65a7215174fe778275954a2d03613f80f647e0c18a0f3d9305c8fe2e",
+    "tests/test_tagging.py": "a20e2702afbd6a827de3cb5a6e0da34da5a9cc91adec3da8372704141b11e159",
+    "tests/test_trained_tagging.py": "b5075237939ab26347ac9ada3fadd35dc44f3b633b4f65bdb4240f76cb7991e1"
+  },
+  "model_license": "CC-BY-NC-SA-4.0",
+  "repository": "https://github.com/back-kh/ket-tagger",
+  "revision": "827051da3ee0c8ff9c3744d5385f63a598f6710e",
+  "schema_version": 1,
+  "software_license": "MIT",
+  "support_files": {
+    "khmereasytools/data/DICTIONARY-NOTICE.txt": "26f59741d2f3db7237c45d35d05d90b68620b027e29fe03599731363b5e6f754",
+    "khmereasytools/data/FREQUENCY-NOTICE.txt": "9f909e886d913fce24dd4262a291f5fe9c832bc7335591387434d4b3514143cb",
+    "khmereasytools/data/SIL-LICENSE.txt": "73ceaad383a32a95b19bff137ed34717715a4f4b101145b135d7d756a97e669d",
+    "khmereasytools/data/UNICODE-LICENSE.txt": "5cba0cc0b60a659761e6c6a1a581e6fa64148aa6a3b118e89bcfcdbcf9a6fb8a",
+    "khmereasytools/data/khmer_words.txt": "f398bea51287dc36d52d2482f0005ecff817733cedb84936fd8e5b72b73d9cf8",
+    "khmereasytools/data/legacy_words.txt": "cc725a68f45f5b76bc26660f9a3a1fdc640947c49d9866d6b555cc683f6cb733",
+    "khmereasytools/data/word_frequencies.txt": "b1f50d1f3a2085e9cb35db5fb66aff1453a9ba5b1a24400533f8644d7edbe42c",
+    "khmereasytools/lexicon.py": "d5de159d298d9d7ec6ed063fa7aad8261085e72568306a93346e33e26d0c7aae",
+    "khmereasytools/segmentation.py": "1fa432e81637183376e96dd1522e40ed97ce5ffa11328b8062b1f73bc705b55f",
+    "khmereasytools/text_quality.py": "e354709fadbe6d34fc71aee68354e9eb43c7a8818802a6b4166ee306ee8f3f71",
+    "scripts/evaluation_metrics.py": "7bb38b67244e9df4f3dfc0e46938ee494224ab41a9921ebe19e4fb964792dcb3",
+    "scripts/test_installed.py": "73598d40740ef8cc615dc389ec61852cde744b9730c5ba7380cdfaaa6b632244"
+  },
+  "toolkit_repository": "https://github.com/back-kh/khmereasytools"
+}

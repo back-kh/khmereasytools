@@ -1,5 +1,13 @@
 # KET-Tagger: compact supervised Khmer POS
 
+Development, model training and tagger research are maintained in the separate
+[KET-Tagger repository](https://github.com/back-kh/ket-tagger). The implementation
+remains bundled in KhmerEasyTools with the same `khtag`/`KhmerTagger` interfaces.
+Its source commit, file hashes and model licensing are recorded in
+[`ket_tagger_source.json`](../khmereasytools/data/ket_tagger_source.json);
+maintainers can run `python scripts/check_tagger_source.py` offline to verify
+the bundled copy. Users do not install another package or fetch code at runtime.
+
 `khtag` now uses a **239 KiB trained CRF model**, with pure-Python inference.
 It works offline after installation, with no runtime dependency, model
 download, service or GPU. Software is MIT; the bundled model and its

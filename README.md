@@ -4,6 +4,11 @@ Everyday Khmer tools: split words, inspect Khmer grammar with KET-Tagger, search
 
 The new **0.5.0.dev0** source version adds an **81,005-entry dictionary**, better segmentation, sentence splitting, structured extraction, one-call file processing, local search, optional translation, and setup diagnostics. PyPI 0.4.0 remains the published version until this update is released.
 
+KET-Tagger source, training and research are maintained in the separate
+[KET-Tagger repository](https://github.com/back-kh/ket-tagger). Its reviewed
+source and model remain bundled here: keep using `khtag()` with no additional
+installation. The bundled copy records its source commit and checksums.
+
 [Paired accuracy evaluation](docs/IMPROVEMENTS.md) now compares the earlier
 and improved defaults. Segmentation F1 rises from 77.21% to 78.46% on khPOS;
 whole-word POS joint F1 rises modestly from 67.40% to 67.67% on ALT; OCR
