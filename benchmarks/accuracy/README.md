@@ -2,6 +2,14 @@
 
 See [the evaluation guide](../../docs/ACCURACY.md) for interpretation.
 
+The separate [KET-Tagger diagnostic](../../docs/TAGGER.md) records all 1,018
+ALT test sentences with gold-boundary coverage, all-token/selective coarse
+accuracy and joint coarse word/tag F1. `tagger/results.json` retains unknowns
+and the failed authored compound-boundary target. The frozen
+[tagger protocol](TAGGER_PROTOCOL.md) specifies the lossy NOVA mapping; these
+scores do not validate fine Khmer particle tags. Existing OCR and report
+artifacts are unchanged.
+
 The [full-page study](../../docs/DOCUMENT_OCR.md) records five frozen OCR
 implementations on 150 historical manuscript images, with separate results for
 30 official CHURRO-DS test pages and 120 source-training stress pages. The

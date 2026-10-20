@@ -42,7 +42,7 @@ def khdoctor(*, timeout=5.0):
     from . import __version__
     if isinstance(timeout, bool) or not isinstance(timeout, (int, float)) or not math.isfinite(timeout) or timeout <= 0:
         raise ValueError("timeout must be a finite positive number")
-    checks = [DoctorCheck("core", "ready", "Text, sentence, extraction and search tools are available.", "")]
+    checks = [DoctorCheck("core", "ready", "Text, KET-Tagger, sentence, extraction and search tools are available.", "")]
     executable = shutil.which("tesseract")
     engine_status, engine_message = "missing", "Tesseract is not on PATH."
     system = platform.system()
@@ -77,7 +77,7 @@ def khdoctor(*, timeout=5.0):
                                   "Install with: python -m pip install 'khmereasytools[ocr]'"))
     pos_modules = all(_available(name) for name in ("khmernltk", "sklearn_crfsuite", "pycrfsuite", "sklearn", "numpy", "scipy"))
     checks.append(DoctorCheck("pos", "ready" if pos_modules else "missing",
-                              "POS packages were found; models were not loaded." if pos_modules else "Optional POS packages are missing.",
+                              "Optional CRF POS packages were found; models were not loaded." if pos_modules else "Optional CRF POS packages are missing; KET-Tagger works with core.",
                               "" if pos_modules else "Install with: python -m pip install 'khmereasytools[khmernltk]'"))
     configured = bool(os.environ.get("GOOGLE_TRANSLATE_API_KEY", "").strip())
     checks.append(DoctorCheck("translation", "configured" if configured else "missing",

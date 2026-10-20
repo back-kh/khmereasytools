@@ -2,6 +2,8 @@
 
 ## 0.5.0.dev0 — unreleased
 
+- Add dependency-free KET-Tagger (`khtag`, `KhmerTagger`): authored Khmer POS/particle rules, Khmer labels, source spans, alternatives, explanations, local vocabulary, and `tag`/`ket-tagger` CLI commands. Keep unknowns visible and retain the optional CRF for broader coverage.
+- Evaluate KET-Tagger on all 1,018 ALT test sentences with explicit abstention denominators and a lossy coarse-label mapping; retain the unmet compound-boundary challenge rather than claiming general POS accuracy.
 - Add simple `KhmerRAG`/`khrag` with local BM25 passage retrieval, source offsets and optional explicit answer generation; no embeddings or vector database.
 - Add a standard-library `LocalModel` Ollama client shared by optional local translation and RAG, with bounded responses and no automatic downloads or cloud fallback. Translation remains a functional interface without a quality evaluation.
 - Name the existing Tesseract-based image/PDF pipeline KET-OCR; add `ket_ocr` with exception-based errors and a `ket-ocr` CLI alias.

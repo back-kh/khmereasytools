@@ -13,6 +13,7 @@ from .tools import (
 from .documents import DocumentLayout, DocumentPage, khanalyze
 from .lexicon import get_khmer_dictionary
 from .segmentation import TokenSpan, khseg_spans
+from .tagging import KhmerTagger, TaggedToken, khtag
 from .search import KhmerSearchIndex, SearchHit, SearchMatch, khindex, khsearch
 from .translation import TranslationError, khtranslate
 from .local_model import LocalModel, LocalModelError
@@ -41,6 +42,7 @@ __all__ = [
     "khsyllable", "khpos", "khocr", "is_khmer", "khseg_spans", "khaudit",
     "khdigits", "khnormalize", "TokenSpan", "TextIssue", "TextAudit", "TextEdit",
     "NormalizationResult", "__version__", "get_khmer_dictionary",
+    "KhmerTagger", "TaggedToken", "khtag",
     "Box", "LayoutColumn", "OCRBlock", "OCRError", "OCRLine", "OCRWord",
     "PageLayout", "khlayout", "khocr_layout", "khocr_overlay",
     "DocumentLayout", "DocumentPage", "khanalyze",

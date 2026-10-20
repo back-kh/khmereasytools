@@ -1,6 +1,6 @@
 # Khmer Easy Tools
 
-Everyday Khmer tools: split words, search local text, retrieve passages with KhmerRAG, read images or PDFs with KET-OCR, and inspect document layouts. Core text, search and retrieval run offline with **no runtime dependencies or model downloads**. Translation and RAG answer generation use an explicitly configured provider or local model.
+Everyday Khmer tools: split words, inspect Khmer grammar with KET-Tagger, search local text, retrieve passages with KhmerRAG, read images or PDFs with KET-OCR, and inspect document layouts. Core text, tagging, search and retrieval run offline with **no runtime dependencies or model downloads**. Translation and RAG answer generation use an explicitly configured provider or local model.
 
 The new **0.5.0.dev0** source version adds an **81,005-entry dictionary**, better segmentation, sentence splitting, structured extraction, one-call file processing, local search, optional translation, and setup diagnostics. PyPI 0.4.0 remains the published version until this update is released.
 
@@ -9,7 +9,7 @@ and improved defaults. Segmentation F1 rises from 77.21% to 78.46% on khPOS;
 whole-word POS joint F1 rises modestly from 67.40% to 67.67% on ALT; OCR
 character error rate falls from 15.99% to 11.43% on 40 reserved page images.
 These samples have documented overlap/annotation limits. Review output where
-errors matter. Core tools remain dependency-free; the current wheel is about 515 KiB.
+errors matter. Core tools remain dependency-free; the current wheel is about 522 KiB.
 
 The [sub-10% OCR experiment](docs/OCR_TARGET.md) did not meet that target:
 the optional larger model scored 11.49% versus 11.43% for the default on the
@@ -109,6 +109,33 @@ For annotations, `khseg_spans(text)` preserves every input character, including 
 `khpos(text)` applies the optional POS CRF directly to the chosen words,
 preserving boundaries without whitespace tokens or a second tokenizer model.
 Use `khpos(text, custom_words=["your domain term"])` for local vocabulary.
+
+## Tag Khmer grammar without a model
+
+```python
+assert ket.khtag("ខ្ញុំអានសៀវភៅ។") == [
+    ("ខ្ញុំ", "PRON"), ("អាន", "VERB"),
+    ("សៀវភៅ", "NOUN"), ("។", "PUNCT")]
+
+tokens = ket.khtag("សិស្ស៣នាក់កំពុងអាន។", with_spans=True)
+print([(t.text, t.label_km, t.role) for t in tokens])
+# Local name/domain overrides:
+tagger = ket.KhmerTagger({"និមល": "PROPN"})
+```
+
+**KET-Tagger** is our authored rule-based grammar helper: Khmer POS names,
+negation/question/aspect markers, classifier roles, repetition marks, source
+spans, alternatives and explanations. It has a small 312-entry POS lexicon;
+unrecognized words stay `X`. The existing 81,005-word segmentation dictionary
+is not a POS lexicon. The optional `khpos` CRF remains the broader-coverage tool.
+On all 26,551 ALT test words, KET-Tagger covers 46.80% and achieves 37.61%
+coarse mapped accuracy counting unknowns as errors. This does not validate
+fine-grained particle accuracy. See [usage and full limits](docs/TAGGER.md).
+
+```bash
+khmereasytools tag notes.txt
+khmereasytools ket-tagger notes.txt --term និមល=PROPN
+```
 
 ## Search and retrieve local text
 

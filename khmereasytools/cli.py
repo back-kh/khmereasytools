@@ -6,6 +6,7 @@ import sys
 
 from . import __version__
 from .segmentation import khseg_spans
+from .tagging import khtag
 from .ocr import OCRError, khocr_overlay
 from .documents import khanalyze
 from .search import khsearch
@@ -42,9 +43,10 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Everyday Khmer text, search, and document tools.")
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command")
-    for command in ("audit", "normalize", "digits", "segment", "sentences", "extract",
+    for command in ("audit", "normalize", "digits", "segment", "tag", "sentences", "extract",
                     "process", "doctor", "ocr", "search", "rag", "translate"):
-        subparser = commands.add_parser(command, aliases=["ket-ocr"] if command == "ocr" else [])
+        aliases = {"ocr": ["ket-ocr"], "tag": ["ket-tagger"]}
+        subparser = commands.add_parser(command, aliases=aliases.get(command, []))
         if command == "doctor":
             subparser.add_argument("--json", action="store_true", help="Print a machine-readable setup report")
             subparser.add_argument("--require", action="append", default=[],
@@ -97,6 +99,9 @@ def main(argv=None):
             subparser.add_argument("--word", action="append", default=[], help="Add a domain word; repeat as needed")
             subparser.add_argument("--dictionary", choices=("expanded", "legacy"), default="expanded")
             subparser.add_argument("--strategy", choices=("frequency", "coverage", "longest"), default="frequency")
+        elif command == "tag":
+            subparser.add_argument("--term", action="append", default=[], metavar="WORD=TAG",
+                                   help="Local POS override, e.g. និមល=PROPN; repeat as needed")
         elif command == "translate":
             subparser.add_argument("--to", dest="target", default="en", help="Target language code (default: en)")
             subparser.add_argument("--from", dest="source", default="km", help="Source language code, or auto (default: km)")
@@ -110,6 +115,8 @@ def main(argv=None):
     args = parser.parse_args(argv)
     if args.command == "ket-ocr":
         args.command = "ocr"
+    elif args.command == "ket-tagger":
+        args.command = "tag"
     if args.command is None:
         parser.print_help()
         return 0
@@ -173,6 +180,14 @@ def main(argv=None):
             result = khaudit(text)
         elif args.command == "segment":
             result = khseg_spans(text, custom_words=args.word, dictionary=args.dictionary, strategy=args.strategy)
+        elif args.command == "tag":
+            lexicon = {}
+            for term in args.term:
+                if "=" not in term:
+                    raise ValueError("--term must have the form WORD=TAG, e.g. និមល=PROPN")
+                word, label = term.rsplit("=", 1)
+                lexicon[word] = label
+            result = khtag(text, with_spans=True, lexicon=lexicon)
         elif args.command == "sentences":
             result = khsentences(text, with_spans=True)
         elif args.command == "extract":
