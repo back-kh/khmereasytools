@@ -150,6 +150,10 @@ python scripts/evaluate_tagger.py --with-crf
 python -m unittest discover -s tests -v
 ```
 
-Native Windows/macOS/Linux installed-wheel evidence for this addition is
-recorded separately from the older OCR/report validation. No OCR benchmark,
-live translation result or paper accuracy claim is changed by adding this API.
+The [native Windows/macOS/Linux run](https://github.com/back-kh/khmereasytools/actions/runs/39355812094)
+passed at runtime commit `9892070`: 181 passed / 19 skipped in each fresh core
+install, and 195 passed / 5 skipped in each extras install, including real OCR
+and CRF POS. [Machine-readable records](../benchmarks/accuracy/tagger/native-validation.json)
+and [validation details](VALIDATION.md) distinguish these software checks from
+linguistic accuracy. No OCR benchmark, live translation result or paper
+accuracy claim is changed by adding this API.
