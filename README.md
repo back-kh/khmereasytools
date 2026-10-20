@@ -19,6 +19,7 @@ and noncommercial use. [License details](MODEL_LICENSES.md).
 
 [Quick start](#quick-start) · [Features](#what-you-can-do) ·
 [Architecture](#how-it-fits-together) · [Evidence](#measured-results) ·
+[OCR scores](#ocr-kh-funsd-and-khmerst) ·
 [Poster](#poster-and-editable-figures) · [API guide](docs/FEATURES.md)
 
 ## Quick start
@@ -193,12 +194,62 @@ exact normalized CLOSE/OPEN/ALT matches before training the compact model:
 templates may still cross splits. Fine grammar roles lack independent gold.
 [Protocol, audit and complete tagger results](docs/TAGGER.md).
 
+### OCR: KH-FUNSD and KhmerST
+
+These are saved development-version evaluations, with lower error rates being
+better. KET-OCR uses Tesseract through the toolkit's preparation and layout
+pipeline; it is not an independently trained recognizer. No new inference was
+run for this README update.
+
+**KH-FUNSD: all 146 unique business images from the supplied folder.** The
+author-designated operational references are Codex-generated transcripts with
+**zero independent human reviews**. These scores measure agreement with those
+references, not certified human-gold accuracy. All images and failed, empty or
+capped outputs remain in the evaluation.
+
+| System | CER | Whitespace-unit WER | Segmentation-assisted WER |
+| --- | ---: | ---: | ---: |
+| Tesseract fast LSTM | 55.29% | 63.87% | 62.78% |
+| KET-OCR (Tesseract) | 53.76% | 62.04% | 62.81% |
+| Surya 2 GGUF first pass | 69.65% | 68.10% | 67.17% |
+| PaddleOCR-VL 1.6 MLX 4-bit | 406.95% | 344.19% | 651.63% |
+| DeepSeek-OCR MLX 4-bit | 494.82% | 429.33% | 891.42% |
+
+These are the recorded execution profiles, not a ranking of all implementations
+of each model family. KET-OCR returned three empty pages; the plain baseline
+returned seven. The separate Qwen comparison uses only 30 matched images.
+[Full comparison, matched subsets, output limits and audit](docs/KHFUNSD_OCR.md).
+
+**KhmerST: recognition using supplied text polygons.** The original track has
+3,563 crops from 1,543 retained scene images (1,541 distinct image-hash groups).
+It measures crop recognition, not end-to-end text detection or page reading order.
+The smaller degraded track uses dependent synthetic variants, not new scenes.
+
+| Track | Crops | System | CER | Whitespace-unit WER | Segmentation-assisted WER |
+| --- | ---: | --- | ---: | ---: | ---: |
+| Original polygon crops | 3,563 | Tesseract fast | 67.07% | 106.41% | 100.54% |
+| Original polygon crops | 3,563 | KET-OCR | 65.74% | 106.91% | 101.78% |
+| Half-size, JPEG quality 40 | 320 | Tesseract fast | 71.84% | 102.73% | 97.31% |
+| Half-size, JPEG quality 40 | 320 | KET-OCR | 67.60% | 107.52% | 98.09% |
+
+The original KhmerST track includes 964 empty KET-OCR crops and 994 empty
+baseline crops. KET-OCR lowers CER on these samples but does not improve either
+WER measure on KhmerST. Business-image segmentation-assisted WER also does not
+improve (62.81% versus 62.78%). These results expose substantial recognition
+failures; they do not establish reliable business or scene-text OCR.
+
+CER uses compact Unicode code points after NFC, whitespace and ZWSP removal,
+not Khmer grapheme clusters. Whitespace-unit WER and segmentation-assisted WER
+are explicitly defined proxies, not scores against human Khmer word boundaries.
+Rates can exceed 100% when insertions are numerous; no rates are clipped.
+[Scene protocol and paired CER results](docs/EXPANDED_OCR.md) ·
+[Word metrics and failure analysis](docs/OCR_WORD_METRICS.md).
+
 OCR is sensitive to fonts, image quality, reading order and reference quality;
-general **CER below 10% is not established**. Full scene-text, historical and
-KH-FUNSD comparisons remain separate, with failures retained. KH-FUNSD uses
-unreviewed machine-generated operational references, so its numbers describe
-agreement rather than certified human-gold accuracy. Sentence/extraction
-results include authored or reconstructed examples.
+general **CER below 10% is not established**. Full studies remain separate from
+the [post hoc smaller document diagnostic](docs/CLEAN_DOCUMENT_DIAGNOSTIC.md);
+its eight screened KH-FUNSD images do not replace the full 146-image results.
+Sentence/extraction results include authored or reconstructed examples.
 [Paired improvements](docs/IMPROVEMENTS.md) ·
 [OCR target](docs/OCR_TARGET.md) · [Research records](benchmarks/accuracy/README.md).
 
