@@ -16,7 +16,7 @@ setup(
     url="https://github.com/back-kh/khmereasytools",
     project_urls={
         "Source": "https://github.com/back-kh/khmereasytools",
-        "KET-Tagger Source": "https://github.com/back-kh/ket-tagger",
+        "KET-Tagger Guide": "https://github.com/back-kh/khmereasytools/blob/main/docs/TAGGER.md",
         "Issues": "https://github.com/back-kh/khmereasytools/issues",
         "Changelog": "https://github.com/back-kh/khmereasytools/blob/main/CHANGELOG.md",
     },

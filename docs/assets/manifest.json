@@ -1,0 +1,151 @@
+{
+  "date": "2026-10-20",
+  "source_version": "0.5.0.dev0",
+  "sources_sha256": {
+    "benchmarks/accuracy/improvements/baseline_reserved.json": "d93330205df089a430a04ab23f2205890fc54bddb1995221839f562b8aea513a",
+    "benchmarks/accuracy/improvements/improved_reserved.json": "c584f07f384b42b4a7ce858cde27a1f05c21c8f680ca6a2bb781529eef37686e",
+    "benchmarks/accuracy/tagger-v2/results.json": "f381e25b9a4dd44c23f8f75c23aa92209082633f927e39ff8d478fa18e35b8aa",
+    "khmereasytools/data/dictionary_manifest.json": "769b6d9207f19850a1dae8f4385631c8306599217812482ddc07dc575ddfbca5",
+    "khmereasytools/data/research/manifest.json": "85a659ae9d7ec634f1aa7bf9afc7335a9a8c3271c105c0cf4f346d035eb4fa38",
+    "benchmarks/accuracy/tagger-v2/native-validation.json": "1f330e11dd1d70749fd68c6288495fca6ceed3f8b607d562844851c9af861a48",
+    "setup.py": "c208a05bf03f2fdfd9316ef7d26dee9dc5318b2c8d179cde4033105ebda37e7c"
+  },
+  "metrics": {
+    "segmentation": [
+      77.21111564440818,
+      78.4616758978024
+    ],
+    "coarse_pos": [
+      37.606869797747734,
+      81.07415916537984
+    ],
+    "ocr_cer": [
+      15.98764359973203,
+      11.432151452745455
+    ],
+    "native_pos": 95.94113686640378,
+    "native_joint": 87.78023669777735,
+    "public_pos": 94.22910454938925,
+    "public_joint": 86.03867988068893,
+    "dictionary_entries": 81005,
+    "model_bytes": 244666,
+    "api_functions": 27,
+    "core_passed": 203,
+    "core_skipped": 19,
+    "extras_passed": 217,
+    "extras_skipped": 5
+  },
+  "documented_example": {
+    "text": "ខ្ញុំអានសៀវភៅ។",
+    "tokens": [
+      {
+        "text": "ខ្ញុំ",
+        "start": 0,
+        "end": 5,
+        "tag": "PRON",
+        "label_km": "សព្វនាម",
+        "role": "personal",
+        "candidates": [
+          "PRON"
+        ],
+        "rule": "model.crf",
+        "reason": "Compact CRF predicted PRO (word seen in training). Role heuristic: Known word in the authored starter lexicon; context may admit other analyses."
+      },
+      {
+        "text": "អាន",
+        "start": 5,
+        "end": 8,
+        "tag": "VERB",
+        "label_km": "កិរិយាសព្ទ",
+        "role": "",
+        "candidates": [
+          "VERB",
+          "PROPN",
+          "NOUN"
+        ],
+        "rule": "model.crf",
+        "reason": "Compact CRF predicted VB (word seen in training)."
+      },
+      {
+        "text": "សៀវភៅ",
+        "start": 8,
+        "end": 13,
+        "tag": "NOUN",
+        "label_km": "នាម",
+        "role": "",
+        "candidates": [
+          "NOUN"
+        ],
+        "rule": "model.crf",
+        "reason": "Compact CRF predicted NN (word seen in training)."
+      },
+      {
+        "text": "។",
+        "start": 13,
+        "end": 14,
+        "tag": "PUNCT",
+        "label_km": "សញ្ញាវណ្ណយុត្ត",
+        "role": "",
+        "candidates": [
+          "PUNCT"
+        ],
+        "rule": "model.crf",
+        "reason": "Compact CRF predicted KAN (word seen in training)."
+      }
+    ]
+  },
+  "assets": {
+    "architecture.png": {
+      "bytes": 147241,
+      "sha256": "f3b1cc643991f1fa147ab106d69fc59f0f4da223defa43c32aecb6303a8be2c3"
+    },
+    "architecture.svg": {
+      "bytes": 106112,
+      "sha256": "85065a434432f501f845cfd64688a8efea759de25ec2f7419e9b4b69eb30f9c7"
+    },
+    "evaluation.png": {
+      "bytes": 120271,
+      "sha256": "7d8080563fa381ae1b4dcf8290568df36713a3f48532b70562e058cfbcd2538e"
+    },
+    "evaluation.svg": {
+      "bytes": 106823,
+      "sha256": "0dccb3f292358f0331e2dfd0d5e24750b3f35cb016b36e8445bca10f252e64bb"
+    },
+    "overview.png": {
+      "bytes": 59396,
+      "sha256": "819e05742ca4dc21f5f2e2fd3792a0e2c8874d014a522a4b393d42d2178062e8"
+    },
+    "overview.svg": {
+      "bytes": 61181,
+      "sha256": "8f947569624d81b0a81fa84aaffea483586a23b001ea5c1cd1103ee544d51599"
+    },
+    "poster.pdf": {
+      "bytes": 48572,
+      "sha256": "c819863aefb01eb459022723930913dfda5e5dd7696b0fb757d1825e71ffa144"
+    },
+    "poster.png": {
+      "bytes": 299690,
+      "sha256": "5af6fe059cb68b88311c96d41ff6080be33eeb5e80733c443f3716ea7db008f1"
+    },
+    "tagging-workflow.png": {
+      "bytes": 95649,
+      "sha256": "a2c03e9e33dc70370da4062e11a77507487cabf7e1d4bf0bed1df94ab147b0e1"
+    },
+    "tagging-workflow.svg": {
+      "bytes": 106751,
+      "sha256": "fbfe3c497e0c7e235b66e6541c36d361acd9b4586b535787bb8f0f9b02181b78"
+    }
+  },
+  "rendering": {
+    "matplotlib": "3.11.2",
+    "fonttools": "4.67.0",
+    "uharfbuzz": "0.56.3",
+    "font_filename": "KhmerOSBattambang-Regular.ttf",
+    "font_sha256": "d75e03b55d024edc8fc5cdd96d487ff457ad4852802d2f2c242feffb3a8932eb"
+  },
+  "notes": [
+    "Existing results only; no new dataset, training or accuracy experiment.",
+    "Each comparison panel has its own metric, sample and limitations.",
+    "Khmer glyphs are shaped and outlined; the font file is not bundled."
+  ]
+}

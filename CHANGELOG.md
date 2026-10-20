@@ -2,6 +2,7 @@
 
 ## 0.5.0.dev0 — unreleased
 
+- Refresh the public README with a complete feature/API guide, architecture drawing, actual source-span tagging example, fixed-result charts and a printable A3 poster. Generate artwork from existing evidence with source/asset hashes; no new dataset, model training or runtime dependency.
 - Maintain KET-Tagger source/training in `back-kh/ket-tagger` while preserving its bundled API, model and zero runtime dependencies. Record the component source commit and checksums, with offline CI verification and explicit synchronization safeguards.
 - Improve KET-Tagger with a 239 KiB supervised khPOS CRF and pure-Python inference; retain `model="rules"`. Bundle corpus-derived weights/counts under separate CC BY-NC-SA 4.0 research licensing; software code stays MIT.
 - Purge normalized CLOSE/OPEN/ALT test matches before training and freeze development-only model selection. The same ALT coarse diagnostic rises from 37.61% to 81.07%; reserved khPOS native gold-boundary accuracy is 95.94%, with 87.78% joint native F1 from unsegmented text. Preserve earlier results and adapted role-interface evidence.

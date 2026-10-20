@@ -1,8 +1,9 @@
 # KET-Tagger: compact supervised Khmer POS
 
-Development, model training and tagger research are maintained in the separate
-[KET-Tagger repository](https://github.com/back-kh/ket-tagger). The implementation
-remains bundled in KhmerEasyTools with the same `khtag`/`KhmerTagger` interfaces.
+The implementation is bundled in KhmerEasyTools with the
+`khtag`/`KhmerTagger` interfaces. Public source:
+[`tagging.py`](../khmereasytools/tagging.py) and the
+[`compact POS decoder`](../khmereasytools/compact_pos.py).
 Its source commit, file hashes and model licensing are recorded in
 [`ket_tagger_source.json`](../khmereasytools/data/ket_tagger_source.json);
 maintainers can run `python scripts/check_tagger_source.py` offline to verify

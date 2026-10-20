@@ -1,6 +1,8 @@
 include CHANGELOG.md
 include requirements-evaluation.txt
+include requirements-visuals.txt
 recursive-include docs *.md
+recursive-include docs/assets *.png *.svg *.pdf *.json
 recursive-include tests *.py
 recursive-include khmereasytools/data *.txt *.json
 include MODEL_LICENSES.md
