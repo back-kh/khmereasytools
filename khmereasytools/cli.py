@@ -100,6 +100,7 @@ def main(argv=None):
             subparser.add_argument("--dictionary", choices=("expanded", "legacy"), default="expanded")
             subparser.add_argument("--strategy", choices=("frequency", "coverage", "longest"), default="frequency")
         elif command == "tag":
+            subparser.add_argument("--model", default="compact", help="compact (research model), rules, or a local gzip JSON path")
             subparser.add_argument("--term", action="append", default=[], metavar="WORD=TAG",
                                    help="Local POS override, e.g. និមល=PROPN; repeat as needed")
         elif command == "translate":
@@ -187,7 +188,7 @@ def main(argv=None):
                     raise ValueError("--term must have the form WORD=TAG, e.g. និមល=PROPN")
                 word, label = term.rsplit("=", 1)
                 lexicon[word] = label
-            result = khtag(text, with_spans=True, lexicon=lexicon)
+            result = khtag(text, with_spans=True, lexicon=lexicon, model=args.model)
         elif args.command == "sentences":
             result = khsentences(text, with_spans=True)
         elif args.command == "extract":

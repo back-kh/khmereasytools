@@ -3,6 +3,8 @@ include requirements-evaluation.txt
 recursive-include docs *.md
 recursive-include tests *.py
 recursive-include khmereasytools/data *.txt *.json
+include MODEL_LICENSES.md
+recursive-include khmereasytools/data/research *.json.gz
 recursive-include scripts *.py
 recursive-include tests/fixtures *.png *.json
 recursive-include tests/fixtures *.pdf

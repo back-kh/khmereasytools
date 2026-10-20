@@ -71,6 +71,12 @@ def khseg_spans(text, custom_words=None, *, dictionary="expanded", strategy="fre
     dictionary accepts 'expanded', 'legacy', or an iterable for a local lexicon.
     Custom words add exact candidates without changing the shared dictionary.
     """
+    return _segment_spans(text, custom_words, dictionary=dictionary, strategy=strategy)
+
+
+def _segment_spans(text, custom_words=None, *, dictionary="expanded", strategy="frequency",
+                   _word_costs=None, _prepared_index=None):
+    """Shared decoder; model-specific indexes/costs stay local to the tagger."""
     _require_text(text)
     if strategy not in ("frequency", "coverage", "longest"):
         raise ValueError("strategy must be 'frequency', 'coverage' or 'longest' for lossless spans")
@@ -83,13 +89,14 @@ def khseg_spans(text, custom_words=None, *, dictionary="expanded", strategy="fre
         if custom_words is not None:
             _validated_words(custom_words)
         return []
-    indexes = [_default_index(dictionary) if isinstance(dictionary, str)
-               else _index(_validated_words(dictionary))]
+    indexes = [_prepared_index if _prepared_index is not None else
+               _default_index(dictionary) if isinstance(dictionary, str) else _index(_validated_words(dictionary))]
     custom = _validated_words(custom_words) if custom_words is not None else set()
     if custom:
         indexes.append(_index(custom))
-    weighted = strategy == "frequency" and isinstance(dictionary, str) and dictionary == "expanded"
-    weights, missing_cost = _frequency_costs() if weighted else ({}, 1)
+    weighted = strategy == "frequency" and (_word_costs is not None or
+                isinstance(dictionary, str) and dictionary == "expanded")
+    weights, missing_cost = _word_costs if _word_costs is not None else _frequency_costs() if weighted else ({}, 1)
 
     def word_cost(start, end):
         word = text[start:end]

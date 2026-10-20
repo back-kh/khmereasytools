@@ -4,10 +4,14 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from functools import partial
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-from khmereasytools import KhmerTagger, TaggedToken, khseg, khtag
+from khmereasytools import KhmerTagger, TaggedToken, khseg, khtag as public_khtag
+
+# Preserve every v1 assertion under the explicit, still-supported rules mode.
+khtag = partial(public_khtag, model="rules")
 
 
 class TaggingTests(unittest.TestCase):
@@ -85,7 +89,7 @@ class TaggingTests(unittest.TestCase):
     def test_locally_added_names_and_no_mutation_of_default(self):
         name = "និមល"
         original = khtag(name)
-        tagger = KhmerTagger({name: "PROPN"})
+        tagger = KhmerTagger({name: "PROPN"}, model="rules")
         self.assertEqual(tagger.tag(name), [(name, "PROPN")])
         custom = tagger.tag(name, with_spans=True)[0]
         self.assertEqual(custom.rule, "user.lexicon")
@@ -95,7 +99,7 @@ class TaggingTests(unittest.TestCase):
     def test_override_beats_context_and_copies_mutable_inputs(self):
         lexicon = {"កំពុង": ["NOUN", "VERB"]}
         words = ["កខគឃ"]
-        tagger = KhmerTagger(lexicon, custom_words=iter(words))
+        tagger = KhmerTagger(lexicon, custom_words=iter(words), model="rules")
         lexicon["កំពុង"][:] = ["ADJ"]
         words.append("ខ្ញុំអាន")
         tagged = tagger.tag("កំពុងអាន។", with_spans=True)
@@ -146,7 +150,7 @@ class TaggingTests(unittest.TestCase):
                 previous = token.end
 
     def test_reusable_tagger_is_deterministic_across_threads(self):
-        tagger = KhmerTagger({"និមល": "PROPN"})
+        tagger = KhmerTagger({"និមល": "PROPN"}, model="rules")
         texts = ["និមលកំពុងអាន។", "ខ្ញុំមិនដឹងទេ។"] * 8
         expected = [tagger.tag(text, with_spans=True) for text in texts]
         with ThreadPoolExecutor(max_workers=4) as executor:
@@ -165,7 +169,7 @@ class TaggingTests(unittest.TestCase):
     def test_cli_json_and_alias_preserve_offsets(self):
         text = "ខ្ញុំ\r\nកំពុងអាន។"
         for command in ("tag", "ket-tagger"):
-            result = subprocess.run([sys.executable, "-m", "khmereasytools", command],
+            result = subprocess.run([sys.executable, "-m", "khmereasytools", command, "--model", "rules"],
                                     input=text.encode("utf-8"), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             self.assertEqual(result.returncode, 0, result.stderr.decode("utf-8", errors="replace"))
             report = json.loads(result.stdout.decode("utf-8"))
@@ -177,7 +181,7 @@ class TaggingTests(unittest.TestCase):
             path = Path(directory) / "notes.txt"
             path.write_bytes("និមល\r\nអាន។".encode("utf-8"))
             result = subprocess.run([sys.executable, "-m", "khmereasytools", "tag", str(path),
-                                     "--term", "និមល=PROPN"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                                     "--model", "rules", "--term", "និមល=PROPN"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             self.assertEqual(result.returncode, 0, result.stderr.decode("utf-8", errors="replace"))
             report = json.loads(result.stdout.decode("utf-8"))
             self.assertEqual(report[0]["tag"], "PROPN")

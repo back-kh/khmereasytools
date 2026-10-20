@@ -1,11 +1,12 @@
-"""KET-Tagger: small, inspectable Khmer POS and grammatical-role heuristics.
+"""KET-Tagger: compact learned Khmer POS with inspectable grammar helpers.
 
-This authored starter lexicon is not a trained model or an evaluation-corpus
-extract. Standard POS names are used as an interface, not a claim of validated
-Universal Dependencies annotation. Unknown words stay X. See docs/TAGGER.md.
+The authored starter lexicon remains available with model='rules'. The default
+uses separately licensed khPOS research weights. Standard POS names are an
+interface, not validated Universal Dependencies annotation. See docs/TAGGER.md.
 """
 
 import unicodedata
+import os
 from collections.abc import Mapping
 from functools import lru_cache
 from types import MappingProxyType
@@ -84,6 +85,14 @@ _CLASSIFIERS = frozenset(("នាក់", "រូប", "ក្បាល", "គ�
 _DEMONSTRATIVES = frozenset(("នេះ", "នោះ", "ទាំងនេះ", "ទាំងនោះ"))
 _LINE_BREAKS = frozenset("\r\n\f\u2028\u2029")
 _PREDICATE_SKIP = _NEGATION | {"ក៏", "តែ"}
+# Aspect/discourse roles are orthogonal to the corpus POS convention. In
+# particular, khPOS often calls modal/aspect words VERB or ADV rather than AUX.
+_INDEPENDENT_ROLES = frozenset((
+    "negation", "negative_final", "negative_response", "question", "question_final",
+    "progressive", "habitual", "future", "perfective", "ability", "advisability",
+    "necessity", "completion", "coordination", "additive", "polite_response",
+    "sequence", "appeal", "directive_final", "reduplication", "classifier", "manner", "degree",
+))
 
 
 @lru_cache(maxsize=1)
@@ -132,35 +141,103 @@ def _custom_lexicon(lexicon):
 
 
 class KhmerTagger:
-    """Reusable, offline KET-Tagger with call-local vocabulary overrides.
+    """Reusable offline POS tagger, with local vocabulary overrides.
 
     lexicon maps a contiguous word to a POS tag or ordered alternatives; its
     first tag wins and contextual rules never override an explicit user tag.
     custom_words changes segmentation only. No shared dictionaries are edited.
+    model='compact' uses bundled CC BY-NC-SA research weights; 'rules' retains
+    the MIT authored v1 helper. A local gzip JSON model path is also accepted.
     """
 
-    def __init__(self, lexicon=None, *, custom_words=None):
+    def __init__(self, lexicon=None, *, custom_words=None, model="compact"):
         self._custom = MappingProxyType(_custom_lexicon(lexicon))
         words = _validated_words(custom_words) if custom_words is not None else set()
         if any(any(char.isspace() or char == "\u200b" for char in word) for word in words):
             raise ValueError("custom_words must be contiguous words without whitespace or ZWSP")
         self._words = frozenset(words | set(self._custom))
+        if not isinstance(model, (str, os.PathLike)):
+            raise TypeError("model must be 'compact', 'rules', or a local gzip JSON path")
+        if not os.fspath(model):
+            raise ValueError("model must not be empty")
+        self._model_choice, self._loaded_model = os.fspath(model), None
+
+    def _model(self):
+        if self._model_choice == "rules":
+            return None
+        if self._loaded_model is None:
+            from .compact_pos import CompactPOS, default_model
+            loaded = default_model() if self._model_choice == "compact" else CompactPOS(self._model_choice)
+            self._loaded_model = loaded
+        return self._loaded_model
 
     def tag(self, text, *, with_spans=False):
         """Return (word, tag) pairs, or TaggedToken explanations with spans.
 
         Whitespace and ZWSP separators are omitted; all returned offsets index
         the unchanged input, in Python code points with exclusive end offsets.
-        Context stops at punctuation and line breaks. Candidates are possible
+        Role heuristics stop at punctuation and line breaks. Candidates are possible
         lexical analyses, not confidence scores or exhaustive disambiguation.
         """
         _require_text(text)
         if not isinstance(with_spans, bool):
             raise TypeError("with_spans must be bool")
-        tokens = self._tag_spans(khseg_spans(text, custom_words=self._words))
+        model = self._model()
+        spans = model.segment(text, self._words) if model is not None else khseg_spans(text, custom_words=self._words)
+        tokens = self._tag_spans(spans)
         return tokens if with_spans else [(token.text, token.tag) for token in tokens]
 
     def _tag_spans(self, spans):
+        spans = list(spans)
+        rules = self._rules_spans(spans)
+        model = self._model()
+        if model is None or not rules:
+            return rules
+        from .compact_pos import public_tag
+        # Keep hard line/sentence boundaries, and include final punctuation in
+        # the model sentence. Commas/colons remain useful internal context.
+        predicted, batch = [], []
+        for span in spans:
+            if span.kind in ("whitespace", "boundary"):
+                if any(c in _LINE_BREAKS for c in span.text) and batch:
+                    predicted.extend(model.predict(batch))
+                    batch = []
+                continue
+            batch.append(span.text)
+            if span.text in ("។", "៕", "?", "!"):
+                predicted.extend(model.predict(batch))
+                batch = []
+        if batch:
+            predicted.extend(model.predict(batch))
+        if len(predicted) != len(rules):
+            raise RuntimeError("Compact POS adapter changed token count")
+        output = []
+        for token, native in zip(rules, predicted):
+            if token.rule == "user.lexicon":
+                output.append(token)
+                continue
+            tag = public_tag(token.text, native)
+            role = token.role if token.tag == tag or token.role in _INDEPENDENT_ROLES else ""
+            role = {"M": "classifier", "DBL": "reduplication", "QT": "question", "RPN": "relative"}.get(native, role)
+            if token.rule in ("unicode.number", "unicode.punctuation", "unicode.symbol", "khmer.reduplication"):
+                tag, role = token.tag, token.role
+            candidates = [tag]
+            distribution = model.lexical.get(token.text, ())
+            for index, count in sorted(distribution, key=lambda pair: (-pair[1], pair[0])):
+                candidate = public_tag(token.text, model.labels[index])
+                if candidate not in candidates:
+                    candidates.append(candidate)
+            status = "word seen in training" if token.text in model.word_counts else "word unseen in training; model prediction may be wrong"
+            reason = "Compact CRF predicted {} ({}).".format(native, status)
+            if tag != public_tag(token.text, native):
+                reason += " Public label follows the Unicode token type."
+            if role and token.role == role:
+                reason += " Role heuristic: " + token.reason
+            output.append(TaggedToken(token.text, token.start, token.end, tag, _LABELS[tag],
+                                      role, tuple(candidates), "model.crf", reason))
+        return output
+
+    def _rules_spans(self, spans):
         # This internal path also allows the research script to measure tags
         # at externally supplied gold boundaries, separately from raw text.
         items, groups, endings, clause = [], {}, {}, 0
@@ -286,8 +363,8 @@ def _default_tagger():
     return KhmerTagger()
 
 
-def khtag(text, *, with_spans=False, lexicon=None, custom_words=None):
+def khtag(text, *, with_spans=False, lexicon=None, custom_words=None, model="compact"):
     """Easy, offline KET-Tagger; see KhmerTagger.tag for contracts and limits."""
-    tagger = _default_tagger() if lexicon is None and custom_words is None else KhmerTagger(
-        lexicon, custom_words=custom_words)
+    tagger = _default_tagger() if lexicon is None and custom_words is None and model == "compact" else KhmerTagger(
+        lexicon, custom_words=custom_words, model=model)
     return tagger.tag(text, with_spans=with_spans)

@@ -9,7 +9,7 @@ and improved defaults. Segmentation F1 rises from 77.21% to 78.46% on khPOS;
 whole-word POS joint F1 rises modestly from 67.40% to 67.67% on ALT; OCR
 character error rate falls from 15.99% to 11.43% on 40 reserved page images.
 These samples have documented overlap/annotation limits. Review output where
-errors matter. Core tools remain dependency-free; the current wheel is about 522 KiB.
+errors matter. Core tools remain dependency-free; the wheel remains under 1 MiB.
 
 The [sub-10% OCR experiment](docs/OCR_TARGET.md) did not meet that target:
 the optional larger model scored 11.49% versus 11.43% for the default on the
@@ -34,6 +34,11 @@ post hoc development sample with disclosed selection and reference limits;
 the larger comparisons remain unchanged.
 
 ## Install
+
+Software code is MIT licensed. The bundled trained KET-Tagger model and its
+derived vocabulary/counts use **CC BY-NC-SA 4.0** for research/noncommercial
+use; see the [model license](khmereasytools/data/research/LICENSE.txt).
+The independently authored helper remains available with `model="rules"`.
 
 From this checkout:
 
@@ -110,7 +115,7 @@ For annotations, `khseg_spans(text)` preserves every input character, including 
 preserving boundaries without whitespace tokens or a second tokenizer model.
 Use `khpos(text, custom_words=["your domain term"])` for local vocabulary.
 
-## Tag Khmer grammar without a model
+## Tag Khmer grammar offline
 
 ```python
 assert ket.khtag("ខ្ញុំអានសៀវភៅ។") == [
@@ -123,14 +128,19 @@ print([(t.text, t.label_km, t.role) for t in tokens])
 tagger = ket.KhmerTagger({"និមល": "PROPN"})
 ```
 
-**KET-Tagger** is our authored rule-based grammar helper: Khmer POS names,
-negation/question/aspect markers, classifier roles, repetition marks, source
-spans, alternatives and explanations. It has a small 312-entry POS lexicon;
-unrecognized words stay `X`. The existing 81,005-word segmentation dictionary
-is not a POS lexicon. The optional `khpos` CRF remains the broader-coverage tool.
-On all 26,551 ALT test words, KET-Tagger covers 46.80% and achieves 37.61%
-coarse mapped accuracy counting unknowns as errors. This does not validate
-fine-grained particle accuracy. See [usage and full limits](docs/TAGGER.md).
+**KET-Tagger** uses a 239 KiB supervised research model trained on real khPOS
+annotations. Its decoder uses only Python's standard library. It includes Khmer
+POS names, heuristic particle/aspect/classifier roles, source spans, lexical
+alternatives, explanations and local vocabulary. No model download is needed.
+The shared 81,005-entry dictionary and `khseg` behavior are unchanged.
+
+After removing exact train/test overlaps, reserved khPOS native POS accuracy is
+**95.94% at gold word boundaries**; joint word/POS F1 from unsegmented text is
+**87.78%**. On the same ALT coarse diagnostic used before, accuracy rises from
+37.61% to **81.07%**, with every word receiving a prediction. Prediction rate
+is not correctness; fine particle roles still have no independent gold. Use
+`model="rules"` for the earlier authored helper. See [data, licensing and full
+evaluation limits](docs/TAGGER.md).
 
 ```bash
 khmereasytools tag notes.txt

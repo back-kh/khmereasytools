@@ -1,0 +1,13 @@
+{
+  "format": "ket-pos-crf-v1",
+  "sha256": "1a1de64d7686d0041b1bd3c5ee853224dc1152caed79f5fd59da8b5d0c6b49a6",
+  "bytes": 244666,
+  "license": "CC-BY-NC-SA-4.0",
+  "source": "https://github.com/ye-kyaw-thu/khPOS",
+  "revision": "0211405c145b0a340ad558569bd06c946b2296b4",
+  "training_sentences": 9827,
+  "training_tokens": 106702,
+  "training_sha256": "9f67c3cb61f3cb015465c025be4acdd2305a97843edec5a45cf5f3095278e439",
+  "selection_sha256": "b98e20d93c190d31dd65aff495338d6184a22095f615ab2af5bf0584f11e5613",
+  "notice": "Research/noncommercial weights and vocabulary; MIT license applies to software code only."
+}

@@ -118,12 +118,12 @@ def evaluate_rows(rows, raw_tagger, oracle_tagger):
                                         alignment_failures=alignment_failures))
 
 
-def authored_checks(ket):
+def authored_checks(ket, *, model="compact"):
     path = ROOT / "tests/fixtures/tagger_cases.json"
     cases = json.loads(path.read_text(encoding="utf-8"))["cases"]
     results = []
     for case in cases:
-        tokens = ket.khtag(case["text"], with_spans=True)
+        tokens = ket.khtag(case["text"], with_spans=True, model=model)
         passed = "pairs" not in case or [[t.text, t.tag] for t in tokens] == case["pairs"]
         passed = passed and all([t.role for t in tokens if t.text == word] == [role]
                                 for word, role in case.get("roles", {}).items())
@@ -136,14 +136,14 @@ def authored_checks(ket):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data", type=Path, default=ROOT / ".evaluation/alt")
-    parser.add_argument("--output", type=Path, default=ROOT / "benchmarks/accuracy/tagger/results.json")
+    parser.add_argument("--output", type=Path, default=ROOT / ".evaluation/tagger_v1_replay/results.json")
     parser.add_argument("--with-crf", action="store_true", help="Also evaluate the actual optional CRF")
     args = parser.parse_args()
     sys.path.insert(0, str(ROOT))
     import khmereasytools as ket
     from khmereasytools.tagging import _starter_lexicon
     rows, hashes = verified_alt(args.data)
-    tagger = ket.KhmerTagger()
+    tagger = ket.KhmerTagger(model="rules")
 
     def raw(text):
         return [(token.text, projected(token)) for token in tagger.tag(text, with_spans=True)]
@@ -158,7 +158,7 @@ def main():
                                 runtime_tagging_sha256=sha256(ROOT / "khmereasytools/tagging.py"),
                                 authored_lexicon_entries=len(_starter_lexicon()),
                                 projection=PROJECTION, copula_projection="v"),
-                  authored_development=authored_checks(ket), ket_tagger=evaluate_rows(rows, raw, oracle))
+                  authored_development=authored_checks(ket, model="rules"), ket_tagger=evaluate_rows(rows, raw, oracle))
     if args.with_crf:
         from khmereasytools.pos import _tag_words
         report["optional_crf"] = evaluate_rows(rows, ket.khpos,

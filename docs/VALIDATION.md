@@ -2,7 +2,24 @@
 
 Passing tests establish the documented contracts on checked inputs. They do not establish universal linguistic accuracy. The source version is 0.5.0.dev0; PyPI 0.4.0 does not include the unreleased features.
 
-## KET-Tagger addition
+## Compact supervised KET-Tagger
+
+The default tagger now uses separately licensed khPOS research weights with
+standard-library inference. [Data and accuracy](TAGGER.md) distinguish native
+23-label scores, public projections, the same ALT before/after comparison and
+adapted authored roles. Model selection excluded all normalized CLOSE, OPEN
+and ALT test matches before training. The original v1 results below remain
+pinned; they do not describe the new model's accuracy or tested revision.
+
+New checks cover exhaustive small Viterbi paths, transition direction, strict
+bounded gzip/JSON, checksums, model/schema errors, training/test purging,
+isolated local vocabulary, concurrency, offline inference, licensed package
+assets, rules-mode compatibility and the CLI. The native installed workflow
+also replays every CLOSE/OPEN gold-boundary and raw-span count with a fresh
+core-only wheel, rejecting drift against the frozen reference. A completed
+workflow is required before claiming a revision passes on all three OSes.
+
+## Earlier KET-Tagger v1 rules addition
 
 The [new native installed-wheel run 39355812094](https://github.com/back-kh/khmereasytools/actions/runs/39355812094)
 passed at `9892070eb594f199996965710e5ce30e7fe5fe6c`. Each environment used the

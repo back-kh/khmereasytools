@@ -1,0 +1,13 @@
+{
+  "captured_after_training": true,
+  "python": "3.9.6",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "training_dependencies": {
+    "python-crfsuite": "0.9.11"
+  },
+  "note": "Training environment was unchanged between fitting and this capture. Daily inference uses only the standard library.",
+  "native_candidate_sha256": {
+    "candidate-0.5.crfsuite": "a14f019a805487ca932166509902e1f2b616cdfcfca3e1ba23bdeb18f00921dd",
+    "candidate-0.1.crfsuite": "0df33092c75944268e43a98f74b0ad445944ee7b209393788e18885d1f78afa3"
+  }
+}

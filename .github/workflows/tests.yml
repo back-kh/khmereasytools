@@ -74,6 +74,8 @@ jobs:
         run: python scripts/prepare_ocr_ci.py
       - name: Test fresh core and all-extras installations outside checkout
         run: python scripts/test_installed.py
+      - name: Replay pinned POS corpus accuracy with a fresh core-only wheel
+        run: python scripts/run_tagger_accuracy_ci.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -2,7 +2,14 @@
 
 See [the evaluation guide](../../docs/ACCURACY.md) for interpretation.
 
-The separate [KET-Tagger diagnostic](../../docs/TAGGER.md) records all 1,018
+The [trained KET-Tagger study](../../docs/TAGGER.md) adds a 239 KiB research
+model, leaked-sentence purging, frozen development selection and reserved
+native/public metrics in `tagger-v2/`. The same ALT coarse accuracy rises from
+37.61% to 81.07%; native khPOS gold-boundary accuracy and unsegmented span F1
+are reported separately. Corpus-derived model assets have a separate
+CC BY-NC-SA 4.0 license. Existing OCR/report evidence is unchanged.
+
+The earlier KET-Tagger v1 diagnostic records all 1,018
 ALT test sentences with gold-boundary coverage, all-token/selective coarse
 accuracy and joint coarse word/tag F1. `tagger/results.json` retains unknowns
 and the failed authored compound-boundary target. The frozen
